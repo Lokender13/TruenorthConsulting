@@ -44,8 +44,8 @@ export default defineConfig({
     },
     // Target modern browsers for smaller bundle
     target: ['es2020', 'edge88', 'firefox78', 'chrome87', 'safari14'],
-    // Minify for production
-    minify: 'terser',
+    // Minify for production (using default esbuild which is faster and built-in)
+    minify: 'esbuild',
     // CSS code splitting
     cssCodeSplit: true,
     // Chunk size warning limit
