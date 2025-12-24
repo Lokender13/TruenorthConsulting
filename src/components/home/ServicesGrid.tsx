@@ -2,34 +2,34 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, BookOpen, Globe, GraduationCap, Users, Building, BarChart } from 'lucide-react';
 import { useTheme } from '../../contexts/ThemeContext';
-import SpotlightCard from '../ui/SpotlightCard';
+import TiltCard from '../ui/TiltCard';
 import AnimatedGradientText from '../ui/AnimatedGradientText';
 
 // Color themes for each service
 const serviceColors = {
     blue: {
-        light: { iconBg: 'bg-blue-100', iconText: 'text-blue-600', border: 'hover:border-blue-400', glow: 'hover:shadow-blue-500/20' },
-        dark: { iconBg: 'bg-blue-500/10', iconText: 'text-blue-400', border: 'hover:border-blue-500/50', glow: 'hover:shadow-blue-500/10' }
+        light: { iconBg: 'bg-blue-100', iconText: 'text-blue-600', border: 'border-blue-200', glow: 'group-hover:shadow-blue-500/20' },
+        dark: { iconBg: 'bg-blue-500/10', iconText: 'text-blue-400', border: 'border-blue-500/20', glow: 'group-hover:shadow-blue-500/10' }
     },
     orange: {
-        light: { iconBg: 'bg-orange-100', iconText: 'text-orange-600', border: 'hover:border-orange-400', glow: 'hover:shadow-orange-500/20' },
-        dark: { iconBg: 'bg-orange-500/10', iconText: 'text-orange-400', border: 'hover:border-orange-500/50', glow: 'hover:shadow-orange-500/10' }
+        light: { iconBg: 'bg-orange-100', iconText: 'text-orange-600', border: 'border-orange-200', glow: 'group-hover:shadow-orange-500/20' },
+        dark: { iconBg: 'bg-orange-500/10', iconText: 'text-orange-400', border: 'border-orange-500/20', glow: 'group-hover:shadow-orange-500/10' }
     },
     emerald: {
-        light: { iconBg: 'bg-emerald-100', iconText: 'text-emerald-600', border: 'hover:border-emerald-400', glow: 'hover:shadow-emerald-500/20' },
-        dark: { iconBg: 'bg-emerald-500/10', iconText: 'text-emerald-400', border: 'hover:border-emerald-500/50', glow: 'hover:shadow-emerald-500/10' }
+        light: { iconBg: 'bg-emerald-100', iconText: 'text-emerald-600', border: 'border-emerald-200', glow: 'group-hover:shadow-emerald-500/20' },
+        dark: { iconBg: 'bg-emerald-500/10', iconText: 'text-emerald-400', border: 'border-emerald-500/20', glow: 'group-hover:shadow-emerald-500/10' }
     },
     purple: {
-        light: { iconBg: 'bg-purple-100', iconText: 'text-purple-600', border: 'hover:border-purple-400', glow: 'hover:shadow-purple-500/20' },
-        dark: { iconBg: 'bg-purple-500/10', iconText: 'text-purple-400', border: 'hover:border-purple-500/50', glow: 'hover:shadow-purple-500/10' }
+        light: { iconBg: 'bg-purple-100', iconText: 'text-purple-600', border: 'border-purple-200', glow: 'group-hover:shadow-purple-500/20' },
+        dark: { iconBg: 'bg-purple-500/10', iconText: 'text-purple-400', border: 'border-purple-500/20', glow: 'group-hover:shadow-purple-500/10' }
     },
     pink: {
-        light: { iconBg: 'bg-pink-100', iconText: 'text-pink-600', border: 'hover:border-pink-400', glow: 'hover:shadow-pink-500/20' },
-        dark: { iconBg: 'bg-pink-500/10', iconText: 'text-pink-400', border: 'hover:border-pink-500/50', glow: 'hover:shadow-pink-500/10' }
+        light: { iconBg: 'bg-pink-100', iconText: 'text-pink-600', border: 'border-pink-200', glow: 'group-hover:shadow-pink-500/20' },
+        dark: { iconBg: 'bg-pink-500/10', iconText: 'text-pink-400', border: 'border-pink-500/20', glow: 'group-hover:shadow-pink-500/10' }
     },
     slate: {
-        light: { iconBg: 'bg-slate-100', iconText: 'text-slate-600', border: 'hover:border-slate-400', glow: 'hover:shadow-slate-500/20' },
-        dark: { iconBg: 'bg-slate-500/10', iconText: 'text-slate-400', border: 'hover:border-slate-500/50', glow: 'hover:shadow-slate-500/10' }
+        light: { iconBg: 'bg-slate-100', iconText: 'text-slate-600', border: 'border-slate-200', glow: 'group-hover:shadow-slate-500/20' },
+        dark: { iconBg: 'bg-slate-500/10', iconText: 'text-slate-400', border: 'border-slate-500/20', glow: 'group-hover:shadow-slate-500/10' }
     },
 };
 
@@ -40,7 +40,7 @@ const services = [
         slug: "career-counselling-psychometric-assessments",
         desc: "Scientific psychometric assessments & personalized career roadmaps for students.",
         color: 'blue' as keyof typeof serviceColors,
-        image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=250&fit=crop&q=80"
+        image: "https://images.unsplash.com/photo-1544531586-fde5298cdd40?q=80&w=800&auto=format&fit=crop"
     },
     {
         icon: Globe,
@@ -48,7 +48,7 @@ const services = [
         slug: "university-admissions-study-abroad",
         desc: "End-to-end admission guidance for top global universities worldwide.",
         color: 'orange' as keyof typeof serviceColors,
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=400&h=250&fit=crop&q=80"
+        image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop"
     },
     {
         icon: GraduationCap,
@@ -56,7 +56,7 @@ const services = [
         slug: "academic-support-online-tutoring",
         desc: "Expert tutoring for IB, IGCSE, CBSE & international curricula.",
         color: 'emerald' as keyof typeof serviceColors,
-        image: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=400&h=250&fit=crop&q=80"
+        image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop"
     },
     {
         icon: BarChart,
@@ -64,7 +64,7 @@ const services = [
         slug: "competitive-exam-language-preparation",
         desc: "IELTS, NEET, JEE & language proficiency preparation.",
         color: 'purple' as keyof typeof serviceColors,
-        image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=250&fit=crop&q=80"
+        image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800&auto=format&fit=crop"
     },
     {
         icon: Users,
@@ -72,7 +72,7 @@ const services = [
         slug: "school-college-partnerships",
         desc: "Comprehensive career guidance curricula for institutions.",
         color: 'pink' as keyof typeof serviceColors,
-        image: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=400&h=250&fit=crop&q=80"
+        image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop"
     },
     {
         icon: Building,
@@ -80,7 +80,7 @@ const services = [
         slug: "career-lab-setup",
         desc: "In-house career infrastructure setup for schools.",
         color: 'slate' as keyof typeof serviceColors,
-        image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&h=250&fit=crop&q=80"
+        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop"
     },
 ];
 
@@ -88,8 +88,13 @@ const ServicesGrid = () => {
     const { theme } = useTheme();
     const isDark = theme === 'dark';
 
+    // Fallback image in case any service image fails to load
+    const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+        e.currentTarget.src = "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop";
+    };
+
     return (
-        <section className={`py-16 lg:py-20 relative overflow-hidden theme-transition ${isDark ? 'bg-zinc-950' : 'bg-gray-50'}`}>
+        <section className={`py-24 lg:py-32 relative overflow-hidden theme-transition ${isDark ? 'bg-zinc-950' : 'bg-gray-50'}`}>
             {/* Subtle background pattern */}
             <div className="absolute inset-0">
                 <div
@@ -101,7 +106,7 @@ const ServicesGrid = () => {
                 />
             </div>
 
-            {/* Very subtle accent glow - reduced orange */}
+            {/* Very subtle accent glow */}
             <div className={`absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[300px] ${isDark ? 'bg-white/[0.02]' : 'bg-gray-200/30'} rounded-full blur-[120px]`}></div>
 
             <div className="max-w-7xl mx-auto px-4 relative z-10">
@@ -140,7 +145,7 @@ const ServicesGrid = () => {
                 </motion.div>
 
                 {/* Premium Service Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
@@ -149,122 +154,100 @@ const ServicesGrid = () => {
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.08, duration: 0.5 }}
                         >
-                            <Link to={`/services/${service.slug}`} className="block h-full group">
-                                <SpotlightCard
+                            <Link to={`/services/${service.slug}`} className="block h-full group perspective-card">
+                                <TiltCard
                                     className={`
-                                        h-full min-h-[380px] rounded-2xl backdrop-blur-md overflow-hidden
+                                        h-full rounded-3xl overflow-hidden backdrop-blur-xl transition-all duration-500
                                         ${isDark
-                                            ? 'bg-zinc-900/50 border border-white/[0.06]'
-                                            : 'bg-white/90 border border-white/20 shadow-[0_8px_30px_rgba(249,115,22,0.08)] hover:border-brand-orange/40'
+                                            ? `bg-zinc-900/40 border-white/10 hover:bg-zinc-900/60 ${serviceColors[service.color].dark.border}`
+                                            : `bg-white/70 border-white/40 shadow-xl hover:shadow-2xl hover:bg-white/90 ${serviceColors[service.color].light.border}`
                                         }
+                                        border group-hover:border-opacity-100 border-opacity-50
                                     `}
-                                    spotlightColor={isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.02)'}
+                                    tiltIntensity={10}
+                                    glareOpacity={isDark ? 0.1 : 0.2}
                                 >
-                                    {/* Service Image at Top */}
-                                    <div className="relative h-40 overflow-hidden rounded-t-2xl">
-                                        <img
-                                            src={service.image}
-                                            alt={service.title}
-                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                            loading="lazy"
-                                        />
-                                        <div className={`absolute inset-0 ${isDark
-                                            ? 'bg-gradient-to-t from-zinc-900 via-transparent to-transparent'
-                                            : 'bg-gradient-to-t from-white via-transparent to-transparent'
-                                            }`} />
-                                    </div>
-
-                                    <div className="relative z-10 p-6 h-full flex flex-col">
-                                        {/* Icon with unique color per service */}
-                                        <div className={`
-                                            w-12 h-12 rounded-xl flex items-center justify-center mb-4
-                                            transition-all duration-500 shadow-lg -mt-10 relative z-20
-                                            ${isDark
-                                                ? `${serviceColors[service.color].dark.iconBg} group-hover:shadow-xl border border-white/10`
-                                                : `${serviceColors[service.color].light.iconBg} group-hover:shadow-xl border border-white`
-                                            }
-                                        `}>
-                                            <service.icon
-                                                size={22}
-                                                className={`transition-all duration-300 ${isDark
-                                                    ? serviceColors[service.color].dark.iconText
-                                                    : serviceColors[service.color].light.iconText
-                                                    }`}
+                                    <div className="flex flex-col h-full">
+                                        {/* Image Section */}
+                                        <div className="relative h-64 overflow-hidden rounded-t-3xl">
+                                            <div className="absolute inset-0 bg-black/10 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
+                                            <motion.img
+                                                src={service.image}
+                                                alt={service.title}
+                                                className="w-full h-full object-cover"
+                                                whileHover={{ scale: 1.1 }}
+                                                transition={{ duration: 0.7 }}
+                                                onError={handleImageError}
                                             />
+                                            {/* Gradient Overlay */}
+                                            <div className={`absolute inset-0 z-20 ${isDark
+                                                ? 'bg-gradient-to-t from-zinc-900 via-transparent to-transparent'
+                                                : 'bg-gradient-to-t from-white via-transparent to-transparent'
+                                                }`} />
+
+                                            {/* Floating Icon */}
+                                            <div className={`
+                                                absolute bottom-4 left-6 z-30
+                                                w-14 h-14 rounded-2xl flex items-center justify-center
+                                                backdrop-blur-md shadow-lg border
+                                                ${isDark
+                                                    ? `bg-zinc-900/80 ${serviceColors[service.color].dark.iconText} border-white/10`
+                                                    : `bg-white/90 ${serviceColors[service.color].light.iconText} border-white/40`
+                                                }
+                                            `}>
+                                                <service.icon size={26} strokeWidth={2} />
+                                            </div>
                                         </div>
 
-                                        {/* Title */}
-                                        <h3 className={`
-                                            text-xl font-bold mb-3 
-                                            transition-colors duration-300
-                                            ${isDark ? 'text-white' : 'text-gray-900'}
-                                        `}>
-                                            {service.title}
-                                        </h3>
+                                        {/* Content Section */}
+                                        <div className="p-8 pt-6 flex-grow flex flex-col relative z-20">
+                                            <h3 className={`text-2xl font-serif font-bold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                                                {service.title}
+                                            </h3>
 
-                                        {/* Description */}
-                                        <p className={`
-                                            text-sm leading-relaxed mb-6 flex-grow
-                                            ${isDark ? 'text-white/40' : 'text-gray-500'}
-                                        `}>
-                                            {service.desc}
-                                        </p>
+                                            <p className={`text-base leading-relaxed mb-6 flex-grow ${isDark ? 'text-white/50' : 'text-gray-500'}`}>
+                                                {service.desc}
+                                            </p>
 
-                                        {/* CTA - Subtle arrow animation */}
-                                        <div className={`
-                                            flex items-center gap-2 text-sm font-medium 
-                                            transition-all duration-300
-                                            ${isDark
-                                                ? 'text-white/30 group-hover:text-white/70'
-                                                : 'text-gray-400 group-hover:text-gray-700'
-                                            }
-                                        `}>
-                                            <span>Learn more</span>
-                                            <ArrowRight
-                                                size={14}
-                                                className="transition-transform duration-300 group-hover:translate-x-1"
-                                            />
+                                            <div className={`
+                                                flex items-center gap-2 text-sm font-semibold tracking-wide uppercase
+                                                ${isDark ? 'text-white/30 group-hover:text-white' : 'text-gray-400 group-hover:text-gray-900'}
+                                                transition-colors duration-300
+                                            `}>
+                                                View Details <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                                            </div>
                                         </div>
-
-                                        {/* Bottom accent line - appears on hover */}
-                                        <div className={`
-                                            absolute bottom-0 left-8 right-8 h-px
-                                            bg-gradient-to-r from-transparent via-current to-transparent
-                                            opacity-0 group-hover:opacity-20
-                                            transition-opacity duration-500
-                                            ${isDark ? 'text-white' : 'text-gray-900'}
-                                        `}></div>
                                     </div>
-                                </SpotlightCard>
+                                </TiltCard>
                             </Link>
                         </motion.div>
                     ))}
                 </div>
 
-                {/* View All Button - Minimal design */}
+                {/* View All Button */}
                 <motion.div
-                    className="text-center mt-16"
+                    className="text-center mt-20"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: 0.4 }}
                 >
                     <Link
                         to="/services"
                         className={`
-                            inline-flex items-center gap-3 
+                            relative inline-flex items-center gap-3 
                             px-8 py-4 rounded-full 
-                            font-medium text-sm
+                            font-medium text-sm tracking-wide uppercase
                             transition-all duration-300
-                            border
+                            overflow-hidden group
                             ${isDark
-                                ? 'border-white/20 text-white hover:bg-white hover:text-black'
-                                : 'border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white'
+                                ? 'bg-white text-black hover:bg-gray-100'
+                                : 'bg-zinc-900 text-white hover:bg-zinc-800'
                             }
                         `}
                     >
-                        View All Services
-                        <ArrowRight size={16} />
+                        <span className="relative z-10 flex items-center gap-2">
+                            Explore All Services <ArrowRight size={16} />
+                        </span>
                     </Link>
                 </motion.div>
             </div>

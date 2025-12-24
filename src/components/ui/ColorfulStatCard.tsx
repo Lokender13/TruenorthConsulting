@@ -50,53 +50,61 @@ const ColorfulStatCard = ({ icon: Icon, value, suffix = '', label, colorTheme, d
 
     return (
         <motion.div
-            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+            initial={{ opacity: 0, y: 30, scale: 0.9 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ delay, duration: 0.5 }}
-            whileHover={{ scale: 1.03, y: -5 }}
+            transition={{ delay, duration: 0.5, type: "spring", bounce: 0.4 }}
+            whileHover={{ scale: 1.05, y: -5 }}
             className={`
-                relative p-6 rounded-2xl border overflow-hidden group cursor-pointer
+                relative p-8 rounded-3xl overflow-hidden group cursor-pointer backdrop-blur-md
                 ${isDark
-                    ? `bg-zinc-900/80 ${colors.border}`
-                    : `bg-white ${colors.border} shadow-lg ${colors.glow}`
+                    ? `bg-zinc-900/40 border border-white/10 hover:bg-zinc-900/60`
+                    : `bg-white/60 border border-white/50 shadow-xl shadow-${colorTheme}-500/10 hover:bg-white/80`
                 }
+                transition-all duration-300
             `}
         >
-            {/* Gradient background on hover */}
+            {/* Glossy gradient reflection */}
+            <div className={`absolute inset-0 bg-gradient-to-br ${colors.gradient} opacity-0 group-hover:opacity-[0.08] transition-opacity duration-500`} />
+
+            {/* Top highlight for glass effect */}
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-50" />
+
+            {/* Floating blurred orb in background */}
             <motion.div
-                className={`absolute inset-0 bg-gradient-to-br ${colors.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
+                className={`absolute -top-12 -right-12 w-40 h-40 rounded-full bg-gradient-to-br ${colors.gradient} opacity-[0.15] blur-3xl`}
+                animate={{
+                    scale: [1, 1.2, 1],
+                    opacity: [0.15, 0.25, 0.15],
+                    rotate: [0, 90, 0]
+                }}
+                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
             />
 
-            {/* Floating orb */}
-            <motion.div
-                className={`absolute -top-10 -right-10 w-32 h-32 rounded-full bg-gradient-to-br ${colors.gradient} opacity-20 blur-2xl`}
-                animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }}
-                transition={{ duration: 4, repeat: Infinity }}
-            />
-
-            <div className="relative z-10">
-                {/* Icon */}
+            <div className="relative z-10 flex flex-col items-center text-center">
+                {/* Icon Container with Glass Effect */}
                 <motion.div
-                    className={`w-14 h-14 rounded-xl ${colors.bg} flex items-center justify-center mb-4`}
-                    whileHover={{ rotate: 10 }}
+                    className={`
+                        w-16 h-16 rounded-2xl flex items-center justify-center mb-6
+                        backdrop-blur-xl shadow-lg
+                        ${isDark ? 'bg-white/5 border border-white/10' : 'bg-white border border-white/60'}
+                    `}
+                    whileHover={{ rotate: 10, scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 300 }}
                 >
-                    <Icon className={`w-7 h-7 ${colors.text}`} />
+                    <Icon className={`w-8 h-8 ${colors.text}`} />
                 </motion.div>
 
-                {/* Value */}
-                <div className={`text-4xl md:text-5xl font-bold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                    <AnimatedCounter target={value} suffix={suffix} duration={2} />
+                {/* Value - Big & Bold */}
+                <div className={`text-5xl md:text-6xl font-serif font-bold mb-3 tracking-tight bg-clip-text text-transparent bg-gradient-to-r ${colors.gradient}`}>
+                    <AnimatedCounter target={value} suffix={suffix} duration={2.5} />
                 </div>
 
                 {/* Label */}
-                <p className={`text-sm font-medium ${isDark ? 'text-white/50' : 'text-gray-500'}`}>
+                <p className={`text-base font-medium tracking-wide uppercase ${isDark ? 'text-white/60' : 'text-gray-600'}`}>
                     {label}
                 </p>
             </div>
-
-            {/* Bottom gradient line */}
-            <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${colors.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`} />
         </motion.div>
     );
 };

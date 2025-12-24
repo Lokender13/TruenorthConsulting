@@ -16,7 +16,7 @@ const StatsSection = () => {
     const isDark = theme === 'dark';
 
     return (
-        <section className={`py-20 lg:py-28 relative overflow-hidden theme-transition ${isDark ? 'bg-zinc-950' : 'bg-gray-50'}`}>
+        <section className={`py-24 lg:py-32 relative overflow-hidden theme-transition ${isDark ? 'bg-zinc-950' : 'bg-gray-50'}`}>
             {/* Subtle divider */}
             <div className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent ${isDark ? 'via-white/10' : 'via-gray-200'} to-transparent`}></div>
 
@@ -43,10 +43,10 @@ const StatsSection = () => {
                 />
             </div>
 
-            <div className="max-w-6xl mx-auto px-4 relative z-10">
+            <div className="max-w-7xl mx-auto px-4 relative z-10">
                 {/* Header */}
                 <motion.div
-                    className="text-center mb-16"
+                    className="text-center mb-20"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -55,7 +55,7 @@ const StatsSection = () => {
                         }`}>
                         Our Impact
                     </span>
-                    <h2 className={`text-3xl md:text-4xl font-serif font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                    <h2 className={`text-3xl md:text-5xl font-serif font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>
                         Trusted by <AnimatedGradientText
                             colors={isDark
                                 ? ['#ffffff', '#a0a0a0', '#ffffff', '#606060', '#ffffff']
@@ -66,7 +66,7 @@ const StatsSection = () => {
                 </motion.div>
 
                 {/* Colorful Stats Grid */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
                     {stats.map((stat, index) => (
                         <ColorfulStatCard
                             key={index}

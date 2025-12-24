@@ -109,7 +109,7 @@ const About = () => {
                         >
                             <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                                 <img
-                                    src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&h=400&fit=crop&q=80"
+                                    src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&h=400&fit=crop&q=80"
                                     alt="Career counselling session"
                                     className="w-full h-80 object-cover"
                                 />
@@ -249,7 +249,7 @@ const About = () => {
                                 {/* Profile Image Container */}
                                 <div className={`relative overflow-hidden rounded-3xl ${isDark ? 'bg-zinc-900' : 'bg-white shadow-xl'}`}>
                                     <img
-                                        src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=500&fit=crop&q=80"
+                                        src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=500&fit=crop&q=80"
                                         alt="Surabhi Rawat - Founder of TrueNorth Consulting"
                                         className="w-full h-80 lg:h-96 object-cover"
                                     />

@@ -33,14 +33,14 @@ const Hero = () => {
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
                 <img
-                    src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1920&q=80"
-                    alt="Students in university lecture"
+                    src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1920&q=80"
+                    alt="University Campus Architecture"
                     className="w-full h-full object-cover"
                 />
-                {/* Overlay - gradient for readability while showing image */}
+                {/* Overlay - adjusted for better image visibility while maintaining text readability */}
                 <div className={`absolute inset-0 ${isDark
-                    ? 'bg-black/75'
-                    : 'bg-gradient-to-r from-white/75 via-white/60 to-white/40'
+                    ? 'bg-gradient-to-r from-black/90 via-black/60 to-transparent'
+                    : 'bg-gradient-to-r from-white/80 via-white/40 to-transparent'
                     }`}></div>
             </div>
 
@@ -148,7 +148,7 @@ const Hero = () => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.5 }}
-                        className={`text-lg lg:text-xl max-w-xl mb-10 leading-relaxed ${isDark ? 'text-white/40' : 'text-gray-500'
+                        className={`text-lg lg:text-xl max-w-xl mb-10 leading-relaxed font-medium ${isDark ? 'text-white/60' : 'text-gray-900 drop-shadow-sm'
                             }`}
                     >
                         Transform your academic journey with expert career counselling,

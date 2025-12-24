@@ -20,7 +20,7 @@ const ServiceHero = ({ service }: ServiceHeroProps) => {
             graphValue: "98%",
             badge1: { icon: Users, label: "Satisfaction", value: "4.9/5 Rated" },
             badge2: { icon: BookOpen, label: "Reports", value: "Detailed" },
-            bgImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1920&q=80"
+            bgImage: "https://images.unsplash.com/photo-1544531586-fde5298cdd40?q=80&w=1920&auto=format&fit=crop"
         },
         "study-abroad": {
             type: "globe",
@@ -29,7 +29,7 @@ const ServiceHero = ({ service }: ServiceHeroProps) => {
             graphValue: "99.5%",
             badge1: { icon: GraduationCap, label: "Acceptance", value: "Ivy League" },
             badge2: { icon: Award, label: "Scholarships", value: "$5M+ Secured" },
-            bgImage: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1920&q=80"
+            bgImage: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1920&auto=format&fit=crop"
         },
         "academic-support": {
             type: "academic",
@@ -38,7 +38,7 @@ const ServiceHero = ({ service }: ServiceHeroProps) => {
             graphValue: "+2 Grades",
             badge1: { icon: CheckCircle2, label: "Tutors", value: "IB/IGCSE Experts" },
             badge2: { icon: TrendingUp, label: "Results", value: "A* Achieved" },
-            bgImage: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=1920&q=80"
+            bgImage: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1920&auto=format&fit=crop"
         },
         "competitive-exams": {
             type: "academic",
@@ -47,7 +47,7 @@ const ServiceHero = ({ service }: ServiceHeroProps) => {
             graphValue: "Top 5%",
             badge1: { icon: Globe, label: "IELTS/TOEFL", value: "Band 8.0+" },
             badge2: { icon: Award, label: "SAT/ACT", value: "1500+ Avg" },
-            bgImage: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1920&q=80"
+            bgImage: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=1920&auto=format&fit=crop"
         },
         "school-partnerships": {
             type: "network",
@@ -56,7 +56,7 @@ const ServiceHero = ({ service }: ServiceHeroProps) => {
             graphValue: "+40%",
             badge1: { icon: Building, label: "Partners", value: "50+ Schools" },
             badge2: { icon: Users, label: "Impact", value: "10k+ Students" },
-            bgImage: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1920&q=80"
+            bgImage: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=1920&auto=format&fit=crop"
         },
         "career-lab": {
             type: "dashboard",
@@ -65,7 +65,7 @@ const ServiceHero = ({ service }: ServiceHeroProps) => {
             graphValue: "100%",
             badge1: { icon: Laptop, label: "Platform", value: "White-Labeled" },
             badge2: { icon: BarChart, label: "Analytics", value: "Real-time" },
-            bgImage: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1920&q=80"
+            bgImage: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1920&auto=format&fit=crop"
         },
         "digital-solutions": {
             type: "digital",
@@ -157,35 +157,65 @@ const ServiceHero = ({ service }: ServiceHeroProps) => {
         </motion.div>
     );
 
-    // 2. Globe Variant (Study Abroad) - REFINED
+    // 2. Globe Variant (Study Abroad) - REFINED & PREMIUM
     const renderGlobe = () => (
-        <div className="relative w-[400px] h-[400px] flex items-center justify-center" style={{ perspective: '1000px' }}>
-            {/* Solid Glass Globe */}
+        <div className="relative w-[400px] h-[400px] flex items-center justify-center" style={{ perspective: '1200px' }}>
+            {/* Outer Glass Sphere - More Opaque & Tangible */}
             <motion.div
-                className={`relative w-64 h-64 rounded-full backdrop-blur-sm border shadow-2xl overflow-hidden ${isDark ? 'bg-brand-blue/10 border-white/20 shadow-brand-blue/20' : 'bg-white/30 border-white/60 shadow-brand-blue/20'}`}
-                animate={{ y: [-10, 10, -10] }}
+                className={`relative w-72 h-72 rounded-full border-2 shadow-2xl overflow-hidden backdrop-blur-xl z-20
+                ${isDark
+                        ? 'bg-gradient-to-br from-white/10 to-transparent border-white/20 shadow-brand-blue/30'
+                        : 'bg-gradient-to-br from-white/60 to-white/10 border-white/80 shadow-brand-blue/20'
+                    }`}
+                animate={{ y: [-15, 15, -15] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                style={{ transformStyle: 'preserve-3d' }}
             >
-                {/* Map Texture / Meridians */}
-                <div className="absolute inset-0 opacity-30">
-                    {[0, 45, 90, 135].map((deg, i) => (
-                        <div key={i} className={`absolute inset-0 border border-brand-blue/30 rounded-full`} style={{ transform: `rotateY(${deg}deg)` }}></div>
+                {/* Internal Holographic Grid */}
+                <div className="absolute inset-0 rounded-full opacity-50">
+                    {[0, 60, 120].map((deg, i) => (
+                        <div key={i} className={`absolute inset-0 border-[1.5px] rounded-full ${isDark ? 'border-blue-400/30' : 'border-blue-500/30'}`} style={{ transform: `rotateY(${deg}deg)` }}></div>
                     ))}
-                    {[0, 1, 2, 3].map((i) => (
-                        <div key={i} className={`absolute inset-0 border-t border-b border-brand-blue/30 rounded-full`} style={{ top: `${i * 25}%`, bottom: `${i * 25}%` }}></div>
+                    {[1, 2, 3].map((i) => (
+                        <div key={i} className={`absolute inset-0 border-t-[1.5px] border-b-[1.5px] rounded-full ${isDark ? 'border-blue-400/30' : 'border-blue-500/30'}`} style={{ top: `${i * 25}%`, bottom: `${i * 25}%` }}></div>
                     ))}
                 </div>
 
-                {/* Glowing Core */}
-                <div className="absolute inset-10 rounded-full bg-brand-blue/20 blur-xl"></div>
+                {/* Glowing Magma Core */}
+                <div className={`absolute inset-0 bg-radial-gradient from-brand-blue/40 via-transparent to-transparent opacity-80 animate-pulse`}></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-brand-blue/30 rounded-full blur-2xl"></div>
 
-                {/* Rotating Ring */}
+                {/* Moving Clouds / Texture */}
                 <motion.div
-                    className="absolute inset-[-20px] border-2 border-dashed border-brand-orange/40 rounded-full"
-                    style={{ rotateX: 75 }}
-                    animate={{ rotateZ: 360 }}
-                    transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                    className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-30"
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                 />
+            </motion.div>
+
+            {/* Orbiting Satellite / Ring - Thicker & More Visible */}
+            <motion.div
+                className={`absolute w-[450px] h-[450px] rounded-full border-[1px] border-dashed z-10
+                ${isDark ? 'border-white/20' : 'border-brand-blue/20'}`}
+                style={{ rotateX: 70 }}
+                animate={{ rotateZ: 360, scale: [0.95, 1.05, 0.95] }}
+                transition={{
+                    rotateZ: { duration: 30, repeat: Infinity, ease: "linear" },
+                    scale: { duration: 8, repeat: Infinity, ease: "easeInOut" }
+                }}
+            >
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-brand-orange rounded-full shadow-lg shadow-brand-orange/60"></div>
+            </motion.div>
+
+            {/* Second Cross Polaris Ring */}
+            <motion.div
+                className={`absolute w-[380px] h-[380px] rounded-full border-[1.5px] z-10
+                ${isDark ? 'border-white/10' : 'border-brand-blue/10'}`}
+                style={{ rotateX: -60, rotateY: 15 }}
+                animate={{ rotateZ: -360 }}
+                transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+            >
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-3 h-3 bg-brand-blue rounded-full shadow-lg shadow-brand-blue/60"></div>
             </motion.div>
 
             {renderBadges()}
@@ -356,10 +386,10 @@ const ServiceHero = ({ service }: ServiceHeroProps) => {
                         alt={service.title}
                         className="w-full h-full object-cover"
                     />
-                    {/* Overlay for readability - less opaque in light mode to show image */}
+                    {/* Overlay for readability - adjusted for MAX clarity in light mode */}
                     <div className={`absolute inset-0 ${isDark
-                        ? 'bg-gradient-to-r from-black/85 via-black/70 to-black/50'
-                        : 'bg-gradient-to-r from-white/80 via-white/60 to-white/30'
+                        ? 'bg-gradient-to-r from-black/90 via-black/60 to-black/30'
+                        : 'bg-gradient-to-r from-white via-white/50 to-transparent'
                         }`}></div>
                 </div>
             )}
@@ -373,8 +403,8 @@ const ServiceHero = ({ service }: ServiceHeroProps) => {
                         backgroundSize: '40px 40px'
                     }}
                 />
-                {/* Gradient Overlay for depth */}
-                <div className={`absolute inset-0 bg-gradient-to-b ${isDark ? 'from-black via-transparent to-black' : 'from-white via-transparent to-white'} opacity-50`}></div>
+                {/* Gradient Overlay for depth - reduced opacity for clarity */}
+                <div className={`absolute inset-0 bg-gradient-to-b ${isDark ? 'from-black via-transparent to-black' : 'from-white via-transparent to-white'} opacity-20`}></div>
             </div>
 
             <div className="max-w-7xl mx-auto relative z-10">
