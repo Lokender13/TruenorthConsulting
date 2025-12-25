@@ -109,8 +109,8 @@ const About = () => {
                         >
                             <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                                 <img
-                                    src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&h=400&fit=crop&q=80"
-                                    alt="Career counselling session"
+                                    src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80"
+                                    alt="TrueNorth Premium Career Counselling"
                                     className="w-full h-80 object-cover"
                                 />
                                 <div className={`absolute inset-0 ${isDark ? 'bg-gradient-to-t from-black/50 to-transparent' : 'bg-gradient-to-t from-gray-900/30 to-transparent'}`}></div>
