@@ -50,7 +50,7 @@ const TrustedBy = () => {
     const isDark = theme === 'dark';
 
     return (
-        <section className={`py-12 relative overflow-hidden theme-transition ${isDark ? 'bg-zinc-950' : 'bg-white'}`}>
+        <section className={`py-8 relative overflow-hidden theme-transition ${isDark ? 'bg-zinc-950' : 'bg-white'}`}>
             {/* Top Border */}
             <div className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent ${isDark ? 'via-white/10' : 'via-gray-200'} to-transparent`}></div>
 

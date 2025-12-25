@@ -16,7 +16,7 @@ const AboutSection = () => {
     ];
 
     return (
-        <section className={`py-24 relative overflow-hidden theme-transition ${isDark ? 'bg-black' : 'bg-gray-50'}`}>
+        <section className={`py-12 relative overflow-hidden theme-transition ${isDark ? 'bg-black' : 'bg-gray-50'}`}>
             {/* Background Decorations */}
             <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-orange/10 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
             <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-brand-blue/10 rounded-full blur-3xl opacity-50 pointer-events-none"></div>

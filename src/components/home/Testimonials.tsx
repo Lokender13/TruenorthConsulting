@@ -30,7 +30,7 @@ const Testimonials = () => {
     const isDark = theme === 'dark';
 
     return (
-        <section className={`py-16 lg:py-20 relative overflow-hidden theme-transition ${isDark ? 'bg-black' : 'bg-white'}`}>
+        <section className={`py-10 relative overflow-hidden theme-transition ${isDark ? 'bg-black' : 'bg-white'}`}>
             {/* Subtle pattern */}
             <div className="absolute inset-0">
                 <div
@@ -45,7 +45,7 @@ const Testimonials = () => {
             <div className="max-w-7xl mx-auto px-4 relative z-10">
                 {/* Header */}
                 <motion.div
-                    className="text-center mb-16"
+                    className="text-center mb-10"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}

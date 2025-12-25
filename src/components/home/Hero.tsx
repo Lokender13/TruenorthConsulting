@@ -28,7 +28,7 @@ const Hero = () => {
         <section
             ref={containerRef}
             onMouseMove={handleMouseMove}
-            className={`relative min-h-screen flex items-center justify-center overflow-hidden theme-transition`}
+            className={`relative min-h-screen flex items-center justify-center overflow-hidden theme-transition pt-32 pb-10`}
         >
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
