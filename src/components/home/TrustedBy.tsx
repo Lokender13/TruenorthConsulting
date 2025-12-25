@@ -29,7 +29,7 @@ const universities = [
     },
     {
         name: "Yale University",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Yale_University_logo.svg/200px-Yale_University_logo.svg.png"
+        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Yale_University_Shield_1.svg/200px-Yale_University_Shield_1.svg.png"
     },
     {
         name: "Princeton University",
@@ -37,7 +37,7 @@ const universities = [
     },
     {
         name: "Columbia University",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Columbia_coat_of_arms_no_crest.svg/200px-Columbia_coat_of_arms_no_crest.svg.png"
+        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Columbia_University_Shield.svg/200px-Columbia_University_Shield.svg.png"
     },
     {
         name: "LSE",
@@ -65,36 +65,34 @@ const TrustedBy = () => {
                     Students Admitted To
                 </motion.p>
 
-                {/* Infinite Scroll Logo Strip */}
-                <div className="relative overflow-hidden">
+                {/* Scrolling logos */}
+                <div className="relative overflow-hidden py-4">
                     {/* Fade edges */}
-                    <div className={`absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r ${isDark ? 'from-zinc-950' : 'from-white'} to-transparent`}></div>
-                    <div className={`absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l ${isDark ? 'from-zinc-950' : 'from-white'} to-transparent`}></div>
+                    <div className={`absolute left-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-r ${isDark ? 'from-zinc-950' : 'from-white'} to-transparent pointer-events-none`}></div>
+                    <div className={`absolute right-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-l ${isDark ? 'from-zinc-950' : 'from-white'} to-transparent pointer-events-none`}></div>
 
                     {/* Scrolling logos */}
                     <div className="flex animate-marquee items-center">
                         {[...universities, ...universities, ...universities].map((uni, index) => (
                             <motion.div
                                 key={index}
-                                className="flex-shrink-0 mx-6"
-                                whileHover={{ scale: 1.15, y: -3 }}
+                                className="flex-shrink-0 mx-8"
+                                whileHover={{ scale: 1.1, y: -5 }}
                                 transition={{ type: 'spring', stiffness: 300 }}
                             >
                                 <div
                                     className={`
-                                        w-16 h-16 rounded-full flex items-center justify-center p-2
+                                        w-28 h-28 rounded-full flex items-center justify-center p-4
                                         cursor-pointer transition-all duration-300
-                                        ${isDark
-                                            ? 'bg-white/5 hover:bg-white/10'
-                                            : 'bg-gray-50 hover:bg-gray-100 shadow-sm hover:shadow-md'
-                                        }
+                                        bg-white shadow-lg hover:shadow-2xl hover:shadow-orange-500/20
+                                        border border-gray-100
                                     `}
                                     title={uni.name}
                                 >
                                     <img
                                         src={uni.logo}
                                         alt={uni.name}
-                                        className={`w-10 h-10 object-contain ${isDark ? 'filter brightness-90' : ''}`}
+                                        className="w-16 h-16 object-contain filter hover:brightness-110 transition-all duration-300"
                                         loading="lazy"
                                     />
                                 </div>
