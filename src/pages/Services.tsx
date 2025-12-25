@@ -11,7 +11,7 @@ import {
 } from 'lucide-react';
 import SEO from '../components/SEO';
 import { useTheme } from '../contexts/ThemeContext';
-import SpotlightCard from '../components/ui/SpotlightCard';
+
 import TiltCard from '../components/ui/TiltCard';
 import FloatingOrbs from '../components/ui/FloatingOrbs';
 import TextReveal from '../components/ui/TextReveal';
