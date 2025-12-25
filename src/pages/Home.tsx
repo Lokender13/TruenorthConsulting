@@ -1,5 +1,6 @@
 import SEO from '../components/SEO';
 import Hero from '../components/home/Hero';
+import AboutSection from '../components/home/AboutSection';
 import MarqueeSection from '../components/home/MarqueeSection';
 import TrustedBy from '../components/home/TrustedBy';
 import StatsSection from '../components/home/StatsSection';
@@ -33,6 +34,9 @@ const Home = () => {
 
             {/* Hero - Main landing section with lead form */}
             <Hero />
+
+            {/* About Section - Brief intro about Truenorth - ADDED NEW */}
+            <AboutSection />
 
             {/* Key stats to build credibility - Right after hero */}
             <StatsSection />
