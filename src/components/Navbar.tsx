@@ -151,7 +151,7 @@ const Navbar = () => {
                                 : 'bg-brand-orange text-white hover:bg-brand-orange-dark shadow-lg shadow-brand-orange/20'
                                 }`}
                         >
-                            Get Started
+                            Start Your Journey
                         </Link>
                     </div>
 
@@ -206,7 +206,7 @@ const Navbar = () => {
                                     : 'bg-brand-orange text-white'
                                     }`}
                             >
-                                Get Started
+                                Start Your Journey
                             </Link>
                         </div>
                     </motion.div>

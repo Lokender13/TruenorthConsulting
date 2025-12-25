@@ -178,7 +178,7 @@ const Hero = () => {
                                     }
                                 `}
                             >
-                                Get Started
+                                Start Your Journey
                                 <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
                             </Link>
                         </motion.div>
