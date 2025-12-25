@@ -1,10 +1,8 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, MessageSquare, Clock, ArrowRight, ChevronDown, Plus, Minus, HelpCircle } from 'lucide-react';
+import { Phone, MessageSquare, Clock, ArrowRight, Plus, Minus } from 'lucide-react';
 import { useState } from 'react';
 import SEO from '../components/SEO';
 import { useTheme } from '../contexts/ThemeContext';
-import FloatingOrbs from '../components/ui/FloatingOrbs';
-import TextReveal from '../components/ui/TextReveal';
 
 // FAQ Content
 const faqs = [
