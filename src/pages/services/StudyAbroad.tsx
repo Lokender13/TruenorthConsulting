@@ -9,6 +9,7 @@ import ServiceProcess from '../../components/service/ServiceProcess';
 import ServiceAudience from '../../components/service/ServiceAudience';
 import ServiceFAQ from '../../components/service/ServiceFAQ';
 import ServiceSidebar from '../../components/service/ServiceSidebar';
+import StudentProfilerCTA from '../../components/service/StudentProfilerCTA';
 import { useTheme } from '../../contexts/ThemeContext';
 
 const StudyAbroad = () => {
@@ -27,6 +28,7 @@ const StudyAbroad = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
                     <div className="lg:col-span-2 space-y-16">
                         <ServiceOverview desc={service.fullDesc} serviceId={service.id} />
+                        <StudentProfilerCTA />
                         <ServiceFeatures features={service.features} />
                         <ServiceProcess process={service.process} />
                         <ServiceBenefits benefits={service.benefits} />

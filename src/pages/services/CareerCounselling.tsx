@@ -7,8 +7,10 @@ import ServiceFeatures from '../../components/service/ServiceFeatures';
 import ServiceBenefits from '../../components/service/ServiceBenefits';
 import ServiceProcess from '../../components/service/ServiceProcess';
 import ServiceAudience from '../../components/service/ServiceAudience';
+
 import ServiceFAQ from '../../components/service/ServiceFAQ';
 import ServiceSidebar from '../../components/service/ServiceSidebar';
+import PsychometricAssessment from '../../components/service/PsychometricAssessment';
 import { useTheme } from '../../contexts/ThemeContext';
 
 const CareerCounselling = () => {
@@ -46,6 +48,7 @@ const CareerCounselling = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
                     <div className="lg:col-span-2 space-y-16">
                         <ServiceOverview desc={service.fullDesc} serviceId={service.id} />
+                        <PsychometricAssessment />
                         <ServiceFeatures features={service.features} />
                         <ServiceProcess process={service.process} />
                         <ServiceBenefits benefits={service.benefits} />
