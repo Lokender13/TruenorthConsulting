@@ -8,7 +8,7 @@ import ServiceBenefits from '../../components/service/ServiceBenefits';
 import ServiceProcess from '../../components/service/ServiceProcess';
 import ServiceAudience from '../../components/service/ServiceAudience';
 import ServiceFAQ from '../../components/service/ServiceFAQ';
-import ServiceSidebar from '../../components/service/ServiceSidebar';
+
 import { useTheme } from '../../contexts/ThemeContext';
 
 const SchoolPartnerships = () => {
@@ -23,17 +23,14 @@ const SchoolPartnerships = () => {
         <div className={`min-h-screen theme-transition ${isDark ? 'bg-black' : 'bg-white'}`}>
             <SEO title={service.seo.title} description={service.seo.description} keywords={service.seo.keywords} schema={{ "@context": "https://schema.org", "@type": "Service", "name": service.title, "description": service.shortDesc, "provider": { "@type": "EducationalOrganization", "name": "TrueNorth Consulting" } }} />
             <ServiceHero service={service} />
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
-                    <div className="lg:col-span-2 space-y-16">
-                        <ServiceOverview desc={service.fullDesc} serviceId={service.id} />
-                        <ServiceFeatures features={service.features} />
-                        <ServiceProcess process={service.process} />
-                        <ServiceBenefits benefits={service.benefits} />
-                        <ServiceAudience audience={service.targetAudience} />
-                        <ServiceFAQ faq={service.faq} />
-                    </div>
-                    <div className="lg:col-span-1"><ServiceSidebar /></div>
+            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div className="space-y-16">
+                    <ServiceOverview desc={service.fullDesc} serviceId={service.id} />
+                    <ServiceFeatures features={service.features} />
+                    <ServiceProcess process={service.process} />
+                    <ServiceBenefits benefits={service.benefits} />
+                    <ServiceAudience audience={service.targetAudience} />
+                    <ServiceFAQ faq={service.faq} />
                 </div>
             </div>
         </div>

@@ -9,7 +9,7 @@ import ServiceProcess from '../../components/service/ServiceProcess';
 import ServiceAudience from '../../components/service/ServiceAudience';
 
 import ServiceFAQ from '../../components/service/ServiceFAQ';
-import ServiceSidebar from '../../components/service/ServiceSidebar';
+
 import PsychometricAssessment from '../../components/service/PsychometricAssessment';
 import { useTheme } from '../../contexts/ThemeContext';
 
@@ -44,20 +44,15 @@ const CareerCounselling = () => {
 
             <ServiceHero service={service} />
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
-                    <div className="lg:col-span-2 space-y-16">
-                        <ServiceOverview desc={service.fullDesc} serviceId={service.id} />
-                        <PsychometricAssessment />
-                        <ServiceFeatures features={service.features} />
-                        <ServiceProcess process={service.process} />
-                        <ServiceBenefits benefits={service.benefits} />
-                        <ServiceAudience audience={service.targetAudience} />
-                        <ServiceFAQ faq={service.faq} />
-                    </div>
-                    <div className="lg:col-span-1">
-                        <ServiceSidebar />
-                    </div>
+            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div className="space-y-16">
+                    <ServiceOverview desc={service.fullDesc} serviceId={service.id} />
+                    <PsychometricAssessment />
+                    <ServiceFeatures features={service.features} />
+                    <ServiceProcess process={service.process} />
+                    <ServiceBenefits benefits={service.benefits} />
+                    <ServiceAudience audience={service.targetAudience} />
+                    <ServiceFAQ faq={service.faq} />
                 </div>
             </div>
         </div>
