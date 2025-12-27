@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, ClipboardList, Sparkles } from 'lucide-react';
+import { ArrowRight, ClipboardList } from 'lucide-react';
 import { useTheme } from '../../contexts/ThemeContext';
 
 const StudentProfilerCTA = () => {

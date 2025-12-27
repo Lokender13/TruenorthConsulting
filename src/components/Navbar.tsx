@@ -104,7 +104,7 @@ const Navbar = () => {
                                                         : 'bg-white/90 border-black/5'
                                                         }`}
                                                 >
-                                                    {services.map((service, idx) => (
+                                                    {services.map((service) => (
                                                         <Link
                                                             key={service.path}
                                                             to={service.path}
@@ -195,8 +195,8 @@ const Navbar = () => {
                         <button
                             onClick={() => setIsOpen(!isOpen)}
                             className={`p-2.5 rounded-xl backdrop-blur-md border transition-colors ${isOpen
-                                    ? (isDark ? 'bg-white text-black border-white' : 'bg-black text-white border-black')
-                                    : (isDark ? 'bg-white/5 border-white/10 text-white' : 'bg-white/60 border-black/5 text-black')
+                                ? (isDark ? 'bg-white text-black border-white' : 'bg-black text-white border-black')
+                                : (isDark ? 'bg-white/5 border-white/10 text-white' : 'bg-white/60 border-black/5 text-black')
                                 }`}
                         >
                             {isOpen ? <X size={24} /> : <Menu size={24} />}
