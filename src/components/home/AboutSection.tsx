@@ -46,7 +46,7 @@ const AboutSection = () => {
                                     alt="TrueNorth Consultancy Team"
                                     className="w-full h-[500px] object-cover"
                                 />
-                                <div className={`absolute inset-0 bg-gradient-to-t ${isDark ? 'from-black/80' : 'from-black/40'} to-transparent`}></div>
+                                <div className={`absolute inset-0 bg-gradient-to-t ${isDark ? 'from-black/40' : 'from-black/20'} to-transparent`}></div>
                             </TiltCard>
 
                             {/* Floating Stats Card 1 */}

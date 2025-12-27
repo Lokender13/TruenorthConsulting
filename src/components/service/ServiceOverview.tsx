@@ -39,8 +39,8 @@ const ServiceOverview = ({ desc, serviceId }: ServiceOverviewProps) => {
             >
                 {/* Gradient overlay */}
                 <div className={`absolute inset-0 z-10 ${isDark
-                    ? 'bg-gradient-to-t from-black/60 via-transparent to-transparent'
-                    : 'bg-gradient-to-t from-gray-900/40 via-transparent to-transparent'
+                    ? 'bg-gradient-to-t from-black/30 via-transparent to-transparent'
+                    : 'bg-gradient-to-t from-gray-900/20 via-transparent to-transparent'
                     }`} />
 
                 <img

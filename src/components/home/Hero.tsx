@@ -39,8 +39,8 @@ const Hero = () => {
                 />
                 {/* Overlay - adjusted for better image visibility while maintaining text readability */}
                 <div className={`absolute inset-0 ${isDark
-                    ? 'bg-gradient-to-r from-black/90 via-black/60 to-transparent'
-                    : 'bg-gradient-to-r from-white/80 via-white/40 to-transparent'
+                    ? 'bg-gradient-to-r from-black/45 via-black/30 to-transparent'
+                    : 'bg-gradient-to-r from-white/40 via-white/20 to-transparent'
                     }`}></div>
             </div>
 
@@ -190,11 +190,11 @@ const Hero = () => {
                                 to="/services"
                                 className={`
                                     inline-flex items-center justify-center gap-2
-                                    px-8 py-4 rounded-full font-medium
-                                    transition-all duration-300 border
+                                    px-8 py-4 rounded-full font-bold
+                                    transition-all duration-300 border-2
                                     ${isDark
-                                        ? 'border-white/20 text-white/70 hover:bg-white/5 hover:border-white/40'
-                                        : 'border-brand-blue/30 text-brand-blue hover:bg-brand-blue/5 hover:border-brand-blue'
+                                        ? 'border-white bg-white/5 backdrop-blur-sm text-white hover:bg-white hover:text-black hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]'
+                                        : 'bg-white border-white text-gray-900 hover:bg-gray-100 hover:scale-105 shadow-xl shadow-black/5'
                                     }
                                 `}
                             >

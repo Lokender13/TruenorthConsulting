@@ -170,7 +170,7 @@ const ServicesGrid = () => {
                                     <div className="flex flex-col h-full">
                                         {/* Image Section */}
                                         <div className="relative h-64 overflow-hidden rounded-t-3xl">
-                                            <div className="absolute inset-0 bg-black/10 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
+                                            <div className="absolute inset-0 bg-black/5 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
                                             <motion.img
                                                 src={service.image}
                                                 alt={service.title}
@@ -181,8 +181,8 @@ const ServicesGrid = () => {
                                             />
                                             {/* Gradient Overlay */}
                                             <div className={`absolute inset-0 z-20 ${isDark
-                                                ? 'bg-gradient-to-t from-zinc-900 via-transparent to-transparent'
-                                                : 'bg-gradient-to-t from-white via-transparent to-transparent'
+                                                ? 'bg-gradient-to-t from-zinc-900/50 via-transparent to-transparent'
+                                                : 'bg-gradient-to-t from-white/50 via-transparent to-transparent'
                                                 }`} />
 
                                             {/* Floating Icon */}

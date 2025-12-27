@@ -113,7 +113,7 @@ const About = () => {
                                     alt="Dubai Skyline Premium view"
                                     className="w-full h-80 object-cover"
                                 />
-                                <div className={`absolute inset-0 ${isDark ? 'bg-gradient-to-t from-black/50 to-transparent' : 'bg-gradient-to-t from-gray-900/30 to-transparent'}`}></div>
+                                <div className={`absolute inset-0 ${isDark ? 'bg-gradient-to-t from-black/25 to-transparent' : 'bg-gradient-to-t from-gray-900/15 to-transparent'}`}></div>
                             </div>
                             {/* Floating badge */}
                             <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 rounded-xl shadow-lg">
@@ -254,7 +254,7 @@ const About = () => {
                                         className="w-full h-80 lg:h-96 object-cover"
                                     />
                                     {/* Gradient overlay */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
 
                                     {/* Name badge */}
                                     <div className="absolute bottom-4 left-4 right-4">

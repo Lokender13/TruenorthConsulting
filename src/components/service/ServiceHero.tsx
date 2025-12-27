@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, TrendingUp, Award, CheckCircle2, GraduationCap, Globe, Users, BarChart, Laptop, Building, BookOpen, Code, Server, Brain, PenTool } from 'lucide-react';
 import { useTheme } from '../../contexts/ThemeContext';
 
+
 interface ServiceHeroProps {
     service: any;
 }
@@ -388,8 +389,8 @@ const ServiceHero = ({ service }: ServiceHeroProps) => {
                     />
                     {/* Overlay for readability - adjusted for MAX clarity in light mode */}
                     <div className={`absolute inset-0 ${isDark
-                        ? 'bg-gradient-to-r from-black/90 via-black/60 to-black/30'
-                        : 'bg-gradient-to-r from-white via-white/50 to-transparent'
+                        ? 'bg-gradient-to-r from-black/45 via-black/30 to-black/15'
+                        : 'bg-gradient-to-r from-white/50 via-white/25 to-transparent'
                         }`}></div>
                 </div>
             )}
@@ -432,8 +433,7 @@ const ServiceHero = ({ service }: ServiceHeroProps) => {
                             {service.tagline}
                         </p>
 
-                        {/* Metrics/Badges */}
-                        <div className="flex flex-wrap gap-6">
+                        <div className="flex flex-wrap gap-6 mb-8">
                             <div className={`flex items-center gap-3 px-4 py-2 rounded-lg border ${isDark ? 'border-white/10 bg-white/5' : 'border-gray-200 bg-gray-50'}`}>
                                 <CheckCircle2 className="text-brand-orange" size={20} />
                                 <span className="text-sm font-semibold">Certified Experts</span>
@@ -443,6 +443,8 @@ const ServiceHero = ({ service }: ServiceHeroProps) => {
                                 <span className="text-sm font-semibold">Data-Driven</span>
                             </div>
                         </div>
+
+
                     </motion.div>
 
                     {/* Right Column: Dynamic 3D Graphic */}

@@ -5,6 +5,8 @@ import ServiceHero from '../../components/service/ServiceHero';
 import ServiceOverview from '../../components/service/ServiceOverview';
 import ServiceFeatures from '../../components/service/ServiceFeatures';
 import ServiceBenefits from '../../components/service/ServiceBenefits';
+import ServiceProcess from '../../components/service/ServiceProcess';
+import ServiceAudience from '../../components/service/ServiceAudience';
 import ServiceFAQ from '../../components/service/ServiceFAQ';
 import ServiceSidebar from '../../components/service/ServiceSidebar';
 import { useTheme } from '../../contexts/ThemeContext';
@@ -25,6 +27,7 @@ const CareerCounselling = () => {
             <SEO
                 title={service.seo.title}
                 description={service.seo.description}
+                keywords={service.seo.keywords}
                 schema={{
                     "@context": "https://schema.org",
                     "@type": "Service",
@@ -44,7 +47,9 @@ const CareerCounselling = () => {
                     <div className="lg:col-span-2 space-y-16">
                         <ServiceOverview desc={service.fullDesc} serviceId={service.id} />
                         <ServiceFeatures features={service.features} />
+                        <ServiceProcess process={service.process} />
                         <ServiceBenefits benefits={service.benefits} />
+                        <ServiceAudience audience={service.targetAudience} />
                         <ServiceFAQ faq={service.faq} />
                     </div>
                     <div className="lg:col-span-1">

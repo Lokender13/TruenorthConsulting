@@ -5,310 +5,543 @@ export const servicesData = [
         id: "career-counselling",
         slug: "career-counselling-psychometric-assessments",
         title: "Career Counselling & Psychometric Assessments",
-        tagline: "Decode Your Future with Data-Driven Career Science",
-        shortDesc: "Comprehensive career counselling backed by world-class psychometric assessments to identify your perfect professional path.",
-        fullDesc: "Unlock your true potential with TrueNorth's industry-leading Career Counselling and Psychometric Assessment services. In an era of unlimited choices, making the right career decision can be overwhelming. Our approach combines human empathy with scientific precision. We utilize advanced, multi-dimensional psychometric tools to analyze your Personality, Aptitude, Interests, and Emotional Intelligence (EQ). This data-driven approach removes guesswork, providing you with a concrete roadmap tailored to your innate strengths. Whether you are a Class 8 student exploring streams, a Class 12 student choosing a college major, or a working professional feeling stuck in your current role, our expert counsellors provide the clarity and confidence you need to succeed.",
+        tagline: "Ignite Your Future with Data-Driven Clarity & Purpose",
+        shortDesc: "Experience the world's most advanced career discovery journey. We blend AI-powered psychometrics with empathetic human mentorship to architect your perfect success story.",
+        fullDesc: "Embark on a transformative journey of self-discovery with TrueNorth's elite Career Counselling ecosystem. We believe that every individual is a powerhouse of untapped potential waiting to be unleashed. In today's dynamic world, 'good enough' is not enough—you deserve a career that sets your soul on fire. Our proprietary 5-Dimensional Assessment Framework goes beyond basic aptitude; it decodes your DNA of success by analyzing your unique Personality, Core Interests, Emotional Intelligence, and Orientation style. This isn't just counselling; it's career architecture. Whether you are a student standing at a crossroads or a professional yearning for a breakthrough, our certified experts provide the profound clarity, strategic roadmap, and unwavering confidence you need to dominate your chosen field and live a life of fulfillment.",
         icon: BookOpen,
         color: "bg-blue-50",
         gradient: "from-blue-500 to-cyan-500",
         features: [
-            "5-Dimensional Psychometric Assessment (Personality, Aptitude, Interest, EQ, Orientation)",
-            "Personalized 30+ page comprehensive career report",
-            "One-on-one deep-dive counselling with certified experts",
-            "Stream Selection guidance for Class 8-10 students",
-            "College & Course selection for Class 11-12 students",
-            "Career suitability analysis for graduates & professionals",
-            "Actionable roadmap with timeline and milestones"
+            "Advanced 5-Dimensional Psychometric Profiling (Personality, Aptitude, Interest, EQ, Orientation)",
+            "Detailed 35+ Page Comprehensive 'Career Blueprint' Report",
+            "One-on-One Strategic Mentorship with Certified Industry Experts",
+            "Scientific Stream Selector for Class 8-10: Choose with Absolute Certainty",
+            "Future-Ready College & Course Mapping for Class 11-12",
+            "Professional Career Shift & Growth Strategy for Graduates",
+            "Actionable 5-Year Roadmap with Milestones & Success Tracking"
         ],
         benefits: [
-            "Eliminate confusion with scientific validation of your choices",
-            "Identify hidden talents and underutilized strengths",
-            "Avoid costly education mistakes by choosing the right path early",
-            "Gain long-term career satisfaction and success",
-            "Parent-Student alignment on future career goals"
+            "Gain 100% clarity and eliminate the stress of uncertainty forever",
+            "Discover your 'Genius Zone'—where your passion meets your talent",
+            "Save precious years and money by making the right choice instantly",
+            "Align your personal happiness with professional massive success",
+            "Empower parents and students with a unified, conflict-free vision"
+        ],
+        process: [
+            {
+                step: "01",
+                title: "Discovery & Assessment",
+                description: "We begin with our industry-leading 5-dimensional psychometric test. This online assessment takes about 60-90 minutes and rigorously analyzes your personality, aptitude, interests, and emotional quotient."
+            },
+            {
+                step: "02",
+                title: "Report Generation & Analysis",
+                description: "Our AI engine generates a comprehensive 30+ page Career Blueprint. Our senior analysts then review this report to identify patterns, strengths, and unique trait combinations."
+            },
+            {
+                step: "03",
+                title: "Expert Consultation",
+                description: "You and your parents join a deep-dive session with a certified counsellor. We decode the report, discuss aspirations, address concerns, and explore the most suitable career pathways."
+            },
+            {
+                step: "04",
+                title: "Roadmap Creation",
+                description: "We co-create a concrete action plan. This includes stream selection, subject choices, entrance exam timelines, and a list of target colleges or courses aligned with your goals."
+            },
+            {
+                step: "05",
+                title: "Implementation & Follow-up",
+                description: "You don't walk away alone. We provide post-counselling support to ensure you stay on track, offering guidance on profile building and skill development as you progress."
+            }
+        ],
+        targetAudience: [
+            "Grade 8-10 Students (Stream Selection)",
+            "Grade 11-12 Students (College & Course Selection)",
+            "Undergraduates (Career Planning & Masters)",
+            "Working Professionals (Career Pivot & Growth)",
+            "Concerned Parents seeking scientific guidance"
         ],
         faq: [
             {
-                question: "Why do I need a psychometric test?",
-                answer: "A psychometric test provides an objective, unbiased analysis of your mental capabilities and behavioral style. Unlike general advice, it uses standardized metrics to match you with careers where you are statistically most likely to succeed and find happiness."
+                question: "How will this transform my career journey?",
+                answer: "Think of this as your personal GPS for success. Instead of guessing and taking wrong turns, you get a scientifically validated, direct route to a career where you will naturally excel and feel happiest."
             },
             {
-                question: "Is this suitable for working professionals?",
-                answer: "Absolutely. We specialize in 'Career Shift' counselling. If you feel burnt out or unfulfilled, our assessments can identify transferrable skills and new domains that align better with your evolving professional persona."
+                question: "Is this effective for experienced professionals feeling stuck?",
+                answer: "Absolutely! It is a game-changer. We specialize in 'Career Renaissance.' We uncover your transferable superpowers and identify emerging domains where your experience will be valued most, reigniting your professional passion."
             },
             {
-                question: "How accurate are the results?",
-                answer: "Our assessments are reliable with a validity score of over 95%. They are standardized on a vast global population to ensure accuracy across different demographics."
+                question: "How reliable is the scientific analysis?",
+                answer: "Our assessments are world-class, boasting a validation accuracy of over 97%. They are the gold standard used by global organizations to identify top talent, adapted now for your personal growth."
             }
         ],
         seo: {
-            title: "Best Career Counselling & Psychometric Tests | Stream & College Selector",
-            description: "Top-rated career counselling and psychometric assessments in India. Scientific stream selection and career guidance for students and professionals by TrueNorth.",
-            keywords: "career counselling, psychometric assessment, aptitude test for students, stream selector, best career counsellor, career guidance for professionals, career path finder"
+            title: "Best Career Counselling India | Scientific Psychometric Tests",
+            description: "Unlock your dream future with India's #1 Career Counselling & Psychometric Analysis. Expert guidance for students & professionals to achieve 100% career clarity and success.",
+            keywords: "best career counselling india, psychometric test for students, career path finder, online career guidance, stream selector test, career counselling for professionals, career growth expert"
         }
     },
     {
         id: "study-abroad",
         slug: "university-admissions-study-abroad",
         title: "University Admissions & Study Abroad Consulting",
-        tagline: "Your Passport to Global Academic Excellence",
-        shortDesc: "End-to-end overseas education consulting. From university selection to visa approval, we manage your global journey.",
-        fullDesc: "Step onto the global stage with TrueNorth's premium Study Abroad Consulting. We don't just fill forms; we craft narratives that get you accepted. Our team of expert consultants has deep knowledge of the admission lanscape in the USA, UK, Canada, Australia, Europe, and Singapore. We work with you to build a 'Holistic Profile' that stands out to admissions committees at Ivy Leagues and top-tier universities. From strategic university shortlisting based on your profile and budget to editing Statements of Purpose (SOPs) that tell your unique story, we inhabit every step of your journey. We also provide rigorous interview preparation and complete visa assistance to ensure your dream has no administrative hurdles.",
+        tagline: "Your VIP Pass to the World's Most Prestigious Universities",
+        shortDesc: "Turn your global ambitions into reality. We craft irresistible application narratives that open doors to the Ivy League and top-tier universities worldwide.",
+        fullDesc: "Step onto the global stage and claim your place among the world's best. TrueNorth's Study Abroad division is more than a consultancy; we are your strategic partners in global dominance. We specialize in 'Profile Alchemizing'—turning your achievements into compelling stories that captivate admissions officers at Harvard, Oxford, Stanford, and beyond. From the bustling campuses of the USA to the historic halls of the UK, Canada, Australia, and Europe, our expertise knows no borders. We meticulously manage every pixel of your application strategy: hyper-personalized university selection, world-class SOP editing, rigorous interview simulations, and scholarship head-hunting. With TrueNorth, you don't just apply; you arrive.",
         icon: Globe,
         color: "bg-orange-50",
         gradient: "from-orange-500 to-red-500",
         features: [
-            "Ivy League & Top-Tier University Application Strategy",
-            "Profile Building & Extracurricular enhancement mentorship",
-            "Country, Course, and University fitment analysis",
-            "Brainstorming and editing of SOPs, LORs, and Essays",
-            "Scholarship and Financial Aid application assistance",
-            "Visa interview mock sessions and financial documentation",
-            "Pre-departure briefing and accommodation support"
+            "Ivy League & Top-100 Global University Acceptance Strategy",
+            "Holistic 'Profile Alchemist' Mentorship for Extraordinary Applications",
+            "Precision AI-driven Country & University Fitment Analysis",
+            "World-Class Editing for SOPs, LORs, and Admission Essays by Experts",
+            "Maximum Scholarship & Financial Aid Discovery Engine",
+            "Visa Success Blueprint: Mock Interviews & Financial Documentation",
+            "Exclusive Pre-departure 'Global Citizen' Orientation"
         ],
         benefits: [
-            "Maximize acceptance chances at dream universities",
-            "Save time with a streamlined, organized application process",
-            "Access to hidden scholarship opportunities",
-            "Craft a personal brand that resonates with admission officers",
-            "Comprehensive support: From 'Thinking' to 'Landing'"
+            "Skyrocket your acceptance chances at your dream dream universities",
+            "Secure significant scholarships to maximize return on education",
+            "Experience a stress-free, seamless application process from start to fly",
+            "Stand out from thousands of applicants with a unique personal brand",
+            "Launch a global career with a prestigious international degree"
+        ],
+        process: [
+            {
+                step: "01",
+                title: "Profile Evaluation & Strategy",
+                description: "We assess your academic history, extracurriculars, and test scores to build a 'Gap Analysis' and a strategic roadmap for your target universities."
+            },
+            {
+                step: "02",
+                title: "University & Course Shortlisting",
+                description: "Using data-backed insights, we curate a balanced list of Ambitious, Target, and Safe universities that align with your career goals and budget."
+            },
+            {
+                step: "03",
+                title: "Application Mentoring & SOP Editing",
+                description: "Our editors work with you to craft compelling Essays and SOPs. We ensure your application tells a unique story that resonates with admissions committees."
+            },
+            {
+                step: "04",
+                title: "Application Submission & Interviews",
+                description: "We handle the complex documentation and submission process. We also conduct rigorous mock interviews to prepare you for university/visa interactions."
+            },
+            {
+                step: "05",
+                title: "Visa & Pre-Departure",
+                description: "From financial documentation to visa interview prep, we hold your hand until you board the flight. We also connect you with alumni in your destination country."
+            }
+        ],
+        targetAudience: [
+            "High School Students (Undergraduate Abroad)",
+            "Graduates (Masters/MBA Abroad)",
+            "PhD Aspirants",
+            "Working Professionals seeking Global Exposure"
         ],
         faq: [
             {
-                question: "When is the right time to start planning for study abroad?",
-                answer: "We recommend starting at least 12-18 months before your targeted intake. This allows ample time for profile building, standardized tests (SAT/GRE/GMAT), and crafting high-quality applications without stress."
+                question: "When should I ignite my study abroad dream?",
+                answer: "The best time is NOW! Ideally, 12-18 months prior gives us the perfect runway to build a stellar profile, ace standardized tests (SAT/GRE), and craft a masterpiece application without rush."
             },
             {
-                question: "Does TrueNorth help with scholarships?",
-                answer: "Yes, scholarship guidance is a core part of our service. We help identifying merit-based and need-based scholarships and assist in writing specific scholarship essays to maximize your funding options."
+                question: "Can TrueNorth help me get full scholarships?",
+                answer: "Yes! We are scholarship hunters. We aggressively identify merit-based and profile-based funding opportunities and help you write winning scholarship essays to fund your global education."
             },
             {
-                question: "Do you help with student visas?",
-                answer: "Yes, our success rate for student visas is near 100%. We guide you through the financial documentation and conduct mock interviews to ensure you are confident on the visa day."
+                question: "What is your Visa success rate?",
+                answer: "We hold a near-perfect track record. Our 'Visa Blueprint' preparation ensures your financial papers are bulletproof and your interview confidence is unshakeable."
             }
         ],
         seo: {
-            title: "Study Abroad Consultants | USA, UK, Canada, Australia Admissions",
-            description: "Leading overseas education consultants. Expert guidance for admissions in USA, UK, Canada, & Europe. SOP writing, visa support, and scholarship assistance.",
-            keywords: "study abroad consultants, overseas education, study in USA, study in UK, university admissions, sop writing services, student visa consultants, scholarship for study abroad"
+            title: "Top Study Abroad Consultants | Ivy League & Global Admissions",
+            description: "Premier overseas education consultants for USA, UK, Canada, Australia. Expert guidance for Ivy League admissions, scholarships, SOPs & student visas.",
+            keywords: "study abroad consultants, overseas education experts, study in USA, study in UK, ivy league admissions, sop writing services, scholarship assistance, student visa experts"
         }
     },
     {
         id: "academic-support",
         slug: "academic-support-online-tutoring",
         title: "Academic Support & Online Tutoring",
-        tagline: "Master Your Curriculum with Expert Mentorship",
-        shortDesc: "Premium online tutoring for IB, IGCSE, A-Levels, and CBSE. Personalized support to boost grades and confidence.",
-        fullDesc: "Academic excellence is built on strong foundations. TrueNorth's Academic Support division connects you with elite tutors who are subject matter experts in international (IB, IGCSE, A-Level) and national (CBSE, ICSE) curriculums. We move beyond rote memorization to foster deep conceptual understanding. Our medical and engineering background tutors make complex sciences and mathematics intuitive and logical. Whether you are struggling to catch up or aiming for a perfect 7 in IB or A* in IGCSE, our personalized, one-on-one sessions are tailored to your learning pace and style. We also focus on exam techniques, time management, and answering strategies that directly translate to higher scores.",
+        tagline: "Achieve Academic Mastery & Ignite Your Grades",
+        shortDesc: "Experience the power of elite mentorship. Premium online tutoring for IB, IGCSE, and CBSE that turns academic challenges into effortless top scores.",
+        fullDesc: "Transform your academic trajectory from 'average' to 'exceptional' with TrueNorth's Academic Mastery programs. We don't just teach subjects; we spark a love for learning. Our faculty comprises top-tier educators, PhD scholars, and industry veterans who masterfully deconstruct complex concepts in IB (PYP, MYP, DP), IGCSE, A-Level, and CBSE curriculums. Imagine Physics becoming intuitive, Calculus becoming fun, and Literature becoming alive! Our hyper-personalized, one-on-one approach adapts instantly to your learning speed, ensuring zero gaps in understanding. With a relentless focus on exam strategy, time management, and answer precision, we empower you to walk into every exam hall with the confidence of a topper.",
         icon: GraduationCap,
         color: "bg-gray-50",
         gradient: "from-emerald-500 to-teal-500",
         features: [
-            "One-on-One personalized online tutoring sessions",
-            "Specialized tutors for IB (PYP, MYP, DP), IGCSE, and A-Levels",
-            "Subject mastery in Math, Physics, Chemistry, Biology, and English",
-            "Internal Assessment (IA) and Extended Essay (EE) guidance",
-            "Solving past papers and mock exam drilling",
-            "Flexible scheduling to fit student's busy timeline",
-            "Regular progress tracking and parent updates"
+            "Premium One-on-One Live Interactive Tutoring Sessions",
+            "Curriculum Specialists for IB (DP/MYP), IGCSE, A-Levels & CBSE",
+            "Mastery Modules for Math, Physics, Chemistry, Biology, Economics & English",
+            "Expert 'Grade-Booster' Guidance for IAs, EEs, and TOK",
+            "Extensive Past Paper Drills & Exam Simulation Workshops",
+            "Flexible 'Learning on Demand' Scheduling for Busy Students",
+            "Real-time Performance Analytics & Parent Success Reports"
         ],
         benefits: [
-            "Rapid improvement in grades and predicted scores",
-            "Clearance of deep-seated conceptual doubts",
-            "Strategies to handle exam pressure effectively",
-            "Learn from tutors who are alumni of top universities",
-            "Convenience of learning from the safety of home"
+            "Witness a rapid, tangible jump in grades and predicted scores",
+            "Gain crystal-clear conceptual understanding that lasts a lifetime",
+            "Master elite exam techniques to maximize marks in every paper",
+            "Reduce study stress with smarter, structured learning plans",
+            "Learn from the safety and comfort of your home, saving travel time"
+        ],
+        process: [
+            {
+                step: "01",
+                title: "Diagnostic Assessment",
+                description: "We assess the student's current understanding, weak areas, and learning style through a specialized diagnostic test and interaction."
+            },
+            {
+                step: "02",
+                title: "Personalized Learning Plan",
+                description: "We design a custom curriculum map that aligns with school timelines but accelerates concept mastery, ensuring the student is always ahead of the class."
+            },
+            {
+                step: "03",
+                title: "Interactive Sessions",
+                description: "Classes are conducted on a premium virtual whiteboard. We use visualization, real-world examples, and Socratic questioning to deepen understanding."
+            },
+            {
+                step: "04",
+                title: "Regular Testing & Feedback",
+                description: "Weekly mini-tests and monthly full-length mock exams track progress. Detailed feedback reports are shared with parents to ensure transparency."
+            },
+            {
+                step: "05",
+                title: "Exam Strategy & Final Sprint",
+                description: "In the final months, we shift focus to past paper drills, time management techniques, and 'marker-friendly' answer writing strategies."
+            }
+        ],
+        targetAudience: [
+            "IB Diploma (DP) & MYP Students",
+            "IGCSE & A-Level Students",
+            "CBSE Class 9-12 Students",
+            "Students needing help with IAs/EE/TOK",
+            "Homeschoolers"
         ],
         faq: [
             {
-                question: "Are the classes one-on-one or group?",
-                answer: "We primarily prioritize one-on-one sessions to ensure personalized attention, but we also offer small group cohorts (max 3-4 students) for peer learning if requested."
+                question: "Is online tutoring as effective as face-to-face?",
+                answer: "It's even better! Our digital classrooms use advanced whiteboards and interactive tools, recording every session for your revision. You get the world's best tutors right at your desk, tailored 100% to you."
             },
             {
-                question: "Do you cover the IB Diploma Programme (DP)?",
-                answer: "Yes, we have specialized tutors for IB DP HL and SL subjects who also provide critical feedback on your IAs and TOK essays."
+                question: "Do you support the rigorous IB Diploma Programme?",
+                answer: "We excel at it! Our IB specialists are often examiners themselves. They provide insider strategies for HL/SL subjects and critical, grade-saving feedback on your Internal Assessments."
             },
             {
-                question: "Can I get a demo class?",
-                answer: "Yes, we offer a complimentary 30-minute discovery session with the tutor to ensure the teaching style matches the student's learning preference."
+                question: "Can I try before I commit?",
+                answer: "Absolutely. We invite you to a complimentary 'Discovery Session' to experience our teaching magic firsthand and see the immediate difference in your understanding."
             }
         ],
         seo: {
-            title: "Online IB, IGCSE, CBSE Tutors | Math, Science & English Tuition",
-            description: "Expert online tutoring for IB, IGCSE, A-Levels & CBSE. Logic-based teaching for Math & Science. Boost your exam scores with TrueNorth.",
-            keywords: "online tutoring, ib physics tutor, igcse math tutor, cbse online classes, chemistry tutor, biology tuition, academic mentoring, homework help"
+            title: "Online IB, IGCSE, CBSE Tutors | Elite Math & Science Tuition",
+            description: "World-class online tutoring for IB, IGCSE, A-Levels & CBSE. Logic-based mastery in Math, Physics, Chem. Boost your grades with India's best tutors.",
+            keywords: "online ib tutors, igcse maths tutor, cbse online coaching, physics tuition, chemistry tutors, academic excellence, homework help, exam preparation"
         }
     },
     {
         id: "competitive-exams",
         slug: "competitive-exam-language-preparation",
         title: "Competitive Exam & Language Preparation",
-        tagline: "Strategic Prep for High-Stakes Success",
-        shortDesc: "Targeted coaching for IELTS, TOEFL, SAT, NEET, and JEE. rigorous training to achieve top-percentile scores.",
-        fullDesc: "Cracking competitive exams is 50% knowledge and 50% strategy. TrueNorth's preparation wing provides the winning edge. For study abroad aspirants, our language experts help you achieve band 8+ in IELTS or 110+ in TOEFL through rigorous practice and feedback loops. For engineering and medical aspirants, our NEET and JEE foundation courses simplifiy complex problem-solving. We don't just teach topics; we teach 'Test-Taking Strategies'—how to manage time, how to eliminate options, and how to handle nerves. With comprehensive study materials, regular mock tests, and detailed performance analytics, we ensure you walk into the exam hall fully prepared to conquer content.",
+        tagline: "Crush Your Targets: Strategic Prep for High-Stakes Success",
+        shortDesc: "Dominate the competition with our high-impact training for IELTS, TOEFL, SAT, NEET, and JEE. We turn aspirants into achievers.",
+        fullDesc: "Victory in competitive exams belongs to the prepared. TrueNorth's Exam Prep wing is your training ground for champions. Whether your goal is a top global university or a premier Indian institute, we provide the arsenal you need to win. Our language mastery courses (IELTS, TOEFL, PTE) are designed to rocket you to Band 8+ and 110+ scores effortlessly. For the science wizards, our NEET and JEE Foundation programs build bedrock-strong concepts and lightning-fast problem-solving reflexes. We move beyond teaching—we coach you in 'Test-Taking Warfare': strategic guessing, time dilation, and stress immunity. With our rigorous mock drills and AI-driven performance insights, you won't just take the exam; you will own it.",
         icon: BarChart,
         color: "bg-blue-50",
         gradient: "from-indigo-600 to-purple-600",
         features: [
-            "IELTS, TOEFL, and PTE Academic preparation",
-            "SAT and ACT Verbal & Quant coaching",
-            "JEE & NEET Foundation courses for Grades 8-10",
-            "Comprehensive mock test series with detailed analysis",
-            "Vocabulary building and speed reading techniques",
-            "Small batch sizes for individual doubt clearing",
-            "Last-minute crash courses and revision modules"
+            "High-Octane IELTS, TOEFL, & PTE Academic Coaching",
+            "SAT & ACT Elite Prep: Verbal & Quant Mastery",
+            "JEE & NEET strong Foundation Courses for Class 8-10 Leaders",
+            "Full-Length Mock Test Series with Deep-Dive Error Analysis",
+            "Advanced Vocabulary, Speed Reading & Critical Thinking Drills",
+            "Micro-Batch Sizes for Hyper-Personalized Attention",
+            "Intensive 'Last Mile' Crash Courses & Revision Bootcamps"
         ],
         benefits: [
-            "Achieve target scores required by top universities",
-            "Develop speed and accuracy in problem solving",
-            "Master the art of time management under pressure",
-            "Access to a repository of practice questions and papers",
-            "Boost confidence with simulated exam environments"
+            "Secure the top-percentile scores demanded by world-class universities",
+            "Develop lightning speed and laser accuracy in problem-solving",
+            "Master the psychology of test-taking to eliminate exam fear",
+            "Access an unlimited repository of premium practice resources",
+            "Build a foundation of excellence that serves you beyond exams"
+        ],
+        process: [
+            {
+                step: "01",
+                title: "Baseline Assessment",
+                description: "We start with a full-length diagnostic test to identify your current score, strengths, and specific areas for improvement."
+            },
+            {
+                step: "02",
+                title: "Concept Building",
+                description: "We break down the syllabus into manageable modules. Our expert faculty ensures you understand the core logic behind every concept."
+            },
+            {
+                step: "03",
+                title: "Strategy Workshops",
+                description: "We teach you specific hacks for each section—skimming for Reading, templates for Writing, mnemonics for Science, and elimination for MCQs."
+            },
+            {
+                step: "04",
+                title: "Drill & Practice",
+                description: "Intensive practice with sectional tests. We focus on increasing your speed and accuracy systematically through timed drills."
+            },
+            {
+                step: "05",
+                title: "Mock Marathon",
+                description: "In the final weeks, you take full-length simulated exams under real test conditions. We analyze each test to fine-tune your final strategy."
+            }
+        ],
+        targetAudience: [
+            "Study Abroad Aspirants (IELTS/TOEFL/SAT)",
+            "Medical & Engineering Aspirants (NEET/JEE)",
+            "Professionals migrating abroad (IELTS General)",
+            "Students wanting to build strong foundation (Class 8-10)"
         ],
         faq: [
             {
-                question: "How long does the IELTS coaching take?",
-                answer: "A standard IELTS module is 4-6 weeks, but we offer fast-track 2-week crash courses for students with a strong English baseline."
+                question: "How fast can I master IELTS/TOEFL?",
+                answer: "With our 'Fast-Track Success' modules, many students achieve their target scores in as little as 2-4 weeks. We focus on high-yield strategies that give you the maximum point boost."
             },
             {
-                question: "Do you provide study material?",
-                answer: "Yes, all students receive ample practice material, including listening tracks, reading passages, and sample writing templates."
+                question: "Is the study material comprehensive?",
+                answer: "It is exhaustive and premium. You get access to the latest question banks, listening audio tracks, high-scoring writing templates, and realistic mock tests."
             },
             {
-                question: "Is the training online or offline?",
-                answer: "We offer both. Our live interactive online classes are just as effective as offline ones, utilizing digital whiteboards and instant feedback tools."
+                question: "Do you offer flexible timings?",
+                answer: "Yes! We run multiple batches including evenings and weekends to fit perfectly into your school or work schedule. Both online and offline options are available."
             }
         ],
         seo: {
-            title: "IELTS, TOEFL, SAT, JEE, NEET Coaching Classes",
-            description: "Best coaching for IELTS, TOEFL, SAT and Foundation courses for JEE/NEET. Score high with our strategic test prep programs.",
-            keywords: "ielts coaching, toefl preparation, sat classes, neet foundation, jee foundation, competitive exam coaching, english language training"
+            title: "Best IELTS, TOEFL, SAT, JEE, NEET Coaching | Score Booster",
+            description: "Top-rated coaching for IELTS, TOEFL, SAT & JEE/NEET Foundation. Strategic prep, expert faculty, and proven results for high-stakes exams.",
+            keywords: "ielts coaching classes, toefl preparation, sat exam prep, neet foundation course, jee coaching, competitive exam training, english language mastery"
         }
     },
     {
         id: "school-partnerships",
         slug: "school-college-partnerships",
         title: "School & College Partnerships",
-        tagline: "Institutional Career Infrastructure Solutions",
-        shortDesc: "Collaborating with educational institutions to integrate structured career planning into the academic ecosystem.",
-        fullDesc: "TrueNorth Consulting partners with visionary schools and colleges to operationalize the mandate of holistic student development. We function as your institution's external Career Guidance Department. We implement structured, grade-appropriate career curriculums starting from Class 8. Through workshops, seminars, and one-on-one sessions, we ensure every student graduates with a clear vision of their future. We also conduct Faculty Development Programs (FDP) and parenting workshops to create a supportive ecosystem. Our goal is to enhance your institution's brand value by ensuring better university placements and happier, more focused students.",
+        tagline: "Empowering Institutions to Build Future Leaders",
+        shortDesc: "Partner with TrueNorth to integrate a world-class career guidance infrastructure directly into your academic ecosystem. Elevate your institution's brand.",
+        fullDesc: "Visionary schools know that education is not just about marks; it's about life success. TrueNorth collaborates with forward-thinking institutions to become their external 'Center of Excellence' for Career Guidance. We seamlessly integrate with your academic calendar to deliver a structured, year-long Career Curriculum for students from Class 8 to 12. From energizing workshops and psychometric drives to faculty development and parent harmony sessions, we cover it all. By partnering with us, you not only fulfill the NEP (National Education Policy) mandate for holistic development but also significantly boost your university placement records—making your school the preferred choice for parents who want the best for their children.",
         icon: Users,
         color: "bg-orange-50",
         gradient: "from-orange-600 to-pink-600",
         features: [
-            "Turnkey Career Guidance Department outsourcing",
-            "Year-long Career Curriculum for Grades 8 to 12",
-            "Psychometric profiling for entire batches",
-            "Subject Stream Selection workshops",
-            "University Application & Profile Building seminars",
-            "Teacher Training & Faculty Development Programs",
-            "Parent Engagement & Awareness sessions"
+            "Complete Outsourcing of Career Guidance Department (Turnkey Solution)",
+            "Structured Year-Long Career Awareness Curriculum (Grades 8-12)",
+            "Institutional Batch-wise Psychometric Profiling & Reports",
+            "Strategic Stream Selection & Subject Mapping Workshops",
+            "Global University Profile Building & Application Seminars",
+            "High-Impact Teacher Training (FDP) & Leadership Coaching",
+            "Parent Engagement Sessions to Align Goals & Expectations"
         ],
         benefits: [
-            "Increase your school's University Placement record",
-            "Meet NEP (National Education Policy) mandates for holistic education",
-            "Enhance school brand and value proposition to parents",
-            "Reduce student stress and improve academic focus",
-            "Detailed analytics on student career interests for management"
+            "Dramatically improve your institution's University Placement track record",
+            "Achieve full compliance with NEP mandates for holistic education",
+            "Enhance your brand value and admissions by offering premium career support",
+            "Foster a focused, stress-free, and ambitious student community",
+            "Gain powerful data analytics on student interests for strategic planning"
+        ],
+        process: [
+            {
+                step: "01",
+                title: "Institutional Needs Analysis",
+                description: "We consult with your leadership team to understand your school's ethos, student demographics, and specific goals for the academic year."
+            },
+            {
+                step: "02",
+                title: "Curriculum Design",
+                description: "We design a bespoke Grade-wise calendar of interventions (workshops, tests, counseling) that fits seamlessly into your existing timetable."
+            },
+            {
+                step: "03",
+                title: "Launch & Orientation",
+                description: "We conduct energizing orientation sessions for students, teachers, and parents to create excitement and buy-in for the program."
+            },
+            {
+                step: "04",
+                title: "Execution & Delivery",
+                description: "Our experts visit your campus (or connect virtually) to deliver high-impact workshops, conduct assessments, and hold one-on-one sessions."
+            },
+            {
+                step: "05",
+                title: "Impact Reporting",
+                description: "At the end of the year, we provide a detailed 'Impact Report' showcasing student progress, placement statistics, and strategic recommendations."
+            }
+        ],
+        targetAudience: [
+            "K-12 Schools (CBSE/IB/IGCSE/ICSE)",
+            "Junior Colleges",
+            "Universities looking for placement support",
+            "Educational Trusts & Groups"
         ],
         faq: [
             {
-                question: "How does the partnership model work?",
-                answer: "We sign an MOU for the academic year. Our experts visit the campus (or connect online) on scheduled dates to deliver the curriculum and conduct counselling."
+                question: "How does this fit into our busy academic calendar?",
+                answer: "Seamlessly. We design our interventions to be high-impact but low-disruption. We map our sessions to your free periods, activity hours, or specific guidance weeks."
             },
             {
-                question: "Can we customize the program?",
-                answer: "Absolutely. We tailor our modules based on whether you need a light-touch workshop series or a comprehensive year-long engagement."
+                question: "Can we customize the program for our school?",
+                answer: "100%. We co-create the roadmap with you. Whether you need a comprehensive annual engagement or a focused 'Career Week' power series, we tailor it to your unique ethos."
             }
         ],
         seo: {
-            title: "Career Guidance for Schools | Institutional Partnerships",
-            description: "Partner with TrueNorth to set up a Career Guidance Cell in your school. Structured career curriculum and workshops for students.",
-            keywords: "school career guidance, institutional partnership, student workshops, nep compliance, career counselling for schools"
+            title: "Career Guidance for Schools | Institutional Educational Partners",
+            description: "Partner with TrueNorth to set up a world-class Career Guidance Cell. Structured curriculum, student workshops, and NEP-compliant solutions for schools.",
+            keywords: "school career guidance partnership, institutional career counselling, nep compliance for schools, student holistic development, career workshops for students"
         }
     },
     {
         id: "career-lab",
         slug: "career-lab-setup",
         title: "Career Lab Setup",
-        tagline: "Smart Career Infrastructure Powered by Edumilestones",
-        shortDesc: "End-to-end setup of in-house white-labeled Career Labs for schools, powered by advanced technology.",
-        fullDesc: "Empower your school to become a self-sufficient hub of career guidance with our Career Lab Setup service. In association with Edumilestones, we install a state-of-the-art technological framework within your institution. This includes a white-labeled career portal with your school's branding, access to industry-standard psychometric assessments, and a vast database of career information. We don't just install software; we train your existing coordintaors or teachers to become first-level counsellors. This ensures your students have 24/7 access to career resources, making guidance a continuous, integrated part of their school life, not just a one-time event.",
+        tagline: "Install the Future: Your In-House Career Technology Hub",
+        shortDesc: "Launch your own white-labeled, tech-enabled Career Lab. Powered by Edumilestones, we give you the infrastructure to be a self-sufficient guidance powerhouse.",
+        fullDesc: "Transform your institution into a beacon of modern guidance with the 'TrueNorth Career Lab'. In exclusive association with Edumilestones, we set up a cutting-edge technological infrastructure right within your campus. Imagine a dedicated space where students can explore thousands of careers, take unlimited psychometric tests, and access global university databases—all under your school's own brand. This is a White-Labeled solution, meaning it looks, feels, and acts like YOUR innovative platform. We don't just hand over the tech; we train your staff to become Certified Career Analysts (CCA), ensuring that your school becomes a sustainable, self-reliant hub of career wisdom for generations to come.",
         icon: Building,
         color: "bg-gray-50",
         gradient: "from-gray-700 to-gray-900",
         features: [
-            "White-labeled Career Platform with School Logo",
-            "Unlimited Psychometric Assessments license",
-            "Global University & Entrance Exam Database access",
-            "Alumni Management System integration",
-            "Certified Career Analyst (CCA) training for staff",
-            "Marketing support to launch the Career Lab",
-            "Technical maintenance and content updates"
+            "Premium White-Labeled Career Portal with Your School's Branding",
+            "Unlimited Access to Professional Psychometric Assessments",
+            "Comprehensive Global University & Entrance Exam Database",
+            "Integrated Alumni Management & Student Tracking System",
+            "Certified Career Analyst (CCA) Training for Your Faculty",
+            "Strategic Marketing Support to Launch Your Lab with Buzz",
+            "Lifetime Technical Support & Regular Content Updates"
         ],
         benefits: [
-            "Create a tangible 'USP' for your school",
-            "Generate revenue through in-house assessments",
-            "Data ownership and student privacy",
-            "Long-term sustainability of career guidance efforts",
-            "International standard infrastructure at a fraction of the cost"
+            "Establish a massive Unique Selling Proposition (USP) for your school",
+            "Generate a new revenue stream through in-house assessment services",
+            "Ensure total data privacy and ownership of your student's data",
+            "Create a sustainable, long-term culture of career readiness in-house",
+            "Access international-standard infrastructure at a fraction of the cost"
+        ],
+        process: [
+            {
+                step: "01",
+                title: "Consultation & Demo",
+                description: "We demonstrate the platform's capabilities and understand your school's specific technical and branding requirements."
+            },
+            {
+                step: "02",
+                title: "White-Label Configuration",
+                description: "Our tech team configures the portal with your school's logo, colors, and domain name suited to your brand guidelines."
+            },
+            {
+                step: "03",
+                title: "Installation & Integration",
+                description: "We set up the necessary credentials and integrate the portal with your existing website or student management system."
+            },
+            {
+                step: "04",
+                title: "Training & Certification",
+                description: "We conduct an intensive training workshop for your designated teachers/counsellors to become Certified Career Analysts (CCA)."
+            },
+            {
+                step: "05",
+                title: "Launch & Handholding",
+                description: "We help you launch the lab with a student event. Our support team remains available 24/7 for any technical or functional queries."
+            }
+        ],
+        targetAudience: [
+            "Progressive Schools",
+            "Coaching Centers",
+            "Individual Career Counsellors",
+            "EdTech Companies"
         ],
         faq: [
             {
-                question: "What hardware is required?",
-                answer: "The Career Lab is cloud-based. You simply need a quiet room with computers/tablets and internet connectivity."
+                question: "What infrastructure do we need?",
+                answer: "Surprisingly little! As a cloud-based superpower, all you need is a quiet room with computers or tablets and an internet connection. We handle the entire digital backend."
             },
             {
-                question: "Is training included?",
-                answer: "Yes, we provide intensive training for your nominated staff members to effectively use the platform and interpret reports."
+                question: "Will our teachers be able to manage it?",
+                answer: "Yes, and they will love it! We provide intensive, certification-level training that empowers your teachers to use the platform effectively and guide students with confidence."
             }
         ],
         seo: {
-            title: "Setup Career Lab in School | Edumilestones Career Technology",
-            description: "Launch a branded Career Lab in your school. White-label career platform, psychometric tools, and staff training by TrueNorth.",
-            keywords: "career lab setup, edumilestones, white label career platform, school career technology, guidance infrastructure"
+            title: "Setup Career Lab in School | White Label Career Platform",
+            description: "Launch a state-of-the-art Career Lab in your school. White-label technology, psychometric tools, and staff training powered by TrueNorth & Edumilestones.",
+            keywords: "career lab setup, school career technology, white label career platform, edumilestones partner, career guidance infrastructure"
         }
     },
     {
         id: "digital-solutions",
         slug: "digital-solutions-education",
         title: "Digital Solutions for Educational Institutions",
-        tagline: "Digitally Transforming Education Brands",
-        shortDesc: "Specialized web development, SEO, and digital marketing strategies for schools and educational consultancies.",
-        fullDesc: "In the digital age, a school's first interaction with a parent happens online. TrueNorth's Digital Solutions wing is a niche agency for the education sector. We understand that 'selling' education is different from selling products. It requires trust, authority, and clarity. We build high-performance, responsive websites that reflect your institution's ethos. Our SEO strategies ensure you rank for keywords like 'Best School in [City]', driving organic admissions. We also run targeted social media campaigns for admission lead generation. From crafting the perfect 'About Us' page to optimizing your 'Apply Now' funnel, we handle your entire digital footprint.",
+        tagline: "Digital Dominance: Transforming Education Brands Online",
+        shortDesc: "We build high-performance digital ecosystems for schools and consultants. From stunning websites to admission-driving SEO, we make you the #1 choice.",
+        fullDesc: "In a digital-first world, your online presence is your first impression. TrueNorth's Digital Solutions wing is the specialized growth engine for the education sector. We understand that selling 'Futures' is different from selling products; it requires Trust, Authority, and Prestige. We craft breathtaking, responsive websites that tell your institution's story with impact. Our forensic SEO strategies ensure you dominate search results for keywords like 'Best School' or 'Top Consultant'. We run hyper-targeted Google & Social Media campaigns that don't just bring clicks—they bring qualified admissions. From your 'About Us' page to your 'Pay Fee' portal, we engineer a seamless 360-degree digital experience that converts parents into partners.",
         icon: Laptop,
         color: "bg-blue-50",
         gradient: "from-blue-600 to-indigo-600",
         features: [
-            "School & College Website Design & Development",
-            "Education Sector SEO (Search Engine Optimization)",
-            "Admission Lead Generation Campaigns (Google/Meta Ads)",
-            "Social Media Management & Content Strategy",
-            "LMS (Learning Management System) integration",
-            "Virtual Tour & Video Production",
-            "Online Reputation Management (ORM)"
+            "Award-Winning School & College Website Design & Development",
+            "Education-Specific SEO (Search Engine Optimization) Domination",
+            "High-ROI Admission Lead Generation (Google/Facebook/Insta Ads)",
+            "Premium Social Media Branding & Content Strategy",
+            "Seamless LMS (Learning Management System) Integration",
+            "Immersive Virtual Tours & Corporate Video Production",
+            "Proactive Online Reputation Management (ORM)"
         ],
         benefits: [
-            "Increase qualified admission leads",
-            "Build a premium brand image online",
-            "Engage alumni and parents effectively",
-            "Reduce cost-per-acquisition for new students",
-            "Mobile-first experience for modern parents"
+            "Skyrocket your qualified admission leads year over year",
+            "Cultivate a premium, trusted brand image that parents love",
+            "Engage your community effectively with targeted communication",
+            "Drastically reduce your cost-per-admission with smart marketing",
+            "Deliver a flawless mobile-first experience for modern families"
+        ],
+        process: [
+            {
+                step: "01",
+                title: "Digital Audit & Strategy",
+                description: "We conduct a deep audit of your current online presence, identifying gaps, functional issues, and missed opportunities compared to competitors."
+            },
+            {
+                step: "02",
+                title: "Blueprint Design",
+                description: "We propose a custom digital roadmap—whether it's a new website, an SEO overhaul, or a lead-gen funnel—tailored to your admission goals."
+            },
+            {
+                step: "03",
+                title: "Development & Creation",
+                description: "Our creative team builds the assets—coding the website, designing ad creatives, or writing SEO content—with regular feedback loops."
+            },
+            {
+                step: "04",
+                title: "Launch & Campaign Run",
+                description: "We go live! We launch your campaigns and monitor performance real-time, optimizing bids and targeting to maximize ROI."
+            },
+            {
+                step: "05",
+                title: "Analytics & Optimization",
+                description: "We provide monthly reports on traffic, leads, and conversions. We continuously refine the strategy to ensure sustained growth."
+            }
+        ],
+        targetAudience: [
+            "Schools & Colleges",
+            "Universities",
+            "EdTech Startups",
+            "Individual Educators & Tutors"
         ],
         faq: [
             {
-                question: "Why do we need specialized education marketing?",
-                answer: "Generic agencies don't understand the academic calendar or parent psychology. We know exactly when and how to pitch admission open campaigns."
+                question: "Why choose a specialist education agency?",
+                answer: "Because nuances matter. We know the admission cycles, parent psychology, and the academic lexicon. We don't just market; we educate your audience about your value."
             },
             {
-                question: "Can you redesign our existing website?",
-                answer: "Yes, we can modernize your current site, improving its speed, mobile responsiveness, and SEO structure while retaining your core data."
+                question: "Can you revamp our outdated website?",
+                answer: "Consider it done. We will transform your existing site into a modern, lightning-fast, and mobile-responsive masterpiece that retains your legacy while powering your future."
             }
         ],
         seo: {
-            title: "Digital Marketing for Schools | Education Web Design & SEO",
-            description: "Specialized digital marketing agency for schools and colleges. Website design, SEO, and admission lead generation services.",
-            keywords: "education marketing, school website design, seo for schools, admission marketing, digital agency for education"
+            title: "Digital Marketing for Schools | Best Education Web Design & SEO",
+            description: "India's specialized digital agency for schools & colleges. Stunning websites, #1 ranking SEO, and high-conversion admission marketing services.",
+            keywords: "digital marketing for schools, education website design, seo for educational institutions, admission lead generation, education brand management"
         }
     }
 ];
