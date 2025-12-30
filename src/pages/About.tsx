@@ -3,7 +3,6 @@ import { Target, Lightbulb, Users, Award, ArrowRight, BookOpen, GraduationCap, G
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import { useTheme } from '../contexts/ThemeContext';
-import FloatingOrbs from '../components/ui/FloatingOrbs';
 import AnimatedCounter from '../components/ui/AnimatedCounter';
 import TiltCard from '../components/ui/TiltCard';
 

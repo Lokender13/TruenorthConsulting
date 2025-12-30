@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Globe, Instagram, Linkedin } from 'lucide-react';
+import { Mail, Phone, Globe, Instagram, Linkedin } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 import logo from '../assets/logo.png';
 

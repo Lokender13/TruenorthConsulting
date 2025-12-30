@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { useTheme } from '../../contexts/ThemeContext';
 import { serviceImages } from '../ui/ServiceImage';
 import { PenTool } from 'lucide-react';
@@ -19,7 +19,7 @@ const ServiceOverview = ({ desc, serviceId }: ServiceOverviewProps) => {
 
     const paragraphs = desc.split('. ').map(p => p.trim()).filter(p => p.length > 0);
 
-    const containerVariants = {
+    const containerVariants: Variants = {
         hidden: {},
         visible: {
             transition: {
@@ -28,7 +28,7 @@ const ServiceOverview = ({ desc, serviceId }: ServiceOverviewProps) => {
         }
     };
 
-    const itemVariants = {
+    const itemVariants: Variants = {
         hidden: { opacity: 0, y: 30 },
         visible: {
             opacity: 1,

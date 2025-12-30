@@ -6,11 +6,10 @@ import { useTheme } from '../../../contexts/ThemeContext';
 interface HeroLayoutProps {
     children: React.ReactNode;
     visual: React.ReactNode;
-    service: any;
     className?: string;
 }
 
-const HeroLayout = ({ children, visual, service, className = "" }: HeroLayoutProps) => {
+const HeroLayout = ({ children, visual, className = "" }: HeroLayoutProps) => {
     const { theme } = useTheme();
     const isDark = theme === 'dark';
 

@@ -77,7 +77,7 @@ const CompetitiveExamsHero = ({ service }: { service: any }) => {
     );
 
     return (
-        <HeroLayout service={service} visual={visual}>
+        <HeroLayout visual={visual}>
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
