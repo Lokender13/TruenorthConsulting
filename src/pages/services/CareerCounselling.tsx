@@ -1,61 +1,38 @@
-import { useEffect } from 'react';
-import { servicesData } from '../../data/servicesData';
-import SEO from '../../components/SEO';
-import ServiceHero from '../../components/service/ServiceHero';
-import ServiceOverview from '../../components/service/ServiceOverview';
-import ServiceFeatures from '../../components/service/ServiceFeatures';
-import ServiceBenefits from '../../components/service/ServiceBenefits';
-import ServiceProcess from '../../components/service/ServiceProcess';
-import ServiceAudience from '../../components/service/ServiceAudience';
-
-import ServiceFAQ from '../../components/service/ServiceFAQ';
-
-import PsychometricAssessment from '../../components/service/PsychometricAssessment';
+import ServicePageLayout from './ServicePageLayout';
+import { motion } from 'framer-motion';
+import { BrainCircuit, Compass, Target } from 'lucide-react';
 import { useTheme } from '../../contexts/ThemeContext';
 
 const CareerCounselling = () => {
-    const service = servicesData.find(s => s.id === "career-counselling");
     const { theme } = useTheme();
     const isDark = theme === 'dark';
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
-
-    if (!service) return null;
-
     return (
-        <div className={`min-h-screen theme-transition ${isDark ? 'bg-black' : 'bg-white'}`}>
-            <SEO
-                title={service.seo.title}
-                description={service.seo.description}
-                keywords={service.seo.keywords}
-                schema={{
-                    "@context": "https://schema.org",
-                    "@type": "Service",
-                    "name": service.title,
-                    "description": service.shortDesc,
-                    "provider": {
-                        "@type": "EducationalOrganization",
-                        "name": "TrueNorth Consulting"
-                    }
-                }}
-            />
-
-            <ServiceHero service={service} />
-
-            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-                <div className="space-y-16">
-                    <ServiceOverview desc={service.fullDesc} serviceId={service.id} />
-                    <PsychometricAssessment />
-                    <ServiceFeatures features={service.features} />
-                    <ServiceProcess process={service.process} />
-                    <ServiceBenefits benefits={service.benefits} />
-                    <ServiceAudience audience={service.targetAudience} />
-                    <ServiceFAQ faq={service.faq} />
+        <ServicePageLayout serviceId="career-counselling">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 md:-mt-12">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
+                    {[
+                        { icon: BrainCircuit, title: "AI-Driven Insights", desc: "Scientific psychometrics that decode your personality with 97% accuracy." },
+                        { icon: Compass, title: "Expert Navigation", desc: "Guided sessions with industry veterans to navigate complex career paths." },
+                        { icon: Target, title: "Precision Clarity", desc: "Eliminate confusion and gain 100% confidence in your next academic step." }
+                    ].map((item, i) => (
+                        <motion.div
+                            key={i}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: i * 0.1 }}
+                            className={`p-8 rounded-[2.5rem] border backdrop-blur-xl ${isDark ? 'bg-zinc-900/40 border-white/5' : 'bg-white border-gray-100 shadow-xl shadow-black/[0.02]'}`}
+                        >
+                            <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-6 ${isDark ? 'bg-blue-500/10 text-brand-blue' : 'bg-brand-blue/5 text-brand-blue'}`}>
+                                <item.icon size={24} />
+                            </div>
+                            <h4 className={`text-xl font-serif font-bold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>{item.title}</h4>
+                            <p className={`leading-relaxed ${isDark ? 'text-white/40' : 'text-gray-500 font-medium'}`}>{item.desc}</p>
+                        </motion.div>
+                    ))}
                 </div>
             </div>
-        </div>
+        </ServicePageLayout>
     );
 };
 

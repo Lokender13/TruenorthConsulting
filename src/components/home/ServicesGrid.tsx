@@ -3,33 +3,32 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, BookOpen, Globe, GraduationCap, Users, Building, BarChart } from 'lucide-react';
 import { useTheme } from '../../contexts/ThemeContext';
 import TiltCard from '../ui/TiltCard';
-import AnimatedGradientText from '../ui/AnimatedGradientText';
 
 // Color themes for each service
 const serviceColors = {
     blue: {
-        light: { iconBg: 'bg-blue-100', iconText: 'text-blue-600', border: 'border-blue-200', glow: 'group-hover:shadow-blue-500/20' },
-        dark: { iconBg: 'bg-blue-500/10', iconText: 'text-blue-400', border: 'border-blue-500/20', glow: 'group-hover:shadow-blue-500/10' }
+        light: { iconBg: 'bg-brand-blue/5', iconText: 'text-brand-blue', border: 'border-brand-blue/10', glow: 'shadow-brand-blue/10' },
+        dark: { iconBg: 'bg-brand-blue/10', iconText: 'text-brand-blue', border: 'border-brand-blue/20', glow: 'shadow-brand-blue/20' }
     },
     orange: {
-        light: { iconBg: 'bg-orange-100', iconText: 'text-orange-600', border: 'border-orange-200', glow: 'group-hover:shadow-orange-500/20' },
-        dark: { iconBg: 'bg-orange-500/10', iconText: 'text-orange-400', border: 'border-orange-500/20', glow: 'group-hover:shadow-orange-500/10' }
+        light: { iconBg: 'bg-brand-orange/5', iconText: 'text-brand-orange', border: 'border-brand-orange/10', glow: 'shadow-brand-orange/10' },
+        dark: { iconBg: 'bg-brand-orange/10', iconText: 'text-brand-orange', border: 'border-brand-orange/20', glow: 'shadow-brand-orange/20' }
     },
     emerald: {
-        light: { iconBg: 'bg-emerald-100', iconText: 'text-emerald-600', border: 'border-emerald-200', glow: 'group-hover:shadow-emerald-500/20' },
-        dark: { iconBg: 'bg-emerald-500/10', iconText: 'text-emerald-400', border: 'border-emerald-500/20', glow: 'group-hover:shadow-emerald-500/10' }
+        light: { iconBg: 'bg-emerald-500/5', iconText: 'text-emerald-600', border: 'border-emerald-500/10', glow: 'shadow-emerald-500/10' },
+        dark: { iconBg: 'bg-emerald-500/10', iconText: 'text-emerald-400', border: 'border-emerald-500/20', glow: 'shadow-emerald-500/20' }
     },
     purple: {
-        light: { iconBg: 'bg-purple-100', iconText: 'text-purple-600', border: 'border-purple-200', glow: 'group-hover:shadow-purple-500/20' },
-        dark: { iconBg: 'bg-purple-500/10', iconText: 'text-purple-400', border: 'border-purple-500/20', glow: 'group-hover:shadow-purple-500/10' }
+        light: { iconBg: 'bg-purple-500/5', iconText: 'text-purple-600', border: 'border-purple-500/10', glow: 'shadow-purple-500/10' },
+        dark: { iconBg: 'bg-purple-500/10', iconText: 'text-purple-400', border: 'border-purple-500/20', glow: 'shadow-purple-500/20' }
     },
     pink: {
-        light: { iconBg: 'bg-pink-100', iconText: 'text-pink-600', border: 'border-pink-200', glow: 'group-hover:shadow-pink-500/20' },
-        dark: { iconBg: 'bg-pink-500/10', iconText: 'text-pink-400', border: 'border-pink-500/20', glow: 'group-hover:shadow-pink-500/10' }
+        light: { iconBg: 'bg-pink-500/5', iconText: 'text-pink-600', border: 'border-pink-500/10', glow: 'shadow-pink-500/10' },
+        dark: { iconBg: 'bg-pink-500/10', iconText: 'text-pink-400', border: 'border-pink-500/20', glow: 'shadow-pink-500/20' }
     },
     slate: {
-        light: { iconBg: 'bg-slate-100', iconText: 'text-slate-600', border: 'border-slate-200', glow: 'group-hover:shadow-slate-500/20' },
-        dark: { iconBg: 'bg-slate-500/10', iconText: 'text-slate-400', border: 'border-slate-500/20', glow: 'group-hover:shadow-slate-500/10' }
+        light: { iconBg: 'bg-slate-500/5', iconText: 'text-slate-600', border: 'border-slate-500/10', glow: 'shadow-slate-500/10' },
+        dark: { iconBg: 'bg-slate-500/10', iconText: 'text-slate-400', border: 'border-slate-500/20', glow: 'shadow-slate-500/20' }
     },
 };
 
@@ -94,7 +93,7 @@ const ServicesGrid = () => {
     };
 
     return (
-        <section className={`py-10 lg:py-16 relative overflow-hidden theme-transition ${isDark ? 'bg-zinc-950' : 'bg-gray-50'}`}>
+        <section className={`py-24 relative overflow-hidden theme-transition ${isDark ? 'bg-zinc-950/0' : 'bg-transparent'}`}>
             {/* Subtle background pattern */}
             <div className="absolute inset-0">
                 <div
@@ -110,111 +109,87 @@ const ServicesGrid = () => {
             <div className={`absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[300px] ${isDark ? 'bg-white/[0.02]' : 'bg-gray-200/30'} rounded-full blur-[120px]`}></div>
 
             <div className="max-w-7xl mx-auto px-4 relative z-10">
-                {/* Section Header */}
                 <motion.div
-                    className="text-center mb-10"
+                    className="text-center mb-20"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
+                    transition={{ duration: 1 }}
                 >
                     <motion.span
-                        className={`inline-block text-xs font-semibold tracking-[0.2em] uppercase mb-6 px-4 py-2 rounded-full border ${isDark
-                            ? 'border-white/10 text-white/60'
-                            : 'border-brand-orange/30 text-brand-orange'
-                            }`}
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
+                        className={`inline-flex items-center gap-2 px-6 py-2 rounded-full border text-[10px] font-black tracking-[0.3em] uppercase mb-8
+                            ${isDark ? 'border-brand-orange/20 text-brand-orange bg-brand-orange/5' : 'border-brand-orange/10 text-brand-orange bg-white shadow-sm'}`}
                     >
-                        Our Services
+                        Our Spectrum of Excellence
                     </motion.span>
 
-                    <h2 className={`text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                        What We <AnimatedGradientText
-                            colors={isDark
-                                ? ['#ffffff', '#a0a0a0', '#ffffff', '#606060', '#ffffff']
-                                : ['#1f2937', '#F97316', '#1f2937', '#1E6FEB', '#1f2937']
-                            }
-                        >Offer</AnimatedGradientText>
+                    <h2 className={`text-5xl md:text-7xl font-serif font-bold mb-8 leading-[0.9] tracking-tighter ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+                        What We <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-purple-500 to-brand-blue italic font-light">
+                            Transform.
+                        </span>
                     </h2>
 
-                    <p className={`text-lg max-w-2xl mx-auto ${isDark ? 'text-white/40' : 'text-gray-500'}`}>
-                        Comprehensive education solutions tailored for every stage of your journey.
+                    <p className={`text-xl font-light max-w-2xl mx-auto leading-relaxed transition-colors duration-500 ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}>
+                        Comprehensive elite education solutions tailored for every critical stage of your academic journey.
                     </p>
                 </motion.div>
 
-                {/* Premium Service Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: index * 0.08, duration: 0.5 }}
+                            transition={{ delay: index * 0.1, duration: 0.8 }}
                         >
-                            <Link to={`/services/${service.slug}`} className="block h-full group perspective-card">
+                            <Link to={`/services/${service.slug}`} className="group h-full block">
                                 <TiltCard
                                     className={`
-                                        h-full rounded-3xl overflow-hidden backdrop-blur-xl transition-all duration-500
+                                        h-full rounded-[3rem] overflow-hidden backdrop-blur-xl transition-all duration-700 border
                                         ${isDark
-                                            ? `bg-zinc-900/40 border-white/10 hover:bg-zinc-900/60 ${serviceColors[service.color].dark.border}`
-                                            : `bg-white/70 border-white/40 shadow-xl hover:shadow-2xl hover:bg-white/90 ${serviceColors[service.color].light.border}`
+                                            ? `bg-zinc-900/40 border-white/5 hover:bg-zinc-900/60 shadow-2xl shadow-black/50`
+                                            : `bg-white/80 border-white shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]`
                                         }
-                                        border group-hover:border-opacity-100 border-opacity-50
                                     `}
-                                    tiltIntensity={10}
-                                    glareOpacity={isDark ? 0.1 : 0.2}
+                                    tiltIntensity={5}
+                                    glareOpacity={isDark ? 0.1 : 0.05}
                                 >
                                     <div className="flex flex-col h-full">
                                         {/* Image Section */}
-                                        <div className="relative h-64 overflow-hidden rounded-t-3xl">
-                                            <div className="absolute inset-0 bg-black/5 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
+                                        <div className="relative h-64 overflow-hidden rounded-t-[3rem]">
                                             <motion.img
                                                 src={service.image}
                                                 alt={service.title}
-                                                className="w-full h-full object-cover"
-                                                whileHover={{ scale: 1.1 }}
-                                                transition={{ duration: 0.7 }}
+                                                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                                                 onError={handleImageError}
                                             />
-                                            {/* Gradient Overlay */}
-                                            <div className={`absolute inset-0 z-20 ${isDark
-                                                ? 'bg-gradient-to-t from-zinc-900/50 via-transparent to-transparent'
-                                                : 'bg-gradient-to-t from-white/50 via-transparent to-transparent'
-                                                }`} />
+                                            <div className={`absolute inset-0 bg-gradient-to-t ${isDark ? 'from-zinc-950 via-zinc-950/20' : 'from-zinc-900/40'} to-transparent`} />
 
-                                            {/* Floating Icon */}
-                                            <div className={`
-                                                absolute bottom-4 left-6 z-30
-                                                w-14 h-14 rounded-2xl flex items-center justify-center
-                                                backdrop-blur-md shadow-lg border
-                                                ${isDark
-                                                    ? `bg-zinc-900/80 ${serviceColors[service.color].dark.iconText} border-white/10`
-                                                    : `bg-white/90 ${serviceColors[service.color].light.iconText} border-white/40`
-                                                }
-                                            `}>
-                                                <service.icon size={26} strokeWidth={2} />
+                                            {/* Icon Overlay */}
+                                            <div className={`absolute bottom-6 left-8 w-16 h-16 rounded-2xl flex items-center justify-center backdrop-blur-2xl border transition-transform duration-500 group-hover:scale-110
+                                                ${isDark ? 'bg-black/40 border-white/10 text-white' : 'bg-white/80 border-white text-zinc-900 shadow-xl'}`}>
+                                                <service.icon size={32} />
                                             </div>
                                         </div>
 
                                         {/* Content Section */}
-                                        <div className="p-8 pt-6 flex-grow flex flex-col relative z-20">
-                                            <h3 className={`text-2xl font-serif font-bold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                                        <div className="p-10 flex-grow flex flex-col">
+                                            <h3 className={`text-2xl font-serif font-bold mb-4 transition-colors duration-500 ${isDark ? 'text-white' : 'text-zinc-900'}`}>
                                                 {service.title}
                                             </h3>
 
-                                            <p className={`text-base leading-relaxed mb-6 flex-grow ${isDark ? 'text-white/50' : 'text-gray-500'}`}>
+                                            <p className={`text-lg font-light leading-relaxed mb-8 flex-grow transition-colors duration-500 ${isDark ? 'text-zinc-400' : 'text-zinc-500 font-medium'}`}>
                                                 {service.desc}
                                             </p>
 
                                             <div className={`
-                                                flex items-center gap-2 text-sm font-semibold tracking-wide uppercase
-                                                ${isDark ? 'text-white/30 group-hover:text-white' : 'text-gray-400 group-hover:text-gray-900'}
-                                                transition-colors duration-300
+                                                flex items-center gap-3 text-[10px] font-black tracking-[0.2em] uppercase
+                                                ${isDark ? 'text-brand-orange' : 'text-brand-orange'}
+                                                transition-all duration-300
                                             `}>
-                                                View Details <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                                                Explore Service <ArrowRight size={18} className="transition-transform group-hover:translate-x-2" />
                                             </div>
                                         </div>
                                     </div>
@@ -224,31 +199,23 @@ const ServicesGrid = () => {
                     ))}
                 </div>
 
-                {/* View All Button */}
                 <motion.div
-                    className="text-center mt-10"
+                    className="text-center mt-20"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                 >
-                    <Link
-                        to="/services"
-                        className={`
-                            relative inline-flex items-center gap-3 
-                            px-8 py-4 rounded-full 
-                            font-medium text-sm tracking-wide uppercase
-                            transition-all duration-300
-                            overflow-hidden group
-                            ${isDark
-                                ? 'bg-white text-black hover:bg-gray-100'
-                                : 'bg-zinc-900 text-white hover:bg-zinc-800'
-                            }
-                        `}
-                    >
-                        <span className="relative z-10 flex items-center gap-2">
-                            Explore All Services <ArrowRight size={16} />
-                        </span>
-                    </Link>
+                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
+                        <Link
+                            to="/services"
+                            className={`group inline-flex items-center gap-4 px-12 py-6 rounded-full font-black text-[10px] tracking-[0.2em] uppercase transition-all duration-300
+                                ${isDark
+                                    ? 'bg-white text-zinc-950 hover:shadow-[0_15px_40px_rgba(255,255,255,0.2)]'
+                                    : 'bg-zinc-900 text-white hover:shadow-[0_15px_40px_rgba(0,0,0,0.2)]'}`}
+                        >
+                            Explore All Services <ArrowRight size={20} className="transition-transform group-hover:translate-x-2" />
+                        </Link>
+                    </motion.div>
                 </motion.div>
             </div>
         </section >

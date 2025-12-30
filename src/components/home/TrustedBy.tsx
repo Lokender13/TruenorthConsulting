@@ -50,7 +50,7 @@ const TrustedBy = () => {
     const isDark = theme === 'dark';
 
     return (
-        <section className={`py-8 relative overflow-hidden theme-transition ${isDark ? 'bg-zinc-950' : 'bg-white'}`}>
+        <section className={`py-12 relative overflow-hidden theme-transition ${isDark ? 'bg-zinc-950/0' : 'bg-transparent'}`}>
             {/* Top Border */}
             <div className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent ${isDark ? 'via-white/10' : 'via-gray-200'} to-transparent`}></div>
 
@@ -76,23 +76,25 @@ const TrustedBy = () => {
                         {[...universities, ...universities, ...universities].map((uni, index) => (
                             <motion.div
                                 key={index}
-                                className="flex-shrink-0 mx-8"
-                                whileHover={{ scale: 1.1, y: -5 }}
-                                transition={{ type: 'spring', stiffness: 300 }}
+                                className="flex-shrink-0 mx-6"
+                                whileHover={{ scale: 1.1, y: -8 }}
+                                transition={{ type: 'spring', stiffness: 400, damping: 20 }}
                             >
                                 <div
                                     className={`
-                                        w-28 h-28 rounded-full flex items-center justify-center p-4
-                                        cursor-pointer transition-all duration-300
-                                        bg-white shadow-lg hover:shadow-2xl hover:shadow-orange-500/20
-                                        border border-gray-100
+                                        w-32 h-32 rounded-3xl flex items-center justify-center p-6
+                                        backdrop-blur-xl transition-all duration-500 border
+                                        ${isDark
+                                            ? 'bg-zinc-900/40 border-white/5 shadow-2xl shadow-black/50'
+                                            : 'bg-white border-white shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(249,115,22,0.1)]'
+                                        }
                                     `}
                                     title={uni.name}
                                 >
                                     <img
                                         src={uni.logo}
                                         alt={uni.name}
-                                        className="w-16 h-16 object-contain filter hover:brightness-110 transition-all duration-300"
+                                        className={`w-20 h-20 object-contain transition-all duration-500 ${isDark ? 'opacity-80 hover:opacity-100 grayscale hover:grayscale-0' : 'opacity-90 hover:opacity-100'}`}
                                         loading="lazy"
                                     />
                                 </div>

@@ -437,6 +437,32 @@
     outline: none;
     box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.3);
   }
+
+  /* ===== EXTRA HIGH-END UTILITIES ===== */
+  .glass-premium {
+    @apply backdrop-blur-2xl border border-white/10 dark:border-white/5 shadow-2xl;
+    background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.05) 0%,
+        rgba(255, 255, 255, 0.01) 100%);
+  }
+
+  .glass-light {
+    @apply backdrop-blur-xl border border-white/60 shadow-xl;
+    background: rgba(255, 255, 255, 0.45);
+  }
+
+  .text-glow-orange {
+    text-shadow: 0 0 15px rgba(249, 115, 22, 0.3);
+  }
+
+  .text-glow-white {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  }
+
+  .bg-mesh {
+    background-size: 40px 40px;
+    background-image: radial-gradient(circle, currentColor 1px, transparent 1px);
+  }
 }
 
 /* ===== PERFORMANCE OPTIMIZATIONS ===== */

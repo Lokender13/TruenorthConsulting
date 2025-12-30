@@ -31,6 +31,7 @@ const Navbar = () => {
         { name: "Competitive Exams", path: "/services/competitive-exam-language-preparation" },
         { name: "School Partnerships", path: "/services/school-college-partnerships" },
         { name: "Career Labs", path: "/services/career-lab-setup" },
+        { name: "Digital Solutions", path: "/services/digital-solutions-education" },
     ];
 
     const navLinks = [
@@ -45,11 +46,11 @@ const Navbar = () => {
             ? 'h-20'
             : 'h-24'
             }`}>
-            {/* Glass Background */}
-            <div className={`absolute inset-0 transition-all duration-300 ${scrolled
+            {/* Glass Background Layer */}
+            <div className={`absolute inset-0 transition-all duration-700 ${scrolled
                 ? isDark
-                    ? 'bg-black/80 backdrop-blur-md border-b border-white/10'
-                    : 'bg-white/80 backdrop-blur-md border-b border-black/5'
+                    ? 'bg-zinc-950/80 backdrop-blur-2xl border-b border-white/5 shadow-2xl shadow-black/50'
+                    : 'bg-white/80 backdrop-blur-2xl border-b border-zinc-100 shadow-[0_10px_30px_rgba(0,0,0,0.02)]'
                 : 'bg-transparent'
                 }`} />
 
@@ -57,12 +58,10 @@ const Navbar = () => {
                 <div className="flex items-center justify-between h-full">
                     {/* Logo - Enhanced Visibility */}
                     <Link to="/" className="flex items-center group relative z-10">
-                        <div className={`absolute -inset-2 rounded-xl blur-lg transition-opacity duration-300 ${isDark ? 'bg-white/5 opacity-0 group-hover:opacity-100' : 'bg-black/5 opacity-0 group-hover:opacity-100'
-                            }`} />
                         <motion.img
                             src={logo}
                             alt="TrueNorth"
-                            className="h-12 w-auto relative transition-transform duration-300 group-hover:scale-105"
+                            className={`h-10 md:h-12 w-auto relative transition-all duration-500 group-hover:scale-105 ${!isDark && !scrolled ? 'brightness-0' : ''}`}
                             layoutId="navbar-logo"
                         />
                     </Link>
@@ -80,15 +79,17 @@ const Navbar = () => {
                                         <Link
                                             to={link.path}
                                             className={`
-                                                flex items-center gap-1.5 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300
+                                                flex items-center gap-2 px-6 py-2.5 rounded-full text-[10px] font-black tracking-[0.2em] uppercase transition-all duration-500
                                                 ${isDark
-                                                    ? 'text-white/80 hover:text-white hover:bg-white/10'
-                                                    : 'text-gray-700 hover:text-black hover:bg-black/5'
+                                                    ? 'text-zinc-400 hover:text-white hover:bg-white/5'
+                                                    : scrolled
+                                                        ? 'text-zinc-500 hover:text-zinc-900 hover:bg-zinc-50'
+                                                        : 'text-zinc-900 hover:bg-white/10'
                                                 }
                                             `}
                                         >
                                             {link.name}
-                                            <ChevronDown size={14} className={`transition-transform duration-300 ${servicesOpen ? 'rotate-180' : ''}`} />
+                                            <ChevronDown size={12} className={`transition-transform duration-500 ${servicesOpen ? 'rotate-180' : ''}`} />
                                         </Link>
 
                                         {/* Dropdown - Premium Glass */}
@@ -128,10 +129,12 @@ const Navbar = () => {
                                     <Link
                                         to={link.path}
                                         className={`
-                                            px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300
+                                            px-6 py-2.5 rounded-full text-[10px] font-black tracking-[0.2em] uppercase transition-all duration-500
                                             ${isDark
-                                                ? 'text-white/80 hover:text-white hover:bg-white/10'
-                                                : 'text-gray-700 hover:text-black hover:bg-black/5'
+                                                ? 'text-zinc-400 hover:text-white hover:bg-white/5'
+                                                : scrolled
+                                                    ? 'text-zinc-500 hover:text-zinc-900 hover:bg-zinc-50'
+                                                    : 'text-zinc-900 hover:bg-white/10'
                                             }
                                         `}
                                     >
@@ -168,18 +171,22 @@ const Navbar = () => {
                         </motion.button>
 
                         {/* CTA Button */}
-                        <Link
-                            to="/contact"
-                            className={`
-                                px-7 py-3 rounded-full text-sm font-bold tracking-wide transition-all duration-300 shadow-lg hover:shadow-xl
-                                ${isDark || !scrolled
-                                    ? 'bg-white text-black hover:bg-gray-100 hover:scale-105'
-                                    : 'bg-black text-white hover:bg-zinc-800 hover:scale-105'
-                                }
-                            `}
-                        >
-                            Start Your Journey
-                        </Link>
+                        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                            <Link
+                                to="/contact"
+                                className={`
+                                    px-8 py-3.5 rounded-full text-[10px] font-black tracking-[0.2em] uppercase transition-all duration-500 shadow-xl
+                                    ${isDark
+                                        ? 'bg-white text-zinc-950 hover:shadow-[0_10px_30px_rgba(255,255,255,0.2)]'
+                                        : scrolled
+                                            ? 'bg-zinc-950 text-white hover:shadow-[0_10px_30px_rgba(0,0,0,0.2)]'
+                                            : 'bg-white text-zinc-950 hover:bg-zinc-50'
+                                    }
+                                `}
+                            >
+                                Start Journey
+                            </Link>
+                        </motion.div>
                     </div>
 
                     {/* Mobile Menu Button - Glass */}
@@ -235,19 +242,21 @@ const Navbar = () => {
                                 </Link>
                             ))}
                             <div className="pt-4 mt-4 border-t border-dashed border-gray-500/20">
-                                <Link
-                                    to="/contact"
-                                    className={`
-                                        block text-center px-6 py-4 rounded-2xl text-lg font-bold transition-all duration-300
-                                        ${isDark
-                                            ? 'bg-white text-black hover:bg-gray-100'
-                                            : 'bg-black text-white hover:bg-zinc-800'
-                                        }
-                                    `}
-                                    onClick={() => setIsOpen(false)}
-                                >
-                                    Start Your Journey
-                                </Link>
+                                <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                                    <Link
+                                        to="/contact"
+                                        className={`
+                                            block text-center px-8 py-5 rounded-2xl font-black text-[10px] tracking-[0.2em] uppercase transition-all duration-500
+                                            ${isDark
+                                                ? 'bg-white text-zinc-950'
+                                                : 'bg-zinc-950 text-white shadow-xl'
+                                            }
+                                        `}
+                                        onClick={() => setIsOpen(false)}
+                                    >
+                                        Start Journey
+                                    </Link>
+                                </motion.div>
                             </div>
                         </div>
                     </motion.div>

@@ -3,6 +3,8 @@ import { Phone, MessageSquare, Clock, ArrowRight, Plus, Minus } from 'lucide-rea
 import { useState } from 'react';
 import SEO from '../components/SEO';
 import { useTheme } from '../contexts/ThemeContext';
+import TiltCard from '../components/ui/TiltCard';
+import TextReveal from '../components/ui/TextReveal';
 
 // FAQ Content
 const faqs = [
@@ -61,6 +63,44 @@ const Contact = () => {
     const { theme } = useTheme();
     const isDark = theme === 'dark';
     const [openFAQ, setOpenFAQ] = useState<number | null>(0);
+    const [formData, setFormData] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        requirements: ''
+    });
+    const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setStatus('loading');
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ ...formData, formType: 'Contact Page' })
+            });
+
+            if (response.ok) {
+                setStatus('success');
+                setFormData({ firstName: '', lastName: '', email: '', phone: '', requirements: '' });
+                setTimeout(() => setStatus('idle'), 5000);
+            } else {
+                throw new Error('Failed to send');
+            }
+        } catch (error) {
+            console.error('Submission error:', error);
+            setStatus('error');
+            setTimeout(() => setStatus('idle'), 5000);
+        }
+    };
 
     const contactSchema = {
         "@context": "https://schema.org",
@@ -72,7 +112,7 @@ const Contact = () => {
     };
 
     return (
-        <div className={`min-h-screen theme-transition ${isDark ? 'bg-zinc-950' : 'bg-white'}`}>
+        <div className={`min-h-screen theme-transition relative overflow-hidden ${isDark ? 'bg-zinc-950 text-white' : 'bg-[#FAFAFA] text-zinc-900'}`}>
             <SEO
                 title="Contact TrueNorth | Expert Career Counselling Dubai"
                 description="Get in touch for premier career counselling and university admissions guidance. Located in Dubai, serving globally."
@@ -80,15 +120,26 @@ const Contact = () => {
                 schema={contactSchema}
             />
 
+            {/* Ambient Background Glows */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                <div className={`absolute top-[-10%] left-[-10%] w-[1000px] h-[1000px] rounded-full blur-[150px] transition-colors duration-1000
+                    ${isDark ? 'bg-brand-blue/10' : 'bg-brand-blue/[0.08]'}`} />
+                <div className={`absolute bottom-[-10%] right-[-10%] w-[1000px] h-[1000px] rounded-full blur-[150px] transition-colors duration-1000
+                    ${isDark ? 'bg-brand-orange/10' : 'bg-brand-orange/[0.08]'}`} />
+            </div>
+
+            {/* Grid Pattern */}
+            <div
+                className={`absolute inset-0 z-0 transition-opacity duration-1000 ${isDark ? 'opacity-[0.03]' : 'opacity-[0.05]'}`}
+                style={{
+                    backgroundImage: `linear-gradient(to right, ${isDark ? 'white' : 'rgba(0,0,0,0.1)'} 1px, transparent 1px), 
+                                      linear-gradient(to bottom, ${isDark ? 'white' : 'rgba(0,0,0,0.1)'} 1px, transparent 1px)`,
+                    backgroundSize: '80px 80px',
+                }}
+            />
+
             {/* Header / Hero Section - Brand Themed */}
-            <section className={`relative pt-32 pb-64 px-4 overflow-hidden ${isDark ? 'bg-black' : 'bg-brand-blue'}`}>
-                {/* Abstract Shapes */}
-                <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-orange/10 rounded-full blur-[100px] translate-x-1/3 -translate-y-1/3"></div>
-                <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-[80px] -translate-x-1/3 translate-y-1/3"></div>
-
-                {/* Pattern Overlay */}
-                <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`, backgroundSize: '40px 40px' }}></div>
-
+            <section className={`relative pt-32 pb-48 px-4 overflow-hidden`}>
                 <div className="max-w-7xl mx-auto relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         <motion.div
@@ -96,15 +147,13 @@ const Contact = () => {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8 }}
                         >
-                            <span className="inline-block px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold tracking-[0.2em] uppercase mb-6">
-                                Contact Us
-                            </span>
-                            <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6 leading-tight">
-                                Let's Start a <br />
-                                <span className={isDark ? 'text-brand-orange' : 'text-brand-orange'}>Conversation.</span>
+                            <span className="text-[10px] font-black tracking-[0.5em] uppercase text-brand-orange mb-6 block">Direct Access</span>
+                            <h1 className={`text-5xl md:text-8xl font-serif font-bold leading-[0.9] tracking-tighter mb-8 ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+                                <TextReveal>Let's Start a</TextReveal> <br />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-purple-500 to-brand-blue italic font-light">Conversation.</span>
                             </h1>
-                            <p className="text-xl text-white/70 max-w-lg leading-relaxed font-light">
-                                Whether you're a parent, student, or school representative, we're here to answer your questions and guide you forward.
+                            <p className={`text-xl lg:text-2xl font-light max-w-xl transition-colors duration-500 ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}>
+                                Whether you're a parent, student, or school representative, we're here to engineer your academic future.
                             </p>
                         </motion.div>
 
@@ -115,27 +164,30 @@ const Contact = () => {
                             transition={{ duration: 0.8, delay: 0.2 }}
                             className="hidden lg:flex justify-end relative"
                         >
-                            <div className="relative z-10 bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-3xl max-w-md w-full">
-                                <div className="flex items-center gap-4 mb-6">
-                                    <div className="w-12 h-12 rounded-full bg-brand-orange flex items-center justify-center text-white">
-                                        <MessageSquare size={20} />
+                            <TiltCard
+                                className={`
+                                    relative z-10 p-10 rounded-[3rem] backdrop-blur-3xl border transition-all duration-700 max-w-md w-full
+                                    ${isDark ? 'bg-zinc-900/40 border-white/5 shadow-2xl shadow-black/50' : 'bg-white/80 border-white shadow-[0_20px_50px_rgba(249,115,22,0.06)]'}
+                                `}
+                                tiltIntensity={5}
+                            >
+                                <div className="flex items-center gap-6 mb-8">
+                                    <div className="w-16 h-16 rounded-2xl bg-brand-orange flex items-center justify-center text-white shadow-lg shadow-brand-orange/20">
+                                        <MessageSquare size={28} />
                                     </div>
                                     <div>
-                                        <p className="text-white text-sm font-medium opacity-60">Status</p>
-                                        <p className="text-white font-semibold flex items-center gap-2">
-                                            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-                                            Accepting New Students
+                                        <p className={`text-xs font-black tracking-widest uppercase mb-1 ${isDark ? 'text-white/40' : 'text-zinc-400'}`}>Availability</p>
+                                        <p className={`font-serif font-bold text-xl flex items-center gap-3 ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+                                            <span className="w-3 h-3 rounded-full bg-green-500 animate-pulse"></span>
+                                            Admissions Open
                                         </p>
                                     </div>
                                 </div>
-                                <div className="space-y-3">
-                                    <div className="h-2 w-3/4 bg-white/20 rounded-full"></div>
-                                    <div className="h-2 w-1/2 bg-white/20 rounded-full"></div>
+                                <div className="space-y-4">
+                                    <div className={`h-2.5 w-3/4 rounded-full ${isDark ? 'bg-white/5' : 'bg-zinc-100 shadow-inner'}`}></div>
+                                    <div className={`h-2.5 w-1/2 rounded-full ${isDark ? 'bg-white/5' : 'bg-zinc-100 shadow-inner'}`}></div>
                                 </div>
-                            </div>
-                            {/* Orbit rings behind */}
-                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 border border-white/10 rounded-full"></div>
-                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-white/5 rounded-full"></div>
+                            </TiltCard>
                         </motion.div>
                     </div>
                 </div>
@@ -153,91 +205,148 @@ const Contact = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.3 }}
                         >
-                            <div className={`p-10 md:p-14 rounded-3xl shadow-2xl ${isDark ? 'bg-zinc-900 border border-white/10' : 'bg-white border border-gray-100'}`}>
-                                <h3 className={`text-3xl font-serif font-bold mb-8 ${isDark ? 'text-white' : 'text-gray-900'}`}>Send us a Message</h3>
-                                <form className="space-y-8">
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <TiltCard
+                                className={`p-10 md:p-14 rounded-[3.5rem] backdrop-blur-xl border transition-all duration-700
+                                ${isDark ? 'bg-zinc-900/40 border-white/5 shadow-2xl shadow-black/50' : 'bg-white border-white shadow-[0_20px_50px_rgba(0,0,0,0.04)]'}`}
+                                tiltIntensity={2}
+                            >
+                                <h3 className={`text-4xl font-serif font-bold mb-10 ${isDark ? 'text-white' : 'text-zinc-900'}`}>Direct Inquiry</h3>
+                                <form className="space-y-10" onSubmit={handleSubmit}>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                                         <div className="group relative">
-                                            <label className={`block text-xs font-bold uppercase tracking-wider mb-2 transition-colors ${isDark ? 'text-white/40 group-focus-within:text-brand-orange' : 'text-gray-400 group-focus-within:text-brand-orange'}`}>First Name</label>
-                                            <input type="text" className={`w-full bg-transparent border-b-2 py-2 outline-none transition-colors font-medium text-lg ${isDark ? 'border-white/10 text-white focus:border-brand-orange placeholder:text-white/10' : 'border-gray-200 text-gray-900 focus:border-brand-orange'}`} placeholder="Jane" />
+                                            <label className={`block text-[10px] font-black uppercase tracking-[0.2em] mb-3 transition-colors ${isDark ? 'text-zinc-600 group-focus-within:text-brand-orange' : 'text-zinc-400 group-focus-within:text-brand-orange'}`}>First Name</label>
+                                            <input
+                                                required
+                                                type="text"
+                                                name="firstName"
+                                                value={formData.firstName}
+                                                onChange={handleInputChange}
+                                                className={`w-full bg-transparent border-b-2 py-4 outline-none transition-all font-serif font-bold text-xl ${isDark ? 'border-white/5 text-white focus:border-brand-orange placeholder:text-zinc-800' : 'border-zinc-100 text-zinc-900 focus:border-brand-orange'}`}
+                                                placeholder="Jane"
+                                            />
                                         </div>
                                         <div className="group relative">
-                                            <label className={`block text-xs font-bold uppercase tracking-wider mb-2 transition-colors ${isDark ? 'text-white/40 group-focus-within:text-brand-orange' : 'text-gray-400 group-focus-within:text-brand-orange'}`}>Last Name</label>
-                                            <input type="text" className={`w-full bg-transparent border-b-2 py-2 outline-none transition-colors font-medium text-lg ${isDark ? 'border-white/10 text-white focus:border-brand-orange placeholder:text-white/10' : 'border-gray-200 text-gray-900 focus:border-brand-orange'}`} placeholder="Doe" />
+                                            <label className={`block text-[10px] font-black uppercase tracking-[0.2em] mb-3 transition-colors ${isDark ? 'text-zinc-600 group-focus-within:text-brand-orange' : 'text-zinc-400 group-focus-within:text-brand-orange'}`}>Last Name</label>
+                                            <input
+                                                type="text"
+                                                name="lastName"
+                                                value={formData.lastName}
+                                                onChange={handleInputChange}
+                                                className={`w-full bg-transparent border-b-2 py-4 outline-none transition-all font-serif font-bold text-xl ${isDark ? 'border-white/5 text-white focus:border-brand-orange placeholder:text-zinc-800' : 'border-zinc-100 text-zinc-900 focus:border-brand-orange'}`}
+                                                placeholder="Doe"
+                                            />
                                         </div>
                                     </div>
 
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                                         <div className="group relative">
-                                            <label className={`block text-xs font-bold uppercase tracking-wider mb-2 transition-colors ${isDark ? 'text-white/40 group-focus-within:text-brand-orange' : 'text-gray-400 group-focus-within:text-brand-orange'}`}>Email Address</label>
-                                            <input type="email" className={`w-full bg-transparent border-b-2 py-2 outline-none transition-colors font-medium text-lg ${isDark ? 'border-white/10 text-white focus:border-brand-orange placeholder:text-white/10' : 'border-gray-200 text-gray-900 focus:border-brand-orange'}`} placeholder="jane@example.com" />
+                                            <label className={`block text-[10px] font-black uppercase tracking-[0.2em] mb-3 transition-colors ${isDark ? 'text-zinc-600 group-focus-within:text-brand-orange' : 'text-zinc-400 group-focus-within:text-brand-orange'}`}>Email Address</label>
+                                            <input
+                                                required
+                                                type="email"
+                                                name="email"
+                                                value={formData.email}
+                                                onChange={handleInputChange}
+                                                className={`w-full bg-transparent border-b-2 py-4 outline-none transition-all font-serif font-bold text-xl ${isDark ? 'border-white/5 text-white focus:border-brand-orange placeholder:text-zinc-800' : 'border-zinc-100 text-zinc-900 focus:border-brand-orange'}`}
+                                                placeholder="jane@example.com"
+                                            />
                                         </div>
                                         <div className="group relative">
-                                            <label className={`block text-xs font-bold uppercase tracking-wider mb-2 transition-colors ${isDark ? 'text-white/40 group-focus-within:text-brand-orange' : 'text-gray-400 group-focus-within:text-brand-orange'}`}>Phone Number</label>
-                                            <input type="tel" className={`w-full bg-transparent border-b-2 py-2 outline-none transition-colors font-medium text-lg ${isDark ? 'border-white/10 text-white focus:border-brand-orange placeholder:text-white/10' : 'border-gray-200 text-gray-900 focus:border-brand-orange'}`} placeholder="+971 50..." />
+                                            <label className={`block text-[10px] font-black uppercase tracking-[0.2em] mb-3 transition-colors ${isDark ? 'text-zinc-600 group-focus-within:text-brand-orange' : 'text-zinc-400 group-focus-within:text-brand-orange'}`}>Phone Number</label>
+                                            <input
+                                                type="tel"
+                                                name="phone"
+                                                value={formData.phone}
+                                                onChange={handleInputChange}
+                                                className={`w-full bg-transparent border-b-2 py-4 outline-none transition-all font-serif font-bold text-xl ${isDark ? 'border-white/5 text-white focus:border-brand-orange placeholder:text-zinc-800' : 'border-zinc-100 text-zinc-900 focus:border-brand-orange'}`}
+                                                placeholder="+971 50..."
+                                            />
                                         </div>
                                     </div>
 
                                     <div className="group relative">
-                                        <label className={`block text-xs font-bold uppercase tracking-wider mb-2 transition-colors ${isDark ? 'text-white/40 group-focus-within:text-brand-orange' : 'text-gray-400 group-focus-within:text-brand-orange'}`}>How can we help?</label>
-                                        <textarea rows={4} className={`w-full bg-transparent border-b-2 py-2 outline-none transition-colors font-medium text-lg resize-none ${isDark ? 'border-white/10 text-white focus:border-brand-orange placeholder:text-white/10' : 'border-gray-200 text-gray-900 focus:border-brand-orange'}`} placeholder="Tell us about your academic goals..."></textarea>
+                                        <label className={`block text-[10px] font-black uppercase tracking-[0.2em] mb-3 transition-colors ${isDark ? 'text-zinc-600 group-focus-within:text-brand-orange' : 'text-zinc-400 group-focus-within:text-brand-orange'}`}>Strategy Requirements</label>
+                                        <textarea
+                                            name="requirements"
+                                            value={formData.requirements}
+                                            onChange={handleInputChange}
+                                            rows={4}
+                                            className={`w-full bg-transparent border-b-2 py-4 outline-none transition-all font-serif font-bold text-xl resize-none ${isDark ? 'border-white/5 text-white focus:border-brand-orange placeholder:text-zinc-800' : 'border-zinc-100 text-zinc-900 focus:border-brand-orange'}`}
+                                            placeholder="Define your academic vision..."
+                                        ></textarea>
                                     </div>
 
-                                    <div className="pt-4">
-                                        <button className="bg-brand-orange text-white px-10 py-4 rounded-full font-bold tracking-wide hover:shadow-[0_10px_30px_rgba(249,115,22,0.4)] transition-all transform hover:-translate-y-1 flex items-center gap-3">
-                                            Send Message <ArrowRight size={18} />
-                                        </button>
+                                    <div className="pt-6">
+                                        <motion.button
+                                            disabled={status === 'loading'}
+                                            whileHover={{ scale: 1.05 }}
+                                            whileTap={{ scale: 0.95 }}
+                                            className={`
+                                                px-12 py-5 rounded-full font-black text-[10px] tracking-[0.2em] uppercase shadow-2xl transition-all flex items-center gap-4
+                                                ${status === 'success' ? 'bg-green-500 text-white' : 'bg-brand-orange text-white shadow-brand-orange/20'}
+                                                ${status === 'loading' ? 'opacity-70 cursor-not-allowed' : ''}
+                                            `}
+                                        >
+                                            {status === 'loading' ? 'Processing...' : status === 'success' ? 'Submission Received' : status === 'error' ? 'Retry Submission' : 'Submit Strategy'}
+                                            {status === 'idle' && <ArrowRight size={18} />}
+                                        </motion.button>
+
+                                        {status === 'success' && (
+                                            <p className="mt-4 text-green-500 font-serif font-bold italic animate-pulse">Our consultants will reach out shortly.</p>
+                                        )}
+                                        {status === 'error' && (
+                                            <p className="mt-4 text-red-500 font-serif font-bold italic">Something went wrong. Please try again.</p>
+                                        )}
                                     </div>
                                 </form>
-                            </div>
+                            </TiltCard>
                         </motion.div>
 
                         {/* Sidebar Info */}
                         <motion.div
-                            className="lg:col-span-4 space-y-6"
+                            className="lg:col-span-4 space-y-10"
                             initial={{ opacity: 0, x: 20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6, delay: 0.5 }}
                         >
                             {/* Quick Contact Card */}
-                            <div className={`p-8 rounded-3xl ${isDark ? 'bg-zinc-800' : 'bg-brand-blue-dark text-white'} shadow-xl`}>
-                                <h4 className="text-xl font-bold mb-6 flex items-center gap-2">
-                                    <Phone size={20} className="text-brand-orange" /> Quick Connect
+                            <TiltCard
+                                className={`p-10 rounded-[3rem] backdrop-blur-xl border transition-all duration-700
+                                ${isDark ? 'bg-zinc-900/60 border-white/10 shadow-3xl shadow-black/80' : 'bg-white border-white shadow-2xl shadow-brand-orange/5'}`}
+                                tiltIntensity={5}
+                            >
+                                <h4 className={`text-2xl font-serif font-bold mb-8 flex items-center gap-4 ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+                                    <Phone size={24} className="text-brand-orange" /> Hub
                                 </h4>
-                                <ul className="space-y-6">
+                                <ul className="space-y-8">
                                     <li>
-                                        <p className="text-xs uppercase tracking-wider opacity-60 mb-1">Call / WhatsApp</p>
-                                        <a href="https://wa.me/971501420956" className="text-xl font-medium hover:text-brand-orange transition-colors block">+971 50 142 0956</a>
+                                        <p className={`text-[10px] font-black uppercase tracking-widest mb-1 ${isDark ? 'text-zinc-600' : 'text-zinc-400'}`}>Direct Line</p>
+                                        <a href="https://wa.me/971501420956" className={`text-xl font-serif font-bold hover:text-brand-orange transition-colors block ${isDark ? 'text-white' : 'text-zinc-900'}`}>+971 50 142 0956</a>
                                     </li>
                                     <li>
-                                        <p className="text-xs uppercase tracking-wider opacity-60 mb-1">Email</p>
-                                        <a href="mailto:contact@truenorthae.com" className="text-xl font-medium hover:text-brand-orange transition-colors block">contact@truenorthae.com</a>
-                                    </li>
-                                    <li>
-                                        <p className="text-xs uppercase tracking-wider opacity-60 mb-1">Office</p>
-                                        <p className="text-lg font-medium">Dubai, United Arab Emirates</p>
+                                        <p className={`text-[10px] font-black uppercase tracking-widest mb-1 ${isDark ? 'text-zinc-600' : 'text-zinc-400'}`}>Email Protocol</p>
+                                        <a href="mailto:contact@truenorthae.com" className={`text-xl font-serif font-bold hover:text-brand-orange transition-colors block ${isDark ? 'text-white' : 'text-zinc-900'}`}>contact@truenorthae.com</a>
                                     </li>
                                 </ul>
-                            </div>
+                            </TiltCard>
 
                             {/* Office Hours */}
-                            <div className={`p-8 rounded-3xl border ${isDark ? 'border-white/10 bg-zinc-900/50' : 'border-gray-200 bg-white'}`}>
-                                <h4 className={`text-lg font-bold mb-4 flex items-center gap-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                                    <Clock size={18} className="text-brand-orange" /> Working Hours
+                            <div className={`p-10 rounded-[3rem] border backdrop-blur-xl transition-all duration-500
+                                ${isDark ? 'border-white/5 bg-zinc-900/40 text-white' : 'border-zinc-100 bg-white shadow-sm'}`}>
+                                <h4 className={`text-xl font-serif font-bold mb-6 flex items-center gap-4 ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+                                    <Clock size={20} className="text-brand-orange" /> Schedule
                                 </h4>
-                                <div className="space-y-3">
-                                    <div className={`flex justify-between text-sm ${isDark ? 'text-white/60' : 'text-gray-600'}`}>
-                                        <span>Monday - Friday</span>
-                                        <span className="font-semibold">9:00 AM - 6:00 PM</span>
-                                    </div>
-                                    <div className={`flex justify-between text-sm ${isDark ? 'text-white/60' : 'text-gray-600'}`}>
-                                        <span>Saturday</span>
-                                        <span className="font-semibold">10:00 AM - 2:00 PM</span>
-                                    </div>
-                                    <div className={`flex justify-between text-sm ${isDark ? 'text-white/60' : 'text-gray-600'}`}>
-                                        <span>Sunday</span>
-                                        <span className="text-brand-orange font-semibold">Closed</span>
-                                    </div>
+                                <div className="space-y-4">
+                                    {[
+                                        { day: "Monday - Friday", time: "9:00 AM - 6:00 PM" },
+                                        { day: "Saturday", time: "10:00 AM - 2:00 PM" },
+                                        { day: "Sunday", time: "Strictly Closed", accent: true }
+                                    ].map((row, i) => (
+                                        <div key={i} className={`flex justify-between items-center text-sm font-medium ${isDark ? 'text-zinc-500' : 'text-zinc-500'}`}>
+                                            <span>{row.day}</span>
+                                            <span className={row.accent ? 'text-brand-orange' : (isDark ? 'text-zinc-300' : 'text-zinc-900')}>{row.time}</span>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                         </motion.div>
@@ -245,17 +354,21 @@ const Contact = () => {
 
                     {/* FAQ Section - "Something Else" */}
                     <motion.div
-                        className="mt-24 max-w-4xl mx-auto"
+                        className="mt-32 max-w-5xl mx-auto"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                     >
-                        <div className="text-center mb-12">
-                            <span className="text-brand-orange font-bold tracking-widest uppercase text-xs mb-2 block">Common Questions</span>
-                            <h2 className={`text-3xl md:text-5xl font-serif font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>Frequently Asked Questions</h2>
+                        <div className="text-center mb-16">
+                            <span className="text-[10px] font-black tracking-[0.5em] uppercase text-brand-orange mb-4 block">Knowledge Base</span>
+                            <h2 className={`text-5xl md:text-7xl font-serif font-bold tracking-tighter ${isDark ? 'text-white' : 'text-zinc-900'}`}>Intelligence <br /><span className="italic font-light text-zinc-400">Hub.</span></h2>
                         </div>
 
-                        <div className={`rounded-3xl p-8 lg:p-12 ${isDark ? 'bg-zinc-900 border border-white/5' : 'bg-gray-50'}`}>
+                        <TiltCard
+                            className={`rounded-[3rem] p-10 lg:p-20 backdrop-blur-xl border transition-all duration-700
+                            ${isDark ? 'bg-zinc-900/40 border-white/5 shadow-2xl shadow-black/50' : 'bg-white border-white shadow-[0_20px_50px_rgba(0,0,0,0.04)]'}`}
+                            tiltIntensity={2}
+                        >
                             {faqs.map((faq, index) => (
                                 <FAQItem
                                     key={index}
@@ -266,13 +379,17 @@ const Contact = () => {
                                     isDark={isDark}
                                 />
                             ))}
-                            <div className="mt-8 pt-8 text-center">
-                                <p className={`mb-4 ${isDark ? 'text-white/50' : 'text-gray-500'}`}>Have more questions?</p>
-                                <a href="https://wa.me/971501420956" className="inline-flex items-center gap-2 text-brand-orange font-bold hover:underline">
-                                    Chat with us on WhatsApp <ArrowRight size={16} />
-                                </a>
+                            <div className="mt-12 pt-12 text-center border-t border-dashed border-zinc-200/20">
+                                <p className={`text-lg font-light mb-6 ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}>Have complex queries?</p>
+                                <motion.a
+                                    whileHover={{ scale: 1.05 }}
+                                    href="https://wa.me/971501420956"
+                                    className="inline-flex items-center gap-4 text-brand-orange font-black text-[10px] tracking-[0.2em] uppercase hover:underline"
+                                >
+                                    Instant Support <ArrowRight size={16} />
+                                </motion.a>
                             </div>
-                        </div>
+                        </TiltCard>
                     </motion.div>
 
                 </div>

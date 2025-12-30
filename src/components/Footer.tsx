@@ -4,7 +4,8 @@ import { useTheme } from '../contexts/ThemeContext';
 import logo from '../assets/logo.png';
 
 const Footer = () => {
-    useTheme(); // Subscriing to the theme
+    const { theme } = useTheme();
+    const isDark = theme === 'dark';
 
     const services = [
         { label: "Career Counselling", path: "/services/career-counselling-psychometric-assessments" },
@@ -12,59 +13,60 @@ const Footer = () => {
         { label: "Academic Support", path: "/services/academic-support-online-tutoring" },
         { label: "Competitive Exams", path: "/services/competitive-exam-language-preparation" },
         { label: "School Partnerships", path: "/services/school-college-partnerships" },
-        { label: "Career Labs", path: "/services/career-lab-setup" },
+        { label: "Career Lab Setup", path: "/services/career-lab-setup" },
+        { label: "Digital Solutions", path: "/services/digital-solutions-education" },
     ];
 
     const company = [
-        { label: "About Us", path: "/about" },
-        { label: "All Services", path: "/services" },
-        { label: "Contact Us", path: "/contact" },
+        { label: "Our Story", path: "/about" },
+        { label: "Specialized Services", path: "/services" },
+        { label: "Contact Partners", path: "/contact" },
     ];
 
     return (
-        <footer className="bg-[#0a0a0f] text-white relative overflow-hidden">
-            {/* Top gradient border */}
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange-500/60 to-transparent"></div>
-
-            {/* Background design elements */}
-            <div className="absolute top-20 left-10 w-64 h-64 bg-orange-500/5 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 right-10 w-48 h-48 bg-blue-500/5 rounded-full blur-3xl"></div>
+        <footer className={`relative overflow-hidden theme-transition border-t ${isDark ? 'bg-zinc-950 border-white/5' : 'bg-[#FAFAFA] border-zinc-100'}`}>
+            {/* Ambient background glows */}
+            <div className={`absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[120px] opacity-20 pointer-events-none transition-colors duration-1000 ${isDark ? 'bg-brand-orange/20' : 'bg-brand-orange/10'}`} />
+            <div className={`absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full blur-[100px] opacity-20 pointer-events-none transition-colors duration-1000 ${isDark ? 'bg-brand-blue/20' : 'bg-brand-blue/10'}`} />
 
             <div className="max-w-7xl mx-auto px-6 py-14 relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
 
                     {/* Brand Column */}
-                    <div>
-                        <Link to="/" className="inline-block mb-5">
-                            <img src={logo} alt="TrueNorth" className="h-10 w-auto" />
+                    <div className="lg:col-span-1">
+                        <Link to="/" className="inline-block mb-8">
+                            <img src={logo} alt="TrueNorth" className={`h-12 w-auto transition-all duration-500 ${!isDark ? 'brightness-0' : ''}`} />
                         </Link>
-                        <p className="text-sm text-gray-400 leading-relaxed mb-6">
-                            Premier career and education consultancy helping students navigate their path to success.
+                        <p className={`text-lg font-light leading-relaxed mb-8 transition-colors duration-500 ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}>
+                            Architects of academic futures, helping students navigate the complexities of global education with elite precision.
                         </p>
 
-                        {/* Location & Reach Box */}
-                        <div className="border border-gray-700/50 rounded-lg p-4">
-                            <h5 className="text-xs font-bold text-orange-400 uppercase tracking-wider mb-2">
-                                Location & Reach
+                        {/* Location Badge */}
+                        <div className={`
+                            inline-flex flex-col p-6 rounded-[2rem] border backdrop-blur-xl transition-all duration-500
+                            ${isDark ? 'bg-zinc-900/40 border-white/5 shadow-2xl shadow-black/50' : 'bg-white border-zinc-100 shadow-[0_10px_30px_rgba(0,0,0,0.02)]'}
+                        `}>
+                            <h5 className="text-[10px] font-black text-brand-orange uppercase tracking-[0.3em] mb-3">
+                                Global Hub
                             </h5>
-                            <p className="text-xs text-gray-500 leading-relaxed">
-                                Based in <span className="text-orange-400">Dubai</span>, <span className="text-orange-400">UAE</span>, serving clients across{' '}
-                                <span className="text-orange-400">UAE</span>, <span className="text-orange-400">India</span>, and international markets.
+                            <p className={`text-xs font-serif leading-relaxed ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>
+                                Based in <span className="font-bold">Dubai, UAE</span>. <br />
+                                Serving elite markets across the <span className="font-bold">GCC, India</span>, and <span className="font-bold">Europe</span>.
                             </p>
                         </div>
                     </div>
 
                     {/* Services Column */}
                     <div>
-                        <h4 className="text-xs font-bold tracking-[0.2em] uppercase mb-6 text-orange-400">
-                            Services
+                        <h4 className={`text-[10px] font-black tracking-[0.3em] uppercase mb-8 ${isDark ? 'text-zinc-600' : 'text-zinc-400'}`}>
+                            Specializations
                         </h4>
-                        <ul className="space-y-3">
+                        <ul className="space-y-4">
                             {services.map((item, i) => (
                                 <li key={i}>
                                     <Link
                                         to={item.path}
-                                        className="text-sm text-gray-400 hover:text-white transition-colors"
+                                        className={`text-sm font-medium transition-colors duration-300 ${isDark ? 'text-zinc-500 hover:text-white' : 'text-zinc-500 hover:text-zinc-950'}`}
                                     >
                                         {item.label}
                                     </Link>
@@ -75,15 +77,15 @@ const Footer = () => {
 
                     {/* Company Column */}
                     <div>
-                        <h4 className="text-xs font-bold tracking-[0.2em] uppercase mb-6 text-orange-400">
-                            Company
+                        <h4 className={`text-[10px] font-black tracking-[0.3em] uppercase mb-8 ${isDark ? 'text-zinc-600' : 'text-zinc-400'}`}>
+                            Foundation
                         </h4>
-                        <ul className="space-y-3">
+                        <ul className="space-y-4">
                             {company.map((item, i) => (
                                 <li key={i}>
                                     <Link
                                         to={item.path}
-                                        className="text-sm text-gray-400 hover:text-white transition-colors"
+                                        className={`text-sm font-medium transition-colors duration-300 ${isDark ? 'text-zinc-500 hover:text-white' : 'text-zinc-500 hover:text-zinc-950'}`}
                                     >
                                         {item.label}
                                     </Link>
@@ -92,86 +94,49 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    {/* Contact Us Column */}
+                    {/* Contact Column */}
                     <div>
-                        <h4 className="text-xs font-bold tracking-[0.2em] uppercase mb-6 text-orange-400">
-                            Contact Us
+                        <h4 className={`text-[10px] font-black tracking-[0.3em] uppercase mb-8 ${isDark ? 'text-zinc-600' : 'text-zinc-400'}`}>
+                            Connect
                         </h4>
-                        <ul className="space-y-4">
-                            <li className="flex items-center gap-3">
-                                <Globe size={16} className="text-orange-400" />
-                                <a
-                                    href="https://www.truenorthae.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-sm text-gray-400 hover:text-white transition-colors"
-                                >
-                                    www.truenorthae.com
-                                </a>
-                            </li>
-                            <li className="flex items-center gap-3">
-                                <Mail size={16} className="text-orange-400" />
-                                <a
-                                    href="mailto:contact@truenorthae.com"
-                                    className="text-sm text-gray-400 hover:text-white transition-colors"
-                                >
-                                    contact@truenorthae.com
-                                </a>
-                            </li>
-                            <li className="flex items-start gap-3">
-                                <Phone size={16} className="text-orange-400 mt-0.5" />
-                                <a
-                                    href="https://wa.me/971501420956"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-sm text-gray-400 hover:text-white transition-colors"
-                                >
-                                    +971 50 142 0956
-                                    <span className="text-xs text-gray-600 block">Phone / WhatsApp</span>
-                                </a>
-                            </li>
-                            <li className="flex items-center gap-3">
-                                <Instagram size={16} className="text-orange-400" />
-                                <a
-                                    href="https://instagram.com/surabhi_truenorth"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-sm text-gray-400 hover:text-white transition-colors"
-                                >
-                                    @surabhi_truenorth
-                                </a>
-                            </li>
-                            <li className="flex items-center gap-3">
-                                <Linkedin size={16} className="text-orange-400" />
-                                <a
-                                    href="https://linkedin.com/in/surabhi-rawat"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-sm text-gray-400 hover:text-white transition-colors"
-                                >
-                                    Surabhi Rawat
-                                </a>
-                            </li>
-                            <li className="flex items-center gap-3">
-                                <MapPin size={16} className="text-orange-400" />
-                                <span className="text-sm text-gray-400">Dubai, UAE</span>
-                            </li>
+                        <ul className="space-y-6">
+                            {[
+                                { icon: Globe, val: "truenorthae.com", href: "https://www.truenorthae.com" },
+                                { icon: Mail, val: "contact@truenorthae.com", href: "mailto:contact@truenorthae.com" },
+                                { icon: Phone, val: "+971 50 142 0956", href: "https://wa.me/971501420956" },
+                                { icon: Instagram, val: "@surabhi_truenorth", href: "https://instagram.com/surabhi_truenorth" },
+                                { icon: Linkedin, val: "Surabhi Rawat", href: "https://linkedin.com/in/surabhi-rawat" }
+                            ].map((item, i) => (
+                                <li key={i} className="flex items-center gap-4 group">
+                                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-500
+                                        ${isDark ? 'bg-white/5 text-zinc-500 group-hover:text-white group-hover:bg-brand-orange/20' : 'bg-zinc-100 text-zinc-400 group-hover:text-brand-orange group-hover:bg-brand-orange/5 shadow-inner'}`}>
+                                        <item.icon size={18} />
+                                    </div>
+                                    <a
+                                        href={item.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={`text-sm font-medium transition-colors duration-300 ${isDark ? 'text-zinc-500 hover:text-white' : 'text-zinc-500 hover:text-zinc-950'}`}
+                                    >
+                                        {item.val}
+                                    </a>
+                                </li>
+                            ))}
                         </ul>
                     </div>
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="mt-12 pt-6 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-xs text-gray-600">
-                        © {new Date().getFullYear()} TrueNorth Consulting. All rights reserved.
+                <div className={`mt-20 pt-10 border-t flex flex-col md:flex-row justify-between items-center gap-6 transition-colors duration-500 ${isDark ? 'border-white/5' : 'border-zinc-100'}`}>
+                    <p className={`text-[10px] font-black tracking-widest uppercase ${isDark ? 'text-zinc-700' : 'text-zinc-400'}`}>
+                        © {new Date().getFullYear()} TrueNorth Consulting. Handcrafted for Global Excellence.
                     </p>
-                    <div className="flex gap-8">
-                        <Link to="/privacy" className="text-xs text-gray-600 hover:text-white transition-colors">
-                            Privacy Policy
-                        </Link>
-                        <Link to="/terms" className="text-xs text-gray-600 hover:text-white transition-colors">
-                            Terms of Service
-                        </Link>
+                    <div className="flex gap-10">
+                        {['Privacy Policy', 'Terms of Service'].map((link, i) => (
+                            <Link key={i} to={`/${link.toLowerCase().replace(/ /g, '-')}`} className={`text-[10px] font-black tracking-widest uppercase transition-colors duration-300 ${isDark ? 'text-zinc-700 hover:text-white' : 'text-zinc-400 hover:text-zinc-950'}`}>
+                                {link}
+                            </Link>
+                        ))}
                     </div>
                 </div>
             </div>

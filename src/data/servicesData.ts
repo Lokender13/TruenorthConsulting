@@ -1,4 +1,34 @@
 import { BookOpen, Globe, GraduationCap, BarChart, Users, Building, Laptop } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
+
+export interface Service {
+    id: string;
+    slug: string;
+    title: string;
+    tagline: string;
+    shortDesc: string;
+    fullDesc: string;
+    icon: LucideIcon;
+    color: string;
+    gradient: string;
+    features: string[];
+    benefits: string[];
+    process: {
+        step: string;
+        title: string;
+        description: string;
+    }[];
+    targetAudience: string[];
+    faq: {
+        question: string;
+        answer: string;
+    }[];
+    seo: {
+        title: string;
+        description: string;
+        keywords: string;
+    };
+}
 
 export const servicesData = [
     {

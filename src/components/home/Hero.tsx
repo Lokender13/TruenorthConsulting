@@ -5,7 +5,6 @@ import { useTheme } from '../../contexts/ThemeContext';
 import { useRef, useState } from 'react';
 import FloatingOrbs from '../ui/FloatingOrbs';
 import TextReveal from '../ui/TextReveal';
-import AnimatedGradientText from '../ui/AnimatedGradientText';
 
 const Hero = () => {
     const { theme } = useTheme();
@@ -14,6 +13,47 @@ const Hero = () => {
     // Mouse spotlight effect
     const containerRef = useRef<HTMLDivElement>(null);
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: ''
+    });
+    const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setStatus('loading');
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    firstName: formData.name,
+                    email: formData.email,
+                    phone: formData.phone,
+                    formType: 'Hero Strategy Audit'
+                })
+            });
+
+            if (response.ok) {
+                setStatus('success');
+                setFormData({ name: '', email: '', phone: '' });
+                setTimeout(() => setStatus('idle'), 5000);
+            } else {
+                throw new Error('Failed to send');
+            }
+        } catch (error) {
+            console.error('Submission error:', error);
+            setStatus('error');
+            setTimeout(() => setStatus('idle'), 5000);
+        }
+    };
 
     const handleMouseMove = (e: React.MouseEvent) => {
         if (!containerRef.current) return;
@@ -30,18 +70,42 @@ const Hero = () => {
             onMouseMove={handleMouseMove}
             className={`relative min-h-screen flex items-center justify-center overflow-hidden theme-transition pt-32 pb-10`}
         >
-            {/* Background Image */}
-            <div className="absolute inset-0 z-0">
-                <img
-                    src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1920&q=80"
-                    alt="University Campus Architecture"
-                    className="w-full h-full object-cover"
-                />
-                {/* Overlay - adjusted for better image visibility while maintaining text readability */}
-                <div className={`absolute inset-0 ${isDark
-                    ? 'bg-gradient-to-r from-black/45 via-black/30 to-transparent'
-                    : 'bg-gradient-to-r from-white/40 via-white/20 to-transparent'
+            {/* Cinematic Background Layer */}
+            <div className="absolute inset-0 z-0 overflow-hidden">
+                <motion.div
+                    animate={{
+                        scale: [1, 1.1],
+                        rotate: [0, 1]
+                    }}
+                    transition={{
+                        duration: 20,
+                        repeat: Infinity,
+                        repeatType: 'reverse',
+                        ease: 'linear'
+                    }}
+                    className="w-full h-full"
+                >
+                    <img
+                        src="https://images.unsplash.com/photo-1498243639351-a4329a28853d?auto=format&fit=crop&w=2000&q=100"
+                        alt="Elite Academic Architecture"
+                        className="w-full h-full object-cover grayscale-[0.3] brightness-[0.7]"
+                    />
+                </motion.div>
+
+                {/* Multi-layered Cinematic Overlays */}
+                <div className={`absolute inset-0 transition-colors duration-1000 ${isDark
+                    ? 'bg-gradient-to-r from-zinc-950 via-zinc-950/60 to-transparent'
+                    : 'bg-gradient-to-r from-[#FAFAFA] via-[#FAFAFA]/40 to-transparent'
                     }`}></div>
+
+                <div className={`absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-${isDark ? 'zinc-950' : '[#FAFAFA]'}`}></div>
+
+                {/* Cinematic Light Leak Pulse */}
+                <motion.div
+                    animate={{ opacity: [0.1, 0.3, 0.1] }}
+                    transition={{ duration: 8, repeat: Infinity }}
+                    className={`absolute top-0 right-0 w-[800px] h-[800px] blur-[150px] rounded-full pointer-events-none ${isDark ? 'bg-brand-orange/10' : 'bg-brand-orange/5'}`}
+                />
             </div>
 
             {/* Floating Orbs Background */}
@@ -128,19 +192,13 @@ const Hero = () => {
                     </motion.div>
 
                     {/* Headline with TextReveal and Gradient Text */}
-                    <h1 className={`text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold leading-[0.95] mb-8 ${isDark ? 'text-white' : 'text-gray-900'
+                    <h1 className={`text-6xl md:text-8xl lg:text-9xl font-serif font-bold leading-[0.9] tracking-tighter mb-8 ${isDark ? 'text-white' : 'text-zinc-900'
                         }`}>
-                        <TextReveal>Navigate Your</TextReveal>
+                        <TextReveal>Architect Your</TextReveal>
                         <br />
-                        <AnimatedGradientText
-                            className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold"
-                            colors={isDark
-                                ? ['#ffffff', '#a0a0a0', '#ffffff', '#606060', '#ffffff']
-                                : ['#1f2937', '#F97316', '#1f2937', '#1E6FEB', '#1f2937']
-                            }
-                        >
-                            Future
-                        </AnimatedGradientText>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-purple-500 to-brand-blue italic font-light">
+                            Global Legacy.
+                        </span>
                     </h1>
 
                     {/* Subheadline */}
@@ -148,11 +206,10 @@ const Hero = () => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.5 }}
-                        className={`text-lg lg:text-xl max-w-xl mb-10 leading-relaxed font-medium ${isDark ? 'text-white/60' : 'text-gray-900 drop-shadow-sm'
+                        className={`text-xl lg:text-2xl font-light max-w-xl mb-12 leading-relaxed transition-colors duration-500 ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'
                             }`}
                     >
-                        Transform your academic journey with expert career counselling,
-                        global university admissions, and personalized guidance.
+                        Success isn't accidental—it's engineered. We provide the strategic DNA and elite mentorship required to conquer the world's most prestigious institutions.
                     </motion.p>
 
                     {/* CTA Buttons with glow */}
@@ -160,41 +217,41 @@ const Hero = () => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.7 }}
-                        className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+                        className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start"
                     >
                         <motion.div
-                            whileHover={{ scale: 1.02 }}
-                            whileTap={{ scale: 0.98 }}
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
                         >
                             <Link
                                 to="/contact"
                                 className={`
-                                    group inline-flex items-center justify-center gap-3
-                                    px-8 py-4 rounded-full font-medium
+                                    group inline-flex items-center justify-center gap-4
+                                    px-10 py-5 rounded-full font-black text-[10px] tracking-[0.2em] uppercase
                                     transition-all duration-300
                                     ${isDark
-                                        ? 'bg-white text-black hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]'
-                                        : 'bg-brand-orange text-white hover:bg-brand-orange-dark hover:shadow-[0_0_30px_rgba(249,115,22,0.3)]'
+                                        ? 'bg-white text-zinc-950 hover:shadow-[0_15px_40px_rgba(255,255,255,0.2)]'
+                                        : 'bg-zinc-900 text-white hover:shadow-[0_15px_40px_rgba(0,0,0,0.2)]'
                                     }
                                 `}
                             >
                                 Start Your Journey
-                                <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+                                <ArrowRight size={18} className="transition-transform group-hover:translate-x-2" />
                             </Link>
                         </motion.div>
                         <motion.div
-                            whileHover={{ scale: 1.02 }}
-                            whileTap={{ scale: 0.98 }}
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
                         >
                             <Link
                                 to="/services"
                                 className={`
-                                    inline-flex items-center justify-center gap-2
-                                    px-8 py-4 rounded-full font-bold
-                                    transition-all duration-300 border-2
+                                    inline-flex items-center justify-center gap-4
+                                    px-10 py-5 rounded-full font-black text-[10px] tracking-[0.2em] uppercase
+                                    transition-all duration-300 border
                                     ${isDark
-                                        ? 'border-white bg-white/5 backdrop-blur-sm text-white hover:bg-white hover:text-black hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]'
-                                        : 'bg-white border-white text-gray-900 hover:bg-gray-100 hover:scale-105 shadow-xl shadow-black/5'
+                                        ? 'border-white/10 text-white hover:bg-white/5'
+                                        : 'bg-white border-white text-zinc-900 hover:bg-zinc-50 shadow-xl shadow-black/5'
                                     }
                                 `}
                             >
@@ -213,65 +270,76 @@ const Hero = () => {
                 >
                     <motion.div
                         className={`
-                            relative p-8 rounded-3xl backdrop-blur-xl
+                            relative p-10 rounded-[3rem] backdrop-blur-3xl border transition-all duration-700
                             ${isDark
-                                ? 'bg-zinc-900/50 border border-white/[0.08]'
-                                : 'bg-white/80 border border-brand-orange/10'
+                                ? 'bg-zinc-900/40 border-white/5 shadow-2xl shadow-black/50'
+                                : 'bg-white/80 border-white shadow-[0_20px_50px_rgba(249,115,22,0.06)]'
                             }
                         `}
                         whileHover={{
+                            y: -10,
                             boxShadow: isDark
-                                ? '0 20px 60px rgba(255,255,255,0.1)'
-                                : '0 20px 60px rgba(249, 115, 22, 0.15)',
-                            y: -5
+                                ? '0 30px 60px rgba(0,0,0,0.6)'
+                                : '0 30px 60px rgba(249, 115, 22, 0.12)',
                         }}
-                        transition={{ duration: 0.3 }}
                     >
-                        {/* Subtle gradient glow */}
-                        <div className={`absolute -inset-px rounded-3xl bg-gradient-to-b ${isDark ? 'from-white/10 to-transparent' : 'from-brand-orange/20 to-transparent'
-                            } pointer-events-none opacity-50`}></div>
+                        {/* Elegant glow */}
+                        <div className={`absolute -inset-px rounded-[3rem] bg-gradient-to-b ${isDark ? 'from-white/10' : 'from-brand-orange/20'
+                            } to-transparent pointer-events-none opacity-50`}></div>
 
                         <div className="relative z-10">
-                            <h3 className={`text-xl font-bold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                                Free Consultation
+                            <h3 className={`text-3xl font-serif font-bold mb-2 transition-colors duration-500 ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+                                Strategy Audit
                             </h3>
-                            <p className={`text-sm mb-6 ${isDark ? 'text-white/40' : 'text-gray-500'}`}>
-                                Get personalized career guidance from our experts
+                            <p className={`text-sm mb-8 transition-colors duration-500 ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}>
+                                Get your personalized 1:1 Admission Roadmap session.
                             </p>
 
-                            <form className="space-y-4">
-                                {['Your Name', 'Email Address', 'Phone Number'].map((placeholder, i) => (
-                                    <motion.input
+                            <form className="space-y-6" onSubmit={handleSubmit}>
+                                {[
+                                    { name: 'name', placeholder: 'Your Name', type: 'text' },
+                                    { name: 'email', placeholder: 'Email Address', type: 'email' },
+                                    { name: 'phone', placeholder: 'Phone Number', type: 'tel' }
+                                ].map((field, i) => (
+                                    <motion.div
                                         key={i}
-                                        type={placeholder === 'Email Address' ? 'email' : placeholder === 'Phone Number' ? 'tel' : 'text'}
-                                        placeholder={placeholder}
                                         initial={{ opacity: 0, x: 20 }}
                                         animate={{ opacity: 1, x: 0 }}
                                         transition={{ delay: 0.6 + i * 0.1 }}
-                                        className={`
-                                            w-full px-4 py-3 rounded-xl outline-none transition-all
-                                            ${isDark
-                                                ? 'bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:border-white/30 focus:bg-white/10'
-                                                : 'bg-white border border-gray-200 text-gray-900 placeholder:text-gray-400 focus:border-brand-orange/50 focus:shadow-[0_0_15px_rgba(249,115,22,0.1)]'
-                                            }
-                                        `}
-                                    />
+                                    >
+                                        <input
+                                            required
+                                            name={field.name}
+                                            type={field.type}
+                                            placeholder={field.placeholder}
+                                            value={formData[field.name as keyof typeof formData]}
+                                            onChange={handleInputChange}
+                                            className={`
+                                                w-full px-6 py-4 rounded-2xl outline-none transition-all duration-300 font-medium text-sm
+                                                ${isDark
+                                                    ? 'bg-white/5 border border-white/10 text-white placeholder:text-white/20 focus:border-white/30 focus:bg-white/10'
+                                                    : 'bg-white border border-zinc-100 text-zinc-900 placeholder:text-zinc-400 focus:border-brand-orange focus:shadow-[0_0_20px_rgba(249,115,22,0.1)] shadow-inner'
+                                                }
+                                            `}
+                                        />
+                                    </motion.div>
                                 ))}
                                 <motion.button
+                                    disabled={status === 'loading'}
                                     type="submit"
                                     className={`
-                                        w-full py-4 rounded-xl font-semibold
+                                        w-full py-5 rounded-2xl font-black text-[10px] tracking-[0.2em] uppercase
                                         transition-all duration-300
-                                        ${isDark
-                                            ? 'bg-white text-black hover:bg-white/90 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]'
-                                            : 'bg-brand-blue text-white hover:bg-brand-blue-dark hover:shadow-[0_0_30px_rgba(30,111,235,0.3)]'
-                                        }
+                                        ${status === 'success' ? 'bg-green-500 text-white' : (isDark ? 'bg-white text-zinc-950 hover:bg-zinc-100' : 'bg-brand-orange text-white hover:opacity-90')}
+                                        ${status === 'loading' ? 'opacity-70 cursor-not-allowed' : ''}
+                                        shadow-xl
                                     `}
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
                                 >
-                                    Request Callback
+                                    {status === 'loading' ? 'Sending...' : status === 'success' ? 'Sent Successfully' : status === 'error' ? 'Retry Action' : 'Claim My Roadmap'}
                                 </motion.button>
+                                {status === 'success' && <p className="text-center text-[10px] text-green-500 font-bold uppercase tracking-widest mt-2 animate-pulse">Roadmap session locked in!</p>}
                             </form>
                         </div>
                     </motion.div>

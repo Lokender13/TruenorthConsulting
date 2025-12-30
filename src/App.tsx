@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import Navbar from './components/Navbar';
@@ -15,6 +16,9 @@ import CompetitiveExams from './pages/services/CompetitiveExams';
 import SchoolPartnerships from './pages/services/SchoolPartnerships';
 import CareerLab from './pages/services/CareerLab';
 import DigitalSolutions from './pages/services/DigitalSolutions';
+import SmoothScroll from './components/SmoothScroll';
+import ScrollToTop from './components/ScrollToTop';
+import ParticlesBackground from './components/Particles';
 
 // Animated Routes wrapper
 const AnimatedRoutes = () => {
@@ -49,17 +53,33 @@ const AnimatedRoutes = () => {
     </AnimatePresence>
   );
 };
-
-import SmoothScroll from './components/SmoothScroll';
-import ScrollToTop from './components/ScrollToTop';
-
 // Force rebuild for new routing structure
 function App() {
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+
+  useEffect(() => {
+    // Function to update theme state based on Tailwind class
+    const updateTheme = () => {
+      const isDark = document.documentElement.classList.contains('dark');
+      setTheme(isDark ? 'dark' : 'light');
+    };
+
+    // Initial check
+    updateTheme();
+
+    // Observer to watch for class changes on <html> element
+    const observer = new MutationObserver(updateTheme);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <Router>
       <SmoothScroll>
         <ScrollToTop />
-        <div className="flex flex-col min-h-screen">
+        <div className="relative flex flex-col min-h-screen overflow-x-hidden">
+          <ParticlesBackground theme={theme} />
           <Navbar />
           <main className="flex-grow">
             <AnimatedRoutes />
