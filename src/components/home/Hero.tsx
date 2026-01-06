@@ -77,25 +77,7 @@ const Hero = () => {
         >
             {/* Cinematic Background Layer */}
             <div className="absolute inset-0 z-0 overflow-hidden">
-                <motion.div
-                    animate={{
-                        scale: [1, 1.1],
-                        rotate: [0, 1]
-                    }}
-                    transition={{
-                        duration: 20,
-                        repeat: Infinity,
-                        repeatType: 'reverse',
-                        ease: 'linear'
-                    }}
-                    className="w-full h-full will-change-transform"
-                >
-                    <img
-                        src="https://images.unsplash.com/photo-1498243639351-a4329a28853d?auto=format&fit=crop&w=2000&q=100"
-                        alt="Elite Academic Architecture"
-                        className="w-full h-full object-cover grayscale-[0.3] brightness-[0.7]"
-                    />
-                </motion.div>
+                {/* Background Image Removed as per request */}
 
                 {/* Multi-layered Cinematic Overlays */}
                 <div className={`absolute inset-0 transition-colors duration-1000 ${isDark
