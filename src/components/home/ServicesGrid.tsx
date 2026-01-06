@@ -37,7 +37,7 @@ const services = [
         icon: BookOpen,
         title: "Career Counselling",
         slug: "career-counselling-psychometric-assessments",
-        desc: "Scientific psychometric assessments & personalized career roadmaps for students.",
+        desc: "Discover your strengths and find the right career path for you.",
         color: 'blue' as keyof typeof serviceColors,
         image: "https://images.unsplash.com/photo-1544531586-fde5298cdd40?q=80&w=800&auto=format&fit=crop"
     },
@@ -45,7 +45,7 @@ const services = [
         icon: Globe,
         title: "Study Abroad",
         slug: "university-admissions-study-abroad",
-        desc: "End-to-end admission guidance for top global universities worldwide.",
+        desc: "Complete help with applying to top universities around the world.",
         color: 'orange' as keyof typeof serviceColors,
         image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop"
     },
@@ -53,7 +53,7 @@ const services = [
         icon: GraduationCap,
         title: "Academic Support",
         slug: "academic-support-online-tutoring",
-        desc: "Expert tutoring for IB, IGCSE, CBSE & international curricula.",
+        desc: "Expert tutoring to help you score better in your exams.",
         color: 'emerald' as keyof typeof serviceColors,
         image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop"
     },
@@ -61,7 +61,7 @@ const services = [
         icon: BarChart,
         title: "Competitive Exams",
         slug: "competitive-exam-language-preparation",
-        desc: "IELTS, NEET, JEE & language proficiency preparation.",
+        desc: "Prepare for entrance exams like IELTS, NEET, and JEE.",
         color: 'purple' as keyof typeof serviceColors,
         image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800&auto=format&fit=crop"
     },
@@ -69,7 +69,7 @@ const services = [
         icon: Users,
         title: "School Partnerships",
         slug: "school-college-partnerships",
-        desc: "Comprehensive career guidance curricula for institutions.",
+        desc: "Career guidance programs for schools and colleges.",
         color: 'pink' as keyof typeof serviceColors,
         image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop"
     },
@@ -77,7 +77,7 @@ const services = [
         icon: Building,
         title: "Career Labs",
         slug: "career-lab-setup",
-        desc: "In-house career infrastructure setup for schools.",
+        desc: "Setting up career guidance centers in schools.",
         color: 'slate' as keyof typeof serviceColors,
         image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop"
     },
@@ -120,18 +120,18 @@ const ServicesGrid = () => {
                         className={`inline-flex items-center gap-2 px-6 py-2 rounded-full border text-[10px] font-black tracking-[0.3em] uppercase mb-8
                             ${isDark ? 'border-brand-orange/20 text-brand-orange bg-brand-orange/5' : 'border-brand-orange/10 text-brand-orange bg-white shadow-sm'}`}
                     >
-                        Our Spectrum of Excellence
+                        Our Services
                     </motion.span>
 
                     <h2 className={`text-5xl md:text-7xl font-serif font-bold mb-8 leading-[0.9] tracking-tighter ${isDark ? 'text-white' : 'text-zinc-900'}`}>
-                        What We <br />
+                        How We <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-purple-500 to-brand-blue italic font-light">
-                            Transform.
+                            Can Help.
                         </span>
                     </h2>
 
                     <p className={`text-xl font-light max-w-2xl mx-auto leading-relaxed transition-colors duration-500 ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}>
-                        Comprehensive elite education solutions tailored for every critical stage of your academic journey.
+                        Complete guidance for every step of your education journey.
                     </p>
                 </motion.div>
 

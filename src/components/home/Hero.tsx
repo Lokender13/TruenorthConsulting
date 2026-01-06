@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useSpring } from 'framer-motion';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTheme } from '../../contexts/ThemeContext';
@@ -11,8 +11,15 @@ const Hero = () => {
     const isDark = theme === 'dark';
 
     // Mouse spotlight effect
+    // Mouse spotlight effect - Optimized with MotionValues to prevent re-renders
     const containerRef = useRef<HTMLDivElement>(null);
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    const mouseX = useMotionValue(0);
+    const mouseY = useMotionValue(0);
+
+    // Smooth spring animation for the spotlight
+    const springX = useSpring(mouseX, { damping: 30, stiffness: 200 });
+    const springY = useSpring(mouseY, { damping: 30, stiffness: 200 });
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -58,10 +65,8 @@ const Hero = () => {
     const handleMouseMove = (e: React.MouseEvent) => {
         if (!containerRef.current) return;
         const rect = containerRef.current.getBoundingClientRect();
-        setMousePosition({
-            x: e.clientX - rect.left,
-            y: e.clientY - rect.top
-        });
+        mouseX.set(e.clientX - rect.left - 200); // Center the spotlight
+        mouseY.set(e.clientY - rect.top - 200);
     };
 
     return (
@@ -83,7 +88,7 @@ const Hero = () => {
                         repeatType: 'reverse',
                         ease: 'linear'
                     }}
-                    className="w-full h-full"
+                    className="w-full h-full will-change-transform"
                 >
                     <img
                         src="https://images.unsplash.com/photo-1498243639351-a4329a28853d?auto=format&fit=crop&w=2000&q=100"
@@ -137,13 +142,10 @@ const Hero = () => {
 
             {/* Mouse-following spotlight - more visible now */}
             <motion.div
-                className="absolute pointer-events-none"
-                animate={{
-                    left: mousePosition.x - 200,
-                    top: mousePosition.y - 200,
-                }}
-                transition={{ type: 'spring', damping: 30, stiffness: 200 }}
+                className="absolute pointer-events-none will-change-transform"
                 style={{
+                    x: springX,
+                    y: springY,
                     width: 400,
                     height: 400,
                     background: isDark
@@ -187,17 +189,17 @@ const Hero = () => {
                             transition={{ duration: 3, repeat: Infinity }}
                         >
                             <Sparkles size={12} className={isDark ? 'text-white/40' : 'text-orange-500'} />
-                            Premier Education Consultancy
+                            Trusted Education Partners
                         </motion.span>
                     </motion.div>
 
                     {/* Headline with TextReveal and Gradient Text */}
-                    <h1 className={`text-6xl md:text-8xl lg:text-9xl font-serif font-bold leading-[0.9] tracking-tighter mb-8 ${isDark ? 'text-white' : 'text-zinc-900'
+                    <h1 className={`text-5xl md:text-7xl lg:text-8xl font-serif font-bold leading-[0.9] tracking-tighter mb-8 ${isDark ? 'text-white' : 'text-zinc-900'
                         }`}>
-                        <TextReveal>Architect Your</TextReveal>
+                        <TextReveal>Build Your</TextReveal>
                         <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-purple-500 to-brand-blue italic font-light">
-                            Global Legacy.
+                            Dream Future.
                         </span>
                     </h1>
 
@@ -209,7 +211,7 @@ const Hero = () => {
                         className={`text-xl lg:text-2xl font-light max-w-xl mb-12 leading-relaxed transition-colors duration-500 ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'
                             }`}
                     >
-                        Success isn't accidental—it's engineered. We provide the strategic DNA and elite mentorship required to conquer the world's most prestigious institutions.
+                        Success starts with the right guidance. We help you find your path and get into your dream university with confidence.
                     </motion.p>
 
                     {/* CTA Buttons with glow */}
@@ -255,7 +257,7 @@ const Hero = () => {
                                     }
                                 `}
                             >
-                                Explore Services
+                                Our Services
                             </Link>
                         </motion.div>
                     </motion.div>
@@ -289,10 +291,10 @@ const Hero = () => {
 
                         <div className="relative z-10">
                             <h3 className={`text-3xl font-serif font-bold mb-2 transition-colors duration-500 ${isDark ? 'text-white' : 'text-zinc-900'}`}>
-                                Strategy Audit
+                                Free Consultation
                             </h3>
                             <p className={`text-sm mb-8 transition-colors duration-500 ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}>
-                                Get your personalized 1:1 Admission Roadmap session.
+                                Book a free session to plan your future.
                             </p>
 
                             <form className="space-y-6" onSubmit={handleSubmit}>
@@ -337,9 +339,9 @@ const Hero = () => {
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
                                 >
-                                    {status === 'loading' ? 'Sending...' : status === 'success' ? 'Sent Successfully' : status === 'error' ? 'Retry Action' : 'Claim My Roadmap'}
+                                    {status === 'loading' ? 'Sending...' : status === 'success' ? 'Sent Successfully' : status === 'error' ? 'Retry Action' : 'Book Free Session'}
                                 </motion.button>
-                                {status === 'success' && <p className="text-center text-[10px] text-green-500 font-bold uppercase tracking-widest mt-2 animate-pulse">Roadmap session locked in!</p>}
+                                {status === 'success' && <p className="text-center text-[10px] text-green-500 font-bold uppercase tracking-widest mt-2 animate-pulse">Session Booked!</p>}
                             </form>
                         </div>
                     </motion.div>

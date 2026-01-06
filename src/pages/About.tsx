@@ -12,34 +12,34 @@ const About = () => {
 
     const credentials = [
         {
-            title: "UCLA Institutional Mastery",
+            title: "Certified by UCLA",
             issuer: "UCLA Extension",
-            impact: "Global Career Excellence",
-            desc: "Validated by the Gold Standard of North American education, specializing in strategic university placement and global career architecture."
+            impact: "Career Planning Expert",
+            desc: "Specialized training in university placement and career planning from UCLA Extension."
         },
         {
-            title: "Psychometric Forensic Analyst",
+            title: "Expert in Student Assessments",
             issuer: "CCA / Univariety",
-            impact: "Scientific Result Engineering",
-            desc: "Utilizing advanced analytic protocols to decode student potential and engineer high-impact profiles for top-tier global institutions."
+            impact: "Scientific Testing",
+            desc: "Using scientific tests to understand your strengths and find the best fit for your future."
         },
         {
-            title: "IB World Pedagogy",
+            title: "IB Education Expert",
             issuer: "International Baccalaureate",
-            impact: "World-Class Educator",
-            desc: "Pioneering Learning Enrichment Programs (LEAP) within the IB framework to cultivate critical logic and global-mindedness."
+            impact: "World-Class Teaching",
+            desc: "Experience in teaching and guiding students within the International Baccalaureate (IB) system."
         },
         {
-            title: "Harvard Project Zero",
+            title: "Harvard Project Zero Focus",
             issuer: "Project Zero",
-            impact: "Design Thinking Expert",
-            desc: "Implementing elite teaching frameworks that prioritize deep understanding, creativity, and the power of intellectual inquiry."
+            impact: "Creative Thinking",
+            desc: "Trained in teaching methods that help students think deeply and creatively."
         },
         {
-            title: "Global Result Engineering",
+            title: "International Education Expert",
             issuer: "CCCIS International",
-            impact: "Universal Strategic Planning",
-            desc: "Expert certification in navigating the complexities of international study environments across British, American, and Indian curricula."
+            impact: "Study Anywhere",
+            desc: "Expertise in British, American, and Indian education systems to help you study anywhere."
         }
     ];
 
@@ -105,7 +105,7 @@ const About = () => {
                         </h1>
                         <p className={`text-xl lg:text-2xl font-light max-w-3xl mx-auto leading-relaxed transition-colors duration-500
                             ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}>
-                            Empowering students through precision guidance, scientific methodology, and empathetic mentorship since inception.
+                            Helping students find their right path with expert guidance and care.
                         </p>
                     </motion.div>
                 </div>
@@ -122,9 +122,9 @@ const About = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 1 }}
                         >
-                            <span className="text-[10px] font-black tracking-[0.5em] uppercase text-brand-orange mb-6 block">The Genesis</span>
+                            <span className="text-[10px] font-black tracking-[0.5em] uppercase text-brand-orange mb-6 block">Our Story</span>
                             <h2 className={`text-4xl md:text-6xl font-serif font-bold mb-8 leading-tight ${isDark ? 'text-white' : 'text-zinc-900'}`}>
-                                Founded with <br /><span className="italic font-light">Purpose.</span>
+                                Why We <br /><span className="italic font-light">Started.</span>
                             </h2>
                             <div className={`space-y-6 text-xl leading-relaxed transition-colors duration-500 ${isDark ? 'text-zinc-400 font-light' : 'text-zinc-600 font-medium'}`}>
                                 <p>
@@ -174,13 +174,13 @@ const About = () => {
                         transition={{ duration: 1 }}
                         className="text-center mb-20"
                     >
-                        <span className="text-[10px] font-black tracking-[0.5em] uppercase text-brand-orange mb-6 block">Global Reach</span>
+                        <span className="text-[10px] font-black tracking-[0.5em] uppercase text-brand-orange mb-6 block">We Help Everyone</span>
                         <h2 className={`text-4xl md:text-6xl font-serif font-bold mb-8 leading-tight ${isDark ? 'text-white' : 'text-zinc-900'}`}>
-                            Comprehensive Guidance <br /><span className="italic font-light">Without Boundaries.</span>
+                            Guidance that reaches <br /><span className="italic font-light">Everywhere.</span>
                         </h2>
                         <p className={`max-w-3xl mx-auto text-xl md:text-2xl font-light leading-relaxed transition-colors duration-500
                             ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}>
-                            We empower individuals at critical junctures of their academic and professional journey through data-driven methodology.
+                            We help students at every important step of their education, no matter where they are.
                         </p>
                     </motion.div>
 
@@ -365,7 +365,7 @@ const About = () => {
 
                                 <div className={`space-y-8 text-lg md:text-xl font-light leading-relaxed ${isDark ? 'text-white/40' : 'text-gray-500'}`}>
                                     <p className="first-letter:text-5xl first-letter:font-serif first-letter:font-bold first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:text-orange-500">
-                                        <strong className={isDark ? 'text-white' : 'text-gray-900'}>Surabhi Rawat</strong> is not just a counselor; she is an architect of academic futures. With a legacy spanning over a decade, her journey has been defined by the intersection of scientific precision and educational empathy.
+                                        <strong className={isDark ? 'text-white' : 'text-gray-900'}>Surabhi Rawat</strong> is more than just a counselor; she helps build bright futures. With over 10 years of experience, she combines expert knowledge with a caring heart.
                                     </p>
 
                                     <p>
@@ -417,17 +417,17 @@ const About = () => {
                     >
                         <div className="flex justify-center mb-6">
                             <motion.div initial={{ width: 0 }} whileInView={{ width: 40 }} className="h-0.5 bg-orange-500 self-center mr-4"></motion.div>
-                            <span className="text-xs font-black tracking-[0.5em] uppercase text-orange-600">Institutional Mastery</span>
+                            <span className="text-xs font-black tracking-[0.5em] uppercase text-orange-600">Our Qualifications</span>
                             <motion.div initial={{ width: 0 }} whileInView={{ width: 40 }} className="h-0.5 bg-orange-500 self-center ml-4"></motion.div>
                         </div>
 
                         <h2 className={`text-5xl md:text-7xl font-serif font-bold mb-8 tracking-tight ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                            Validated by <br />
-                            <span className="italic text-brand-orange">Global Authorities.</span>
+                            Certified <br />
+                            <span className="italic text-brand-orange">Experts.</span>
                         </h2>
 
                         <p className={`max-w-3xl mx-auto text-xl font-light leading-relaxed ${isDark ? 'text-white/40' : 'text-gray-500 font-medium'}`}>
-                            Our methodology isn't just effective—it's endorsed. We operate at the intersection of international educational standards and scientific career analytics.
+                            Our methods are proven and trusted. We use international standards to give you the best advice.
                         </p>
                     </motion.div>
 
@@ -549,7 +549,7 @@ const About = () => {
                         </h2>
                         <p className={`text-xl lg:text-2xl font-light mb-12 max-w-2xl mx-auto leading-relaxed transition-colors duration-500
                             ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}>
-                            Join thousands of families who transformed their futures with our personalized elite guidance model.
+                            Join thousands of families who found their future with our personalized guidance.
                         </p>
                         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
                             <Link

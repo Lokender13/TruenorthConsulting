@@ -10,15 +10,15 @@ import TextReveal from '../components/ui/TextReveal';
 const faqs = [
     {
         question: "What age students do you work with?",
-        answer: "We work with students from Grade 8 onwards for subject selection, profile building, and early career planning, all the way up to postgraduate university admissions."
+        answer: "We help students from Grade 8 to postgraduate level."
     },
     {
         question: "Do you offer online consultations?",
-        answer: "Yes! We work with students globally. All our counseling sessions can be conducted via Zoom or Google Meet with the same effectiveness as in-person meetings."
+        answer: "Yes, we do online sessions via Zoom or Google Meet."
     },
     {
         question: "How are you different from other agents?",
-        answer: "We are not 'agents' who get commissions from universities. We are independent educational consultants who work exclusively for the student's best interest, helping you apply to any university worldwide."
+        answer: "We work for you, not the universities. We help you apply anywhere."
     }
 ];
 
@@ -147,13 +147,12 @@ const Contact = () => {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8 }}
                         >
-                            <span className="text-[10px] font-black tracking-[0.5em] uppercase text-brand-orange mb-6 block">Direct Access</span>
+                            <span className="text-[10px] font-black tracking-[0.5em] uppercase text-brand-orange mb-6 block">Get in Touch</span>
                             <h1 className={`text-5xl md:text-8xl font-serif font-bold leading-[0.9] tracking-tighter mb-8 ${isDark ? 'text-white' : 'text-zinc-900'}`}>
-                                <TextReveal>Let's Start a</TextReveal> <br />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-purple-500 to-brand-blue italic font-light">Conversation.</span>
+                                <TextReveal>Let's Talk.</TextReveal>
                             </h1>
                             <p className={`text-xl lg:text-2xl font-light max-w-xl transition-colors duration-500 ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}>
-                                Whether you're a parent, student, or school representative, we're here to engineer your academic future.
+                                We are here to answer your questions and help you plan your future.
                             </p>
                         </motion.div>
 
@@ -176,7 +175,7 @@ const Contact = () => {
                                         <MessageSquare size={28} />
                                     </div>
                                     <div>
-                                        <p className={`text-xs font-black tracking-widest uppercase mb-1 ${isDark ? 'text-white/40' : 'text-zinc-400'}`}>Availability</p>
+                                        <p className={`text-xs font-black tracking-widest uppercase mb-1 ${isDark ? 'text-white/40' : 'text-zinc-400'}`}>Status</p>
                                         <p className={`font-serif font-bold text-xl flex items-center gap-3 ${isDark ? 'text-white' : 'text-zinc-900'}`}>
                                             <span className="w-3 h-3 rounded-full bg-green-500 animate-pulse"></span>
                                             Admissions Open
@@ -210,7 +209,7 @@ const Contact = () => {
                                 ${isDark ? 'bg-zinc-900/40 border-white/5 shadow-2xl shadow-black/50' : 'bg-white border-white shadow-[0_20px_50px_rgba(0,0,0,0.04)]'}`}
                                 tiltIntensity={2}
                             >
-                                <h3 className={`text-4xl font-serif font-bold mb-10 ${isDark ? 'text-white' : 'text-zinc-900'}`}>Direct Inquiry</h3>
+                                <h3 className={`text-4xl font-serif font-bold mb-10 ${isDark ? 'text-white' : 'text-zinc-900'}`}>Send a Message</h3>
                                 <form className="space-y-10" onSubmit={handleSubmit}>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                                         <div className="group relative">
@@ -265,14 +264,14 @@ const Contact = () => {
                                     </div>
 
                                     <div className="group relative">
-                                        <label className={`block text-[10px] font-black uppercase tracking-[0.2em] mb-3 transition-colors ${isDark ? 'text-zinc-600 group-focus-within:text-brand-orange' : 'text-zinc-400 group-focus-within:text-brand-orange'}`}>Strategy Requirements</label>
+                                        <label className={`block text-[10px] font-black uppercase tracking-[0.2em] mb-3 transition-colors ${isDark ? 'text-zinc-600 group-focus-within:text-brand-orange' : 'text-zinc-400 group-focus-within:text-brand-orange'}`}>How can we help?</label>
                                         <textarea
                                             name="requirements"
                                             value={formData.requirements}
                                             onChange={handleInputChange}
                                             rows={4}
                                             className={`w-full bg-transparent border-b-2 py-4 outline-none transition-all font-serif font-bold text-xl resize-none ${isDark ? 'border-white/5 text-white focus:border-brand-orange placeholder:text-zinc-800' : 'border-zinc-100 text-zinc-900 focus:border-brand-orange'}`}
-                                            placeholder="Define your academic vision..."
+                                            placeholder="Tell us about your goals..."
                                         ></textarea>
                                     </div>
 
@@ -287,12 +286,12 @@ const Contact = () => {
                                                 ${status === 'loading' ? 'opacity-70 cursor-not-allowed' : ''}
                                             `}
                                         >
-                                            {status === 'loading' ? 'Processing...' : status === 'success' ? 'Submission Received' : status === 'error' ? 'Retry Submission' : 'Submit Strategy'}
+                                            {status === 'loading' ? 'Processing...' : status === 'success' ? 'Message Sent' : status === 'error' ? 'Retry Sending' : 'Send Message'}
                                             {status === 'idle' && <ArrowRight size={18} />}
                                         </motion.button>
 
                                         {status === 'success' && (
-                                            <p className="mt-4 text-green-500 font-serif font-bold italic animate-pulse">Our consultants will reach out shortly.</p>
+                                            <p className="mt-4 text-green-500 font-serif font-bold italic animate-pulse">We will get back to you soon.</p>
                                         )}
                                         {status === 'error' && (
                                             <p className="mt-4 text-red-500 font-serif font-bold italic">Something went wrong. Please try again.</p>
@@ -316,15 +315,15 @@ const Contact = () => {
                                 tiltIntensity={5}
                             >
                                 <h4 className={`text-2xl font-serif font-bold mb-8 flex items-center gap-4 ${isDark ? 'text-white' : 'text-zinc-900'}`}>
-                                    <Phone size={24} className="text-brand-orange" /> Hub
+                                    <Phone size={24} className="text-brand-orange" /> Contact
                                 </h4>
                                 <ul className="space-y-8">
                                     <li>
-                                        <p className={`text-[10px] font-black uppercase tracking-widest mb-1 ${isDark ? 'text-zinc-600' : 'text-zinc-400'}`}>Direct Line</p>
+                                        <p className={`text-[10px] font-black uppercase tracking-widest mb-1 ${isDark ? 'text-zinc-600' : 'text-zinc-400'}`}>Phone</p>
                                         <a href="https://wa.me/971501420956" className={`text-xl font-serif font-bold hover:text-brand-orange transition-colors block ${isDark ? 'text-white' : 'text-zinc-900'}`}>+971 50 142 0956</a>
                                     </li>
                                     <li>
-                                        <p className={`text-[10px] font-black uppercase tracking-widest mb-1 ${isDark ? 'text-zinc-600' : 'text-zinc-400'}`}>Email Protocol</p>
+                                        <p className={`text-[10px] font-black uppercase tracking-widest mb-1 ${isDark ? 'text-zinc-600' : 'text-zinc-400'}`}>Email</p>
                                         <a href="mailto:contact@truenorthae.com" className={`text-xl font-serif font-bold hover:text-brand-orange transition-colors block ${isDark ? 'text-white' : 'text-zinc-900'}`}>contact@truenorthae.com</a>
                                     </li>
                                 </ul>
@@ -360,8 +359,8 @@ const Contact = () => {
                         viewport={{ once: true }}
                     >
                         <div className="text-center mb-16">
-                            <span className="text-[10px] font-black tracking-[0.5em] uppercase text-brand-orange mb-4 block">Knowledge Base</span>
-                            <h2 className={`text-5xl md:text-7xl font-serif font-bold tracking-tighter ${isDark ? 'text-white' : 'text-zinc-900'}`}>Intelligence <br /><span className="italic font-light text-zinc-400">Hub.</span></h2>
+                            <span className="text-[10px] font-black tracking-[0.5em] uppercase text-brand-orange mb-4 block">Common Questions</span>
+                            <h2 className={`text-5xl md:text-7xl font-serif font-bold tracking-tighter ${isDark ? 'text-white' : 'text-zinc-900'}`}>Frequently Asked <br /><span className="italic font-light text-zinc-400">Questions.</span></h2>
                         </div>
 
                         <TiltCard

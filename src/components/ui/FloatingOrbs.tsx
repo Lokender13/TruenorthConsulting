@@ -31,7 +31,7 @@ const FloatingOrbs = ({ orbs = defaultOrbs }: FloatingOrbsProps) => {
             {orbs.map((orb, index) => (
                 <motion.div
                     key={index}
-                    className="absolute rounded-full blur-[100px]"
+                    className="absolute rounded-full blur-[100px] will-change-transform"
                     style={{
                         width: orb.size,
                         height: orb.size,
