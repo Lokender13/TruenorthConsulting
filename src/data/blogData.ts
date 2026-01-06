@@ -216,5 +216,126 @@ export const blogData: BlogPost[] = [
                 <a href="/contact" class="inline-block bg-white text-blue-900 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors">Start Your Application</a>
             </div>
         `
+    },
+    {
+        id: "4",
+        slug: "sat-act-ielts-guide-uae-students",
+        title: "SAT, ACT, or IELTS? The Ultimate Testing Guide for UAE Students",
+        excerpt: "Navigating the maze of standardized tests is the first step to your dream university. We decode the Digital SAT, IELTS vs TOEFL, and what top universities actually look for.",
+        author: "Surabhi Rawat",
+        date: "Jan 08, 2025",
+        readTime: "6 min read",
+        image: "https://images.unsplash.com/photo-1596496050844-361d526cc632?auto=format&fit=crop&w=1200&q=80",
+        category: "Test Prep",
+        keywords: "digital sat uae, ielts coaching dubai, sat vs act for indian students, toefl vs ielts for usa, study abroad exams 2025",
+        seoTitle: "SAT vs ACT vs IELTS Guide | Test Prep Dubai & India",
+        seoDescription: "Complete guide to Standardized Testing for UAE & Indian students. Digital SAT, ACT, IELTS, TOEFL reflected. Know what score you need for Ivy League.",
+        content: `
+            <p class="lead text-xl text-gray-600 mb-8">For students in the UAE and India, standardized tests are often the gatekeepers to global education. With the SAT going digital and universities constantly updating their requirements, confusion is natural. Here is your clarity.</p>
+
+            <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">1. The Digital SAT: Game Changer</h2>
+            <p>The SAT is no longer the pen-and-paper marathon it used to be. The <strong>Digital SAT</strong> is:</p>
+            <ul class="list-disc pl-6 space-y-4 mb-8">
+                <li><strong>Shorter:</strong> 2 hours 14 minutes instead of 3 hours.</li>
+                <li><strong>Adaptive:</strong> The second module's difficulty depends on your performance in the first.</li>
+                <li><strong>Faster Results:</strong> Scores in days, not weeks.</li>
+            </ul>
+            <p><strong>Verdict:</strong> If you are comfortable with screens and have strong logic, the Digital SAT is your friend. TrueNorth students have seen a 50-point average increase since the switch.</p>
+
+            <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">2. IELTS vs. TOEFL: The Language Battle</h2>
+            <p>Most universities accept both, but there are nuances:</p>
+            <div class="grid md:grid-cols-2 gap-6 my-8">
+                <div class="bg-blue-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-brand-blue mb-2">IELTS (UK/Australia/Canada)</h3>
+                    <p>Preferred by UK and Commonwealth countries. The speaking section is a face-to-face interview, which often feels more natural.</p>
+                </div>
+                <div class="bg-orange-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-brand-orange mb-2">TOEFL (USA)</h3>
+                    <p>Traditionally preferred by US universities. It's 100% academic English. The speaking section involves recording your voice into a microphone.</p>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">3. Do I Need Both?</h2>
+            <p>Typically, yes. You will likely need one "Aptitude" test (SAT/ACT) for US/Singapore undergraduate admissions and one "Proficiency" test (IELTS/TOEFL) for visa purposes across the globe.</p>
+
+            <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">4. TrueNorth's Prep Strategy</h2>
+            <p>We don't believe in rote learning. Our prep modules focus on <strong>Concept Mastery</strong> and <strong>Test-Taking Strategy</strong>. Knowing <em>why</em> an answer is wrong is as important as knowing the right one.</p>
+        `
+    },
+    {
+        id: "5",
+        slug: "profile-building-ivy-league-oxbridge",
+        title: "Beyond Grades: Building a Profile for Ivy League & Oxbridge",
+        excerpt: "Top grades are just the baseline. Discover how research, internships, and social impact can differentiate your application for the world's most competitive universities.",
+        author: "Team TrueNorth",
+        date: "Jan 10, 2025",
+        readTime: "8 min read",
+        image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80",
+        category: "Admissions Strategy",
+        keywords: "ivy league profile building, extracurricular methodology, research papers for high school students, oxbridge supercurriculars, admission consulting dubai",
+        seoTitle: "Profile Building for Ivy League & Oxbridge | Admissions Strategy",
+        seoDescription: "How to get into Harvard, Oxford, or Stanford? It's not just about marks. Learn the art of Profile Building: Research, Leadership, & Impact.",
+        content: `
+            <p class="lead text-xl text-gray-600 mb-8">Harvard acceptance rate: 3.4%. Oxford acceptance rate: 13%. In a pool of straight-A students from Dubai and India, how do you stand out? The answer lies in your <strong>Profile</strong>.</p>
+
+            <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">1. The Holistic Review Process</h2>
+            <p>US universities review applications "holistically." They want to know:</p>
+            <ul class="list-disc pl-6 space-y-4 mb-8">
+                <li>Who are you outside the classroom?</li>
+                <li>How have you impacted your community?</li>
+                <li>What is your intellectual curiosity?</li>
+            </ul>
+
+            <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">2. The "Spike" Approach</h2>
+            <p>Don't be a jack-of-all-trades. Be a master of ONE. Top colleges look for a "spike"—deep excellence in a specific area.</p>
+            <div class="bg-gray-100 p-6 rounded-lg my-6">
+                <p><strong>Example:</strong> Instead of joining 10 random clubs, a student interested in Environmental Science should:</p>
+                <ul class="list-decimal pl-6 mt-2 space-y-2">
+                    <li>Publish a research paper on local water conservation.</li>
+                    <li>Intern with an ESG consultancy in Dubai.</li>
+                    <li>Launch a school-wide recycling initiative.</li>
+                </ul>
+            </div>
+
+            <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">3. Research & Publications</h2>
+            <p>For Indian students especially, publishing a research paper is a massive differentiator. It proves you have university-level academic rigor. TrueNorth mentors guide students to publish in IEEE journals, youth conferences, and more.</p>
+
+            <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">4. Supercurriculars (For UK/Oxbridge)</h2>
+            <p>The UK is different. They care less about leadership and more about <strong>Supercurriculars</strong>—activities that take your academic subject further. This includes Olympiads, advanced reading, and subject-specific summer schools.</p>
+        `
+    },
+    {
+        id: "6",
+        slug: "ai-data-science-careers-dubai",
+        title: "AI, Data Science, & Cyber Security: The Future of Careers in Dubai",
+        excerpt: "Dubai's Smart City vision is creating a massive demand for tech talent. We explore the most lucrative career paths in the region's booming digital economy.",
+        author: "Surabhi Rawat",
+        date: "Jan 12, 2025",
+        readTime: "5 min read",
+        image: "https://images.unsplash.com/photo-1485827404703-89f55137256b?auto=format&fit=crop&w=1200&q=80",
+        category: "Future Careers",
+        keywords: "data science jobs dubai, ai careers uae, cyber security demand middle east, future of work dubai, tech education pathways",
+        seoTitle: "AI & Data Science Careers in Dubai | Future Job Market Trends",
+        seoDescription: "Dubai is becoming a global tech hub. Explore career opportunities in AI, Data Science, and Cyber Security aligned with UAE Vision 2030.",
+        content: `
+            <p class="lead text-xl text-gray-600 mb-8">With the Dubai Economy Agenda (D33) aiming to double the economy's size, Technology is the engine of growth. For students choosing their majors today, alignment with this vision is the key to future employability.</p>
+
+            <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">1. Artificial Intelligence (AI)</h2>
+            <p>The UAE has the world's first Ministry of AI. From government services to healthcare, AI is everywhere.</p>
+            <p><strong>Hot Roles:</strong> AI Ethics Compliance Officer, Machine Learning Engineer, Prompt Engineer.</p>
+
+            <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">2. Data Science</h2>
+            <p>"Data is the new oil." In the Middle East, this is literally true as economies diversify away from oil. Retail giants, logistics hubs (DP World), and airlines (Emirates) are hiring data scientists aggressively to optimize operations.</p>
+
+            <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">3. Cyber Security</h2>
+            <p>As digitization grows, so does vulnerability. The UAE is investing billions in Cyber Defense.</p>
+            <ul class="list-disc pl-6 space-y-4 mb-8">
+                <li><strong>Skill Gap:</strong> There is a massive global shortage of cyber professionals.</li>
+                <li><strong>Salary:</strong> Junior Cyber Security analysts in Dubai can expect starting salaries of AED 15,000 - 20,000/month.</li>
+            </ul>
+
+            <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">4. Education Pathways</h2>
+            <p>You don't just need a Computer Science degree. Specialized degrees in <strong>Robotics, Data Analytics, and FinTech</strong> are gaining traction. Universities like University of Birmingham Dubai and RIT Dubai offer cutting-edge programs locally.</p>
+        `
     }
 ];

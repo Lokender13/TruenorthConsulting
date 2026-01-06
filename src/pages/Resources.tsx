@@ -5,39 +5,13 @@ import { useTheme } from '../contexts/ThemeContext';
 import SEO from '../components/SEO';
 import TiltCard from '../components/ui/TiltCard';
 
+import { blogData } from '../data/blogData';
+
 const Resources = () => {
     const { theme } = useTheme();
     const isDark = theme === 'dark';
 
-    const blogs = [
-        {
-            title: "How to choose the right career after 12th?",
-            slug: "choose-right-career-after-12th",
-            excerpt: "Confused about your next step? Discover a scientific approach to identifying your strengths and aligning them with the perfect career path. Don't just follow the crowd.",
-            author: "Surabhi Rawat",
-            date: "Jan 05, 2025",
-            image: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=800&q=80",
-            category: "Career Guidance"
-        },
-        {
-            title: "Study Abroad vs India – A Comparative Analysis",
-            slug: "study-abroad-vs-india-comparative-analysis",
-            excerpt: "Is studying abroad really worth the investment? We break down the ROI, lifestyle, and career opportunities of international vs domestic education to help you decide.",
-            author: "Team TrueNorth",
-            date: "Dec 28, 2024",
-            image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80",
-            category: "Study Abroad"
-        },
-        {
-            title: "Top Universities for Indian Students in 2025",
-            slug: "top-universities-indian-students-2025",
-            excerpt: "A curated list of universities in the UK, USA, and Canada that are welcoming Indian talent with open arms and generous scholarships this year.",
-            author: "Surabhi Rawat",
-            date: "Dec 15, 2024",
-            image: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=800&q=80",
-            category: "University Admissions"
-        }
-    ];
+    const blogs = blogData;
 
     return (
         <div className={`min-h-screen theme-transition relative overflow-hidden ${isDark ? 'bg-zinc-950 text-white' : 'bg-[#FAFAFA] text-zinc-900'}`}>
