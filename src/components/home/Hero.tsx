@@ -159,9 +159,19 @@ const Hero = () => {
                             transition={{ duration: 3, repeat: Infinity }}
                         >
                             <Sparkles size={12} className={isDark ? 'text-white/40' : 'text-orange-500'} />
-                            Trusted Education Partners
+                            TrueNorth Consulting
                         </motion.span>
                     </motion.div>
+
+                    {/* Differentiator Sub-heading */}
+                    <motion.h2
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2 }}
+                        className={`text-lg md:text-xl font-bold tracking-widest uppercase mb-4 ${isDark ? 'text-brand-orange' : 'text-brand-orange'}`}
+                    >
+                        Education & Career Advisory (UAE & India)
+                    </motion.h2>
 
                     {/* Headline with TextReveal and Gradient Text */}
                     <h1 className={`text-5xl md:text-7xl lg:text-8xl font-serif font-bold leading-[0.9] tracking-tighter mb-8 ${isDark ? 'text-white' : 'text-zinc-900'

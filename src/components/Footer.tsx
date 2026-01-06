@@ -132,7 +132,7 @@ const Footer = () => {
                         © {new Date().getFullYear()} TrueNorth Consulting. Handcrafted for Global Excellence.
                     </p>
                     <div className="flex gap-10">
-                        {['Privacy Policy', 'Terms of Service'].map((link, i) => (
+                        {['Privacy Policy', 'Terms of Service', 'Refund Policy', 'Disclaimer'].map((link, i) => (
                             <Link key={i} to={`/${link.toLowerCase().replace(/ /g, '-')}`} className={`text-[10px] font-black tracking-widest uppercase transition-colors duration-300 ${isDark ? 'text-zinc-700 hover:text-white' : 'text-zinc-400 hover:text-zinc-950'}`}>
                                 {link}
                             </Link>

@@ -1,15 +1,17 @@
 import { motion, type Variants } from 'framer-motion';
 import { useTheme } from '../../contexts/ThemeContext';
 import { serviceImages } from '../ui/ServiceImage';
-import { PenTool } from 'lucide-react';
+import { PenTool, Clock, Sparkles } from 'lucide-react';
 import TiltCard from '../ui/TiltCard';
 
 interface ServiceOverviewProps {
     desc: string;
     serviceId?: string;
+    duration?: string;
+    pricing?: string;
 }
 
-const ServiceOverview = ({ desc, serviceId }: ServiceOverviewProps) => {
+const ServiceOverview = ({ desc, serviceId, duration, pricing }: ServiceOverviewProps) => {
     const { theme } = useTheme();
     const isDark = theme === 'dark';
 
@@ -69,7 +71,7 @@ const ServiceOverview = ({ desc, serviceId }: ServiceOverviewProps) => {
                 <div className="grid lg:grid-cols-12 gap-16 lg:gap-24 items-start">
                     {/* Left: Interactive Image & Card */}
                     <motion.div
-                        className="lg:col-span-5 space-y-12"
+                        className="lg:col-span-5 space-y-8"
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
@@ -93,6 +95,38 @@ const ServiceOverview = ({ desc, serviceId }: ServiceOverviewProps) => {
                                 <p className="text-white text-lg font-serif font-bold leading-tight">Join 5,000+ students who transformed their futures.</p>
                             </div>
                         </TiltCard>
+
+                        {(duration || pricing) && (
+                            <div className={`p-8 rounded-[2.5rem] border backdrop-blur-3xl space-y-6 transition-all duration-500
+                                ${isDark
+                                    ? 'bg-zinc-900/40 border-white/5 shadow-2xl shadow-black/20'
+                                    : 'bg-white/80 border-white shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]'}`}>
+
+                                <div className="flex items-start gap-4">
+                                    <div className={`mt-1 w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0
+                                        ${isDark ? 'bg-brand-orange/10 text-brand-orange' : 'bg-brand-orange/5 text-brand-orange'}`}>
+                                        <Clock size={20} />
+                                    </div>
+                                    <div>
+                                        <h4 className={`text-sm font-black uppercase tracking-wider mb-1 ${isDark ? 'text-zinc-500' : 'text-zinc-400'}`}>Duration</h4>
+                                        <p className={`text-lg font-medium ${isDark ? 'text-white' : 'text-zinc-900'}`}>{duration || "Flexible"}</p>
+                                    </div>
+                                </div>
+
+                                <div className="h-px w-full bg-gradient-to-r from-transparent via-gray-500/20 to-transparent"></div>
+
+                                <div className="flex items-start gap-4">
+                                    <div className={`mt-1 w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0
+                                        ${isDark ? 'bg-brand-blue/10 text-brand-blue' : 'bg-brand-blue/5 text-brand-blue'}`}>
+                                        <Sparkles size={20} />
+                                    </div>
+                                    <div>
+                                        <h4 className={`text-sm font-black uppercase tracking-wider mb-1 ${isDark ? 'text-zinc-500' : 'text-zinc-400'}`}>Investment</h4>
+                                        <p className={`text-lg font-medium ${isDark ? 'text-white' : 'text-zinc-900'}`}>{pricing || "Contact for pricing"}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
 
                         <div className={`p-10 rounded-[2.5rem] border backdrop-blur-3xl transition-all duration-500
                             ${isDark

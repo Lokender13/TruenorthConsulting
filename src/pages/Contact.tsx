@@ -326,6 +326,13 @@ const Contact = () => {
                                         <p className={`text-[10px] font-black uppercase tracking-widest mb-1 ${isDark ? 'text-zinc-600' : 'text-zinc-400'}`}>Email</p>
                                         <a href="mailto:contact@truenorthae.com" className={`text-xl font-serif font-bold hover:text-brand-orange transition-colors block ${isDark ? 'text-white' : 'text-zinc-900'}`}>contact@truenorthae.com</a>
                                     </li>
+                                    <li>
+                                        <p className={`text-[10px] font-black uppercase tracking-widest mb-1 ${isDark ? 'text-zinc-600' : 'text-zinc-400'}`}>Locations</p>
+                                        <p className={`text-lg font-serif font-medium ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+                                            Dubai, UAE (Headquarters)<br />
+                                            <span className={`text-base ${isDark ? 'text-zinc-500' : 'text-zinc-500'}`}>Serving students in India & Globally</span>
+                                        </p>
+                                    </li>
                                 </ul>
                             </TiltCard>
 

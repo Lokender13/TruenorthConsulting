@@ -31,9 +31,9 @@ const Home = () => {
     return (
         <div className={`min-h-screen theme-transition relative overflow-hidden ${isDark ? 'bg-zinc-950 text-white' : 'bg-[#FAFAFA] text-zinc-900'}`}>
             <SEO
-                title="Career Counselling & Education Consultancy in Dubai"
-                description="TrueNorth Consulting is a premier career counselling and education consultancy based in Dubai, UAE. Expert guidance for study abroad, university admissions, IB/CBSE/British curriculum support, and personalized career planning. Founded by Surabhi Rawat."
-                keywords="career counselling Dubai, education consultancy UAE, study abroad consultant, university admissions, IB curriculum support, CBSE tutoring, British curriculum, psychometric assessment, Surabhi Rawat, TrueNorth"
+                title="TrueNorth Consulting – Education & Career Advisory (UAE & India)"
+                description="TrueNorth Consulting is a premier career counselling and education consultancy based in Dubai, UAE and serving India. Expert guidance for study abroad, university admissions, and personalized career planning."
+                keywords="career counselling Dubai, study abroad consultants UAE, university admission guidance India, education consultancy UAE, IELTS coaching Dubai, TrueNorth Consulting, education advisory India"
                 canonical="/"
                 schema={homeSchema}
             />

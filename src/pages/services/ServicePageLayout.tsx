@@ -88,13 +88,28 @@ const ServicePageLayout = ({ serviceId, children }: ServicePageLayoutProps) => {
                 keywords={service.seo.keywords}
                 schema={{
                     "@context": "https://schema.org",
-                    "@type": "Service",
-                    "name": service.title,
-                    "description": service.shortDesc,
-                    "provider": {
-                        "@type": "EducationalOrganization",
-                        "name": "TrueNorth Consulting"
-                    }
+                    "@graph": [
+                        {
+                            "@type": "Service",
+                            "name": service.title,
+                            "description": service.shortDesc,
+                            "provider": {
+                                "@type": "EducationalOrganization",
+                                "name": "TrueNorth Consulting"
+                            }
+                        },
+                        ...(service.faq && service.faq.length > 0 ? [{
+                            "@type": "FAQPage",
+                            "mainEntity": service.faq.map(item => ({
+                                "@type": "Question",
+                                "name": item.question,
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": item.answer
+                                }
+                            }))
+                        }] : [])
+                    ]
                 }}
             />
 
@@ -115,7 +130,12 @@ const ServicePageLayout = ({ serviceId, children }: ServicePageLayoutProps) => {
                     <div className="space-y-0">
                         {service.fullDesc && (
                             <Section>
-                                <ServiceOverview desc={service.fullDesc} serviceId={service.id} />
+                                <ServiceOverview
+                                    desc={service.fullDesc}
+                                    serviceId={service.id}
+                                    duration={service.duration}
+                                    pricing={service.pricing}
+                                />
                             </Section>
                         )}
 

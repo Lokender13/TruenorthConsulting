@@ -33,6 +33,43 @@ const SEO: React.FC<SEOProps> = ({
     const defaultKeywords = 'career counselling, education consultancy, study abroad, Dubai, UAE, India, university admissions, IB curriculum, CBSE, British curriculum, psychometric assessment';
     const allKeywords = keywords ? `${keywords}, ${defaultKeywords}` : defaultKeywords;
 
+    // Auto-generate Breadcrumb Schema
+    const pathSegments = location.pathname.split('/').filter(Boolean);
+    const breadcrumbList = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": siteUrl
+            },
+            ...pathSegments.map((segment, index) => {
+                const path = `/${pathSegments.slice(0, index + 1).join('/')}`;
+                // Friendly names for services
+                let name = segment.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+
+                // Specific overrides for long slugs
+                if (segment === 'services') name = 'Services';
+                if (segment === 'career-counselling-psychometric-assessments') name = 'Career Counselling';
+                if (segment === 'university-admissions-study-abroad') name = 'Study Abroad';
+                if (segment === 'academic-support-online-tutoring') name = 'Academic Support';
+                if (segment === 'competitive-exam-language-preparation') name = 'Competitive Exams';
+                if (segment === 'school-college-partnerships') name = 'School Partnerships';
+                if (segment === 'career-lab-setup') name = 'Career Labs';
+                if (segment === 'digital-solutions-education') name = 'Digital Solutions';
+
+                return {
+                    "@type": "ListItem",
+                    "position": index + 2,
+                    "name": name,
+                    "item": `${siteUrl}${path}`
+                };
+            })
+        ]
+    };
+
     return (
         <Helmet>
             {/* Primary Meta Tags */}
@@ -69,6 +106,9 @@ const SEO: React.FC<SEOProps> = ({
             <meta name="twitter:creator" content="@surabhi_truenorth" />
 
             {/* Structured Data (JSON-LD) */}
+            <script type="application/ld+json">
+                {JSON.stringify(breadcrumbList)}
+            </script>
             {schema && (
                 <script type="application/ld+json">
                     {JSON.stringify(schema)}

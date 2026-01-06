@@ -9,10 +9,10 @@ const AboutSection = () => {
     const isDark = theme === 'dark';
 
     const benefits = [
-        "Personalized Career Roadmaps",
-        "Expert University Admissions Guidance",
-        "Global Network of Top Institutions",
-        "Holistic Student Development"
+        "Certified Counsellors",
+        "1-on-1 Guidance",
+        "International University Network",
+        "Proven Student Success"
     ];
 
     return (

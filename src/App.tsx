@@ -16,9 +16,15 @@ import CompetitiveExams from './pages/services/CompetitiveExams';
 import SchoolPartnerships from './pages/services/SchoolPartnerships';
 import CareerLab from './pages/services/CareerLab';
 import DigitalSolutions from './pages/services/DigitalSolutions';
+import Resources from './pages/Resources';
+import PrivacyPolicy from './pages/legal/PrivacyPolicy';
+import TermsConditions from './pages/legal/TermsConditions';
+import RefundPolicy from './pages/legal/RefundPolicy';
+import Disclaimer from './pages/legal/Disclaimer';
 import SmoothScroll from './components/SmoothScroll';
 import ScrollToTop from './components/ScrollToTop';
 import ParticlesBackground from './components/Particles';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 // Animated Routes wrapper
 const AnimatedRoutes = () => {
@@ -46,8 +52,16 @@ const AnimatedRoutes = () => {
           <Route path="/services/career-lab-setup" element={<CareerLab />} />
           <Route path="/services/digital-solutions-education" element={<DigitalSolutions />} />
 
+
           <Route path="/about" element={<About />} />
+          <Route path="/resources" element={<Resources />} />
           <Route path="/contact" element={<Contact />} />
+
+          {/* Legal Pages */}
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsConditions />} />
+          <Route path="/refund-policy" element={<RefundPolicy />} />
+          <Route path="/disclaimer" element={<Disclaimer />} />
         </Routes>
       </motion.div>
     </AnimatePresence>
@@ -85,6 +99,7 @@ function App() {
             <AnimatedRoutes />
           </main>
           <Footer />
+          <FloatingWhatsApp />
         </div>
       </SmoothScroll>
     </Router>

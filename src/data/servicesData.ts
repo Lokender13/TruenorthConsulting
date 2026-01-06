@@ -23,6 +23,8 @@ export interface Service {
         question: string;
         answer: string;
     }[];
+    duration: string;
+    pricing: string;
     seo: {
         title: string;
         description: string;
@@ -105,10 +107,12 @@ export const servicesData = [
                 answer: "Our assessments are world-class, boasting a validation accuracy of over 97%. They are the gold standard used by global organizations to identify top talent, adapted now for your personal growth."
             }
         ],
+        duration: "2-3 Sessions (Assessment + Report Analysis + Planning)",
+        pricing: "Custom packages available starting from AED 1500",
         seo: {
             title: "Best Career Counselling India | Scientific Psychometric Tests",
             description: "Unlock your dream future with India's #1 Career Counselling & Psychometric Analysis. Expert guidance for students & professionals to achieve 100% career clarity and success.",
-            keywords: "best career counselling india, psychometric test for students, career path finder, online career guidance, stream selector test, career counselling for professionals, career growth expert"
+            keywords: "best career counselling india, career counselling in dubai, career guidance dubai, psychometric test for students, career path finder, online career guidance, stream selector test, career counselling for professionals"
         }
     },
     {
@@ -184,10 +188,12 @@ export const servicesData = [
                 answer: "We hold a near-perfect track record. Our 'Visa Blueprint' preparation ensures your financial papers are bulletproof and your interview confidence is unshakeable."
             }
         ],
+        duration: "End-to-End Support (6-12 Months recommended)",
+        pricing: "Tailored based on number of universities and regions",
         seo: {
             title: "Top Study Abroad Consultants | Ivy League & Global Admissions",
             description: "Premier overseas education consultants for USA, UK, Canada, Australia. Expert guidance for Ivy League admissions, scholarships, SOPs & student visas.",
-            keywords: "study abroad consultants, overseas education experts, study in USA, study in UK, ivy league admissions, sop writing services, scholarship assistance, student visa experts"
+            keywords: "study abroad consultants, study abroad consultants uae, university admission guidance india, overseas education experts, study in USA, study in UK, ivy league admissions, sop writing services, scholarship assistance"
         }
     },
     {
@@ -264,6 +270,8 @@ export const servicesData = [
                 answer: "Absolutely. We invite you to a complimentary 'Discovery Session' to experience our teaching magic firsthand and see the immediate difference in your understanding."
             }
         ],
+        duration: "Flexible (Hourly or Monthly Packages)",
+        pricing: "Competitive hourly rates. Book a trial to discuss.",
         seo: {
             title: "Online IB, IGCSE, CBSE Tutors | Elite Math & Science Tuition",
             description: "World-class online tutoring for IB, IGCSE, A-Levels & CBSE. Logic-based mastery in Math, Physics, Chem. Boost your grades with India's best tutors.",
@@ -343,10 +351,12 @@ export const servicesData = [
                 answer: "Yes! We run multiple batches including evenings and weekends to fit perfectly into your school or work schedule. Both online and offline options are available."
             }
         ],
+        duration: "3-6 Months Comprehensive Courses",
+        pricing: "Course-based pricing. Contact for current batch fees.",
         seo: {
             title: "Best IELTS, TOEFL, SAT, JEE, NEET Coaching | Score Booster",
             description: "Top-rated coaching for IELTS, TOEFL, SAT & JEE/NEET Foundation. Strategic prep, expert faculty, and proven results for high-stakes exams.",
-            keywords: "ielts coaching classes, toefl preparation, sat exam prep, neet foundation course, jee coaching, competitive exam training, english language mastery"
+            keywords: "ielts coaching classes, ielts coaching dubai, toefl preparation, sat exam prep, neet foundation course, jee coaching, competitive exam training, english language mastery"
         }
     },
     {
@@ -418,6 +428,8 @@ export const servicesData = [
                 answer: "100%. We co-create the roadmap with you. Whether you need a comprehensive annual engagement or a focused 'Career Week' power series, we tailor it to your unique ethos."
             }
         ],
+        duration: "Annual Partnership / Academic Year Contract",
+        pricing: "Custom institutional proposal based on student count",
         seo: {
             title: "Career Guidance for Schools | Institutional Educational Partners",
             description: "Partner with TrueNorth to set up a world-class Career Guidance Cell. Structured curriculum, student workshops, and NEP-compliant solutions for schools.",
@@ -493,6 +505,8 @@ export const servicesData = [
                 answer: "Yes, and they will love it! We provide intensive, certification-level training that empowers your teachers to use the platform effectively and guide students with confidence."
             }
         ],
+        duration: "Setup: 4-6 Weeks | License: Annual",
+        pricing: "White-label licensing fee + Setup cost",
         seo: {
             title: "Setup Career Lab in School | White Label Career Platform",
             description: "Launch a state-of-the-art Career Lab in your school. White-label technology, psychometric tools, and staff training powered by TrueNorth & Edumilestones.",
@@ -568,10 +582,12 @@ export const servicesData = [
                 answer: "Consider it done. We will transform your existing site into a modern, lightning-fast, and mobile-responsive masterpiece that retains your legacy while powering your future."
             }
         ],
+        duration: "Project-based or Monthly Retainer",
+        pricing: "Custom quote based on scope of work",
         seo: {
             title: "Digital Marketing for Schools | Best Education Web Design & SEO",
             description: "India's specialized digital agency for schools & colleges. Stunning websites, #1 ranking SEO, and high-conversion admission marketing services.",
-            keywords: "digital marketing for schools, education website design, seo for educational institutions, admission lead generation, education brand management"
+            keywords: "digital marketing for schools, education website design, seo for educational institutions, admission lead generation, education brand management, school marketing india, education consultancy digital growth"
         }
     }
 ];

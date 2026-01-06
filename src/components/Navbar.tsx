@@ -38,6 +38,7 @@ const Navbar = () => {
         { name: "Home", path: "/" },
         { name: "About", path: "/about" },
         { name: "Services", path: "/services", hasDropdown: true },
+        { name: "Resources", path: "/resources" },
         { name: "Contact", path: "/contact" },
     ];
 
@@ -201,6 +202,7 @@ const Navbar = () => {
                         </motion.button>
                         <button
                             onClick={() => setIsOpen(!isOpen)}
+                            aria-label="Toggle menu"
                             className={`p-2.5 rounded-xl backdrop-blur-md border transition-colors ${isOpen
                                 ? (isDark ? 'bg-white text-black border-white' : 'bg-black text-white border-black')
                                 : (isDark ? 'bg-white/5 border-white/10 text-white' : 'bg-white/60 border-black/5 text-black')
