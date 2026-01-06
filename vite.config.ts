@@ -1,43 +1,10 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import vitePrerender from 'vite-plugin-prerender'
-import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     react(),
-    vitePrerender({
-      staticDir: path.join(__dirname, 'dist'),
-      routes: [
-        '/',
-        '/about',
-        '/services',
-        '/resources',
-        '/contact',
-        '/privacy-policy',
-        '/terms-of-service',
-        '/refund-policy',
-        '/disclaimer',
-        '/resources/choose-right-career-after-12th',
-        '/resources/study-abroad-vs-india-comparative-analysis',
-        '/resources/top-universities-indian-students-2025',
-        '/resources/sat-act-ielts-guide-uae-students',
-        '/resources/profile-building-ivy-league-oxbridge',
-        '/resources/ai-data-science-careers-dubai',
-        '/services/career-counselling-psychometric-assessments',
-        '/services/university-admissions-study-abroad',
-        '/services/academic-support-online-tutoring',
-        '/services/competitive-exam-language-preparation',
-        '/services/school-college-partnerships',
-        '/services/career-lab-setup',
-        '/services/digital-solutions-education'
-      ],
-      renderer: new vitePrerender.PuppeteerRenderer({
-        renderAfterTime: 2000, // Wait for animations/data to load
-        maxConcurrentRoutes: 1
-      })
-    })
   ],
   // Advanced build configuration for SEO
   build: {
