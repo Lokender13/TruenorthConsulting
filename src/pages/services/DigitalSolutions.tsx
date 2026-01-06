@@ -11,7 +11,7 @@ const DigitalSolutions = () => {
     return (
         <ServicePageLayout serviceId="digital-solutions">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 md:-mt-12">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
                     {[
                         { icon: Rocket, title: "Admission Scale", desc: "Engineered marketing funnels that predictably drive school admissions." },
                         { icon: Search, title: "SEO Dominance", desc: "#1 rankings for competitive education keywords in your local region." },
@@ -33,7 +33,7 @@ const DigitalSolutions = () => {
                     ))}
                 </div>
 
-                <div className="mb-24">
+                <div className="mb-16">
                     <StudentProfilerCTA />
                 </div>
             </div>

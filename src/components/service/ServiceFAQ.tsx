@@ -84,14 +84,14 @@ const ServiceFAQ = ({ faq }: ServiceFAQProps) => {
     };
 
     return (
-        <section className={`py-24 md:py-32 relative theme-transition ${isDark ? 'bg-zinc-950/0' : 'bg-transparent'}`}>
+        <section className={`py-16 md:py-20 relative theme-transition ${isDark ? 'bg-zinc-950/0' : 'bg-transparent'}`}>
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="text-center mb-24"
+                    className="text-center mb-16"
                 >
                     <motion.span className="text-brand-orange font-black tracking-[0.3em] uppercase text-xs mb-4 block">
                         Clarifications

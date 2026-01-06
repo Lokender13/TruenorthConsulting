@@ -105,7 +105,7 @@ const PsychometricAssessment = () => {
     const isDark = theme === 'dark';
 
     return (
-        <section className={`py-24 relative overflow-hidden theme-transition ${isDark ? 'bg-zinc-950/0' : 'bg-transparent'}`}>
+        <section className={`py-16 md:py-20 relative overflow-hidden theme-transition ${isDark ? 'bg-zinc-950/0' : 'bg-transparent'}`}>
             {/* Background Decorations */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 <div className={`absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[120px] opacity-[0.05] ${isDark ? 'bg-brand-orange' : 'bg-brand-orange/40'}`} />
@@ -122,7 +122,7 @@ const PsychometricAssessment = () => {
             </div>
 
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-20">
+                <div className="text-center mb-16">
                     <motion.span
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}

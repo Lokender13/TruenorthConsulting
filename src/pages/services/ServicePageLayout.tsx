@@ -123,7 +123,7 @@ const ServicePageLayout = ({ serviceId, children }: ServicePageLayoutProps) => {
                             <>
                                 <SectionDivider />
                                 <Section>
-                                    <div className="py-16">
+                                    <div className="py-12">
                                         {children}
                                     </div>
                                 </Section>

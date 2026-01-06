@@ -50,14 +50,14 @@ const ServiceProcess = ({ process }: ServiceProcessProps) => {
     if (!process || process.length === 0) return null;
 
     return (
-        <section className={`py-24 md:py-32 relative overflow-hidden theme-transition ${isDark ? 'bg-zinc-950/0' : 'bg-transparent'}`} ref={ref}>
+        <section className={`py-16 md:py-20 relative overflow-hidden theme-transition ${isDark ? 'bg-zinc-950/0' : 'bg-transparent'}`} ref={ref}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="text-center mb-28"
+                    className="text-center mb-16"
                 >
                     <motion.span className="text-brand-orange font-black tracking-[0.3em] uppercase text-xs mb-4 block">
                         Execution Workflow

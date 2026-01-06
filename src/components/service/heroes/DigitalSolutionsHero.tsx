@@ -102,14 +102,14 @@ const DigitalSolutionsHero = ({ service }: { service: any }) => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
             >
-                <div className={`inline-flex items-center gap-3 px-4 py-1.5 rounded-full text-[10px] font-black tracking-[0.2em] uppercase mb-8 shadow-sm
+                <div className={`inline-flex items-center gap-3 px-4 py-1.5 rounded-full text-[10px] font-black tracking-[0.2em] uppercase mb-6 shadow-sm
                     ${isDark ? 'bg-blue-500/10 text-brand-blue border border-brand-blue/20' : 'bg-brand-blue/5 text-brand-blue border border-brand-blue/10'}
                 `}>
                     <Laptop size={12} />
                     Digital Growth Architecture
                 </div>
 
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold mb-8 leading-[1.1] tracking-tight">
+                <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold mb-6 leading-[1.1] tracking-tight">
                     {service.title.split(' ').map((word: string, i: number) => (
                         <span key={i} className={i >= 2 ? 'text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-blue' : ''}>
                             {word}{' '}
@@ -117,7 +117,7 @@ const DigitalSolutionsHero = ({ service }: { service: any }) => {
                     ))}
                 </h1>
 
-                <p className={`text-xl md:text-2xl font-light leading-relaxed mb-12 max-w-xl ${isDark ? 'text-white/50' : 'text-gray-500 font-medium'}`}>
+                <p className={`text-xl md:text-2xl font-light leading-relaxed mb-8 max-w-xl ${isDark ? 'text-white/50' : 'text-gray-500 font-medium'}`}>
                     {service.tagline}
                 </p>
 
