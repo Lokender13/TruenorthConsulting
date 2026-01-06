@@ -10,25 +10,25 @@ const StrategicDNA = () => {
 
     const pillars = [
         {
-            title: "Invisible Admission Narrative",
-            desc: "Universal boards don't just look for grades; they look for a legacy. We engineer the narrative that makes your application irresistible.",
+            title: "Your Personal Story",
+            desc: "Universities want to know who you really are. We help you tell your unique story in a way that stands out.",
             icon: Zap,
             color: "brand-orange",
-            tag: "The Narrative Edge"
+            tag: "Stand Out"
         },
         {
-            title: "Psychometric Forensics",
-            desc: "Stop guessing your career. Our scientific auditing finds your precise competitive advantage in the global market.",
+            title: "Discover Your Strengths",
+            desc: "No more guessing. We use scientific tools to find exactly what you are good at and which career fits you best.",
             icon: Target,
             color: "purple-500",
-            tag: "Scientific Auditing"
+            tag: "Know Yourself"
         },
         {
-            title: "Global Result Engineering",
-            desc: "We don't just apply—we manifest results. Join the elite alumni admitted to Harvard, Stanford, and Oxford.",
+            title: "Achieve Your Goals",
+            desc: "We guide you every step of the way, helping you get into top universities like Harvard, Stanford, and Oxford.",
             icon: BarChart3,
             color: "brand-blue",
-            tag: "Proven Outcomes"
+            tag: "Get Results"
         }
     ];
 
@@ -43,7 +43,7 @@ const StrategicDNA = () => {
                         viewport={{ once: true }}
                         className={`inline-block text-[10px] font-black tracking-[0.5em] uppercase mb-6 ${isDark ? 'text-brand-orange' : 'text-brand-orange'}`}
                     >
-                        Success is Engineered, Not Accidental
+                        Success Comes From Planning
                     </motion.span>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
@@ -52,8 +52,8 @@ const StrategicDNA = () => {
                         transition={{ delay: 0.1 }}
                         className={`text-5xl md:text-8xl font-serif font-bold leading-[0.9] tracking-tighter mb-8 ${isDark ? 'text-white' : 'text-zinc-900'}`}
                     >
-                        The <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-purple-500 to-brand-blue italic font-light">1% Strategic</span> <br />
-                        Framework.
+                        Our Proven <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-purple-500 to-brand-blue italic font-light">3-Step Success</span> <br />
+                        Plan.
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -62,7 +62,7 @@ const StrategicDNA = () => {
                         transition={{ delay: 0.2 }}
                         className={`text-xl lg:text-2xl font-light max-w-3xl mx-auto ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}
                     >
-                        While other consultants follow the manual, we write the playbook. Discover the DNA of global academic dominance.
+                        We don't just fill out forms; we build a personalized roadmap for your child's future.
                     </motion.p>
                 </div>
 
@@ -131,10 +131,10 @@ const StrategicDNA = () => {
                     `}>
                         <div className="text-left max-w-md">
                             <h4 className={`text-3xl font-serif font-bold mb-4 ${isDark ? 'text-white' : 'text-zinc-900'}`}>
-                                Ready for your <span className="text-brand-orange">Strategy Audit?</span>
+                                Ready to <span className="text-brand-orange">Start Planning?</span>
                             </h4>
                             <p className={`text-lg font-light ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}>
-                                Join the elite circle of students who transformed their confusion into a world-class roadmap.
+                                Join hundreds of students who found their right path with us.
                             </p>
                         </div>
                         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
