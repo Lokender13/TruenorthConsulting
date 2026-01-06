@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, ArrowRight, User } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
@@ -11,6 +12,7 @@ const Resources = () => {
     const blogs = [
         {
             title: "How to choose the right career after 12th?",
+            slug: "choose-right-career-after-12th",
             excerpt: "Confused about your next step? Discover a scientific approach to identifying your strengths and aligning them with the perfect career path. Don't just follow the crowd.",
             author: "Surabhi Rawat",
             date: "Jan 05, 2025",
@@ -19,6 +21,7 @@ const Resources = () => {
         },
         {
             title: "Study Abroad vs India – A Comparative Analysis",
+            slug: "study-abroad-vs-india-comparative-analysis",
             excerpt: "Is studying abroad really worth the investment? We break down the ROI, lifestyle, and career opportunities of international vs domestic education to help you decide.",
             author: "Team TrueNorth",
             date: "Dec 28, 2024",
@@ -27,6 +30,7 @@ const Resources = () => {
         },
         {
             title: "Top Universities for Indian Students in 2025",
+            slug: "top-universities-indian-students-2025",
             excerpt: "A curated list of universities in the UK, USA, and Canada that are welcoming Indian talent with open arms and generous scholarships this year.",
             author: "Surabhi Rawat",
             date: "Dec 15, 2024",
@@ -85,44 +89,46 @@ const Resources = () => {
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1 }}
                             >
-                                <TiltCard
-                                    tiltIntensity={5}
-                                    className={`h-full flex flex-col rounded-[2rem] overflow-hidden border transition-all duration-500
-                                        ${isDark
-                                            ? 'bg-zinc-900/40 border-white/5 hover:border-white/10 group'
-                                            : 'bg-white border-zinc-100 hover:border-brand-orange/20 shadow-lg group'}`}
-                                >
-                                    {/* Image */}
-                                    <div className="aspect-[16/9] relative overflow-hidden">
-                                        <img
-                                            src={blog.image}
-                                            alt={blog.title}
-                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                        />
-                                        <div className="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur-md rounded-full text-[10px] font-black uppercase tracking-wider text-zinc-900">
-                                            {blog.category}
-                                        </div>
-                                    </div>
-
-                                    {/* Content */}
-                                    <div className="p-8 flex-1 flex flex-col">
-                                        <div className="flex items-center gap-4 mb-4 text-xs font-medium text-zinc-500">
-                                            <span className="flex items-center gap-1"><Calendar size={12} /> {blog.date}</span>
-                                            <span className="flex items-center gap-1"><User size={12} /> {blog.author}</span>
+                                <Link to={`/resources/${blog.slug}`} className="block h-full">
+                                    <TiltCard
+                                        tiltIntensity={5}
+                                        className={`h-full flex flex-col rounded-[2rem] overflow-hidden border transition-all duration-500
+                                            ${isDark
+                                                ? 'bg-zinc-900/40 border-white/5 hover:border-white/10 group'
+                                                : 'bg-white border-zinc-100 hover:border-brand-orange/20 shadow-lg group'}`}
+                                    >
+                                        {/* Image */}
+                                        <div className="aspect-[16/9] relative overflow-hidden">
+                                            <img
+                                                src={blog.image}
+                                                alt={blog.title}
+                                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                            />
+                                            <div className="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur-md rounded-full text-[10px] font-black uppercase tracking-wider text-zinc-900">
+                                                {blog.category}
+                                            </div>
                                         </div>
 
-                                        <h3 className={`text-xl font-serif font-bold mb-4 ${isDark ? 'text-white group-hover:text-brand-orange' : 'text-zinc-900 group-hover:text-brand-orange'} transition-colors`}>
-                                            {blog.title}
-                                        </h3>
-                                        <p className={`text-sm leading-relaxed mb-6 flex-1 ${isDark ? 'text-zinc-400' : 'text-zinc-500'}`}>
-                                            {blog.excerpt}
-                                        </p>
+                                        {/* Content */}
+                                        <div className="p-8 flex-1 flex flex-col">
+                                            <div className="flex items-center gap-4 mb-4 text-xs font-medium text-zinc-500">
+                                                <span className="flex items-center gap-1"><Calendar size={12} /> {blog.date}</span>
+                                                <span className="flex items-center gap-1"><User size={12} /> {blog.author}</span>
+                                            </div>
 
-                                        <button className={`flex items-center gap-2 text-xs font-black uppercase tracking-widest transition-all ${isDark ? 'text-white group-hover:translate-x-2' : 'text-zinc-900 group-hover:translate-x-2'}`}>
-                                            Read Article <ArrowRight size={14} className="text-brand-orange" />
-                                        </button>
-                                    </div>
-                                </TiltCard>
+                                            <h3 className={`text-xl font-serif font-bold mb-4 ${isDark ? 'text-white group-hover:text-brand-orange' : 'text-zinc-900 group-hover:text-brand-orange'} transition-colors`}>
+                                                {blog.title}
+                                            </h3>
+                                            <p className={`text-sm leading-relaxed mb-6 flex-1 ${isDark ? 'text-zinc-400' : 'text-zinc-500'}`}>
+                                                {blog.excerpt}
+                                            </p>
+
+                                            <div className={`flex items-center gap-2 text-xs font-black uppercase tracking-widest transition-all ${isDark ? 'text-white group-hover:translate-x-2' : 'text-zinc-900 group-hover:translate-x-2'}`}>
+                                                Read Article <ArrowRight size={14} className="text-brand-orange" />
+                                            </div>
+                                        </div>
+                                    </TiltCard>
+                                </Link>
                             </motion.div>
                         ))}
                     </div>

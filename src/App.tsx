@@ -17,6 +17,7 @@ import SchoolPartnerships from './pages/services/SchoolPartnerships';
 import CareerLab from './pages/services/CareerLab';
 import DigitalSolutions from './pages/services/DigitalSolutions';
 import Resources from './pages/Resources';
+import BlogPost from './pages/BlogPost';
 import PrivacyPolicy from './pages/legal/PrivacyPolicy';
 import TermsConditions from './pages/legal/TermsConditions';
 import RefundPolicy from './pages/legal/RefundPolicy';
@@ -55,6 +56,7 @@ const AnimatedRoutes = () => {
 
           <Route path="/about" element={<About />} />
           <Route path="/resources" element={<Resources />} />
+          <Route path="/resources/:slug" element={<BlogPost />} />
           <Route path="/contact" element={<Contact />} />
 
           {/* Legal Pages */}
