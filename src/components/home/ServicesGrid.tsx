@@ -93,7 +93,7 @@ const ServicesGrid = () => {
     };
 
     return (
-        <section className={`py-24 relative overflow-hidden theme-transition ${isDark ? 'bg-zinc-950/0' : 'bg-transparent'}`}>
+        <section className={`py-16 relative overflow-hidden theme-transition ${isDark ? 'bg-zinc-950/0' : 'bg-transparent'}`}>
             {/* Subtle background pattern */}
             <div className="absolute inset-0">
                 <div

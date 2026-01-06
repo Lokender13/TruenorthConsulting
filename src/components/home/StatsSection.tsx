@@ -15,7 +15,7 @@ const StatsSection = () => {
     const isDark = theme === 'dark';
 
     return (
-        <section className={`py-24 relative overflow-hidden theme-transition ${isDark ? 'bg-zinc-950/0' : 'bg-transparent'}`}>
+        <section className={`py-16 relative overflow-hidden theme-transition ${isDark ? 'bg-zinc-950/0' : 'bg-transparent'}`}>
             {/* Ambient background line */}
             <motion.div
                 className={`absolute top-1/2 left-0 w-full h-[1px] ${isDark ? 'bg-gradient-to-r from-transparent via-white/5 to-transparent' : 'bg-gradient-to-r from-transparent via-brand-orange/10 to-transparent'}`}

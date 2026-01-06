@@ -133,7 +133,7 @@ const Services = () => {
             />
 
             {/* Hero */}
-            <section className={`relative pt-40 pb-24 px-4 overflow-hidden ${isDark ? 'bg-black text-white' : 'bg-gray-50 text-gray-900'}`}>
+            <section className={`relative pt-32 pb-16 px-4 overflow-hidden ${isDark ? 'bg-black text-white' : 'bg-gray-50 text-gray-900'}`}>
                 {/* FloatingOrbs */}
                 <FloatingOrbs orbs={isDark ? [
                     { size: 400, x: '5%', y: '15%', color: 'rgba(255,255,255,0.025)', delay: 0, duration: 18 },
@@ -175,7 +175,7 @@ const Services = () => {
             </section>
 
             {/* Services Grid */}
-            <section className={`py-16 relative ${isDark ? 'bg-zinc-950' : 'bg-white'}`}>
+            <section className={`py-12 relative ${isDark ? 'bg-zinc-950' : 'bg-white'}`}>
                 <div className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent ${isDark ? 'via-white/10' : 'via-gray-200'} to-transparent`}></div>
 
                 <div className="max-w-7xl mx-auto px-4">
@@ -261,7 +261,7 @@ const Services = () => {
             </section>
 
             {/* CTA */}
-            <section className={`py-24 text-center relative ${isDark ? 'bg-black' : 'bg-gray-50'}`}>
+            <section className={`py-16 text-center relative ${isDark ? 'bg-black' : 'bg-gray-50'}`}>
                 <div className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent ${isDark ? 'via-white/10' : 'via-gray-200'} to-transparent`}></div>
                 <div className="max-w-3xl mx-auto px-4">
                     <h2 className={`text-3xl md:text-4xl font-serif font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>

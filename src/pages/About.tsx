@@ -86,7 +86,7 @@ const About = () => {
             />
 
             {/* Hero Section */}
-            <section className="relative pt-40 pb-20 px-4 overflow-hidden">
+            <section className="relative pt-32 pb-16 px-4 overflow-hidden">
                 <div className="max-w-7xl mx-auto relative z-10 text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -112,7 +112,7 @@ const About = () => {
             </section>
 
             {/* Our Story Section */}
-            <section className="py-24 px-4 relative z-10">
+            <section className="py-16 px-4 relative z-10">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                         {/* Story Content */}
@@ -165,7 +165,7 @@ const About = () => {
             </section>
 
             {/* What We Do Section */}
-            <section className="py-24 px-4 relative z-10">
+            <section className="py-16 px-4 relative z-10">
                 <div className="max-w-7xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -219,7 +219,7 @@ const About = () => {
             </section>
 
             {/* Mission & Vision Section */}
-            <section className="py-24 px-4 relative z-10">
+            <section className="py-16 px-4 relative z-10">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                         {[
@@ -274,7 +274,7 @@ const About = () => {
             </section>
 
             {/* Founder Section - Hyper Luxury Version */}
-            <section className={`relative py-32 px-4 overflow-hidden ${isDark ? 'bg-transparent' : 'bg-transparent'}`}>
+            <section className={`relative py-20 px-4 overflow-hidden ${isDark ? 'bg-transparent' : 'bg-transparent'}`}>
                 {/* Atmospheric Background Elements */}
                 <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-orange-500/10 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/2"></div>
                 <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2"></div>
@@ -404,7 +404,7 @@ const About = () => {
 
 
             {/* Elite Authority Section - Marketing Enhancement */}
-            <section className={`relative py-32 px-4 overflow-hidden`}>
+            <section className={`relative py-20 px-4 overflow-hidden`}>
                 <div className={`absolute inset-0 opacity-[0.4] ${isDark ? 'bg-[radial-gradient(#ffffff0a_1px,transparent_1px)]' : 'bg-[radial-gradient(#00000005_1px,transparent_1px)]'}`} style={{ backgroundSize: '40px 40px' }}></div>
                 <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-orange-500/20 to-transparent"></div>
 
@@ -500,7 +500,7 @@ const About = () => {
             </section>
 
             {/* Stats Section */}
-            <section className={`py-16 px-4 ${isDark ? 'bg-zinc-950' : 'bg-white'}`}>
+            <section className={`py-12 px-4 ${isDark ? 'bg-zinc-950' : 'bg-white'}`}>
                 <div className="max-w-6xl mx-auto">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                         {[
@@ -529,7 +529,7 @@ const About = () => {
             </section>
 
             {/* Final CTA */}
-            <section className="py-32 px-4 relative z-10 overflow-hidden">
+            <section className="py-24 px-4 relative z-10 overflow-hidden">
                 <div className={`max-w-5xl mx-auto rounded-[4rem] p-12 md:p-24 text-center relative overflow-hidden theme-transition
                     ${isDark ? 'bg-zinc-900/40 border border-white/5 shadow-2xl shadow-black/50' : 'bg-white border border-white shadow-2xl shadow-brand-orange/10'}`}>
 
