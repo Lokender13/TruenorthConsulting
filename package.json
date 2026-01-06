@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "build:prerender": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "serve": "vite preview --host"
@@ -48,7 +47,6 @@
     "terser": "^5.44.1",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",
-    "vite": "^7.2.4",
-    "vite-plugin-prerender": "^1.0.8"
+    "vite": "^7.2.4"
   }
 }
