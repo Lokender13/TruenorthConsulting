@@ -137,19 +137,7 @@ const Hero = () => {
                 }}
             />
 
-            {/* Animated Lines */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <motion.div
-                    className={`absolute h-px w-[200%] top-1/4 -left-1/2 ${isDark ? 'bg-gradient-to-r from-transparent via-white/10 to-transparent' : 'bg-gradient-to-r from-transparent via-orange-500/20 to-transparent'}`}
-                    animate={{ x: ['-50%', '0%'] }}
-                    transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
-                />
-                <motion.div
-                    className={`absolute h-px w-[200%] top-3/4 -left-1/2 ${isDark ? 'bg-gradient-to-r from-transparent via-white/5 to-transparent' : 'bg-gradient-to-r from-transparent via-blue-500/20 to-transparent'}`}
-                    animate={{ x: ['0%', '-50%'] }}
-                    transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
-                />
-            </div>
+            {/* Animated Lines Removed as per request */}
 
             {/* Main Content */}
             <div className="relative z-10 max-w-7xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-16 pt-20">
