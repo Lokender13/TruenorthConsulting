@@ -37,7 +37,7 @@ const services = [
         icon: BookOpen,
         title: "Career Counselling",
         slug: "career-counselling-psychometric-assessments",
-        desc: "Discover your strengths and find the right career path for you.",
+        desc: "Unlock your true potential with scientifically-backed psychometric assessments and personalized mentorship to map your perfect career trajectory.",
         color: 'blue' as keyof typeof serviceColors,
         image: "https://images.unsplash.com/photo-1544531586-fde5298cdd40?q=80&w=800&auto=format&fit=crop"
     },
@@ -45,7 +45,7 @@ const services = [
         icon: Globe,
         title: "Study Abroad",
         slug: "university-admissions-study-abroad",
-        desc: "Complete help with applying to top universities around the world.",
+        desc: "Expert end-to-end guidance for global university admissions. From selecting the right Ivy League to visa approvals, we make your global dreams a reality.",
         color: 'orange' as keyof typeof serviceColors,
         image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop"
     },
@@ -53,15 +53,15 @@ const services = [
         icon: GraduationCap,
         title: "Academic Support",
         slug: "academic-support-online-tutoring",
-        desc: "Expert tutoring to help you score better in your exams.",
+        desc: "Achieve academic excellence with tailored 1-on-1 tutoring. We identify learning gaps and design custom strategies to boost grades and subject mastery.",
         color: 'emerald' as keyof typeof serviceColors,
         image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop"
     },
     {
         icon: BarChart,
-        title: "Competitive Exams",
+        title: "Profile Building & IELTS Prep",
         slug: "competitive-exam-language-preparation",
-        desc: "Prepare for entrance exams like IELTS, NEET, and JEE.",
+        desc: "Craft a standout profile for top-tier universities and master the IELTS. We combine strategic profile enhancement with rigorous exam prep to maximize your scholarship chances.",
         color: 'purple' as keyof typeof serviceColors,
         image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800&auto=format&fit=crop"
     },
@@ -69,7 +69,7 @@ const services = [
         icon: Users,
         title: "School Partnerships",
         slug: "school-college-partnerships",
-        desc: "Career guidance programs for schools and colleges.",
+        desc: "Empower your institution with a world-class career guidance ecosystem. We partner with schools to deliver workshops, counselling, and resources that drive student success.",
         color: 'pink' as keyof typeof serviceColors,
         image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop"
     },
@@ -77,7 +77,7 @@ const services = [
         icon: Building,
         title: "Career Labs",
         slug: "career-lab-setup",
-        desc: "Setting up career guidance centers in schools.",
+        desc: "Transform your campus with a state-of-the-art Career Lab—a dedicated innovation hub where students explore futures and engage with career possibilities.",
         color: 'slate' as keyof typeof serviceColors,
         image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop"
     },
