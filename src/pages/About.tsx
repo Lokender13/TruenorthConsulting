@@ -1,0 +1,578 @@
+import { motion } from 'framer-motion';
+import { Target, Lightbulb, Users, Award, ArrowRight, BookOpen, GraduationCap, Globe } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
+import { useTheme } from '../contexts/ThemeContext';
+import AnimatedCounter from '../components/ui/AnimatedCounter';
+import TiltCard from '../components/ui/TiltCard';
+
+const About = () => {
+    const { theme } = useTheme();
+    const isDark = theme === 'dark';
+
+    const credentials = [
+        {
+            title: "Certified by UCLA",
+            issuer: "UCLA Extension",
+            impact: "Career Planning Expert",
+            desc: "Specialized training in university placement and career planning from UCLA Extension."
+        },
+        {
+            title: "Expert in Student Assessments",
+            issuer: "CCA / Univariety",
+            impact: "Scientific Testing",
+            desc: "Using scientific tests to understand your strengths and find the best fit for your future."
+        },
+        {
+            title: "IB Education Expert",
+            issuer: "International Baccalaureate",
+            impact: "World-Class Teaching",
+            desc: "Experience in teaching and guiding students within the International Baccalaureate (IB) system."
+        },
+        {
+            title: "Harvard Project Zero Focus",
+            issuer: "Project Zero",
+            impact: "Creative Thinking",
+            desc: "Trained in teaching methods that help students think deeply and creatively."
+        },
+        {
+            title: "International Education Expert",
+            issuer: "CCCIS International",
+            impact: "Study Anywhere",
+            desc: "Expertise in British, American, and Indian education systems to help you study anywhere."
+        }
+    ];
+
+    return (
+        <div className={`min-h-screen theme-transition relative overflow-hidden ${isDark ? 'bg-zinc-950 text-white' : 'bg-[#FAFAFA] text-zinc-900'}`}>
+            <SEO
+                title="About TrueNorth Consulting | Career Counselling & Education Consultancy in Dubai"
+                description="TrueNorth Consulting, founded by Surabhi Rawat, is a premier career counselling and education consultancy based in Dubai, UAE. We help students navigate academic pathways from CBSE to IB, British, and American curricula."
+                schema={{
+                    "@context": "https://schema.org",
+                    "@type": "Organization",
+                    "name": "TrueNorth Consulting",
+                    "founder": {
+                        "@type": "Person",
+                        "name": "Surabhi Rawat",
+                        "jobTitle": "Founder & Career Counselor"
+                    },
+                    "description": "Premier career counselling and education consultancy",
+                    "url": "https://www.truenorthae.com",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "Dubai",
+                        "addressCountry": "UAE"
+                    }
+                }}
+            />
+
+            {/* Ambient Background Glows */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                <div className={`absolute top-[-10%] left-[-10%] w-[1000px] h-[1000px] rounded-full blur-[150px] transition-colors duration-1000
+                    ${isDark ? 'bg-brand-orange/10' : 'bg-brand-orange/[0.08]'}`} />
+                <div className={`absolute bottom-[-10%] right-[-10%] w-[1000px] h-[1000px] rounded-full blur-[150px] transition-colors duration-1000
+                    ${isDark ? 'bg-brand-blue/10' : 'bg-brand-blue/[0.08]'}`} />
+            </div>
+
+            {/* Grid Pattern */}
+            <div
+                className={`absolute inset-0 z-0 transition-opacity duration-1000 ${isDark ? 'opacity-[0.03]' : 'opacity-[0.05]'}`}
+                style={{
+                    backgroundImage: `linear-gradient(to right, ${isDark ? 'white' : 'rgba(0,0,0,0.1)'} 1px, transparent 1px), 
+                                      linear-gradient(to bottom, ${isDark ? 'white' : 'rgba(0,0,0,0.1)'} 1px, transparent 1px)`,
+                    backgroundSize: '80px 80px',
+                }}
+            />
+
+            {/* Hero Section */}
+            <section className="relative pt-32 pb-16 px-4 overflow-hidden">
+                <div className="max-w-7xl mx-auto relative z-10 text-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                    >
+                        <span className={`inline-flex items-center gap-2 px-6 py-2 rounded-full border text-[10px] font-black tracking-[0.3em] uppercase mb-8
+                            ${isDark ? 'border-brand-orange/20 text-brand-orange bg-brand-orange/5' : 'border-brand-orange/10 text-brand-orange bg-white shadow-sm'}`}>
+                            Our Legacy
+                        </span>
+                        <h1 className={`text-6xl md:text-9xl font-serif font-bold mb-8 leading-[0.9] tracking-tighter ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+                            Finding Your<br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-purple-500 to-brand-blue italic font-light">
+                                True North
+                            </span>
+                        </h1>
+                        <p className={`text-xl lg:text-2xl font-light max-w-3xl mx-auto leading-relaxed transition-colors duration-500
+                            ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}>
+                            Helping students find their right path with expert guidance and care.
+                        </p>
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* Our Story Section */}
+            <section className="py-16 px-4 relative z-10">
+                <div className="max-w-7xl mx-auto">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                        {/* Story Content */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1 }}
+                        >
+                            <span className="text-[10px] font-black tracking-[0.5em] uppercase text-brand-orange mb-6 block">Our Story</span>
+                            <h2 className={`text-4xl md:text-6xl font-serif font-bold mb-8 leading-tight ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+                                Why We <br /><span className="italic font-light">Started.</span>
+                            </h2>
+                            <div className={`space-y-6 text-xl leading-relaxed transition-colors duration-500 ${isDark ? 'text-zinc-400 font-light' : 'text-zinc-600 font-medium'}`}>
+                                <p>
+                                    <strong className={isDark ? 'text-zinc-200' : 'text-zinc-900'}>TrueNorth Consulting</strong> was founded by <strong className="text-brand-orange">Surabhi Rawat</strong>, an experienced educator and certified career counselor, driven by a deep understanding of the challenges students and parents face today.
+                                </p>
+                                <p>
+                                    She recognized how overwhelming it can be to make sense of the many available academic pathways — from <strong className={isDark ? 'text-zinc-200' : 'text-zinc-900'}>CBSE to IB, British, American,</strong> and more.
+                                </p>
+                                <p>
+                                    TrueNorth Consulting was established with one clear purpose — to support students and parents in making <strong className="text-brand-orange">confident, well-informed academic and career decisions</strong>.
+                                </p>
+                            </div>
+                        </motion.div>
+
+                        {/* Image */}
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1 }}
+                            className="relative"
+                        >
+                            <div className={`relative overflow-hidden rounded-[3rem] aspect-[4/3] shadow-2xl ${isDark ? 'shadow-black/50 border border-white/5' : 'border border-white shadow-brand-blue/10'}`}>
+                                <img
+                                    src="https://images.unsplash.com/photo-1582672060674-bc2bd808a8b5?auto=format&fit=crop&w=800&q=80"
+                                    alt="Dubai Skyline Premium view"
+                                    className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
+                                />
+                                <div className={`absolute inset-0 ${isDark ? 'bg-gradient-to-t from-black/60 via-transparent' : 'bg-gradient-to-t from-zinc-900/20 via-transparent'}`}></div>
+                                {/* Floating badge */}
+                                <div className="absolute bottom-10 right-10 backdrop-blur-3xl bg-white/10 dark:bg-black/20 px-8 py-4 rounded-2xl border border-white/20 shadow-2xl">
+                                    <span className="text-white text-xs font-black tracking-widest uppercase">Based in Dubai, UAE</span>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
+
+            {/* What We Do Section */}
+            <section className="py-16 px-4 relative z-10">
+                <div className="max-w-7xl mx-auto">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1 }}
+                        className="text-center mb-20"
+                    >
+                        <span className="text-[10px] font-black tracking-[0.5em] uppercase text-brand-orange mb-6 block">We Help Everyone</span>
+                        <h2 className={`text-4xl md:text-6xl font-serif font-bold mb-8 leading-tight ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+                            Guidance that reaches <br /><span className="italic font-light">Everywhere.</span>
+                        </h2>
+                        <p className={`max-w-3xl mx-auto text-xl md:text-2xl font-light leading-relaxed transition-colors duration-500
+                            ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}>
+                            We help students at every important step of their education, no matter where they are.
+                        </p>
+                    </motion.div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                        {[
+                            { icon: BookOpen, title: "Personalized Guidance", desc: "Tailored advice based on each student's unique strengths and aspirations." },
+                            { icon: GraduationCap, title: "All Age Groups", desc: "Services for students from middle school to college level." },
+                            { icon: Globe, title: "Global Reach", desc: "Serving clients across UAE, India, and international markets." },
+                        ].map((item, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1, duration: 0.8 }}
+                            >
+                                <TiltCard
+                                    tiltIntensity={5}
+                                    glareOpacity={isDark ? 0.1 : 0.05}
+                                    className={`p-10 rounded-[3rem] h-full border transition-all duration-500
+                                        ${isDark
+                                            ? 'bg-zinc-900/40 border-white/5 hover:bg-zinc-900/60 shadow-2xl shadow-black/20'
+                                            : 'bg-white/80 border-white shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]'}`}
+                                >
+                                    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-8 transition-transform group-hover:scale-110
+                                        ${isDark ? 'bg-brand-orange/10 text-brand-orange' : 'bg-brand-orange/5 text-brand-orange shadow-inner shadow-brand-orange/10'}`}>
+                                        <item.icon size={32} />
+                                    </div>
+                                    <h3 className={`text-2xl font-serif font-bold mb-4 ${isDark ? 'text-white' : 'text-zinc-900'}`}>{item.title}</h3>
+                                    <p className={`text-lg leading-relaxed ${isDark ? 'text-zinc-400 font-light' : 'text-zinc-500 font-medium'}`}>{item.desc}</p>
+                                </TiltCard>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Mission & Vision Section */}
+            <section className="py-16 px-4 relative z-10">
+                <div className="max-w-7xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        {[
+                            {
+                                icon: Target,
+                                title: "Our Mission",
+                                desc: "To empower students and parents with the clarity, confidence, and direction they need to make informed decisions about their academic and career journeys."
+                            },
+                            {
+                                icon: Lightbulb,
+                                title: "Our Vision",
+                                desc: "We believe every child has a unique path — their own True North. Our mission is to help them discover and navigate that path with purpose and peace of mind."
+                            }
+                        ].map((item, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1, duration: 0.8 }}
+                            >
+                                <TiltCard
+                                    tiltIntensity={5}
+                                    glareOpacity={isDark ? 0.1 : 0.05}
+                                    className={`p-12 rounded-[3.5rem] h-full border transition-all duration-500
+                                        ${isDark
+                                            ? 'bg-zinc-900/40 border-white/5 hover:bg-zinc-900/60 shadow-2xl shadow-black/20'
+                                            : 'bg-white/80 border-white shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]'}`}
+                                >
+                                    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-8 transition-transform group-hover:scale-110
+                                        ${isDark ? 'bg-brand-blue/10 text-brand-blue' : 'bg-brand-blue/5 text-brand-blue shadow-inner shadow-brand-blue/10'}`}>
+                                        <item.icon size={32} />
+                                    </div>
+                                    <h2 className={`text-4xl font-serif font-bold mb-6 ${isDark ? 'text-white' : 'text-zinc-900'}`}>{item.title}</h2>
+                                    <p className={`text-xl leading-relaxed transition-colors duration-500 ${isDark ? 'text-zinc-400 font-light' : 'text-zinc-600 font-medium'}`}>{item.desc}</p>
+                                </TiltCard>
+                            </motion.div>
+                        ))}
+                    </div>
+
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        className="text-center mt-20"
+                    >
+                        <p className={`text-2xl md:text-3xl italic font-light max-w-4xl mx-auto leading-relaxed transition-colors duration-500 ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}>
+                            "Above all, TrueNorth is committed to creating a <span className="text-brand-orange font-bold italic">supportive space</span> where students feel heard, understood, and inspired."
+                        </p>
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* Founder Section - Hyper Luxury Version */}
+            <section className={`relative py-20 px-4 overflow-hidden ${isDark ? 'bg-transparent' : 'bg-transparent'}`}>
+                {/* Atmospheric Background Elements */}
+                <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-orange-500/10 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/2"></div>
+                <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2"></div>
+
+                {/* Decorative Text Watermark - Premium Animated Stroke Version */}
+                <motion.div
+                    animate={{
+                        y: ["-45%", "-55%", "-45%"],
+                        x: [0, 10, 0]
+                    }}
+                    transition={{
+                        duration: 15,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                    }}
+                    className={`absolute top-1/2 left-4 font-serif font-bold pointer-events-none select-none tracking-tighter transition-colors duration-1000 text-[18vw]
+                        ${isDark
+                            ? 'text-transparent opacity-[0.08] [-webkit-text-stroke:1px_rgba(255,165,0,0.3)]'
+                            : 'text-transparent opacity-[0.03] [-webkit-text-stroke:1px_rgba(0,0,0,0.15)]'}`}
+                >
+                    TRUENORTH
+                </motion.div>
+
+                <div className="max-w-7xl mx-auto relative z-10">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
+
+                        {/* Left - Portrait Side with 3D Effects */}
+                        <div className="lg:col-span-5 relative">
+                            {/* Decorative Frame Element */}
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                className="absolute -top-10 -left-10 w-64 h-64 border-l border-t border-orange-500/30 rounded-tl-[4rem] hidden lg:block"
+                            ></motion.div>
+
+                            <TiltCard tiltIntensity={15} glareOpacity={0.15} className="relative z-10">
+                                <motion.div
+                                    initial={{ opacity: 0, x: -50 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    transition={{ duration: 1 }}
+                                    className="relative group"
+                                >
+                                    <div className={`relative overflow-hidden rounded-[3rem] ${isDark ? 'bg-zinc-900 border border-white/5' : 'bg-white shadow-2xl border border-gray-100'}`}>
+                                        <img
+                                            src="/assets/surabhi-rawat.jpg"
+                                            alt="Surabhi Rawat - Founder of TrueNorth Consulting"
+                                            className="w-full aspect-[4/5] object-cover transition-transform duration-1000 group-hover:scale-105"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
+                                    </div>
+
+                                    {/* Floating Glass Name Card */}
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: 0.5, duration: 0.8 }}
+                                        className="absolute -bottom-8 -right-8 w-72 backdrop-blur-2xl bg-white/10 dark:bg-black/20 p-8 rounded-[2rem] border border-white/20 shadow-2xl"
+                                    >
+                                        <div className="relative">
+                                            <h4 className="text-white text-2xl font-serif font-black mb-1">Surabhi Rawat</h4>
+                                            <p className="text-orange-400 text-[10px] font-black tracking-[0.3em] uppercase mb-4">Founder & Lead Counselor</p>
+                                            <p className="text-white/60 text-xs italic font-light leading-relaxed">
+                                                "Every student has a unique North Star; it's our mission to find it."
+                                            </p>
+                                        </div>
+                                    </motion.div>
+                                </motion.div>
+                            </TiltCard>
+                        </div>
+
+                        {/* Right - Narrative Section */}
+                        <div className="lg:col-span-7">
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8 }}
+                            >
+                                <div className="flex items-center gap-4 mb-8">
+                                    <div className="h-px w-12 bg-orange-500"></div>
+                                    <span className="text-[10px] font-black tracking-[0.5em] uppercase text-orange-500">The Visionary Mind</span>
+                                </div>
+
+                                <h2 className={`text-6xl md:text-8xl font-serif font-bold mb-10 leading-[0.9] tracking-tighter ${isDark ? 'bg-gradient-to-br from-white via-white to-white/40 bg-clip-text text-transparent' : 'text-gray-900'}`}>
+                                    Guidance as an <br />
+                                    <span className="italic font-light text-orange-500">Art Form.</span>
+                                </h2>
+
+                                <div className={`space-y-8 text-lg md:text-xl font-light leading-relaxed ${isDark ? 'text-white/40' : 'text-gray-500'}`}>
+                                    <p className="first-letter:text-5xl first-letter:font-serif first-letter:font-bold first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:text-orange-500">
+                                        <strong className={isDark ? 'text-white' : 'text-gray-900'}>Surabhi Rawat</strong> is more than just a counselor; she helps build bright futures. With over 10 years of experience, she combines expert knowledge with a caring heart.
+                                    </p>
+
+                                    <p>
+                                        An <span className="text-orange-500 italic">IB World Educator</span> at her core, Surabhi pioneered the Learning Enrichment Program (LEAP), a groundbreaking initiative that shifted the focus from rote learning to the cultivation of critical thinking and creative logic.
+                                    </p>
+
+                                    <p>
+                                        As a parent who has navigated diverse global educational systems, her approach is deeply personal. She transformed her firsthand challenges into a boutique consultancy model that prioritizes <span className="underline decoration-orange-500/30 underline-offset-8">peace of mind</span> for families and <span className="text-orange-500 font-bold italic">clarity of purpose</span> for students.
+                                    </p>
+                                </div>
+
+                                {/* Expertise Grid */}
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 pt-16 border-t border-orange-500/10">
+                                    <div className="group">
+                                        <p className="text-[10px] font-black tracking-[0.2em] uppercase text-orange-500/50 mb-2 group-hover:text-orange-500 transition-colors">Academic Foundation</p>
+                                        <h5 className={`text-xl font-serif font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>M.Sc., B.Ed.</h5>
+                                    </div>
+                                    <div className="group">
+                                        <p className="text-[10px] font-black tracking-[0.2em] uppercase text-orange-500/50 mb-2 group-hover:text-orange-500 transition-colors">Global Counseling</p>
+                                        <h5 className={`text-xl font-serif font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>UCLA Certified</h5>
+                                    </div>
+                                    <div className="group">
+                                        <p className="text-[10px] font-black tracking-[0.2em] uppercase text-orange-500/50 mb-2 group-hover:text-orange-500 transition-colors">Design Thinking</p>
+                                        <h5 className={`text-xl font-serif font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>Harvard Project Zero</h5>
+                                    </div>
+                                    <div className="group">
+                                        <p className="text-[10px] font-black tracking-[0.2em] uppercase text-orange-500/50 mb-2 group-hover:text-orange-500 transition-colors">International Standards</p>
+                                        <h5 className={`text-xl font-serif font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>IB Educator</h5>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            {/* Elite Authority Section - Marketing Enhancement */}
+            <section className={`relative py-20 px-4 overflow-hidden`}>
+                <div className={`absolute inset-0 opacity-[0.4] ${isDark ? 'bg-[radial-gradient(#ffffff0a_1px,transparent_1px)]' : 'bg-[radial-gradient(#00000005_1px,transparent_1px)]'}`} style={{ backgroundSize: '40px 40px' }}></div>
+                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-orange-500/20 to-transparent"></div>
+
+                <div className="max-w-7xl mx-auto relative z-10">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-center mb-24"
+                    >
+                        <div className="flex justify-center mb-6">
+                            <motion.div initial={{ width: 0 }} whileInView={{ width: 40 }} className="h-0.5 bg-orange-500 self-center mr-4"></motion.div>
+                            <span className="text-xs font-black tracking-[0.5em] uppercase text-orange-600">Our Qualifications</span>
+                            <motion.div initial={{ width: 0 }} whileInView={{ width: 40 }} className="h-0.5 bg-orange-500 self-center ml-4"></motion.div>
+                        </div>
+
+                        <h2 className={`text-5xl md:text-7xl font-serif font-bold mb-8 tracking-tight ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                            Certified <br />
+                            <span className="italic text-brand-orange">Experts.</span>
+                        </h2>
+
+                        <p className={`max-w-3xl mx-auto text-xl font-light leading-relaxed ${isDark ? 'text-white/40' : 'text-gray-500 font-medium'}`}>
+                            Our methods are proven and trusted. We use international standards to give you the best advice.
+                        </p>
+                    </motion.div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {credentials.map((item, idx) => (
+                            <motion.div
+                                key={idx}
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: idx * 0.1 }}
+                            >
+                                <TiltCard
+                                    tiltIntensity={4}
+                                    className={`
+                                        h-full p-10 rounded-[3rem] border transition-all duration-700 relative overflow-hidden group
+                                        ${isDark
+                                            ? 'bg-zinc-900/40 border-white/5 hover:bg-zinc-900/60 shadow-2xl'
+                                            : 'bg-white border-zinc-100 shadow-[0_20px_50px_rgba(0,0,0,0.03)] hover:shadow-brand-orange/10'
+                                        }
+                                    `}
+                                >
+                                    <div className="relative z-10">
+                                        <div className="flex items-start justify-between mb-8">
+                                            <div className={`p-4 rounded-2xl ${isDark ? 'bg-orange-500/10 text-orange-500' : 'bg-orange-50 text-orange-600'}`}>
+                                                <Award size={24} />
+                                            </div>
+                                            <span className={`text-[10px] font-black uppercase tracking-[0.2em] px-3 py-1 rounded-full ${isDark ? 'bg-white/5 text-zinc-500' : 'bg-zinc-100 text-zinc-500'}`}>
+                                                {item.issuer}
+                                            </span>
+                                        </div>
+
+                                        <h3 className={`text-2xl font-serif font-bold mb-3 ${isDark ? 'text-white' : 'text-zinc-900'}`}>{item.title}</h3>
+                                        <p className="text-brand-orange text-[10px] font-black uppercase tracking-[0.3em] mb-6">{item.impact}</p>
+                                        <p className={`text-base leading-relaxed ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}>
+                                            {item.desc}
+                                        </p>
+                                    </div>
+
+                                    {/* Subtle interactive background element */}
+                                    <div className="absolute -right-10 -bottom-10 opacity-0 group-hover:opacity-10 transition-opacity duration-700 pointer-events-none">
+                                        <Award size={200} className="text-brand-orange" />
+                                    </div>
+                                </TiltCard>
+                            </motion.div>
+                        ))}
+
+                        {/* Interactive "Why it matters" card */}
+                        <motion.div
+                            initial={{ opacity: 0, x: 20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            className="lg:col-span-1"
+                        >
+                            <div className={`
+                                h-full p-10 rounded-[3rem] flex flex-col justify-center items-center text-center border-2 border-dashed
+                                ${isDark ? 'border-brand-orange/20 bg-brand-orange/5' : 'border-brand-orange/20 bg-brand-orange/[0.02]'}
+                            `}>
+                                <div className="w-16 h-16 rounded-full bg-brand-orange text-white flex items-center justify-center mb-6 shadow-xl shadow-brand-orange/20">
+                                    <Target size={30} />
+                                </div>
+                                <h4 className={`text-2xl font-serif font-bold mb-4 ${isDark ? 'text-white' : 'text-zinc-900'}`}>The Global Advantage</h4>
+                                <p className={`text-sm leading-relaxed ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}>
+                                    These aren't just titles. They represent a global network of academic intelligence that we leverage for every single student.
+                                </p>
+                            </div>
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Stats Section */}
+            <section className={`py-12 px-4 ${isDark ? 'bg-zinc-950' : 'bg-white'}`}>
+                <div className="max-w-6xl mx-auto">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        {[
+                            { icon: Users, num: 5000, suffix: '+', label: "Students Guided" },
+                            { icon: BookOpen, num: 50, suffix: '+', label: "Schools Partnered" },
+                            { icon: Award, num: 98, suffix: '%', label: "Success Rate" },
+                            { icon: Globe, num: 3, suffix: '+', label: "Countries Served" }
+                        ].map((stat, idx) => (
+                            <motion.div
+                                key={idx}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: idx * 0.1 }}
+                                className={`text-center p-6 rounded-2xl ${isDark ? 'bg-zinc-900/50 border border-white/10' : 'bg-gray-50 border border-gray-100'}`}
+                            >
+                                <stat.icon className={`mx-auto mb-3 ${isDark ? 'text-orange-400' : 'text-orange-500'}`} size={32} />
+                                <div className={`text-3xl font-bold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                                    <AnimatedCounter target={stat.num} suffix={stat.suffix} duration={2} />
+                                </div>
+                                <div className={`text-xs uppercase tracking-wider ${isDark ? 'text-white/40' : 'text-gray-500'}`}>{stat.label}</div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Final CTA */}
+            <section className="py-24 px-4 relative z-10 overflow-hidden">
+                <div className={`max-w-5xl mx-auto rounded-[4rem] p-12 md:p-24 text-center relative overflow-hidden theme-transition
+                    ${isDark ? 'bg-zinc-900/40 border border-white/5 shadow-2xl shadow-black/50' : 'bg-white border border-white shadow-2xl shadow-brand-orange/10'}`}>
+
+                    {/* Inner Content */}
+                    <div className="relative z-10">
+                        <motion.span
+                            initial={{ opacity: 0, y: 10 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            className="text-[10px] font-black tracking-[0.3em] uppercase text-brand-orange mb-6 block">
+                            Take the First Step
+                        </motion.span>
+                        <h2 className={`text-4xl md:text-7xl font-serif font-bold mb-8 leading-tight ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+                            Ready to Find Your <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-purple-500 to-brand-blue italic font-light">
+                                True North?
+                            </span>
+                        </h2>
+                        <p className={`text-xl lg:text-2xl font-light mb-12 max-w-2xl mx-auto leading-relaxed transition-colors duration-500
+                            ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}>
+                            Join thousands of families who found their future with our personalized guidance.
+                        </p>
+                        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
+                            <Link
+                                to="/contact"
+                                className={`group inline-flex items-center gap-4 px-12 py-6 rounded-full font-black text-xs tracking-[0.2em] uppercase transition-all duration-300
+                                    ${isDark
+                                        ? 'bg-white text-zinc-950 hover:shadow-[0_15px_40px_rgba(255,255,255,0.2)]'
+                                        : 'bg-zinc-900 text-white hover:shadow-[0_15px_40px_rgba(0,0,0,0.2)]'}`}
+                            >
+                                Start Your Journey <ArrowRight size={20} className="transition-transform group-hover:translate-x-2" />
+                            </Link>
+                        </motion.div>
+                    </div>
+
+                    {/* Decorative Elements */}
+                    <div className={`absolute top-0 right-0 w-80 h-80 rounded-full blur-[100px] -mr-40 -mt-40 transition-colors duration-500
+                        ${isDark ? 'bg-brand-orange/20' : 'bg-brand-orange/10'}`} />
+                    <div className={`absolute bottom-0 left-0 w-80 h-80 rounded-full blur-[100px] -ml-40 -mb-40 transition-colors duration-500
+                        ${isDark ? 'bg-brand-blue/20' : 'bg-brand-blue/10'}`} />
+                </div>
+            </section>
+        </div >
+    );
+};
+
+export default About;
