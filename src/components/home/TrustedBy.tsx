@@ -1,48 +1,31 @@
 import { motion } from 'framer-motion';
 import { useTheme } from '../../contexts/ThemeContext';
 
-// Universities with actual logo URLs
+// Import local images
+import harvardLogo from '../../assets/images/universities/harvard.png';
+import stanfordLogo from '../../assets/images/universities/stanford.png';
+import oxfordLogo from '../../assets/images/universities/oxford.png';
+import cambridgeLogo from '../../assets/images/universities/cambridge.png';
+import iitDelhiLogo from '../../assets/images/universities/iit-delhi.png';
+import yaleLogo from '../../assets/images/universities/yale.png';
+import princetonLogo from '../../assets/images/universities/princeton.png';
+import lseLogo from '../../assets/images/universities/lse.png';
+
+// Fallback URLs for images that couldn't be downloaded automatically
+const mitLogo = "https://logo.clearbit.com/mit.edu";
+const columbiaLogo = "https://logo.clearbit.com/columbia.edu";
+
 const universities = [
-    {
-        name: "Harvard University",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Harvard_University_coat_of_arms.svg/200px-Harvard_University_coat_of_arms.svg.png"
-    },
-    {
-        name: "Stanford University",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Seal_of_Leland_Stanford_Junior_University.svg/200px-Seal_of_Leland_Stanford_Junior_University.svg.png"
-    },
-    {
-        name: "MIT",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/200px-MIT_logo.svg.png"
-    },
-    {
-        name: "Oxford University",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Oxford-University-Circlet.svg/200px-Oxford-University-Circlet.svg.png"
-    },
-    {
-        name: "Cambridge University",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Coat_of_Arms_of_the_University_of_Cambridge.svg/200px-Coat_of_Arms_of_the_University_of_Cambridge.svg.png"
-    },
-    {
-        name: "IIT Delhi",
-        logo: "https://upload.wikimedia.org/wikipedia/en/thumb/f/fd/Indian_Institute_of_Technology_Delhi_Logo.svg/200px-Indian_Institute_of_Technology_Delhi_Logo.svg.png"
-    },
-    {
-        name: "Yale University",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Yale_University_Shield_1.svg/200px-Yale_University_Shield_1.svg.png"
-    },
-    {
-        name: "Princeton University",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Princeton_seal.svg/200px-Princeton_seal.svg.png"
-    },
-    {
-        name: "Columbia University",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Columbia_University_Shield.svg/200px-Columbia_University_Shield.svg.png"
-    },
-    {
-        name: "LSE",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/LSE_Logo.svg/200px-LSE_Logo.svg.png"
-    },
+    { name: "Harvard University", logo: harvardLogo },
+    { name: "Stanford University", logo: stanfordLogo },
+    { name: "MIT", logo: mitLogo },
+    { name: "Oxford University", logo: oxfordLogo },
+    { name: "Cambridge University", logo: cambridgeLogo },
+    { name: "IIT Delhi", logo: iitDelhiLogo },
+    { name: "Yale University", logo: yaleLogo },
+    { name: "Princeton University", logo: princetonLogo },
+    { name: "Columbia University", logo: columbiaLogo },
+    { name: "LSE", logo: lseLogo },
 ];
 
 const TrustedBy = () => {
@@ -50,106 +33,64 @@ const TrustedBy = () => {
     const isDark = theme === 'dark';
 
     return (
-        <section className={`py-12 relative overflow-hidden theme-transition ${isDark ? 'bg-zinc-950/0' : 'bg-transparent'}`}>
-            {/* Top Border */}
-            <div className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent ${isDark ? 'via-white/10' : 'via-gray-200'} to-transparent`}></div>
+        <section className={`py-20 relative overflow-hidden theme-transition ${isDark ? 'bg-zinc-950/0' : 'bg-transparent'}`}>
+            {/* Minimal Top Border */}
+            <div className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent ${isDark ? 'via-white/10' : 'via-zinc-200'} to-transparent opacity-50`}></div>
 
-            <div className="max-w-7xl mx-auto px-4">
-                {/* Simple Header */}
-                <motion.p
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
+            <div className="max-w-7xl mx-auto px-4 text-center mb-12">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className={`text-center text-xs font-semibold tracking-[0.2em] uppercase mb-8 ${isDark ? 'text-white/40' : 'text-gray-400'}`}
                 >
-                    Students Admitted To
-                </motion.p>
+                    <span className={`inline-block text-[10px] font-black tracking-[0.3em] uppercase mb-4 px-4 py-2 rounded-full border ${isDark ? 'border-white/10 bg-white/5 text-white/60' : 'border-zinc-200 bg-zinc-50 text-zinc-500'}`}>
+                        Proven Excellence
+                    </span>
+                    <h2 className={`text-3xl md:text-5xl font-serif font-bold mb-6 ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+                        Admitted to the <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-blue">World's Best</span>
+                    </h2>
+                    <p className={`max-w-2xl mx-auto text-sm md:text-base font-light leading-relaxed ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>
+                        Our students consistently secure offers from Ivy League universities, Oxbridge, and premier institutions worldwide.
+                    </p>
+                </motion.div>
+            </div>
 
-                {/* Scrolling logos */}
-                <div className="relative overflow-hidden py-4 mb-12">
-                    {/* Fade edges */}
-                    <div className={`absolute left-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-r ${isDark ? 'from-zinc-950' : 'from-white'} to-transparent pointer-events-none`}></div>
-                    <div className={`absolute right-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-l ${isDark ? 'from-zinc-950' : 'from-white'} to-transparent pointer-events-none`}></div>
+            <div className="relative overflow-hidden">
+                {/* Gradient Masks */}
+                <div className={`absolute left-0 top-0 bottom-0 w-32 md:w-64 z-10 bg-gradient-to-r ${isDark ? 'from-zinc-950' : 'from-[#FAFAFA]'} to-transparent pointer-events-none`}></div>
+                <div className={`absolute right-0 top-0 bottom-0 w-32 md:w-64 z-10 bg-gradient-to-l ${isDark ? 'from-zinc-950' : 'from-[#FAFAFA]'} to-transparent pointer-events-none`}></div>
 
-                    {/* Scrolling logos */}
-                    <div className="flex animate-marquee items-center">
-                        {[...universities, ...universities, ...universities].map((uni, index) => (
-                            <motion.div
-                                key={index}
-                                className="flex-shrink-0 mx-6"
-                                whileHover={{ scale: 1.1, y: -8 }}
-                                transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+                <div className="flex animate-marquee items-center py-8">
+                    {[...universities, ...universities].map((uni, index) => (
+                        <motion.div
+                            key={index}
+                            className="flex-shrink-0 mx-8 md:mx-12 group"
+                            whileHover={{ scale: 1.05 }}
+                            transition={{ type: 'spring', stiffness: 300 }}
+                        >
+                            <div
+                                className={`
+                                    w-32 h-32 md:w-40 md:h-40 rounded-full flex items-center justify-center p-8
+                                    transition-all duration-500
+                                    ${isDark
+                                        ? 'bg-zinc-900/30 border border-white/5 group-hover:bg-zinc-900/60 group-hover:border-white/10'
+                                        : 'bg-white border border-zinc-100 shadow-[0_4px_20px_rgba(0,0,0,0.02)] group-hover:shadow-[0_10px_30px_rgba(0,0,0,0.06)]'
+                                    }
+                                `}
                             >
-                                <div
+                                <img
+                                    src={uni.logo}
+                                    alt={uni.name}
                                     className={`
-                                        w-32 h-32 rounded-3xl flex items-center justify-center p-6
-                                        backdrop-blur-xl transition-all duration-500 border
-                                        ${isDark
-                                            ? 'bg-zinc-900/40 border-white/5 shadow-2xl shadow-black/50'
-                                            : 'bg-white border-white shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(249,115,22,0.1)]'
-                                        }
+                                        w-full h-full object-contain transition-all duration-500
+                                        filter grayscale opacity-60
+                                        group-hover:grayscale-0 group-hover:opacity-100
                                     `}
-                                    title={uni.name}
-                                >
-                                    <img
-                                        src={uni.logo}
-                                        alt={uni.name}
-                                        className={`w-20 h-20 object-contain transition-all duration-500 ${isDark ? 'opacity-80 hover:opacity-100' : 'opacity-90 hover:opacity-100'}`}
-                                        loading="lazy"
-                                    />
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-
-                {/* Country Flags Section */}
-                <motion.p
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    className={`text-center text-xs font-semibold tracking-[0.2em] uppercase mb-8 ${isDark ? 'text-white/40' : 'text-gray-400'}`}
-                >
-                    Global Study Destinations
-                </motion.p>
-
-                <div className="relative overflow-hidden py-4">
-                    {/* Fade edges */}
-                    <div className={`absolute left-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-r ${isDark ? 'from-zinc-950' : 'from-white'} to-transparent pointer-events-none`}></div>
-                    <div className={`absolute right-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-l ${isDark ? 'from-zinc-950' : 'from-white'} to-transparent pointer-events-none`}></div>
-
-                    <div className="flex animate-marquee-reverse items-center">
-                        {[
-                            { code: 'us', name: 'USA' }, { code: 'gb', name: 'UK' }, { code: 'in', name: 'India' },
-                            { code: 'ae', name: 'UAE' }, { code: 'de', name: 'Germany' }, { code: 'sg', name: 'Singapore' },
-                            { code: 'nz', name: 'New Zealand' }, { code: 'ie', name: 'Ireland' }, { code: 'fr', name: 'France' },
-                            { code: 'it', name: 'Italy' }, { code: 'nl', name: 'Netherlands' }, { code: 'ge', name: 'Georgia' }
-                        ].map((flag, index) => (
-                            // Duplicate list for infinite scroll
-                            [...Array(4)].map((_, i) => (
-                                <motion.div
-                                    key={`${index}-${i}`}
-                                    className="flex-shrink-0 mx-8 flex flex-col items-center gap-3"
-                                    whileHover={{ scale: 1.1, y: -5 }}
-                                >
-                                    <div className={`
-                                        w-20 h-14 rounded-xl overflow-hidden shadow-lg flex items-center justify-center
-                                        ${isDark ? 'bg-zinc-800' : 'bg-gray-100'}
-                                    `}>
-                                        <img
-                                            src={`https://flagcdn.com/w160/${flag.code}.png`}
-                                            alt={flag.name}
-                                            className="w-full h-full object-cover"
-                                            loading="lazy"
-                                        />
-                                    </div>
-                                    <span className={`text-[10px] font-bold uppercase tracking-wider ${isDark ? 'text-zinc-500' : 'text-zinc-400'}`}>
-                                        {flag.name}
-                                    </span>
-                                </motion.div>
-                            ))
-                        )).flat()}
-                    </div>
+                                    loading="lazy"
+                                />
+                            </div>
+                        </motion.div>
+                    ))}
                 </div>
             </div>
         </section>
