@@ -95,25 +95,21 @@ const Hero = () => {
                 />
             </div>
 
-            {/* Floating Orbs Background */}
+            {/* Floating Orbs Background - Reduced Opacity */}
             <FloatingOrbs orbs={isDark ? [
-                { size: 400, x: '5%', y: '10%', color: 'rgba(255,255,255,0.03)', delay: 0, duration: 20 },
-                { size: 300, x: '85%', y: '60%', color: 'rgba(255,255,255,0.025)', delay: 2, duration: 15 },
-                { size: 500, x: '50%', y: '80%', color: 'rgba(255,255,255,0.02)', delay: 4, duration: 25 },
-                { size: 200, x: '15%', y: '70%', color: 'rgba(255,255,255,0.035)', delay: 1, duration: 12 },
-                { size: 350, x: '70%', y: '15%', color: 'rgba(255,255,255,0.02)', delay: 3, duration: 18 },
+                { size: 400, x: '5%', y: '10%', color: 'rgba(255,255,255,0.02)', delay: 0, duration: 20 },
+                { size: 300, x: '85%', y: '60%', color: 'rgba(255,255,255,0.015)', delay: 2, duration: 15 },
+                { size: 500, x: '50%', y: '80%', color: 'rgba(255,255,255,0.01)', delay: 4, duration: 25 },
             ] : [
-                { size: 400, x: '5%', y: '10%', color: 'rgba(249, 115, 22, 0.08)', delay: 0, duration: 20 }, // Orange
-                { size: 300, x: '85%', y: '60%', color: 'rgba(30, 111, 235, 0.08)', delay: 2, duration: 15 }, // Blue
-                { size: 500, x: '50%', y: '80%', color: 'rgba(249, 115, 22, 0.05)', delay: 4, duration: 25 }, // Orange
-                { size: 200, x: '15%', y: '70%', color: 'rgba(30, 111, 235, 0.06)', delay: 1, duration: 12 }, // Blue
-                { size: 350, x: '70%', y: '15%', color: 'rgba(249, 115, 22, 0.04)', delay: 3, duration: 18 }, // Orange
+                { size: 400, x: '5%', y: '10%', color: 'rgba(249, 115, 22, 0.04)', delay: 0, duration: 20 }, // Orange
+                { size: 300, x: '85%', y: '60%', color: 'rgba(30, 111, 235, 0.04)', delay: 2, duration: 15 }, // Blue
+                { size: 500, x: '50%', y: '80%', color: 'rgba(249, 115, 22, 0.02)', delay: 4, duration: 25 }, // Orange
             ]} />
 
             {/* Subtle Grid Pattern */}
             <div className="absolute inset-0 z-[1]">
                 <div
-                    className={`absolute inset-0 ${isDark ? 'opacity-[0.03]' : 'opacity-[0.04]'}`}
+                    className={`absolute inset-0 ${isDark ? 'opacity-[0.02]' : 'opacity-[0.03]'}`}
                     style={{
                         backgroundImage: `linear-gradient(${isDark ? 'rgba(255,255,255,0.1)' : 'rgba(249, 115, 22, 0.05)'} 1px, transparent 1px),
                                          linear-gradient(90deg, ${isDark ? 'rgba(255,255,255,0.1)' : 'rgba(30, 111, 235, 0.05)'} 1px, transparent 1px)`,
@@ -131,13 +127,11 @@ const Hero = () => {
                     width: 400,
                     height: 400,
                     background: isDark
-                        ? 'radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%)'
-                        : 'radial-gradient(circle, rgba(249, 115, 22, 0.08) 0%, transparent 70%)',
+                        ? 'radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%)'
+                        : 'radial-gradient(circle, rgba(249, 115, 22, 0.05) 0%, transparent 70%)',
                     borderRadius: '50%',
                 }}
             />
-
-            {/* Animated Lines Removed as per request */}
 
             {/* Main Content */}
             <div className="relative z-10 max-w-7xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-16 pt-20">
@@ -152,13 +146,11 @@ const Hero = () => {
                     >
                         <motion.span
                             className={`
-                                inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium tracking-wider uppercase
-                                border ${isDark ? 'border-white/10 text-white/60' : 'border-orange-200 text-orange-600 bg-orange-50/50'}
+                                inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase
+                                border ${isDark ? 'border-white/10 text-white/50' : 'border-zinc-200 text-zinc-500 bg-zinc-50'}
                             `}
-                            animate={{ boxShadow: isDark ? ['0 0 0 0 rgba(255,255,255,0)', '0 0 20px 5px rgba(255,255,255,0.1)', '0 0 0 0 rgba(255,255,255,0)'] : ['0 0 0 0 rgba(249,115,22,0)', '0 0 20px 5px rgba(249,115,22,0.1)', '0 0 0 0 rgba(249,115,22,0)'] }}
-                            transition={{ duration: 3, repeat: Infinity }}
                         >
-                            <Sparkles size={12} className={isDark ? 'text-white/40' : 'text-orange-500'} />
+                            <Sparkles size={12} className={isDark ? 'text-white/40' : 'text-brand-orange'} />
                             TrueNorth Consulting FZE
                         </motion.span>
                     </motion.div>
@@ -168,15 +160,15 @@ const Hero = () => {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
-                        className={`text-lg md:text-xl font-bold tracking-widest uppercase mb-4 ${isDark ? 'text-brand-orange' : 'text-brand-orange'}`}
+                        className={`text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-4 ${isDark ? 'text-brand-orange' : 'text-brand-orange'}`}
                     >
                         Career & University Admission in ( UAE & India )
                     </motion.h2>
 
                     {/* Headline with TextReveal and Gradient Text */}
-                    <h1 className={`text-5xl md:text-7xl lg:text-8xl font-serif font-bold leading-[0.9] tracking-tighter mb-8 ${isDark ? 'text-white' : 'text-zinc-900'
+                    <h1 className={`text-4xl md:text-6xl lg:text-7xl font-serif font-medium leading-[1.1] tracking-tight mb-8 ${isDark ? 'text-white' : 'text-zinc-900'
                         }`}>
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-purple-500 to-brand-blue italic font-light">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-purple-500 to-brand-blue italic">
                             Navigate Your Career with Confidence.
                         </span>
                     </h1>
@@ -186,7 +178,7 @@ const Hero = () => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.5 }}
-                        className={`text-xl lg:text-2xl font-light max-w-xl mb-12 leading-relaxed transition-colors duration-500 ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'
+                        className={`text-lg lg:text-xl font-light max-w-xl mb-10 leading-relaxed transition-colors duration-500 ${isDark ? 'text-zinc-400' : 'text-zinc-600'
                             }`}
                     >
                         Success starts with the right guidance. We help you find your right career and get into your dream university with confidence.
@@ -206,17 +198,17 @@ const Hero = () => {
                             <Link
                                 to="/services"
                                 className={`
-                                    group inline-flex items-center justify-center gap-4
-                                    px-10 py-5 rounded-full font-black text-[10px] tracking-[0.2em] uppercase
+                                    group inline-flex items-center justify-center gap-3
+                                    px-8 py-4 rounded-full font-bold text-[10px] tracking-[0.2em] uppercase
                                     transition-all duration-300
                                     ${isDark
-                                        ? 'bg-white text-zinc-950 hover:shadow-[0_15px_40px_rgba(255,255,255,0.2)]'
-                                        : 'bg-zinc-900 text-white hover:shadow-[0_15px_40px_rgba(0,0,0,0.2)]'
+                                        ? 'bg-white text-zinc-950 hover:bg-zinc-200'
+                                        : 'bg-zinc-900 text-white hover:bg-zinc-800'
                                     }
                                 `}
                             >
                                 Our Services
-                                <ArrowRight size={18} className="transition-transform group-hover:translate-x-2" />
+                                <ArrowRight size={16} className="transition-transform group-hover:translate-x-2" />
                             </Link>
                         </motion.div>
                     </motion.div>
@@ -231,32 +223,28 @@ const Hero = () => {
                 >
                     <motion.div
                         className={`
-                            relative p-10 rounded-[3rem] backdrop-blur-3xl border transition-all duration-700
+                            relative p-8 rounded-3xl backdrop-blur-3xl border transition-all duration-700
                             ${isDark
-                                ? 'bg-zinc-900/40 border-white/5 shadow-2xl shadow-black/50'
-                                : 'bg-white/80 border-white shadow-[0_20px_50px_rgba(249,115,22,0.06)]'
+                                ? 'bg-zinc-900/40 border-white/5 shadow-xl'
+                                : 'bg-white/80 border-white shadow-xl shadow-zinc-200/50'
                             }
                         `}
                         whileHover={{
-                            y: -10,
+                            y: -5,
                             boxShadow: isDark
-                                ? '0 30px 60px rgba(0,0,0,0.6)'
-                                : '0 30px 60px rgba(249, 115, 22, 0.12)',
+                                ? '0 20px 40px rgba(0,0,0,0.4)'
+                                : '0 20px 40px rgba(0,0,0,0.05)',
                         }}
                     >
-                        {/* Elegant glow */}
-                        <div className={`absolute -inset-px rounded-[3rem] bg-gradient-to-b ${isDark ? 'from-white/10' : 'from-brand-orange/20'
-                            } to-transparent pointer-events-none opacity-50`}></div>
-
                         <div className="relative z-10">
-                            <h3 className={`text-3xl font-serif font-bold mb-2 transition-colors duration-500 ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+                            <h3 className={`text-2xl font-serif font-bold mb-2 transition-colors duration-500 ${isDark ? 'text-white' : 'text-zinc-900'}`}>
                                 Book Appointment
                             </h3>
-                            <p className={`text-sm mb-8 transition-colors duration-500 ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}>
+                            <p className={`text-sm mb-6 transition-colors duration-500 ${isDark ? 'text-zinc-500' : 'text-zinc-500'}`}>
                                 Book a session to plan your future.
                             </p>
 
-                            <form className="space-y-6" onSubmit={handleSubmit}>
+                            <form className="space-y-4" onSubmit={handleSubmit}>
                                 {[
                                     { name: 'name', placeholder: 'Your Name', type: 'text' },
                                     { name: 'email', placeholder: 'Email Address', type: 'email' },
@@ -276,10 +264,10 @@ const Hero = () => {
                                             value={formData[field.name as keyof typeof formData]}
                                             onChange={handleInputChange}
                                             className={`
-                                                w-full px-6 py-4 rounded-2xl outline-none transition-all duration-300 font-medium text-sm
+                                                w-full px-5 py-3 rounded-xl outline-none transition-all duration-300 font-medium text-sm
                                                 ${isDark
                                                     ? 'bg-white/5 border border-white/10 text-white placeholder:text-white/20 focus:border-white/30 focus:bg-white/10'
-                                                    : 'bg-white border border-zinc-100 text-zinc-900 placeholder:text-zinc-400 focus:border-brand-orange focus:shadow-[0_0_20px_rgba(249,115,22,0.1)] shadow-inner'
+                                                    : 'bg-white border border-zinc-100 text-zinc-900 placeholder:text-zinc-400 focus:border-brand-orange/50 focus:shadow-sm shadow-inner'
                                                 }
                                             `}
                                         />
@@ -289,11 +277,11 @@ const Hero = () => {
                                     disabled={status === 'loading'}
                                     type="submit"
                                     className={`
-                                        w-full py-5 rounded-2xl font-black text-[10px] tracking-[0.2em] uppercase
+                                        w-full py-4 rounded-xl font-bold text-[10px] tracking-[0.2em] uppercase
                                         transition-all duration-300
                                         ${status === 'success' ? 'bg-green-500 text-white' : (isDark ? 'bg-white text-zinc-950 hover:bg-zinc-100' : 'bg-brand-orange text-white hover:opacity-90')}
                                         ${status === 'loading' ? 'opacity-70 cursor-not-allowed' : ''}
-                                        shadow-xl
+                                        shadow-lg
                                     `}
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}

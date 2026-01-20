@@ -80,7 +80,7 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
-        serif: ['Merriweather', 'serif'],
+        serif: ['"Playfair Display"', 'serif'],
       },
       animation: {
         'fade-in-up': 'fadeInUp 0.5s ease-out',

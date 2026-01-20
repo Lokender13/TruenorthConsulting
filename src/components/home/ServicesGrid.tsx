@@ -100,7 +100,7 @@ const ServicesGrid = () => {
     };
 
     return (
-        <section className={`py-16 relative overflow-hidden theme-transition ${isDark ? 'bg-zinc-950/0' : 'bg-transparent'}`}>
+        <section className={`py-24 relative overflow-hidden theme-transition ${isDark ? 'bg-zinc-950/0' : 'bg-transparent'}`}>
             {/* Subtle background pattern */}
             <div className="absolute inset-0">
                 <div
@@ -112,37 +112,31 @@ const ServicesGrid = () => {
                 />
             </div>
 
-            {/* Very subtle accent glow */}
-            <div className={`absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[300px] ${isDark ? 'bg-white/[0.02]' : 'bg-gray-200/30'} rounded-full blur-[120px]`}></div>
-
             <div className="max-w-7xl mx-auto px-4 relative z-10">
                 <motion.div
-                    className="text-center mb-20"
+                    className="text-center mb-16"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1 }}
                 >
                     <motion.span
-                        className={`inline-flex items-center gap-2 px-6 py-2 rounded-full border text-[10px] font-black tracking-[0.3em] uppercase mb-8
+                        className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full border text-[10px] font-bold tracking-[0.2em] uppercase mb-6
                             ${isDark ? 'border-brand-orange/20 text-brand-orange bg-brand-orange/5' : 'border-brand-orange/10 text-brand-orange bg-white shadow-sm'}`}
                     >
                         Our Services
                     </motion.span>
 
-                    <h2 className={`text-5xl md:text-7xl font-serif font-bold mb-8 leading-[0.9] tracking-tighter ${isDark ? 'text-white' : 'text-zinc-900'}`}>
-                        How We <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-purple-500 to-brand-blue italic font-light">
-                            Can Help.
-                        </span>
+                    <h2 className={`text-4xl md:text-5xl font-serif font-medium mb-6 tracking-tight ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+                        How We <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-blue italic">Can Help.</span>
                     </h2>
 
-                    <p className={`text-xl font-light max-w-2xl mx-auto leading-relaxed transition-colors duration-500 ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}>
+                    <p className={`text-lg font-light max-w-2xl mx-auto leading-relaxed ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>
                         Complete guidance for every step of your education journey.
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
@@ -152,81 +146,79 @@ const ServicesGrid = () => {
                             transition={{ delay: index * 0.1, duration: 0.8 }}
                         >
                             <Link to={`/services/${service.slug}`} className="group h-full block">
-                                <TiltCard
+                                <div
                                     className={`
-                                        h-full rounded-[3rem] overflow-hidden backdrop-blur-xl transition-all duration-700 border
+                                        h-full rounded-3xl overflow-hidden backdrop-blur-xl transition-all duration-500 border
                                         ${isDark
-                                            ? `bg-zinc-900/40 border-white/5 hover:bg-zinc-900/60 shadow-2xl shadow-black/50`
-                                            : `bg-white/80 border-white shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]`
+                                            ? `bg-zinc-900/40 border-white/5 hover:bg-zinc-900/60 hover:border-white/10 hover:shadow-2xl hover:shadow-black/50`
+                                            : `bg-white border-zinc-100 hover:border-zinc-200 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]`
                                         }
                                     `}
-                                    tiltIntensity={5}
-                                    glareOpacity={isDark ? 0.1 : 0.05}
                                 >
                                     <div className="flex flex-col h-full">
                                         {/* Image Section */}
-                                        <div className="relative h-64 overflow-hidden rounded-t-[3rem]">
+                                        <div className="relative h-60 overflow-hidden">
                                             <motion.img
                                                 src={service.image}
                                                 alt={service.title}
-                                                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                                 onError={handleImageError}
                                             />
-                                            <div className={`absolute inset-0 bg-gradient-to-t ${isDark ? 'from-zinc-950 via-zinc-950/20' : 'from-zinc-900/40'} to-transparent`} />
+                                            <div className={`absolute inset-0 bg-gradient-to-t ${isDark ? 'from-zinc-900/90 via-zinc-900/20' : 'from-white/90 via-transparent'} to-transparent opacity-90`} />
 
                                             {/* Icon Overlay */}
-                                            <div className={`absolute bottom-6 left-8 w-16 h-16 rounded-2xl flex items-center justify-center backdrop-blur-2xl border transition-transform duration-500 group-hover:scale-110
-                                                ${isDark ? 'bg-black/40 border-white/10 text-white' : 'bg-white/80 border-white text-zinc-900 shadow-xl'}`}>
-                                                <service.icon size={32} />
+                                            <div className={`absolute bottom-4 left-6 w-12 h-12 rounded-xl flex items-center justify-center backdrop-blur-md border transition-transform duration-500
+                                                ${isDark ? 'bg-black/40 border-white/10 text-white' : 'bg-white/90 border-white text-zinc-900 shadow-lg'}`}>
+                                                <service.icon size={22} />
                                             </div>
                                         </div>
 
                                         {/* Content Section */}
-                                        <div className="p-10 flex-grow flex flex-col">
-                                            <h3 className={`text-2xl font-serif font-bold mb-4 transition-colors duration-500 ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+                                        <div className="p-8 flex-grow flex flex-col">
+                                            <h3 className={`text-xl font-serif font-bold mb-3 transition-colors duration-300 ${isDark ? 'text-white' : 'text-zinc-900'}`}>
                                                 {service.title}
                                             </h3>
 
-                                            <p className={`text-lg font-light leading-relaxed mb-8 flex-grow transition-colors duration-500 ${isDark ? 'text-zinc-400' : 'text-zinc-500 font-medium'}`}>
+                                            <p className={`text-base font-light leading-relaxed mb-6 flex-grow ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>
                                                 {service.desc}
                                             </p>
 
                                             <div className={`
-                                                flex items-center gap-3 text-[10px] font-black tracking-[0.2em] uppercase
+                                                flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] uppercase
                                                 ${isDark ? 'text-brand-orange' : 'text-brand-orange'}
                                                 transition-all duration-300
                                             `}>
-                                                Explore Service <ArrowRight size={18} className="transition-transform group-hover:translate-x-2" />
+                                                Explore <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
                                             </div>
                                         </div>
                                     </div>
-                                </TiltCard>
+                                </div>
                             </Link>
                         </motion.div>
                     ))}
                 </div>
 
                 <motion.div
-                    className="text-center mt-20"
+                    className="text-center mt-16"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                 >
-                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
-                        <Link
-                            to="/services"
-                            className={`group inline-flex items-center gap-4 px-12 py-6 rounded-full font-black text-[10px] tracking-[0.2em] uppercase transition-all duration-300
-                                ${isDark
-                                    ? 'bg-white text-zinc-950 hover:shadow-[0_15px_40px_rgba(255,255,255,0.2)]'
-                                    : 'bg-zinc-900 text-white hover:shadow-[0_15px_40px_rgba(0,0,0,0.2)]'}`}
-                        >
-                            Explore All Services <ArrowRight size={20} className="transition-transform group-hover:translate-x-2" />
-                        </Link>
-                    </motion.div>
+                    <Link
+                        to="/services"
+                        className={`inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-[10px] tracking-[0.2em] uppercase transition-all duration-300
+                            ${isDark
+                                ? 'bg-white text-zinc-950 hover:bg-zinc-200'
+                                : 'bg-zinc-900 text-white hover:bg-zinc-800'}`}
+                    >
+                        View All Services <ArrowRight size={16} />
+                    </Link>
                 </motion.div>
             </div>
         </section >
     );
 };
+
+export default ServicesGrid;
 
 export default ServicesGrid;
