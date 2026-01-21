@@ -132,13 +132,13 @@ const About = () => {
                             </h2>
                             <div className={`space-y-6 text-base lg:text-lg leading-relaxed transition-colors duration-500 ${isDark ? 'text-zinc-300 font-light' : 'text-zinc-700'}`}>
                                 <p>
-                                    <strong className={isDark ? 'text-zinc-200' : 'text-zinc-900'}>TrueNorth Consulting</strong> was founded by <strong className="text-brand-orange">Surabhi Rawat</strong>, an experienced educator and certified career counselor, driven by a deep understanding of the challenges students and parents face today.
+                                    <strong className={isDark ? 'text-zinc-200' : 'text-zinc-900'}>TrueNorth</strong> was founded by <strong className="text-brand-orange">Surabhi Rawat</strong>, a career counsellor and education consultant, with the aim of bringing <strong className={isDark ? 'text-zinc-200' : 'text-zinc-900'}>clarity and structure</strong> to education and career decision-making.
                                 </p>
                                 <p>
-                                    She recognized how overwhelming it can be to make sense of the many available academic pathways — from <strong className={isDark ? 'text-zinc-200' : 'text-zinc-900'}>CBSE to IB, British, American,</strong> and more.
+                                    As an education professional and an <strong className={isDark ? 'text-zinc-200' : 'text-zinc-900'}>expat parent</strong>, Surabhi witnessed firsthand the uncertainty faced by students, the concerns of parents, the transitions professionals navigate, and the need schools have for ethical, structured guidance partners. Too often, these journeys were approached in isolation.
                                 </p>
                                 <p>
-                                    TrueNorth Consulting was established with one clear purpose — to support students and parents in making <strong className="text-brand-orange">confident, well-informed academic and career decisions</strong>.
+                                    TrueNorth was created to align them — offering <strong className="text-brand-orange">psychometric-led insights</strong> and personalised guidance that support informed education and career decisions at <strong className={isDark ? 'text-zinc-200' : 'text-zinc-900'}>every stage</strong>.
                                 </p>
                             </div>
                         </motion.div>
