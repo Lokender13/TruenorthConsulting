@@ -382,25 +382,7 @@ const About = () => {
                                     </p>
                                 </div>
 
-                                {/* Expertise Grid */}
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 pt-16 border-t border-orange-500/10">
-                                    <div className="group">
-                                        <p className="text-[10px] font-black tracking-[0.2em] uppercase text-orange-500/50 mb-2 group-hover:text-orange-500 transition-colors">Academic Foundation</p>
-                                        <h5 className={`text-xl font-serif font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>M.Sc., B.Ed.</h5>
-                                    </div>
-                                    <div className="group">
-                                        <p className="text-[10px] font-black tracking-[0.2em] uppercase text-orange-500/50 mb-2 group-hover:text-orange-500 transition-colors">Global Counseling</p>
-                                        <h5 className={`text-xl font-serif font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>UCLA Certified</h5>
-                                    </div>
-                                    <div className="group">
-                                        <p className="text-[10px] font-black tracking-[0.2em] uppercase text-orange-500/50 mb-2 group-hover:text-orange-500 transition-colors">Design Thinking</p>
-                                        <h5 className={`text-xl font-serif font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>Harvard Project Zero</h5>
-                                    </div>
-                                    <div className="group">
-                                        <p className="text-[10px] font-black tracking-[0.2em] uppercase text-orange-500/50 mb-2 group-hover:text-orange-500 transition-colors">International Standards</p>
-                                        <h5 className={`text-xl font-serif font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>IB Educator</h5>
-                                    </div>
-                                </div>
+
                             </motion.div>
                         </div>
                     </div>
@@ -451,37 +433,43 @@ const About = () => {
                                 className={`
                                     group relative p-10 rounded-[2.5rem] border transition-all duration-500 overflow-hidden h-full flex flex-col items-start
                                     ${isDark
-                                        ? 'bg-zinc-900/60 border-white/10 shadow-xl shadow-black/30 hover:border-white/20'
-                                        : 'bg-white border-zinc-200 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.08)] hover:border-zinc-300 hover:shadow-xl'
+                                        ? 'bg-zinc-900/60 border-white/10 shadow-xl shadow-black/30 hover:border-brand-orange/30 hover:bg-zinc-900/80'
+                                        : 'bg-white border-zinc-200 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.08)] hover:border-brand-orange/30 hover:shadow-2xl hover:shadow-brand-orange/10'
                                     }
                                 `}
                             >
-                                <div className="flex items-center gap-4 mb-10 w-full">
-                                    <div className={`p-4 rounded-2xl transition-all duration-500 group-hover:scale-110
-                                        ${isDark ? 'bg-white/5 text-brand-orange' : 'bg-orange-50 text-brand-orange'}`}>
+                                {/* Animated Background Glow */}
+                                <div className={`absolute -inset-4 bg-gradient-to-br from-brand-orange/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none`} />
+
+                                <div className="flex items-center gap-4 mb-10 w-full relative z-10">
+                                    <div className={`p-4 rounded-2xl transition-all duration-500 group-hover:scale-110 group-hover:rotate-3
+                                        ${isDark ? 'bg-white/5 text-brand-orange border border-white/10' : 'bg-orange-50 text-brand-orange border border-orange-100'}`}>
                                         <section.icon size={28} strokeWidth={1.5} />
                                     </div>
-                                    <h3 className={`text-2xl font-serif font-bold ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+                                    <h3 className={`text-2xl font-serif font-bold tracking-tight ${isDark ? 'text-white' : 'text-zinc-900'}`}>
                                         {section.title}
                                     </h3>
                                 </div>
 
-                                <div className="space-y-8 w-full mt-auto">
+                                <div className="space-y-6 w-full relative z-10">
                                     {section.items.map((item, itemIdx) => (
-                                        <div key={itemIdx} className="relative pl-6 border-l border-orange-500/20">
-                                            <h4 className={`text-sm font-bold tracking-wide mb-2 transition-colors group-hover:text-brand-orange ${isDark ? 'text-zinc-200' : 'text-zinc-900'}`}>
+                                        <div key={itemIdx} className="group/item relative pl-8">
+                                            {/* Decorative Bullet */}
+                                            <div className="absolute left-0 top-1.5 w-1.5 h-1.5 rounded-full bg-brand-orange/30 transition-all duration-300 group-hover/item:h-full group-hover/item:bg-brand-orange/60" />
+
+                                            <h4 className={`text-sm font-bold tracking-wide mb-1.5 transition-colors group-hover/item:text-brand-orange ${isDark ? 'text-zinc-200' : 'text-zinc-900'}`}>
                                                 {item.title}
                                             </h4>
-                                            <p className={`text-sm leading-relaxed ${isDark ? 'text-zinc-500 font-light' : 'text-zinc-500 font-medium'}`}>
+                                            <p className={`text-[13px] leading-relaxed transition-colors ${isDark ? 'text-zinc-500 font-light' : 'text-zinc-500 font-medium'}`}>
                                                 {item.desc}
                                             </p>
                                         </div>
                                     ))}
                                 </div>
 
-                                {/* Subtle decoration */}
-                                <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity pointer-events-none">
-                                    <section.icon size={120} />
+                                {/* Subtle Watermark Icon */}
+                                <div className="absolute -bottom-10 -right-10 p-8 opacity-[0.02] group-hover:opacity-[0.05] transition-all duration-700 pointer-events-none transform group-hover:-translate-x-4 group-hover:-translate-y-4">
+                                    <section.icon size={180} strokeWidth={1} />
                                 </div>
                             </motion.div>
                         ))}
