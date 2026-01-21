@@ -100,15 +100,16 @@ const About = () => {
                             </span>
                         </div>
 
-                        <h1 className={`text-6xl md:text-8xl font-serif font-bold mb-8 leading-[0.9] tracking-tighter ${isDark ? 'text-white' : 'text-zinc-900'}`}>
-                            Finding Your<br />
+                        <h1 className={`text-4xl md:text-7xl font-serif font-bold mb-8 leading-[1.1] tracking-tighter ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+                            Expert Guidance for <br className="hidden md:block" />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-yellow-500 to-brand-orange italic font-light drop-shadow-sm">
-                                True North
+                                Education & Career Decisions
                             </span>
+                            <br className="hidden md:block" /> at Every Stage
                         </h1>
-                        <p className={`text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed font-light transition-colors duration-500
+                        <p className={`text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed font-light transition-colors duration-500
                             ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>
-                            Helping students find their right path with expert guidance and care.
+                            Supporting students, professionals, families, and institutions with clarity, insight, and purpose.
                         </p>
                     </motion.div>
                 </div>
