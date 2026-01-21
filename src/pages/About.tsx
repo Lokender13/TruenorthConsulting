@@ -366,17 +366,21 @@ const About = () => {
                                     <span className="italic font-light text-orange-500">Art Form.</span>
                                 </h2>
 
-                                <div className={`space-y-8 text-base md:text-lg font-light leading-relaxed ${isDark ? 'text-white/40' : 'text-gray-500'}`}>
+                                <div className={`space-y-8 text-base md:text-lg font-light leading-relaxed ${isDark ? 'text-white/40' : 'text-gray-600 font-medium'}`}>
                                     <p className="first-letter:text-4xl first-letter:font-serif first-letter:font-bold first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:text-orange-500">
-                                        <strong className={isDark ? 'text-white' : 'text-gray-900'}>Surabhi Rawat</strong> is more than just a counselor; she helps build bright futures. With over 10 years of experience, she combines expert knowledge with a caring heart.
+                                        <strong className={isDark ? 'text-white' : 'text-gray-900'}>Surabhi Rawat</strong> is the Founder of TrueNorth Consulting and an educator and career counsellor with over a decade of experience in international education. Her professional journey is strongly shaped by her work at <span className="text-orange-500 italic">Fountainhead School</span>, an IB World School, where she embraced inquiry-led learning and the International Baccalaureate philosophy.
                                     </p>
 
                                     <p>
-                                        An <span className="text-orange-500 italic">IB World Educator</span> at her core, Surabhi pioneered the Learning Enrichment Program (LEAP), a groundbreaking initiative that shifted the focus from rote learning to the cultivation of critical thinking and creative logic.
+                                        At Fountainhead, Surabhi led the <strong className={isDark ? 'text-zinc-200' : 'text-zinc-900'}>Learning Enrichment Program (LEAP)</strong> — a pilot initiative focused on developing critical thinking, creativity, problem-solving, and logical reasoning skills in students. She also facilitated professional development for educators using globally recognised thinking frameworks, including de Bono’s CoRT tools, Harvard’s Project Zero, and Design for Change.
                                     </p>
 
                                     <p>
-                                        As a parent who has navigated diverse global educational systems, her approach is deeply personal. She transformed her firsthand challenges into a boutique consultancy model that prioritizes <span className="underline decoration-orange-500/30 underline-offset-8">peace of mind</span> for families and <span className="text-orange-500 font-bold italic">clarity of purpose</span> for students.
+                                        Surabhi received the <span className="text-orange-500 font-bold">Global Teacher Accreditation Award</span> from the British Council in collaboration with <strong className={isDark ? 'text-zinc-200' : 'text-zinc-900'}>University College London (UCL)</strong> for her action research. A lifelong learner, she continues to update her skills through global learning experiences, ensuring her guidance remains current and responsive to evolving contexts.
+                                    </p>
+
+                                    <p className={`p-6 rounded-2xl border ${isDark ? 'bg-orange-500/5 border-orange-500/10' : 'bg-orange-50 border-orange-100'}`}>
+                                        As both an <span className="text-orange-500 italic">IB educator</span> and an <span className="text-orange-500 italic">expat parent</span> navigating multiple systems, Surabhi brings a rare blend of professional insight and lived understanding to her work, shaping TrueNorth’s empathetic and globally informed approach.
                                     </p>
                                 </div>
 
