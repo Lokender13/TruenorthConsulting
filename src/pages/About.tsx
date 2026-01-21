@@ -1,9 +1,7 @@
 import { motion } from 'framer-motion';
-import { Target, Lightbulb, Users, Award, ArrowRight, BookOpen, GraduationCap, Globe } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Target, Lightbulb, Award, BookOpen, GraduationCap, Globe } from 'lucide-react';
 import SEO from '../components/SEO';
 import { useTheme } from '../contexts/ThemeContext';
-import AnimatedCounter from '../components/ui/AnimatedCounter';
 import TiltCard from '../components/ui/TiltCard';
 
 const About = () => {
@@ -254,23 +252,7 @@ const About = () => {
                         ))}
                     </div>
 
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        className="text-center mt-32"
-                    >
-                        <div className={`relative p-12 md:p-16 rounded-[3rem] overflow-hidden border
-                            ${isDark ? 'bg-zinc-900/50 border-white/5' : 'bg-white border-zinc-100 shadow-2xl shadow-zinc-100/50'}`}>
-                            <div className={`absolute top-0 left-0 w-24 h-24 border-t-2 border-l-2 rounded-tl-[2rem] m-8 border-brand-orange/20`} />
-                            <div className={`absolute bottom-0 right-0 w-24 h-24 border-b-2 border-r-2 rounded-br-[2rem] m-8 border-brand-orange/20`} />
 
-                            <p className={`relative z-10 text-2xl md:text-3xl italic font-serif leading-relaxed transition-colors duration-500 max-w-4xl mx-auto
-                                    ${isDark ? 'text-zinc-300' : 'text-zinc-700'}`}>
-                                "Above all, TrueNorth is committed to creating a <span className="text-brand-orange font-bold">supportive space</span> where individuals and families feel heard, understood, and confident in the decisions they make."
-                            </p>
-                        </div>
-                    </motion.div>
                 </div>
             </section>
 
@@ -477,76 +459,41 @@ const About = () => {
                 </div>
             </section>
 
-            {/* Stats Section */}
-            <section className={`py-20 border-y ${isDark ? 'bg-zinc-900/50 border-white/5' : 'bg-zinc-50/50 border-zinc-100'}`}>
-                <div className="max-w-7xl mx-auto px-4">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-8">
-                        {[
-                            { icon: Users, num: 5000, suffix: '+', label: "Students Guided" },
-                            { icon: BookOpen, num: 50, suffix: '+', label: "Schools Partnered" },
-                            { icon: Award, num: 98, suffix: '%', label: "Success Rate" },
-                            { icon: Globe, num: 3, suffix: '+', label: "Countries Served" }
-                        ].map((stat, idx) => (
-                            <motion.div
-                                key={idx}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: idx * 0.1 }}
-                                className={`text-center relative ${idx !== 3 ? 'md:border-r' : ''} ${isDark ? 'border-white/10' : 'border-zinc-200'}`}
-                            >
-                                <div className={`text-4xl md:text-5xl font-serif font-bold mb-2 ${isDark ? 'text-white' : 'text-zinc-900'}`}>
-                                    <AnimatedCounter target={stat.num} suffix={stat.suffix} duration={2.5} />
-                                </div>
-                                <div className={`text-xs font-bold uppercase tracking-[0.2em] ${isDark ? 'text-brand-orange' : 'text-zinc-500'}`}>{stat.label}</div>
-                            </motion.div>
-                        ))}
-                    </div>
+
+
+            {/* Our Commitment Section - Refined Typography */}
+            <section className="relative pt-4 pb-32 px-4 z-10 overflow-hidden">
+                <div className="max-w-5xl mx-auto">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1, ease: "easeOut" }}
+                        className="text-center"
+                    >
+                        <div className="flex justify-center items-center gap-4 mb-12">
+                            <div className={`h-px w-8 ${isDark ? 'bg-white/20' : 'bg-zinc-200'}`} />
+                            <span className="text-[10px] font-black tracking-[0.5em] uppercase text-brand-orange">Our Commitment</span>
+                            <div className={`h-px w-8 ${isDark ? 'bg-white/20' : 'bg-zinc-200'}`} />
+                        </div>
+
+                        <div className="space-y-12">
+                            <h2 className={`text-3xl md:text-5xl lg:text-6xl font-serif font-bold leading-[1.2] tracking-tight ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+                                Above all, TrueNorth is committed to creating a <br className="hidden md:block" />
+                                <span className="italic font-light text-brand-orange">supportive and trusted</span> space where individuals and families <br className="hidden md:block" />
+                                feel heard, understood, and confident in the decisions they make.
+                            </h2>
+
+                            <p className={`text-xl md:text-2xl font-light leading-relaxed max-w-4xl mx-auto ${isDark ? 'text-zinc-400' : 'text-zinc-500'}`}>
+                                We see ourselves not just as advisors, but as <span className={`font-semibold ${isDark ? 'text-zinc-200' : 'text-zinc-800'}`}>long-term partners</span> — helping individuals and institutions navigate complexity, align choices with purpose, and move forward with clarity towards their own <span className="text-brand-orange italic font-serif">True North.</span>
+                            </p>
+                        </div>
+                    </motion.div>
                 </div>
-            </section>
 
-            {/* Final CTA */}
-            <section className="py-24 px-4 relative z-10 overflow-hidden">
-                <div className={`max-w-5xl mx-auto rounded-[4rem] p-12 md:p-24 text-center relative overflow-hidden theme-transition
-                    ${isDark ? 'bg-zinc-900/40 border border-white/5 shadow-2xl shadow-black/50' : 'bg-white border border-white shadow-2xl shadow-brand-orange/10'}`}>
-
-                    {/* Inner Content */}
-                    <div className="relative z-10">
-                        <motion.span
-                            initial={{ opacity: 0, y: 10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            className="text-[10px] font-black tracking-[0.3em] uppercase text-brand-orange mb-6 block">
-                            Take the First Step
-                        </motion.span>
-                        <h2 className={`text-4xl md:text-6xl font-serif font-bold mb-8 leading-tight ${isDark ? 'text-white' : 'text-zinc-900'}`}>
-                            Ready to Find Your <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-purple-500 to-brand-blue italic font-light">
-                                True North?
-                            </span>
-                        </h2>
-                        <p className={`text-lg lg:text-xl font-light mb-12 max-w-2xl mx-auto leading-relaxed transition-colors duration-500
-                            ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}>
-                            Join thousands of families who found their future with our personalized guidance.
-                        </p>
-                        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
-                            <Link
-                                to="/contact"
-                                className={`group inline-flex items-center gap-4 px-12 py-6 rounded-full font-black text-xs tracking-[0.2em] uppercase transition-all duration-300
-                                    ${isDark
-                                        ? 'bg-white text-zinc-950 hover:shadow-[0_15px_40px_rgba(255,255,255,0.2)]'
-                                        : 'bg-zinc-900 text-white hover:shadow-[0_15px_40px_rgba(0,0,0,0.2)]'}`}
-                            >
-                                Start Your Journey <ArrowRight size={20} className="transition-transform group-hover:translate-x-2" />
-                            </Link>
-                        </motion.div>
-                    </div>
-
-                    {/* Decorative Elements */}
-                    <div className={`absolute top-0 right-0 w-80 h-80 rounded-full blur-[100px] -mr-40 -mt-40 transition-colors duration-500
-                        ${isDark ? 'bg-brand-orange/20' : 'bg-brand-orange/10'}`} />
-                    <div className={`absolute bottom-0 left-0 w-80 h-80 rounded-full blur-[100px] -ml-40 -mb-40 transition-colors duration-500
-                        ${isDark ? 'bg-brand-blue/20' : 'bg-brand-blue/10'}`} />
-                </div>
+                {/* Ambient glow centered behind text */}
+                <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] blur-[150px] -z-10 opacity-20
+                    ${isDark ? 'bg-brand-orange/20' : 'bg-brand-orange/10'}`} />
             </section>
         </div >
     );
