@@ -17,23 +17,24 @@ export default {
         // Brand Colors - Orange, Blue, Red, Black
         brand: {
           orange: {
-            DEFAULT: '#F97316',
+            DEFAULT: '#F97316', // Refined, vibrant orange from Shadcn/Tailwind default is actually good, keeping it but ensuring it's used with new dark mode.
             light: '#FB923C',
             dark: '#EA580C',
           },
           blue: {
-            DEFAULT: '#1E6FEB',
+            DEFAULT: '#2563EB', // Brighter, more premium Royal Blue (Blue-600)
             light: '#3B82F6',
             dark: '#1D4ED8',
+            deep: '#0F172A', // Navy (Slate-900) for "Trust" backgrounds
           },
           red: {
-            DEFAULT: '#E53935',
+            DEFAULT: '#DC2626',
             light: '#EF4444',
-            dark: '#DC2626',
+            dark: '#B91C1C',
           },
           black: {
-            DEFAULT: '#0D0D0D',
-            light: '#262626',
+            DEFAULT: '#09090b', // Zinc-950 (Rich Black)
+            light: '#27272a',    // Zinc-800
             dark: '#000000',
           },
         },

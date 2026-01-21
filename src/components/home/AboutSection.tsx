@@ -58,7 +58,7 @@ const AboutSection = () => {
                                 animate={{ y: [0, -15, 0] }}
                                 transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
                             >
-                                <div className="text-3xl md:text-5xl font-serif font-black text-brand-orange mb-1 md:mb-2">10+</div>
+                                <div className="text-2xl md:text-4xl font-serif font-black text-brand-orange mb-1 md:mb-2">10+</div>
                                 <div className={`text-[8px] md:text-xs font-black tracking-widest uppercase ${isDark ? 'text-white/40' : 'text-zinc-500'}`}>Years of Excellence</div>
                             </motion.div>
 
@@ -71,7 +71,7 @@ const AboutSection = () => {
                                 animate={{ y: [0, 15, 0] }}
                                 transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
                             >
-                                <div className="text-3xl md:text-5xl font-serif font-black text-brand-blue mb-1 md:mb-2">5000+</div>
+                                <div className="text-2xl md:text-4xl font-serif font-black text-brand-blue mb-1 md:mb-2">5000+</div>
                                 <div className={`text-[8px] md:text-xs font-black tracking-widest uppercase ${isDark ? 'text-white/40' : 'text-zinc-500'}`}>Potential Unlocked</div>
                             </motion.div>
 
@@ -90,11 +90,11 @@ const AboutSection = () => {
                             transition={{ duration: 1 }}
                         >
                             <span className="text-[10px] font-black tracking-[0.5em] uppercase text-brand-orange mb-6 block">The Visionary Edge</span>
-                            <h2 className={`text-5xl md:text-7xl font-serif font-bold mb-8 leading-[0.9] tracking-tighter ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+                            <h2 className={`text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-8 leading-[0.9] tracking-tighter ${isDark ? 'text-white' : 'text-zinc-900'}`}>
                                 Navigating Your Path to <br />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-purple-500 to-brand-blue italic font-light">Global Excellence.</span>
                             </h2>
-                            <p className={`text-xl font-light mb-8 leading-relaxed transition-colors duration-500 ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}>
+                            <p className={`text-lg font-light mb-8 leading-relaxed transition-colors duration-500 ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}>
                                 At TrueNorth Consulting, we believe every student has a unique potential waiting to be unlocked. We are more than just consultants; we are <strong className={isDark ? 'text-zinc-200' : 'text-zinc-800'}>architects of academic futures</strong>.
                             </p>
 

@@ -22,7 +22,7 @@ export default defineConfig({
           // Animation libraries
           'vendor-animation': ['framer-motion'],
           // 3D libraries (lazy loaded)
-          'vendor-three': ['three', '@react-three/fiber', '@react-three/drei'],
+
           // Utility libraries
           'vendor-utils': ['clsx', 'tailwind-merge', 'class-variance-authority'],
         },

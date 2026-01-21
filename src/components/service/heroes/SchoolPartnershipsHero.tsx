@@ -93,7 +93,7 @@ const SchoolPartnershipsHero = ({ service }: { service: any }) => {
                     Strategic Institutional Synergy
                 </div>
 
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold mb-8 leading-[1.1] tracking-tight">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 leading-tight tracking-tight">
                     {service.title.split(' ').map((word: string, i: number) => (
                         <span key={i} className={i >= 2 ? 'text-transparent bg-clip-text bg-gradient-to-r from-brand-blue via-indigo-500 to-purple-600' : ''}>
                             {word}{' '}
@@ -101,7 +101,7 @@ const SchoolPartnershipsHero = ({ service }: { service: any }) => {
                     ))}
                 </h1>
 
-                <p className={`text-xl md:text-2xl font-light leading-relaxed mb-12 max-w-xl ${isDark ? 'text-white/50' : 'text-gray-500 font-medium'}`}>
+                <p className={`text-lg md:text-xl font-light leading-relaxed mb-10 max-w-xl ${isDark ? 'text-white/50' : 'text-gray-500 font-medium'}`}>
                     {service.tagline}
                 </p>
 

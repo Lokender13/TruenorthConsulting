@@ -1,7 +1,7 @@
 import { motion, type Variants } from 'framer-motion';
 import { useTheme } from '../../contexts/ThemeContext';
 import { serviceImages } from '../ui/ServiceImage';
-import { PenTool, Clock, Sparkles } from 'lucide-react';
+import { Clock, Sparkles, Quote } from 'lucide-react';
 import TiltCard from '../ui/TiltCard';
 
 interface ServiceOverviewProps {
@@ -43,35 +43,35 @@ const ServiceOverview = ({ desc, serviceId, duration, pricing }: ServiceOverview
     };
 
     return (
-        <section className={`py-16 md:py-20 relative theme-transition ${isDark ? 'bg-zinc-950/0' : 'bg-transparent'}`}>
+        <section className={`py-12 md:py-16 relative theme-transition ${isDark ? 'bg-zinc-950/0' : 'bg-transparent'}`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.8 }}
-                    className="text-center mb-16"
+                    className="text-center mb-12"
                 >
                     <motion.span
-                        className="text-brand-orange font-black tracking-[0.3em] uppercase text-xs mb-4 block"
+                        className="text-brand-orange font-black tracking-[0.3em] uppercase text-xs mb-6 block"
                     >
                         Strategic Overview
                     </motion.span>
-                    <h2 className={`text-4xl lg:text-7xl font-serif font-bold mb-8 tracking-tight ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                    <h2 className={`text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-8 tracking-tight ${isDark ? 'text-white' : 'text-gray-900'}`}>
                         The TrueNorth{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-purple-500 to-brand-blue">
                             Advisory
                         </span>
                     </h2>
-                    <p className={`max-w-3xl mx-auto text-xl lg:text-2xl font-light leading-relaxed ${isDark ? 'text-white/40' : 'text-zinc-500 font-medium'}`}>
+                    <p className={`max-w-2xl mx-auto text-lg md:text-xl font-light leading-relaxed ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>
                         Our methodology is rooted in precision, empathy, and data-driven insights.
                     </p>
                 </motion.div>
 
-                <div className="grid lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+                <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
                     {/* Left: Interactive Image & Card */}
                     <motion.div
-                        className="lg:col-span-5 space-y-8"
+                        className="lg:col-span-5 space-y-6 sticky top-24"
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
@@ -80,7 +80,7 @@ const ServiceOverview = ({ desc, serviceId, duration, pricing }: ServiceOverview
                         <TiltCard
                             tiltIntensity={5}
                             glareOpacity={isDark ? 0.1 : 0.05}
-                            className={`relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl ${isDark ? 'shadow-black/50' : 'shadow-brand-blue/10 border border-white'}`}
+                            className={`relative aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl ${isDark ? 'shadow-black/50 border border-white/10' : 'shadow-zinc-200/50 border border-white'}`}
                         >
                             <motion.img
                                 src={image.src}
@@ -89,58 +89,44 @@ const ServiceOverview = ({ desc, serviceId, duration, pricing }: ServiceOverview
                                 whileHover={{ scale: 1.05 }}
                                 transition={{ duration: 0.6 }}
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
                             <div className="absolute bottom-10 left-10 right-10">
-                                <p className="text-white text-[10px] font-black tracking-[0.2em] uppercase mb-2 opacity-60">Success Stories</p>
-                                <p className="text-white text-lg font-serif font-bold leading-tight">Join 5,000+ students who transformed their futures.</p>
+                                <p className="text-white text-[10px] font-black tracking-[0.2em] uppercase mb-3 opacity-80">Success Stories</p>
+                                <p className="text-white text-xl font-serif font-bold leading-tight">Join 5,000+ students who transformed their futures.</p>
                             </div>
                         </TiltCard>
 
                         {(duration || pricing) && (
-                            <div className={`p-8 rounded-[2.5rem] border backdrop-blur-3xl space-y-6 transition-all duration-500
+                            <div className={`p-8 rounded-[2rem] border backdrop-blur-xl space-y-6 transition-all duration-500
                                 ${isDark
-                                    ? 'bg-zinc-900/40 border-white/5 shadow-2xl shadow-black/20'
-                                    : 'bg-white/80 border-white shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]'}`}>
+                                    ? 'bg-zinc-900/60 border-white/10 shadow-xl'
+                                    : 'bg-white/90 border-zinc-100 shadow-xl shadow-zinc-100'}`}>
 
-                                <div className="flex items-start gap-4">
-                                    <div className={`mt-1 w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0
-                                        ${isDark ? 'bg-brand-orange/10 text-brand-orange' : 'bg-brand-orange/5 text-brand-orange'}`}>
-                                        <Clock size={20} />
+                                <div className="flex items-start gap-5">
+                                    <div className={`mt-1 w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0
+                                        ${isDark ? 'bg-zinc-800 text-brand-orange' : 'bg-orange-50 text-brand-orange'}`}>
+                                        <Clock size={20} strokeWidth={2.5} />
                                     </div>
                                     <div>
-                                        <h4 className={`text-sm font-black uppercase tracking-wider mb-1 ${isDark ? 'text-zinc-500' : 'text-zinc-400'}`}>Duration</h4>
-                                        <p className={`text-lg font-medium ${isDark ? 'text-white' : 'text-zinc-900'}`}>{duration || "Flexible"}</p>
+                                        <h4 className={`text-xs font-black uppercase tracking-widest mb-1 ${isDark ? 'text-zinc-500' : 'text-zinc-400'}`}>Duration</h4>
+                                        <p className={`text-lg font-bold ${isDark ? 'text-white' : 'text-zinc-900'}`}>{duration || "Flexible"}</p>
                                     </div>
                                 </div>
 
-                                <div className="h-px w-full bg-gradient-to-r from-transparent via-gray-500/20 to-transparent"></div>
+                                <div className={`h-px w-full ${isDark ? 'bg-white/5' : 'bg-zinc-100'}`}></div>
 
-                                <div className="flex items-start gap-4">
-                                    <div className={`mt-1 w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0
-                                        ${isDark ? 'bg-brand-blue/10 text-brand-blue' : 'bg-brand-blue/5 text-brand-blue'}`}>
-                                        <Sparkles size={20} />
+                                <div className="flex items-start gap-5">
+                                    <div className={`mt-1 w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0
+                                        ${isDark ? 'bg-zinc-800 text-brand-blue' : 'bg-blue-50 text-brand-blue'}`}>
+                                        <Sparkles size={20} strokeWidth={2.5} />
                                     </div>
                                     <div>
-                                        <h4 className={`text-sm font-black uppercase tracking-wider mb-1 ${isDark ? 'text-zinc-500' : 'text-zinc-400'}`}>Investment</h4>
-                                        <p className={`text-lg font-medium ${isDark ? 'text-white' : 'text-zinc-900'}`}>{pricing || "Contact for pricing"}</p>
+                                        <h4 className={`text-xs font-black uppercase tracking-widest mb-1 ${isDark ? 'text-zinc-500' : 'text-zinc-400'}`}>Investment</h4>
+                                        <p className={`text-lg font-bold ${isDark ? 'text-white' : 'text-zinc-900'}`}>{pricing || "Contact for pricing"}</p>
                                     </div>
                                 </div>
                             </div>
                         )}
-
-                        <div className={`p-10 rounded-[2.5rem] border backdrop-blur-3xl transition-all duration-500
-                            ${isDark
-                                ? 'bg-zinc-900/40 border-white/5 shadow-2xl shadow-black/20'
-                                : 'bg-white/80 border-white shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]'}`}>
-                            <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-8 transition-transform group-hover:scale-110
-                                ${isDark ? 'bg-brand-orange/10 text-brand-orange' : 'bg-brand-orange/5 text-brand-orange shadow-inner shadow-brand-orange/10'}`}>
-                                <PenTool size={32} />
-                            </div>
-                            <h3 className={`text-2xl font-serif font-bold mb-4 ${isDark ? 'text-white' : 'text-zinc-900'}`}>Our Core Intent</h3>
-                            <p className={`text-lg leading-relaxed ${isDark ? 'text-white/40' : 'text-zinc-500 font-medium'}`}>
-                                We don't just provide options; we engineer paths that align with your deepest aspirations and market realities.
-                            </p>
-                        </div>
                     </motion.div>
 
                     {/* Right: Narrative Content */}
@@ -151,25 +137,46 @@ const ServiceOverview = ({ desc, serviceId, duration, pricing }: ServiceOverview
                         whileInView="visible"
                         viewport={{ once: true }}
                     >
-                        {paragraphs.map((paragraph, i) => (
-                            <motion.p
-                                key={i}
-                                variants={itemVariants}
-                                className={`text-xl md:text-2xl mb-10 leading-[1.6] transition-colors duration-500 ${isDark ? 'text-zinc-400 font-light' : 'text-zinc-600 font-medium'} 
-                                    ${i === 0 ? 'first-letter:text-7xl first-letter:font-serif first-letter:font-bold first-letter:text-brand-orange first-letter:mr-4 first-letter:float-left first-letter:mt-1' : ''}`}
-                            >
-                                {paragraph}.
-                            </motion.p>
-                        ))}
+                        <div className="prose prose-lg max-w-none">
+                            {paragraphs.map((paragraph, i) => (
+                                <motion.p
+                                    key={i}
+                                    variants={itemVariants}
+                                    className={`
+                                        text-base md:text-lg leading-relaxed mb-6 transition-colors duration-500
+                                        ${isDark ? 'text-zinc-300 font-light' : 'text-zinc-700 font-medium'}
+                                        ${i === 0
+                                            ? `first-letter:text-4xl first-letter:font-serif first-letter:font-bold first-letter:mr-3 first-letter:float-left first-letter:leading-[0.9]
+                                               ${isDark ? 'first-letter:text-brand-orange' : 'first-letter:text-brand-orange'}`
+                                            : ''}
+                                    `}
+                                >
+                                    {paragraph}.
+                                </motion.p>
+                            ))}
+                        </div>
 
                         <motion.div
                             variants={itemVariants}
-                            className={`mt-12 p-8 rounded-3xl border-l-4 border-brand-blue
-                                ${isDark ? 'bg-brand-blue/5 text-brand-blue/80' : 'bg-brand-blue/5 text-brand-blue'}`}
+                            className={`mt-10 relative p-8 rounded-[2rem] overflow-hidden
+                                ${isDark ? 'bg-zinc-900 text-white' : 'bg-zinc-50 text-zinc-900'}`}
                         >
-                            <p className="text-lg font-serif italic font-medium leading-relaxed">
+                            <Quote className={`absolute top-8 left-8 w-12 h-12 opacity-10 ${isDark ? 'text-white' : 'text-black'}`} />
+
+                            <p className="relative z-10 text-xl md:text-2xl font-serif italic font-medium leading-relaxed text-center">
                                 "Excellence is not an act, but a habit. We make excellence the standard for your career journey."
                             </p>
+                        </motion.div>
+
+                        <motion.div
+                            variants={itemVariants}
+                            className="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4"
+                        >
+                            {['Strategic Clarity', 'Market Edge', 'Personal Brand', 'Growth Mindset'].map((item, i) => (
+                                <div key={i} className={`p-4 rounded-2xl border text-center transition-all ${isDark ? 'bg-white/5 border-white/5 hover:bg-white/10' : 'bg-white border-zinc-100 shadow-sm hover:shadow-md'}`}>
+                                    <p className={`text-sm md:text-base font-serif font-bold ${isDark ? 'text-zinc-200' : 'text-zinc-800'}`}>{item}</p>
+                                </div>
+                            ))}
                         </motion.div>
                     </motion.div>
                 </div>

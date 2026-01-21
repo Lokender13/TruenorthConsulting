@@ -1,5 +1,5 @@
 import ServicePageLayout from './ServicePageLayout';
-import StudentProfilerCTA from '../../components/service/StudentProfilerCTA';
+
 import { motion } from 'framer-motion';
 import { Globe2, GraduationCap, Landmark } from 'lucide-react';
 import { useTheme } from '../../contexts/ThemeContext';
@@ -33,7 +33,6 @@ const StudyAbroad = () => {
                     ))}
                 </div>
             </div>
-            <StudentProfilerCTA />
         </ServicePageLayout>
     );
 };

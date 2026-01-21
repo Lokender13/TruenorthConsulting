@@ -64,6 +64,14 @@ const services = [
         path: "/services/career-lab-setup",
         color: 'slate' as const,
         image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+        title: "Digital Solutions",
+        description: "Web development & digital marketing for education brands.",
+        icon: Laptop,
+        path: "/services/digital-solutions-education",
+        color: 'cyan' as const,
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop"
     }
 ];
 
@@ -92,6 +100,10 @@ const serviceColors = {
     slate: {
         light: { iconBg: 'bg-slate-100', iconText: 'text-slate-600', border: 'border-slate-200', glow: 'group-hover:shadow-slate-500/20' },
         dark: { iconBg: 'bg-slate-500/10', iconText: 'text-slate-400', border: 'border-slate-500/20', glow: 'group-hover:shadow-slate-500/10' }
+    },
+    cyan: {
+        light: { iconBg: 'bg-cyan-100', iconText: 'text-cyan-600', border: 'border-cyan-200', glow: 'group-hover:shadow-cyan-500/20' },
+        dark: { iconBg: 'bg-cyan-500/10', iconText: 'text-cyan-400', border: 'border-cyan-500/20', glow: 'group-hover:shadow-cyan-500/10' }
     },
 };
 
@@ -123,7 +135,7 @@ const Services = () => {
     };
 
     return (
-        <div className={`min-h-screen theme-transition ${isDark ? 'bg-black' : 'bg-white'}`}>
+        <div className={`min-h-screen theme-transition ${isDark ? 'bg-black' : 'bg-zinc-100'}`}>
             <SEO
                 title="Our Services - Career Counselling, Study Abroad & Academic Support"
                 description="Explore TrueNorth's comprehensive services: career counselling, psychometric assessments, study abroad guidance, university admissions, IB/CBSE/IGCSE tutoring, IELTS/SAT preparation, and school partnerships in Dubai, UAE."
@@ -133,7 +145,7 @@ const Services = () => {
             />
 
             {/* Hero */}
-            <section className={`relative pt-32 pb-16 px-4 overflow-hidden ${isDark ? 'bg-black text-white' : 'bg-gray-50 text-gray-900'}`}>
+            <section className={`relative pt-32 pb-16 px-4 overflow-hidden ${isDark ? 'bg-black text-white' : 'bg-zinc-100 text-gray-900'}`}>
                 {/* FloatingOrbs */}
                 <FloatingOrbs orbs={isDark ? [
                     { size: 400, x: '5%', y: '15%', color: 'rgba(255,255,255,0.025)', delay: 0, duration: 18 },
@@ -165,17 +177,17 @@ const Services = () => {
                         }`}>
                         What We Offer
                     </span>
-                    <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6">
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6">
                         <TextReveal>Our Services</TextReveal>
                     </h1>
-                    <p className={`text-xl max-w-2xl mx-auto ${isDark ? 'text-white/40' : 'text-gray-500'}`}>
+                    <p className={`text-lg max-w-2xl mx-auto ${isDark ? 'text-white/40' : 'text-gray-500'}`}>
                         Comprehensive solutions for every stage of your educational journey.
                     </p>
                 </motion.div>
             </section>
 
             {/* Services Grid */}
-            <section className={`py-12 relative ${isDark ? 'bg-zinc-950' : 'bg-white'}`}>
+            <section className={`py-12 relative ${isDark ? 'bg-zinc-950' : 'bg-zinc-100'}`}>
                 <div className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent ${isDark ? 'via-white/10' : 'via-gray-200'} to-transparent`}></div>
 
                 <div className="max-w-7xl mx-auto px-4">
@@ -193,8 +205,8 @@ const Services = () => {
                                         className={`
                                             h-full rounded-3xl overflow-hidden backdrop-blur-xl transition-all duration-500
                                             ${isDark
-                                                ? `bg-zinc-900/40 border-white/10 hover:bg-zinc-900/60 ${serviceColors[service.color].dark.border}`
-                                                : `bg-white/70 border-white/40 shadow-xl hover:shadow-2xl hover:bg-white/90 ${serviceColors[service.color].light.border}`
+                                                ? `bg-zinc-950 border-white/10 hover:border-white/20 ${serviceColors[service.color].dark.border}`
+                                                : `bg-white border-zinc-100 shadow-xl hover:shadow-2xl hover:border-zinc-200 ${serviceColors[service.color].light.border}`
                                             }
                                             border group-hover:border-opacity-100 border-opacity-50
                                         `}

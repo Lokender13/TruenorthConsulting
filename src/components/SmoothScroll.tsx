@@ -11,7 +11,7 @@ const SmoothScroll = ({ children }: SmoothScrollProps) => {
     useEffect(() => {
         // Initialize Lenis
         const lenis = new Lenis({
-            duration: 1.0,
+            duration: 1.2,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Exponential easing
             orientation: 'vertical',
             gestureOrientation: 'vertical',

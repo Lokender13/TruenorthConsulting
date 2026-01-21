@@ -82,10 +82,10 @@ const Hero = () => {
                 {/* Multi-layered Cinematic Overlays */}
                 <div className={`absolute inset-0 transition-colors duration-1000 ${isDark
                     ? 'bg-gradient-to-r from-zinc-950 via-zinc-950/60 to-transparent'
-                    : 'bg-gradient-to-r from-[#FAFAFA] via-[#FAFAFA]/40 to-transparent'
+                    : 'bg-gradient-to-r from-zinc-100 via-zinc-100/50 to-transparent'
                     }`}></div>
 
-                <div className={`absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-${isDark ? 'zinc-950' : '[#FAFAFA]'}`}></div>
+                <div className={`absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-${isDark ? 'zinc-950' : 'zinc-100'}`}></div>
 
                 {/* Cinematic Light Leak Pulse */}
                 <motion.div
@@ -166,9 +166,9 @@ const Hero = () => {
                     </motion.h2>
 
                     {/* Headline with TextReveal and Gradient Text */}
-                    <h1 className={`text-4xl md:text-6xl lg:text-7xl font-serif font-medium leading-[1.1] tracking-tight mb-8 ${isDark ? 'text-white' : 'text-zinc-900'
+                    <h1 className={`text-4xl md:text-5xl lg:text-7xl font-serif font-bold leading-[1.05] tracking-tight mb-6 ${isDark ? 'text-white' : 'text-zinc-900'
                         }`}>
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-purple-500 to-brand-blue italic">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-purple-500 to-brand-blue">
                             Navigate Your Career with Confidence.
                         </span>
                     </h1>
@@ -178,7 +178,7 @@ const Hero = () => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.5 }}
-                        className={`text-lg lg:text-xl font-light max-w-xl mb-10 leading-relaxed transition-colors duration-500 ${isDark ? 'text-zinc-400' : 'text-zinc-600'
+                        className={`text-lg lg:text-xl max-w-xl mb-10 leading-relaxed transition-colors duration-500 ${isDark ? 'text-zinc-400' : 'text-zinc-600'
                             }`}
                     >
                         Success starts with the right guidance. We help you find your right career and get into your dream university with confidence.
@@ -223,21 +223,21 @@ const Hero = () => {
                 >
                     <motion.div
                         className={`
-                            relative p-8 rounded-3xl backdrop-blur-3xl border transition-all duration-700
+                            relative p-8 rounded-[2.5rem] backdrop-blur-xl border transition-all duration-700
                             ${isDark
-                                ? 'bg-zinc-900/40 border-white/5 shadow-xl'
-                                : 'bg-white/80 border-white shadow-xl shadow-zinc-200/50'
+                                ? 'bg-zinc-950 border-white/20 shadow-xl shadow-black/80'
+                                : 'bg-white border-zinc-200 shadow-[0_30px_60px_-12px_rgba(0,0,0,0.12)]'
                             }
                         `}
                         whileHover={{
                             y: -5,
                             boxShadow: isDark
-                                ? '0 20px 40px rgba(0,0,0,0.4)'
-                                : '0 20px 40px rgba(0,0,0,0.05)',
+                                ? '0 40px 80px rgba(0,0,0,0.7)'
+                                : '0 40px 80px rgba(0,0,0,0.15)',
                         }}
                     >
                         <div className="relative z-10">
-                            <h3 className={`text-2xl font-serif font-bold mb-2 transition-colors duration-500 ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+                            <h3 className={`text-xl font-serif font-bold mb-2 transition-colors duration-500 ${isDark ? 'text-white' : 'text-zinc-900'}`}>
                                 Book Appointment
                             </h3>
                             <p className={`text-sm mb-6 transition-colors duration-500 ${isDark ? 'text-zinc-500' : 'text-zinc-500'}`}>
@@ -264,10 +264,10 @@ const Hero = () => {
                                             value={formData[field.name as keyof typeof formData]}
                                             onChange={handleInputChange}
                                             className={`
-                                                w-full px-5 py-3 rounded-xl outline-none transition-all duration-300 font-medium text-sm
+                                                w-full px-5 py-4 rounded-xl outline-none transition-all duration-300 font-medium text-sm border
                                                 ${isDark
-                                                    ? 'bg-white/5 border border-white/10 text-white placeholder:text-white/20 focus:border-white/30 focus:bg-white/10'
-                                                    : 'bg-white border border-zinc-100 text-zinc-900 placeholder:text-zinc-400 focus:border-brand-orange/50 focus:shadow-sm shadow-inner'
+                                                    ? 'bg-zinc-900 border-zinc-800 text-white placeholder:text-zinc-600 focus:border-brand-orange/50 focus:bg-zinc-800'
+                                                    : 'bg-zinc-50 border-zinc-200 text-zinc-900 placeholder:text-zinc-400 focus:border-zinc-300 focus:bg-white focus:shadow-lg'
                                                 }
                                             `}
                                         />

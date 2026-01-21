@@ -14,7 +14,7 @@ const Resources = () => {
     const blogs = blogData;
 
     return (
-        <div className={`min-h-screen theme-transition relative overflow-hidden ${isDark ? 'bg-zinc-950 text-white' : 'bg-[#FAFAFA] text-zinc-900'}`}>
+        <div className={`min-h-screen theme-transition relative overflow-hidden ${isDark ? 'bg-zinc-950 text-white' : 'bg-zinc-100 text-zinc-900'}`}>
             <SEO
                 title="Resources & Insights | TrueNorth Consulting"
                 description="Expert articles, guides, and resources on career planning, study abroad, and educational success by TrueNorth Consulting."
@@ -38,13 +38,13 @@ const Resources = () => {
                         <span className="text-brand-orange font-black tracking-[0.3em] uppercase text-xs mb-4 block">
                             Knowledge Hub
                         </span>
-                        <h1 className={`text-4xl md:text-6xl lg:text-7xl font-serif font-bold mb-8 ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+                        <h1 className={`text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-8 ${isDark ? 'text-white' : 'text-zinc-900'}`}>
                             Insights for your <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-blue italic">
                                 Journey.
                             </span>
                         </h1>
-                        <p className={`max-w-2xl mx-auto text-xl font-light leading-relaxed ${isDark ? 'text-white/40' : 'text-zinc-500'}`}>
+                        <p className={`max-w-2xl mx-auto text-lg font-light leading-relaxed ${isDark ? 'text-white/40' : 'text-zinc-500'}`}>
                             Expert advice, detailed guides, and the latest updates on global education trends.
                         </p>
                     </motion.div>
@@ -68,8 +68,8 @@ const Resources = () => {
                                         tiltIntensity={5}
                                         className={`h-full flex flex-col rounded-[2rem] overflow-hidden border transition-all duration-500
                                             ${isDark
-                                                ? 'bg-zinc-900/40 border-white/5 hover:border-white/10 group'
-                                                : 'bg-white border-zinc-100 hover:border-brand-orange/20 shadow-lg group'}`}
+                                                ? 'bg-zinc-950 border-white/10 hover:bg-zinc-900 group'
+                                                : 'bg-white border-zinc-100 hover:border-zinc-200 hover:shadow-xl group'}`}
                                     >
                                         {/* Image */}
                                         <div className="aspect-[16/9] relative overflow-hidden">

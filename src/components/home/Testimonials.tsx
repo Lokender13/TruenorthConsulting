@@ -42,11 +42,8 @@ const Testimonials = () => {
                         ${isDark ? 'border-brand-blue/20 text-brand-blue bg-brand-blue/5' : 'border-blue-200 text-brand-blue bg-white shadow-sm'}`}>
                         Student Voices
                     </span>
-                    <h2 className={`text-5xl md:text-7xl font-serif font-bold mb-8 leading-[0.9] tracking-tighter ${isDark ? 'text-white' : 'text-zinc-900'}`}>
-                        What Our <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-purple-500 to-brand-blue italic font-light">
-                            Students Say.
-                        </span>
+                    <h2 className={`text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-8 leading-[0.9] tracking-tighter ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+                        What Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-purple-500 to-brand-blue italic font-light">Students Say.</span>
                     </h2>
                 </motion.div>
 
@@ -63,8 +60,8 @@ const Testimonials = () => {
                                 className={`
                                     h-full p-10 rounded-[3rem] backdrop-blur-xl transition-all duration-700 border
                                     ${isDark
-                                        ? 'bg-zinc-900/40 border-white/5 hover:bg-zinc-900/60 shadow-2xl shadow-black/50'
-                                        : 'bg-white/80 border-white shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]'
+                                        ? 'bg-zinc-950 border-white/20 shadow-lg shadow-black/50 hover:bg-zinc-900 hover:border-brand-orange/30 hover:shadow-2xl hover:shadow-brand-orange/10'
+                                        : 'bg-white border-zinc-200 shadow-xl hover:border-zinc-300 hover:shadow-2xl'
                                     }
                                 `}
                                 tiltIntensity={5}
@@ -78,7 +75,7 @@ const Testimonials = () => {
                                         ))}
                                     </div>
 
-                                    <p className={`text-xl font-light italic leading-relaxed mb-10 flex-grow transition-colors duration-500 ${isDark ? 'text-zinc-400' : 'text-zinc-600 font-medium'}`}>
+                                    <p className={`text-lg leading-[1.8] mb-10 flex-grow transition-colors duration-500 ${isDark ? 'text-zinc-300' : 'text-zinc-700'}`}>
                                         "{testimonial.content}"
                                     </p>
 
@@ -86,7 +83,7 @@ const Testimonials = () => {
                                         <div className={`text-lg font-serif font-bold transition-colors duration-500 ${isDark ? 'text-white' : 'text-zinc-900'}`}>
                                             {testimonial.name}
                                         </div>
-                                        <div className={`text-xs font-black tracking-widest uppercase mt-2 ${isDark ? 'text-zinc-600' : 'text-zinc-400'}`}>
+                                        <div className={`text-sm font-medium tracking-wide uppercase mt-2 ${isDark ? 'text-zinc-500' : 'text-zinc-500'}`}>
                                             {testimonial.role}
                                         </div>
                                     </div>

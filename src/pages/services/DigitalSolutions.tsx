@@ -2,7 +2,7 @@ import ServicePageLayout from './ServicePageLayout';
 import { motion } from 'framer-motion';
 import { Rocket, Search, Code } from 'lucide-react';
 import { useTheme } from '../../contexts/ThemeContext';
-import StudentProfilerCTA from '../../components/service/StudentProfilerCTA';
+
 
 const DigitalSolutions = () => {
     const { theme } = useTheme();
@@ -31,10 +31,6 @@ const DigitalSolutions = () => {
                             <p className={`leading-relaxed ${isDark ? 'text-white/40' : 'text-gray-500 font-medium'}`}>{item.desc}</p>
                         </motion.div>
                     ))}
-                </div>
-
-                <div className="mb-16">
-                    <StudentProfilerCTA />
                 </div>
             </div>
         </ServicePageLayout>

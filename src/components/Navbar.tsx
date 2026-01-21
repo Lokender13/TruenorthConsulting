@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Sun, Moon, Linkedin, Instagram, Twitter } from 'lucide-react';
+import { Menu, X, ChevronDown, Sun, Moon, Linkedin, Instagram, Twitter, BookOpen, Globe, GraduationCap, Target, Building2, Laptop } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../contexts/ThemeContext';
 import logo from '../assets/logo.png';
@@ -25,13 +25,13 @@ const Navbar = () => {
     }, [location]);
 
     const services = [
-        { name: "Career Counselling", path: "/services/career-counselling-psychometric-assessments" },
-        { name: "Study Abroad", path: "/services/university-admissions-study-abroad" },
-        { name: "Academic Support", path: "/services/academic-support-online-tutoring" },
-        { name: "Competitive Exams", path: "/services/competitive-exam-language-preparation" },
-        { name: "School Partnerships", path: "/services/school-college-partnerships" },
-        { name: "Career Labs", path: "/services/career-lab-setup" },
-        { name: "Digital Solutions", path: "/services/digital-solutions-education" },
+        { name: "Career Counselling", path: "/services/career-counselling-psychometric-assessments", icon: Target },
+        { name: "Study Abroad", path: "/services/university-admissions-study-abroad", icon: Globe },
+        { name: "Academic Support", path: "/services/academic-support-online-tutoring", icon: BookOpen },
+        { name: "Competitive Exams", path: "/services/competitive-exam-language-preparation", icon: GraduationCap },
+        { name: "School Partnerships", path: "/services/school-college-partnerships", icon: Building2 },
+        { name: "Career Labs", path: "/services/career-lab-setup", icon: Laptop },
+        { name: "Digital Solutions", path: "/services/digital-solutions-education", icon: Laptop },
     ];
 
     const navLinks = [
@@ -50,8 +50,8 @@ const Navbar = () => {
             {/* Glass Background Layer */}
             <div className={`absolute inset-0 transition-all duration-700 ${scrolled
                 ? isDark
-                    ? 'bg-zinc-950/80 backdrop-blur-2xl border-b border-white/5 shadow-2xl shadow-black/50'
-                    : 'bg-white/80 backdrop-blur-2xl border-b border-zinc-100 shadow-[0_10px_30px_rgba(0,0,0,0.02)]'
+                    ? 'bg-zinc-950/90 backdrop-blur-xl border-b border-white/5 shadow-2xl shadow-black/50'
+                    : 'bg-white/80 backdrop-blur-xl border-b border-white/50 shadow-sm'
                 : 'bg-transparent'
                 }`} />
 
@@ -101,9 +101,9 @@ const Navbar = () => {
                                                     animate={{ opacity: 1, y: 0, scale: 1 }}
                                                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
                                                     transition={{ duration: 0.2, ease: "easeOut" }}
-                                                    className={`absolute top-full left-0 mt-4 w-72 p-2 rounded-2xl border backdrop-blur-xl shadow-2xl overflow-hidden ${isDark
-                                                        ? 'bg-zinc-900/90 border-white/10'
-                                                        : 'bg-white/90 border-black/5'
+                                                    className={`absolute top-full left-0 mt-4 w-80 p-2 rounded-2xl border backdrop-blur-xl shadow-2xl overflow-hidden ${isDark
+                                                        ? 'bg-zinc-950 border-white/10 shadow-black/50'
+                                                        : 'bg-white border-zinc-200/50 shadow-zinc-200/20'
                                                         }`}
                                                 >
                                                     {services.map((service) => (
@@ -112,13 +112,16 @@ const Navbar = () => {
                                                             to={service.path}
                                                             className={`
                                                                 block px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200
-                                                                relative overflow-hidden group/item
+                                                                relative overflow-hidden group/item flex items-center
                                                                 ${isDark
-                                                                    ? 'text-white/60 hover:text-white hover:bg-white/10'
-                                                                    : 'text-gray-600 hover:text-black hover:bg-black/5'
+                                                                    ? 'text-zinc-400 hover:text-white hover:bg-white/5'
+                                                                    : 'text-zinc-600 hover:text-zinc-900 hover:bg-zinc-50'
                                                                 }
                                                             `}
                                                         >
+                                                            <span className={`p-2 rounded-lg mr-3 transition-colors ${isDark ? 'bg-white/5 text-zinc-400 group-hover/item:text-white group-hover/item:bg-white/10' : 'bg-zinc-100 text-zinc-500 group-hover/item:text-zinc-900 group-hover/item:bg-white'}`}>
+                                                                <service.icon size={16} />
+                                                            </span>
                                                             <span className="relative z-10">{service.name}</span>
                                                         </Link>
                                                     ))}
@@ -231,7 +234,7 @@ const Navbar = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
                         className={`absolute top-full left-0 right-0 border-t backdrop-blur-xl shadow-2xl ${isDark
-                            ? 'bg-black/95 border-white/10'
+                            ? 'bg-zinc-950/95 border-white/10'
                             : 'bg-white/95 border-black/5'
                             }`}
                     >
@@ -244,7 +247,7 @@ const Navbar = () => {
                                         block px-6 py-4 rounded-2xl text-lg font-medium transition-all duration-300
                                         ${isDark
                                             ? 'text-white/70 hover:text-white hover:bg-white/10'
-                                            : 'text-gray-600 hover:text-black hover:bg-black/5'
+                                            : 'text-zinc-600 hover:text-zinc-900 hover:bg-zinc-50'
                                         }
                                     `}
                                     onClick={() => setIsOpen(false)}
@@ -252,7 +255,7 @@ const Navbar = () => {
                                     {link.name}
                                 </Link>
                             ))}
-                            <div className="pt-4 mt-4 border-t border-dashed border-gray-500/20">
+                            <div className="pt-4 mt-4 border-t border-dashed border-zinc-500/20">
                                 <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                                     <Link
                                         to="/contact"

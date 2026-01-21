@@ -47,10 +47,10 @@ const StudentProfilerCTA = () => {
                         >
                             Profile Engineering
                         </motion.span>
-                        <h3 className={`text-3xl md:text-5xl font-serif font-bold mb-8 leading-[1.2] ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                        <h3 className={`text-2xl md:text-4xl font-serif font-bold mb-8 leading-[1.2] ${isDark ? 'text-white' : 'text-gray-900'}`}>
                             Uncertain about your <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-purple-500">Global Trajectory?</span>
                         </h3>
-                        <p className={`text-lg md:text-xl mb-10 leading-relaxed font-light ${isDark ? 'text-white/40' : 'text-gray-500 font-medium'}`}>
+                        <p className={`text-base md:text-lg mb-10 leading-relaxed font-light ${isDark ? 'text-white/40' : 'text-gray-500 font-medium'}`}>
                             Our proprietary <strong className={isDark ? 'text-white/80' : 'text-gray-900'}>Student Profiler</strong> intelligently evaluates your aptitude, budget, and aspirations to curate a roadmap that guarantees success.
                         </p>
 
@@ -61,7 +61,7 @@ const StudentProfilerCTA = () => {
                                 rel="noopener noreferrer"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.98 }}
-                                className={`group flex items-center justify-center gap-3 px-10 py-5 rounded-full font-bold text-lg transition-all shadow-2xl relative overflow-hidden
+                                className={`group flex items-center justify-center gap-3 px-10 py-5 rounded-full font-bold text-base transition-all shadow-2xl relative overflow-hidden
                                     ${isDark ? 'bg-white text-black' : 'bg-brand-blue text-white shadow-brand-blue/20'}
                                 `}
                             >

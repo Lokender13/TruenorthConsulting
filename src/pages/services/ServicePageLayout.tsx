@@ -12,6 +12,8 @@ import ServiceFAQ from '../../components/service/ServiceFAQ';
 import PsychometricAssessment from '../../components/service/PsychometricAssessment';
 import { useTheme } from '../../contexts/ThemeContext';
 import { motion, useScroll, useSpring } from 'framer-motion';
+import CTASection from '../../components/home/CTASection';
+
 
 const Section = ({ children }: { children: React.ReactNode }) => (
     <motion.div
@@ -65,7 +67,7 @@ const ServicePageLayout = ({ serviceId, children }: ServicePageLayoutProps) => {
     const has = (key: keyof Service) => service[key] && (service[key] as any[]).length > 0;
 
     return (
-        <div ref={containerRef} className={`min-h-screen theme-transition relative overflow-hidden ${isDark ? 'bg-zinc-950 text-white' : 'bg-[#FAFAFA] text-zinc-900'}`}>
+        <div ref={containerRef} className={`min-h-screen theme-transition relative overflow-hidden ${isDark ? 'bg-zinc-950 text-white' : 'bg-zinc-100 text-zinc-900'}`}>
             {/* Scroll Progress Bar */}
             <motion.div
                 className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-orange via-purple-500 to-brand-blue z-[100] origin-left"
@@ -203,6 +205,11 @@ const ServicePageLayout = ({ serviceId, children }: ServicePageLayoutProps) => {
                                 </Section>
                             </>
                         )}
+
+                        <SectionDivider />
+                        <Section>
+                            <CTASection />
+                        </Section>
                     </div>
                 </div>
             </main>
@@ -218,8 +225,8 @@ const ServicePageLayout = ({ serviceId, children }: ServicePageLayoutProps) => {
                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
-                    className={`w-14 h-14 rounded-full flex items-center justify-center shadow-2xl backdrop-blur-xl border
-                        ${isDark ? 'bg-white/10 border-white/20 text-white' : 'bg-white border-gray-200 text-gray-900'}
+                    className={`w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 border
+                        ${isDark ? 'bg-zinc-900 border-white/10 text-white hover:bg-zinc-800' : 'bg-white border-zinc-200 text-zinc-900 hover:bg-zinc-50'}
                     `}
                 >
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

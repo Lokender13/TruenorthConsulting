@@ -62,13 +62,13 @@ const ServiceProcess = ({ process }: ServiceProcessProps) => {
                     <motion.span className="text-brand-orange font-black tracking-[0.3em] uppercase text-xs mb-4 block">
                         Execution Workflow
                     </motion.span>
-                    <h2 className={`text-4xl lg:text-7xl font-serif font-bold mb-8 tracking-tight ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                    <h2 className={`text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-8 tracking-tight ${isDark ? 'text-white' : 'text-gray-900'}`}>
                         Our Strategic{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-purple-500">
                             Roadmap
                         </span>
                     </h2>
-                    <p className={`text-xl lg:text-2xl font-light max-w-3xl mx-auto ${isDark ? 'text-white/40' : 'text-gray-500 font-medium'}`}>
+                    <p className={`text-base md:text-lg font-light max-w-3xl mx-auto ${isDark ? 'text-white/40' : 'text-gray-500 font-medium'}`}>
                         A systematic, data-driven methodology designed to convert your potential into high-impact performance.
                     </p>
                 </motion.div>

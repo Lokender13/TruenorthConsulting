@@ -60,18 +60,13 @@ const AssessmentCard = ({ item, index }: { item: typeof assessments[0], index: n
             <TiltCard
                 tiltIntensity={8}
                 glareOpacity={isDark ? 0.1 : 0.05}
-                className={`group relative h-full rounded-[2.5rem] p-8 transition-all duration-500 overflow-hidden
+                className={`group relative h-full rounded-[2.5rem] p-8 transition-all duration-500 overflow-hidden border
                     ${isDark
-                        ? 'bg-zinc-900/40 border-white/5 hover:bg-zinc-900/60 shadow-2xl shadow-black/20'
-                        : 'bg-white/80 border-white hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] shadow-[0_10px_30px_rgba(0,0,0,0.02)]'
+                        ? 'bg-zinc-900 border-white/10 hover:border-brand-orange/30 shadow-xl shadow-black/50'
+                        : 'bg-white border-zinc-200 hover:border-brand-orange/30 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_50px_-10px_rgba(0,0,0,0.15)]'
                     }
                 `}
             >
-                {/* Decorative Background Icon */}
-                <div className={`absolute -right-8 -bottom-8 opacity-[0.03] group-hover:scale-125 transition-transform duration-700 ${isDark ? 'text-white' : 'text-black'}`}>
-                    <item.icon size={200} />
-                </div>
-
                 <div className="relative z-10 flex flex-col h-full">
                     {/* Icon Header */}
                     <div className={`w-16 h-16 rounded-2xl mb-8 flex items-center justify-center bg-gradient-to-br ${item.color} shadow-lg ${item.shadow} transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500`}>

@@ -2,7 +2,7 @@ import ServicePageLayout from './ServicePageLayout';
 import { motion } from 'framer-motion';
 import { Layout, Zap, Award } from 'lucide-react';
 import { useTheme } from '../../contexts/ThemeContext';
-import StudentProfilerCTA from '../../components/service/StudentProfilerCTA';
+
 
 const CareerLab = () => {
     const { theme } = useTheme();
@@ -31,10 +31,6 @@ const CareerLab = () => {
                             <p className={`leading-relaxed ${isDark ? 'text-white/40' : 'text-gray-500 font-medium'}`}>{item.desc}</p>
                         </motion.div>
                     ))}
-                </div>
-
-                <div className="mb-24">
-                    <StudentProfilerCTA />
                 </div>
             </div>
         </ServicePageLayout>

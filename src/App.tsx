@@ -24,7 +24,6 @@ import RefundPolicy from './pages/legal/RefundPolicy';
 import Disclaimer from './pages/legal/Disclaimer';
 import SmoothScroll from './components/SmoothScroll';
 import ScrollToTop from './components/ScrollToTop';
-import ParticlesBackground from './components/Particles';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 // Animated Routes wrapper
@@ -94,8 +93,7 @@ function App() {
     <Router>
       <SmoothScroll>
         <ScrollToTop />
-        <div className="relative flex flex-col min-h-screen overflow-x-hidden">
-          <ParticlesBackground theme={theme} />
+        <div className="relative flex flex-col min-h-screen overflow-x-hidden transition-colors duration-300 bg-zinc-100 dark:bg-zinc-950">
           <Navbar />
           <main className="flex-grow">
             <AnimatedRoutes />

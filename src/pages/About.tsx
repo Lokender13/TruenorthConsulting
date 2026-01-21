@@ -44,7 +44,7 @@ const About = () => {
     ];
 
     return (
-        <div className={`min-h-screen theme-transition relative overflow-hidden ${isDark ? 'bg-zinc-950 text-white' : 'bg-[#FAFAFA] text-zinc-900'}`}>
+        <div className={`min-h-screen theme-transition relative overflow-hidden ${isDark ? 'bg-zinc-950 text-white' : 'bg-zinc-100 text-zinc-900'}`}>
             <SEO
                 title="About TrueNorth Consulting | Career Counselling & Education Consultancy in Dubai"
                 description="TrueNorth Consulting, founded by Surabhi Rawat, is a premier career counselling and education consultancy based in Dubai, UAE. We help students navigate academic pathways from CBSE to IB, British, and American curricula."
@@ -93,18 +93,21 @@ const About = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                     >
-                        <span className={`inline-flex items-center gap-2 px-6 py-2 rounded-full border text-[10px] font-black tracking-[0.3em] uppercase mb-8
-                            ${isDark ? 'border-brand-orange/20 text-brand-orange bg-brand-orange/5' : 'border-brand-orange/10 text-brand-orange bg-white shadow-sm'}`}>
-                            Our Legacy
-                        </span>
-                        <h1 className={`text-6xl md:text-9xl font-serif font-bold mb-8 leading-[0.9] tracking-tighter ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+                        <div className="flex justify-center mb-8">
+                            <span className={`px-5 py-2 rounded-full text-[10px] font-black tracking-[0.3em] uppercase border transition-colors
+                                ${isDark ? 'border-white/10 text-white/60 bg-white/5' : 'border-black/5 text-zinc-500 bg-black/[0.02]'}`}>
+                                Who We Are
+                            </span>
+                        </div>
+
+                        <h1 className={`text-6xl md:text-8xl font-serif font-bold mb-8 leading-[0.9] tracking-tighter ${isDark ? 'text-white' : 'text-zinc-900'}`}>
                             Finding Your<br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-purple-500 to-brand-blue italic font-light">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-yellow-500 to-brand-orange italic font-light drop-shadow-sm">
                                 True North
                             </span>
                         </h1>
-                        <p className={`text-xl lg:text-2xl font-light max-w-3xl mx-auto leading-relaxed transition-colors duration-500
-                            ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}>
+                        <p className={`text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed font-light transition-colors duration-500
+                            ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>
                             Helping students find their right path with expert guidance and care.
                         </p>
                     </motion.div>
@@ -123,10 +126,10 @@ const About = () => {
                             transition={{ duration: 1 }}
                         >
                             <span className="text-[10px] font-black tracking-[0.5em] uppercase text-brand-orange mb-6 block">Our Story</span>
-                            <h2 className={`text-4xl md:text-6xl font-serif font-bold mb-8 leading-tight ${isDark ? 'text-white' : 'text-zinc-900'}`}>
-                                Why We <br /><span className="italic font-light">Started.</span>
+                            <h2 className={`text-4xl md:text-5xl font-serif font-bold mb-8 leading-tight ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+                                Why We <span className="italic font-light">Started.</span>
                             </h2>
-                            <div className={`space-y-6 text-xl leading-relaxed transition-colors duration-500 ${isDark ? 'text-zinc-400 font-light' : 'text-zinc-600 font-medium'}`}>
+                            <div className={`space-y-6 text-base lg:text-lg leading-relaxed transition-colors duration-500 ${isDark ? 'text-zinc-300 font-light' : 'text-zinc-700'}`}>
                                 <p>
                                     <strong className={isDark ? 'text-zinc-200' : 'text-zinc-900'}>TrueNorth Consulting</strong> was founded by <strong className="text-brand-orange">Surabhi Rawat</strong>, an experienced educator and certified career counselor, driven by a deep understanding of the challenges students and parents face today.
                                 </p>
@@ -175,10 +178,10 @@ const About = () => {
                         className="text-center mb-20"
                     >
                         <span className="text-[10px] font-black tracking-[0.5em] uppercase text-brand-orange mb-6 block">We Help Everyone</span>
-                        <h2 className={`text-4xl md:text-6xl font-serif font-bold mb-8 leading-tight ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+                        <h2 className={`text-3xl md:text-5xl font-serif font-bold mb-8 leading-tight ${isDark ? 'text-white' : 'text-zinc-900'}`}>
                             Guidance that reaches <br /><span className="italic font-light">Everywhere.</span>
                         </h2>
-                        <p className={`max-w-3xl mx-auto text-xl md:text-2xl font-light leading-relaxed transition-colors duration-500
+                        <p className={`max-w-3xl mx-auto text-lg md:text-xl font-light leading-relaxed transition-colors duration-500
                             ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}>
                             We help students at every important step of their education, no matter where they are.
                         </p>
@@ -196,22 +199,19 @@ const About = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1, duration: 0.8 }}
+                                className={`
+                                    group p-10 rounded-[2.5rem] h-full border transition-all duration-500 flex flex-col items-center text-center
+                                    ${isDark
+                                        ? 'bg-zinc-900/80 border-white/10 shadow-xl shadow-black/30 hover:bg-zinc-900 hover:border-white/20'
+                                        : 'bg-white border-zinc-200 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_50px_-10px_rgba(0,0,0,0.12)] hover:border-zinc-300'}
+                                `}
                             >
-                                <TiltCard
-                                    tiltIntensity={5}
-                                    glareOpacity={isDark ? 0.1 : 0.05}
-                                    className={`p-10 rounded-[3rem] h-full border transition-all duration-500
-                                        ${isDark
-                                            ? 'bg-zinc-900/40 border-white/5 hover:bg-zinc-900/60 shadow-2xl shadow-black/20'
-                                            : 'bg-white/80 border-white shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]'}`}
-                                >
-                                    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-8 transition-transform group-hover:scale-110
-                                        ${isDark ? 'bg-brand-orange/10 text-brand-orange' : 'bg-brand-orange/5 text-brand-orange shadow-inner shadow-brand-orange/10'}`}>
-                                        <item.icon size={32} />
-                                    </div>
-                                    <h3 className={`text-2xl font-serif font-bold mb-4 ${isDark ? 'text-white' : 'text-zinc-900'}`}>{item.title}</h3>
-                                    <p className={`text-lg leading-relaxed ${isDark ? 'text-zinc-400 font-light' : 'text-zinc-500 font-medium'}`}>{item.desc}</p>
-                                </TiltCard>
+                                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-8 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3
+                                    ${isDark ? 'bg-brand-orange/10 text-brand-orange' : 'bg-orange-50 text-brand-orange'}`}>
+                                    <item.icon size={32} strokeWidth={1.5} />
+                                </div>
+                                <h3 className={`text-2xl font-serif font-bold mb-4 ${isDark ? 'text-white' : 'text-zinc-900'}`}>{item.title}</h3>
+                                <p className={`text-lg leading-relaxed ${isDark ? 'text-zinc-400 font-light' : 'text-zinc-500 font-medium'}`}>{item.desc}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -219,9 +219,9 @@ const About = () => {
             </section>
 
             {/* Mission & Vision Section */}
-            <section className="py-16 px-4 relative z-10">
+            <section className="py-24 px-4 relative z-10 transition-colors duration-500">
                 <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24">
                         {[
                             {
                                 icon: Target,
@@ -240,35 +240,37 @@ const About = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1, duration: 0.8 }}
+                                className="relative group"
                             >
-                                <TiltCard
-                                    tiltIntensity={5}
-                                    glareOpacity={isDark ? 0.1 : 0.05}
-                                    className={`p-12 rounded-[3.5rem] h-full border transition-all duration-500
-                                        ${isDark
-                                            ? 'bg-zinc-900/40 border-white/5 hover:bg-zinc-900/60 shadow-2xl shadow-black/20'
-                                            : 'bg-white/80 border-white shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]'}`}
-                                >
-                                    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-8 transition-transform group-hover:scale-110
-                                        ${isDark ? 'bg-brand-blue/10 text-brand-blue' : 'bg-brand-blue/5 text-brand-blue shadow-inner shadow-brand-blue/10'}`}>
-                                        <item.icon size={32} />
-                                    </div>
-                                    <h2 className={`text-4xl font-serif font-bold mb-6 ${isDark ? 'text-white' : 'text-zinc-900'}`}>{item.title}</h2>
-                                    <p className={`text-xl leading-relaxed transition-colors duration-500 ${isDark ? 'text-zinc-400 font-light' : 'text-zinc-600 font-medium'}`}>{item.desc}</p>
-                                </TiltCard>
+                                <div className={`absolute -inset-4 bg-gradient-to-b from-brand-orange/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] -z-10`} />
+
+                                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-8 transition-all duration-500 group-hover:scale-110
+                                    ${isDark ? 'bg-white/5 text-white ring-1 ring-white/10' : 'bg-zinc-50 text-zinc-900 border border-zinc-200'}`}>
+                                    <item.icon size={32} strokeWidth={1.5} />
+                                </div>
+                                <h2 className={`text-4xl font-serif font-bold mb-6 ${isDark ? 'text-white' : 'text-zinc-900'}`}>{item.title}</h2>
+                                <div className={`h-px w-12 bg-brand-orange mb-8`}></div>
+                                <p className={`text-xl leading-relaxed transition-colors duration-500 ${isDark ? 'text-zinc-400 font-light' : 'text-zinc-600 font-medium'}`}>{item.desc}</p>
                             </motion.div>
                         ))}
                     </div>
 
                     <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="text-center mt-20"
+                        className="text-center mt-32"
                     >
-                        <p className={`text-2xl md:text-3xl italic font-light max-w-4xl mx-auto leading-relaxed transition-colors duration-500 ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}>
-                            "Above all, TrueNorth is committed to creating a <span className="text-brand-orange font-bold italic">supportive space</span> where students feel heard, understood, and inspired."
-                        </p>
+                        <div className={`relative p-12 md:p-16 rounded-[3rem] overflow-hidden border
+                            ${isDark ? 'bg-zinc-900/50 border-white/5' : 'bg-white border-zinc-100 shadow-2xl shadow-zinc-100/50'}`}>
+                            <div className={`absolute top-0 left-0 w-24 h-24 border-t-2 border-l-2 rounded-tl-[2rem] m-8 border-brand-orange/20`} />
+                            <div className={`absolute bottom-0 right-0 w-24 h-24 border-b-2 border-r-2 rounded-br-[2rem] m-8 border-brand-orange/20`} />
+
+                            <p className={`relative z-10 text-2xl md:text-3xl italic font-serif leading-relaxed transition-colors duration-500 max-w-4xl mx-auto
+                                    ${isDark ? 'text-zinc-300' : 'text-zinc-700'}`}>
+                                "Above all, TrueNorth is committed to creating a <span className="text-brand-orange font-bold">supportive space</span> where students feel heard, understood, and inspired."
+                            </p>
+                        </div>
                     </motion.div>
                 </div>
             </section>
@@ -358,13 +360,13 @@ const About = () => {
                                     <span className="text-[10px] font-black tracking-[0.5em] uppercase text-orange-500">The Visionary Mind</span>
                                 </div>
 
-                                <h2 className={`text-6xl md:text-8xl font-serif font-bold mb-10 leading-[0.9] tracking-tighter ${isDark ? 'bg-gradient-to-br from-white via-white to-white/40 bg-clip-text text-transparent' : 'text-gray-900'}`}>
+                                <h2 className={`text-4xl md:text-6xl font-serif font-bold mb-10 leading-[0.9] tracking-tighter ${isDark ? 'bg-gradient-to-br from-white via-white to-white/40 bg-clip-text text-transparent' : 'text-gray-900'}`}>
                                     Guidance as an <br />
                                     <span className="italic font-light text-orange-500">Art Form.</span>
                                 </h2>
 
-                                <div className={`space-y-8 text-lg md:text-xl font-light leading-relaxed ${isDark ? 'text-white/40' : 'text-gray-500'}`}>
-                                    <p className="first-letter:text-5xl first-letter:font-serif first-letter:font-bold first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:text-orange-500">
+                                <div className={`space-y-8 text-base md:text-lg font-light leading-relaxed ${isDark ? 'text-white/40' : 'text-gray-500'}`}>
+                                    <p className="first-letter:text-4xl first-letter:font-serif first-letter:font-bold first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:text-orange-500">
                                         <strong className={isDark ? 'text-white' : 'text-gray-900'}>Surabhi Rawat</strong> is more than just a counselor; she helps build bright futures. With over 10 years of experience, she combines expert knowledge with a caring heart.
                                     </p>
 
@@ -421,12 +423,12 @@ const About = () => {
                             <motion.div initial={{ width: 0 }} whileInView={{ width: 40 }} className="h-0.5 bg-orange-500 self-center ml-4"></motion.div>
                         </div>
 
-                        <h2 className={`text-5xl md:text-7xl font-serif font-bold mb-8 tracking-tight ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                        <h2 className={`text-4xl md:text-5xl font-serif font-bold mb-8 tracking-tight ${isDark ? 'text-white' : 'text-gray-900'}`}>
                             Certified <br />
                             <span className="italic text-brand-orange">Experts.</span>
                         </h2>
 
-                        <p className={`max-w-3xl mx-auto text-xl font-light leading-relaxed ${isDark ? 'text-white/40' : 'text-gray-500 font-medium'}`}>
+                        <p className={`max-w-3xl mx-auto text-lg font-light leading-relaxed ${isDark ? 'text-white/40' : 'text-gray-500 font-medium'}`}>
                             Our methods are proven and trusted. We use international standards to give you the best advice.
                         </p>
                     </motion.div>
@@ -435,43 +437,45 @@ const About = () => {
                         {credentials.map((item, idx) => (
                             <motion.div
                                 key={idx}
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1 }}
+                                className={`
+                                    group relative p-10 rounded-[2.5rem] border transition-all duration-500 overflow-hidden h-full flex flex-col items-start
+                                    ${isDark
+                                        ? 'bg-zinc-900/60 border-white/10 shadow-xl shadow-black/30 hover:border-white/20'
+                                        : 'bg-white border-zinc-200 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.08)] hover:border-zinc-300 hover:shadow-xl'
+                                    }
+                                `}
                             >
-                                <TiltCard
-                                    tiltIntensity={4}
-                                    className={`
-                                        h-full p-10 rounded-[3rem] border transition-all duration-700 relative overflow-hidden group
+                                <div className="flex items-center justify-between w-full mb-8">
+                                    <div className={`p-4 rounded-2xl transition-all duration-500 group-hover:scale-110
+                                        ${isDark ? 'bg-white/5 text-brand-orange' : 'bg-orange-50 text-brand-orange'}`}>
+                                        <Award size={28} strokeWidth={1.5} />
+                                    </div>
+                                    <span className={`text-[10px] font-black uppercase tracking-[0.2em] px-4 py-2 rounded-full border transition-colors
                                         ${isDark
-                                            ? 'bg-zinc-900/40 border-white/5 hover:bg-zinc-900/60 shadow-2xl'
-                                            : 'bg-white border-zinc-100 shadow-[0_20px_50px_rgba(0,0,0,0.03)] hover:shadow-brand-orange/10'
-                                        }
-                                    `}
-                                >
-                                    <div className="relative z-10">
-                                        <div className="flex items-start justify-between mb-8">
-                                            <div className={`p-4 rounded-2xl ${isDark ? 'bg-orange-500/10 text-orange-500' : 'bg-orange-50 text-orange-600'}`}>
-                                                <Award size={24} />
-                                            </div>
-                                            <span className={`text-[10px] font-black uppercase tracking-[0.2em] px-3 py-1 rounded-full ${isDark ? 'bg-white/5 text-zinc-500' : 'bg-zinc-100 text-zinc-500'}`}>
-                                                {item.issuer}
-                                            </span>
-                                        </div>
+                                            ? 'bg-transparent border-white/10 text-zinc-400 group-hover:text-white group-hover:border-white/20'
+                                            : 'bg-transparent border-zinc-100 text-zinc-500 group-hover:text-zinc-900 group-hover:border-zinc-200'}`}>
+                                        {item.issuer}
+                                    </span>
+                                </div>
 
-                                        <h3 className={`text-2xl font-serif font-bold mb-3 ${isDark ? 'text-white' : 'text-zinc-900'}`}>{item.title}</h3>
-                                        <p className="text-brand-orange text-[10px] font-black uppercase tracking-[0.3em] mb-6">{item.impact}</p>
-                                        <p className={`text-base leading-relaxed ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}>
-                                            {item.desc}
-                                        </p>
-                                    </div>
+                                <h3 className={`text-2xl font-serif font-medium mb-4 transition-colors ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+                                    {item.title}
+                                </h3>
 
-                                    {/* Subtle interactive background element */}
-                                    <div className="absolute -right-10 -bottom-10 opacity-0 group-hover:opacity-10 transition-opacity duration-700 pointer-events-none">
-                                        <Award size={200} className="text-brand-orange" />
-                                    </div>
-                                </TiltCard>
+                                <div className="mb-6 flex items-center gap-3">
+                                    <div className={`h-px w-8 ${isDark ? 'bg-brand-orange/50' : 'bg-brand-orange'}`}></div>
+                                    <p className="text-brand-orange text-[10px] font-black uppercase tracking-[0.2em]">
+                                        {item.impact}
+                                    </p>
+                                </div>
+
+                                <p className={`text-base leading-relaxed mt-auto ${isDark ? 'text-zinc-400 font-light' : 'text-zinc-500 font-medium'}`}>
+                                    {item.desc}
+                                </p>
                             </motion.div>
                         ))}
 
@@ -500,9 +504,9 @@ const About = () => {
             </section>
 
             {/* Stats Section */}
-            <section className={`py-12 px-4 ${isDark ? 'bg-zinc-950' : 'bg-white'}`}>
-                <div className="max-w-6xl mx-auto">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <section className={`py-20 border-y ${isDark ? 'bg-zinc-900/50 border-white/5' : 'bg-zinc-50/50 border-zinc-100'}`}>
+                <div className="max-w-7xl mx-auto px-4">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-8">
                         {[
                             { icon: Users, num: 5000, suffix: '+', label: "Students Guided" },
                             { icon: BookOpen, num: 50, suffix: '+', label: "Schools Partnered" },
@@ -515,13 +519,12 @@ const About = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1 }}
-                                className={`text-center p-6 rounded-2xl ${isDark ? 'bg-zinc-900/50 border border-white/10' : 'bg-gray-50 border border-gray-100'}`}
+                                className={`text-center relative ${idx !== 3 ? 'md:border-r' : ''} ${isDark ? 'border-white/10' : 'border-zinc-200'}`}
                             >
-                                <stat.icon className={`mx-auto mb-3 ${isDark ? 'text-orange-400' : 'text-orange-500'}`} size={32} />
-                                <div className={`text-3xl font-bold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                                    <AnimatedCounter target={stat.num} suffix={stat.suffix} duration={2} />
+                                <div className={`text-4xl md:text-5xl font-serif font-bold mb-2 ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+                                    <AnimatedCounter target={stat.num} suffix={stat.suffix} duration={2.5} />
                                 </div>
-                                <div className={`text-xs uppercase tracking-wider ${isDark ? 'text-white/40' : 'text-gray-500'}`}>{stat.label}</div>
+                                <div className={`text-xs font-bold uppercase tracking-[0.2em] ${isDark ? 'text-brand-orange' : 'text-zinc-500'}`}>{stat.label}</div>
                             </motion.div>
                         ))}
                     </div>
@@ -541,13 +544,13 @@ const About = () => {
                             className="text-[10px] font-black tracking-[0.3em] uppercase text-brand-orange mb-6 block">
                             Take the First Step
                         </motion.span>
-                        <h2 className={`text-4xl md:text-7xl font-serif font-bold mb-8 leading-tight ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+                        <h2 className={`text-4xl md:text-6xl font-serif font-bold mb-8 leading-tight ${isDark ? 'text-white' : 'text-zinc-900'}`}>
                             Ready to Find Your <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-purple-500 to-brand-blue italic font-light">
                                 True North?
                             </span>
                         </h2>
-                        <p className={`text-xl lg:text-2xl font-light mb-12 max-w-2xl mx-auto leading-relaxed transition-colors duration-500
+                        <p className={`text-lg lg:text-xl font-light mb-12 max-w-2xl mx-auto leading-relaxed transition-colors duration-500
                             ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}>
                             Join thousands of families who found their future with our personalized guidance.
                         </p>

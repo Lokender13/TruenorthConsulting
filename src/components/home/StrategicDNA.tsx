@@ -50,7 +50,7 @@ const StrategicDNA = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className={`text-5xl md:text-8xl font-serif font-bold leading-[0.9] tracking-tighter mb-8 ${isDark ? 'text-white' : 'text-zinc-900'}`}
+                        className={`text-4xl md:text-6xl font-serif font-bold leading-[0.9] tracking-tighter mb-8 ${isDark ? 'text-white' : 'text-zinc-900'}`}
                     >
                         Our Proven <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-purple-500 to-brand-blue italic font-light">3-Step Success</span> <br />
                         Plan.
@@ -60,7 +60,7 @@ const StrategicDNA = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className={`text-xl lg:text-2xl font-light max-w-3xl mx-auto ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}
+                        className={`text-lg lg:text-xl font-light max-w-3xl mx-auto ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}
                     >
                         We don't just fill out forms; we build a personalized roadmap for your child's future.
                     </motion.p>
@@ -92,8 +92,16 @@ const StrategicDNA = () => {
                                         w-24 h-24 rounded-[2rem] flex items-center justify-center mb-10 relative group
                                         ${isDark ? 'bg-zinc-950/50 text-white' : 'bg-zinc-50 text-zinc-900 shadow-inner'}
                                     `}>
-                                        <div className={`absolute inset-0 rounded-[2rem] bg-${pillar.color} opacity-0 group-hover:opacity-10 blur-xl transition-all duration-500`}></div>
-                                        <pillar.icon size={44} className={`relative z-10 text-${pillar.color} transition-transform duration-500 group-hover:scale-110`} />
+                                        <div className={`absolute inset-0 rounded-[2rem] opacity-0 group-hover:opacity-10 blur-xl transition-all duration-500
+                                            ${pillar.color === 'brand-orange' ? 'bg-brand-orange' : ''}
+                                            ${pillar.color === 'purple-500' ? 'bg-purple-500' : ''}
+                                            ${pillar.color === 'brand-blue' ? 'bg-brand-blue' : ''}
+                                        `}></div>
+                                        <pillar.icon size={44} className={`relative z-10 transition-transform duration-500 group-hover:scale-110
+                                            ${pillar.color === 'brand-orange' ? 'text-brand-orange' : ''}
+                                            ${pillar.color === 'purple-500' ? 'text-purple-500' : ''}
+                                            ${pillar.color === 'brand-blue' ? 'text-brand-blue' : ''}
+                                        `} />
                                     </div>
 
                                     <span className={`text-[10px] font-black tracking-widest uppercase mb-4 ${isDark ? 'text-zinc-600' : 'text-zinc-400'}`}>
@@ -110,7 +118,11 @@ const StrategicDNA = () => {
 
                                     {/* Reveal on hover line */}
                                     <div className={`w-full h-px relative overflow-hidden transition-all duration-500 ${isDark ? 'bg-white/5' : 'bg-zinc-100'}`}>
-                                        <div className={`absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-transparent via-${pillar.color} to-transparent transform -translate-x-full transition-transform duration-1000 group-hover:translate-x-[400%]`}></div>
+                                        <div className={`absolute inset-y-0 left-0 w-1/3 transform -translate-x-full transition-transform duration-1000 group-hover:translate-x-[400%] bg-gradient-to-r from-transparent to-transparent
+                                            ${pillar.color === 'brand-orange' ? 'via-brand-orange' : ''}
+                                            ${pillar.color === 'purple-500' ? 'via-purple-500' : ''}
+                                            ${pillar.color === 'brand-blue' ? 'via-brand-blue' : ''}
+                                        `}></div>
                                     </div>
                                 </div>
                             </TiltCard>

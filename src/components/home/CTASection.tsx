@@ -26,14 +26,14 @@ const CTASection = () => {
                 >
                     <span className="text-[10px] font-black tracking-[0.5em] uppercase text-brand-orange mb-8 block">Start Your Legacy</span>
 
-                    <h2 className={`text-5xl md:text-8xl font-serif font-bold mb-8 leading-[0.9] tracking-tighter ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+                    <h2 className={`text-4xl md:text-6xl font-serif font-bold mb-8 leading-[0.9] tracking-tighter ${isDark ? 'text-white' : 'text-zinc-900'}`}>
                         Ready to Shape <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-purple-500 to-brand-blue italic font-light">
                             Your Future?
                         </span>
                     </h2>
 
-                    <p className={`text-xl font-light max-w-2xl mx-auto mb-12 leading-relaxed transition-colors duration-500 ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}>
+                    <p className={`text-lg font-light max-w-2xl mx-auto mb-12 leading-relaxed transition-colors duration-500 ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}>
                         Join thousands of elite students who have transformed their academic journey with TrueNorth's expert guidance.
                     </p>
 

@@ -11,20 +11,14 @@ import yaleLogo from '../../assets/images/universities/yale.png';
 import princetonLogo from '../../assets/images/universities/princeton.png';
 import lseLogo from '../../assets/images/universities/lse.png';
 
-// Fallback URLs for images that couldn't be downloaded automatically
-const mitLogo = "https://logo.clearbit.com/mit.edu";
-const columbiaLogo = "https://logo.clearbit.com/columbia.edu";
-
 const universities = [
     { name: "Harvard University", logo: harvardLogo },
     { name: "Stanford University", logo: stanfordLogo },
-    { name: "MIT", logo: mitLogo },
     { name: "Oxford University", logo: oxfordLogo },
     { name: "Cambridge University", logo: cambridgeLogo },
     { name: "IIT Delhi", logo: iitDelhiLogo },
     { name: "Yale University", logo: yaleLogo },
     { name: "Princeton University", logo: princetonLogo },
-    { name: "Columbia University", logo: columbiaLogo },
     { name: "LSE", logo: lseLogo },
 ];
 
@@ -70,7 +64,7 @@ const TrustedBy = () => {
                                     w-20 h-20 md:w-28 md:h-28 rounded-full flex items-center justify-center p-5
                                     transition-all duration-500
                                     ${isDark
-                                        ? 'bg-zinc-900/20 border border-white/5 group-hover:bg-zinc-900/40 group-hover:border-white/10'
+                                        ? 'bg-zinc-950 border border-white/10 group-hover:bg-zinc-900 group-hover:border-white/20'
                                         : 'bg-white border border-zinc-100 shadow-sm group-hover:shadow-md'
                                     }
                                 `}
@@ -80,8 +74,6 @@ const TrustedBy = () => {
                                     alt={uni.name}
                                     className={`
                                         w-full h-full object-contain transition-all duration-500
-                                        filter grayscale opacity-50
-                                        group-hover:grayscale-0 group-hover:opacity-100
                                     `}
                                     loading="lazy"
                                 />

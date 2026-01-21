@@ -112,7 +112,7 @@ const Contact = () => {
     };
 
     return (
-        <div className={`min-h-screen theme-transition relative overflow-hidden ${isDark ? 'bg-zinc-950 text-white' : 'bg-[#FAFAFA] text-zinc-900'}`}>
+        <div className={`min-h-screen theme-transition relative overflow-hidden ${isDark ? 'bg-zinc-950 text-white' : 'bg-zinc-100 text-zinc-900'}`}>
             <SEO
                 title="Contact TrueNorth | Expert Career Counselling Dubai"
                 description="Get in touch for premier career counselling and university admissions guidance. Located in Dubai, serving globally."
@@ -148,10 +148,10 @@ const Contact = () => {
                             transition={{ duration: 0.8 }}
                         >
                             <span className="text-[10px] font-black tracking-[0.5em] uppercase text-brand-orange mb-6 block">Get in Touch</span>
-                            <h1 className={`text-5xl md:text-8xl font-serif font-bold leading-[0.9] tracking-tighter mb-8 ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+                            <h1 className={`text-4xl md:text-6xl font-serif font-bold leading-[0.9] tracking-tighter mb-8 ${isDark ? 'text-white' : 'text-zinc-900'}`}>
                                 <TextReveal>Let's Talk.</TextReveal>
                             </h1>
-                            <p className={`text-xl lg:text-2xl font-light max-w-xl transition-colors duration-500 ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}>
+                            <p className={`text-lg lg:text-xl font-light max-w-xl transition-colors duration-500 ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}>
                                 We are here to answer your questions and help you plan your future.
                             </p>
                         </motion.div>
@@ -165,8 +165,8 @@ const Contact = () => {
                         >
                             <TiltCard
                                 className={`
-                                    relative z-10 p-10 rounded-[3rem] backdrop-blur-3xl border transition-all duration-700 max-w-md w-full
-                                    ${isDark ? 'bg-zinc-900/40 border-white/5 shadow-2xl shadow-black/50' : 'bg-white/80 border-white shadow-[0_20px_50px_rgba(249,115,22,0.06)]'}
+                                    relative z-10 p-10 rounded-[3rem] backdrop-blur-xl border transition-all duration-700 max-w-md w-full
+                                    ${isDark ? 'bg-zinc-950/80 border-white/10 shadow-2xl shadow-black/50' : 'bg-white border-zinc-100 shadow-[0_20px_50px_rgba(249,115,22,0.06)]'}
                                 `}
                                 tiltIntensity={5}
                             >
@@ -206,7 +206,7 @@ const Contact = () => {
                         >
                             <TiltCard
                                 className={`p-10 md:p-14 rounded-[3.5rem] backdrop-blur-xl border transition-all duration-700
-                                ${isDark ? 'bg-zinc-900/40 border-white/5 shadow-2xl shadow-black/50' : 'bg-white border-white shadow-[0_20px_50px_rgba(0,0,0,0.04)]'}`}
+                                ${isDark ? 'bg-zinc-950/80 border-white/10 shadow-2xl shadow-black/50' : 'bg-white border-zinc-100 shadow-[0_30px_60px_rgba(0,0,0,0.04)]'}`}
                                 tiltIntensity={2}
                             >
                                 <h3 className={`text-4xl font-serif font-bold mb-10 ${isDark ? 'text-white' : 'text-zinc-900'}`}>Send a Message</h3>
@@ -367,7 +367,7 @@ const Contact = () => {
                     >
                         <div className="text-center mb-16">
                             <span className="text-[10px] font-black tracking-[0.5em] uppercase text-brand-orange mb-4 block">Common Questions</span>
-                            <h2 className={`text-5xl md:text-7xl font-serif font-bold tracking-tighter ${isDark ? 'text-white' : 'text-zinc-900'}`}>Frequently Asked <br /><span className="italic font-light text-zinc-400">Questions.</span></h2>
+                            <h2 className={`text-4xl md:text-6xl font-serif font-bold tracking-tighter ${isDark ? 'text-white' : 'text-zinc-900'}`}>Frequently Asked <br /><span className="italic font-light text-zinc-400">Questions.</span></h2>
                         </div>
 
                         <TiltCard

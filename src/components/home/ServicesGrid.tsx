@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, BookOpen, Globe, GraduationCap, Users, Building, BarChart } from 'lucide-react';
 import { useTheme } from '../../contexts/ThemeContext';
-import TiltCard from '../ui/TiltCard';
+
 
 import careerCounsellingImg from '../../assets/images/services/career-counselling.webp';
 import studyAbroadImg from '../../assets/images/services/study-abroad.webp';
@@ -148,10 +148,10 @@ const ServicesGrid = () => {
                             <Link to={`/services/${service.slug}`} className="group h-full block">
                                 <div
                                     className={`
-                                        h-full rounded-3xl overflow-hidden backdrop-blur-xl transition-all duration-500 border
+                                        h-full rounded-3xl overflow-hidden transition-all duration-500 border
                                         ${isDark
-                                            ? `bg-zinc-900/40 border-white/5 hover:bg-zinc-900/60 hover:border-white/10 hover:shadow-2xl hover:shadow-black/50`
-                                            : `bg-white border-zinc-100 hover:border-zinc-200 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]`
+                                            ? `bg-zinc-950 border-white/20 shadow-lg shadow-black/50 hover:border-brand-orange/30 hover:shadow-2xl hover:shadow-brand-orange/10`
+                                            : `bg-white border-zinc-200 shadow-md hover:border-zinc-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)]`
                                         }
                                     `}
                                 >
@@ -164,7 +164,7 @@ const ServicesGrid = () => {
                                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                                 onError={handleImageError}
                                             />
-                                            <div className={`absolute inset-0 bg-gradient-to-t ${isDark ? 'from-zinc-900/90 via-zinc-900/20' : 'from-white/90 via-transparent'} to-transparent opacity-90`} />
+                                            <div className={`absolute inset-0 bg-gradient-to-t ${isDark ? 'from-zinc-950 via-transparent' : 'from-white via-transparent'} to-transparent opacity-60`} />
 
                                             {/* Icon Overlay */}
                                             <div className={`absolute bottom-4 left-6 w-12 h-12 rounded-xl flex items-center justify-center backdrop-blur-md border transition-transform duration-500
@@ -221,4 +221,3 @@ const ServicesGrid = () => {
 
 export default ServicesGrid;
 
-export default ServicesGrid;

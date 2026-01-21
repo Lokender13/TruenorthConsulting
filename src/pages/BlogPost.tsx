@@ -56,7 +56,7 @@ const BlogPost = () => {
     };
 
     return (
-        <div className={`min-h-screen theme-transition pb-20 ${isDark ? 'bg-zinc-950 text-zinc-300' : 'bg-[#FAFAFA] text-zinc-700'}`}>
+        <div className={`min-h-screen theme-transition pb-20 ${isDark ? 'bg-zinc-950 text-zinc-300' : 'bg-zinc-100 text-zinc-700'}`}>
             <SEO
                 title={`${post.seoTitle} | TrueNorth Resources`}
                 description={post.seoDescription}
@@ -103,7 +103,7 @@ const BlogPost = () => {
 
             {/* Content Section */}
             <div className="max-w-4xl mx-auto px-4 -mt-10 relative z-30">
-                <div className={`p-8 md:p-12 rounded-3xl shadow-xl ${isDark ? 'bg-zinc-900/90 backdrop-blur-md border border-white/10' : 'bg-white border border-gray-100'}`}>
+                <div className={`p-8 md:p-12 rounded-3xl shadow-xl ${isDark ? 'bg-zinc-950 border border-white/10' : 'bg-white border border-zinc-100 shadow-[0_30px_60px_rgba(0,0,0,0.05)]'}`}>
 
                     {/* Share Buttons */}
                     <div className="flex justify-end gap-3 mb-8 border-b pb-8 border-dashed border-gray-200 dark:border-gray-800">

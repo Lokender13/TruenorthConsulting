@@ -14,7 +14,7 @@ const benefitIcons = [
     Smile,
 ];
 
-import TiltCard from '../ui/TiltCard';
+
 
 const ServiceBenefits = ({ benefits }: ServiceBenefitsProps) => {
     const { theme } = useTheme();
@@ -54,19 +54,19 @@ const ServiceBenefits = ({ benefits }: ServiceBenefitsProps) => {
                     <motion.span className="text-brand-orange font-black tracking-[0.3em] uppercase text-xs mb-4 block">
                         Direct Impact
                     </motion.span>
-                    <h2 className={`text-4xl lg:text-7xl font-serif font-bold mb-8 tracking-tight ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                    <h2 className={`text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-8 tracking-tight ${isDark ? 'text-white' : 'text-gray-900'}`}>
                         Tangible{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-purple-500">
                             Outcomes
                         </span>
                     </h2>
-                    <p className={`text-xl lg:text-2xl font-light max-w-3xl mx-auto ${isDark ? 'text-white/40' : 'text-gray-500 font-medium'}`}>
+                    <p className={`text-base md:text-lg font-light max-w-3xl mx-auto ${isDark ? 'text-white/40' : 'text-gray-500 font-medium'}`}>
                         Our intervention is designed to produce measurable results that accelerate your personal and professional growth.
                     </p>
                 </motion.div>
 
                 <motion.div
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
@@ -78,28 +78,34 @@ const ServiceBenefits = ({ benefits }: ServiceBenefitsProps) => {
                             <motion.div
                                 key={idx}
                                 variants={itemVariants}
-                                className="h-full"
+                                className={`group relative p-8 rounded-[2rem] border transition-all duration-500 overflow-hidden
+                                    ${isDark
+                                        ? 'border-white/5 hover:bg-white/5 hover:border-white/10'
+                                        : 'border-zinc-100 hover:bg-zinc-50 hover:border-zinc-200 hover:shadow-lg hover:shadow-zinc-200/50'
+                                    }
+                                `}
                             >
-                                <TiltCard
-                                    tiltIntensity={5}
-                                    glareOpacity={isDark ? 0.1 : 0.05}
-                                    className={`group h-full p-10 rounded-[3rem] border transition-all duration-500
+                                {/* Background Number */}
+                                <div className={`absolute -right-4 -top-8 text-[8rem] font-serif font-bold leading-none select-none transition-all duration-500 opacity-0 group-hover:opacity-100
+                                    ${isDark ? 'text-white/5' : 'text-black/5'}
+                                `}>
+                                    {String(idx + 1).padStart(2, '0')}
+                                </div>
+
+                                <div className="relative z-10">
+                                    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3
                                         ${isDark
-                                            ? 'bg-zinc-900/40 border-white/5 hover:bg-zinc-900/60 shadow-2xl shadow-black/20'
-                                            : 'bg-white/80 border-white hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] shadow-[0_10px_30px_rgba(0,0,0,0.02)]'
-                                        }`}
-                                >
-                                    <div className="flex flex-col h-full">
-                                        <div className={`mb-8 w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-6
-                                            ${isDark ? 'bg-brand-orange/10 text-brand-orange' : 'bg-brand-orange/5 text-brand-orange shadow-inner shadow-brand-orange/10'}
-                                        `}>
-                                            <Icon size={32} />
-                                        </div>
-                                        <p className={`text-xl md:text-2xl font-serif font-bold leading-tight ${isDark ? 'text-zinc-200' : 'text-zinc-800'}`}>
-                                            {benefit}
-                                        </p>
+                                            ? 'bg-gradient-to-br from-zinc-800 to-zinc-900 border border-white/10 text-brand-orange shadow-lg shadow-black/20'
+                                            : 'bg-white border border-zinc-100 text-brand-orange shadow-md shadow-zinc-200'
+                                        }
+                                    `}>
+                                        <Icon size={26} strokeWidth={1.5} />
                                     </div>
-                                </TiltCard>
+
+                                    <h3 className={`text-xl font-medium leading-relaxed transition-colors duration-300 ${isDark ? 'text-zinc-300 group-hover:text-white' : 'text-zinc-700 group-hover:text-zinc-900'}`}>
+                                        {benefit}
+                                    </h3>
+                                </div>
                             </motion.div>
                         );
                     })}
