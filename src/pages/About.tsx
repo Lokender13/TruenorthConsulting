@@ -269,7 +269,7 @@ const About = () => {
 
                             <p className={`relative z-10 text-2xl md:text-3xl italic font-serif leading-relaxed transition-colors duration-500 max-w-4xl mx-auto
                                     ${isDark ? 'text-zinc-300' : 'text-zinc-700'}`}>
-                                "Above all, TrueNorth is committed to creating a <span className="text-brand-orange font-bold">supportive space</span> where students feel heard, understood, and inspired."
+                                "Above all, TrueNorth is committed to creating a <span className="text-brand-orange font-bold">supportive space</span> where individuals and families feel heard, understood, and confident in the decisions they make."
                             </p>
                         </div>
                     </motion.div>
