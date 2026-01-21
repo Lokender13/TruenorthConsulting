@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import Navbar from './components/Navbar';
@@ -70,25 +70,6 @@ const AnimatedRoutes = () => {
 };
 // Force rebuild for new routing structure
 function App() {
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
-
-  useEffect(() => {
-    // Function to update theme state based on Tailwind class
-    const updateTheme = () => {
-      const isDark = document.documentElement.classList.contains('dark');
-      setTheme(isDark ? 'dark' : 'light');
-    };
-
-    // Initial check
-    updateTheme();
-
-    // Observer to watch for class changes on <html> element
-    const observer = new MutationObserver(updateTheme);
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <Router>
       <SmoothScroll>
