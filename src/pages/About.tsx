@@ -225,14 +225,14 @@ const About = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24">
                         {[
                             {
-                                icon: Target,
+                                icon: Lightbulb,
                                 title: "Our Mission",
-                                desc: "To empower students and parents with the clarity, confidence, and direction they need to make informed decisions about their academic and career journeys."
+                                desc: "We believe every individual has a unique path — their own True North. Our mission is to help students, professionals, and families discover and navigate that path with clarity, confidence, and peace of mind."
                             },
                             {
-                                icon: Lightbulb,
+                                icon: Target,
                                 title: "Our Vision",
-                                desc: "We believe every child has a unique path — their own True North. Our mission is to help them discover and navigate that path with purpose and peace of mind."
+                                desc: "To empower students, parents, and professionals with the clarity, confidence, and direction they need to make informed decisions across their academic and career journeys."
                             }
                         ].map((item, i) => (
                             <motion.div
