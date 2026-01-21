@@ -10,36 +10,34 @@ const About = () => {
     const { theme } = useTheme();
     const isDark = theme === 'dark';
 
-    const credentials = [
+    const qualificationSections = [
         {
-            title: "Certified by UCLA",
-            issuer: "UCLA Extension",
-            impact: "Career Planning Expert",
-            desc: "Specialized training in university placement and career planning from UCLA Extension."
+            title: "Academic Credentials",
+            icon: GraduationCap,
+            items: [
+                { title: "Master of Science (M.Sc.)", desc: "Strong academic foundation in scientific inquiry and analytical thinking." },
+                { title: "Bachelor of Education (B.Ed.)", desc: "Professional qualification in pedagogy and learner-centred instruction." }
+            ]
         },
         {
-            title: "Expert in Student Assessments",
-            issuer: "CCA / Univariety",
-            impact: "Scientific Testing",
-            desc: "Using scientific tests to understand your strengths and find the best fit for your future."
+            title: "Career Counselling",
+            icon: Award,
+            items: [
+                { title: "Certified Career Analyst (CCA)", desc: "Certification in psychometric assessment and data-driven guidance." },
+                { title: "CCCIS", desc: "Qualification for global education pathways and international admissions." },
+                { title: "Global Career Counsellor", desc: "UCLA Extension & Univariety internationally recognised certification." },
+                { title: "Green Belt Certification", desc: "Advanced career counselling certification through Univariety." },
+                { title: "Specialist Accreditations", desc: "Premium Overseas Admission & Profile Building Beyond Academics." },
+                { title: "Global Teacher Accreditation", desc: "Awarded by British Council & UCL for action research excellence." }
+            ]
         },
         {
-            title: "IB Education Expert",
-            issuer: "International Baccalaureate",
-            impact: "World-Class Teaching",
-            desc: "Experience in teaching and guiding students within the International Baccalaureate (IB) system."
-        },
-        {
-            title: "Harvard Project Zero Focus",
-            issuer: "Project Zero",
-            impact: "Creative Thinking",
-            desc: "Trained in teaching methods that help students think deeply and creatively."
-        },
-        {
-            title: "International Education Expert",
-            issuer: "CCCIS International",
-            impact: "Study Anywhere",
-            desc: "Expertise in British, American, and Indian education systems to help you study anywhere."
+            title: "Specialist Training",
+            icon: BookOpen,
+            items: [
+                { title: "Thinking Frameworks", desc: "Professional training in visible thinking routines and creative problem solving." },
+                { title: "Global Learning", desc: "Courses from Vanderbilt, Edinburgh, and Minnesota in Critical Thinking." }
+            ]
         }
     ];
 
@@ -411,7 +409,7 @@ const About = () => {
 
 
             {/* Elite Authority Section - Marketing Enhancement */}
-            <section className={`relative py-20 px-4 overflow-hidden`}>
+            <section className={`relative py-24 px-4 overflow-hidden`}>
                 <div className={`absolute inset-0 opacity-[0.4] ${isDark ? 'bg-[radial-gradient(#ffffff0a_1px,transparent_1px)]' : 'bg-[radial-gradient(#00000005_1px,transparent_1px)]'}`} style={{ backgroundSize: '40px 40px' }}></div>
                 <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-orange-500/20 to-transparent"></div>
 
@@ -420,26 +418,30 @@ const About = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-center mb-24"
+                        className="text-center mb-20"
                     >
                         <div className="flex justify-center mb-6">
                             <motion.div initial={{ width: 0 }} whileInView={{ width: 40 }} className="h-0.5 bg-orange-500 self-center mr-4"></motion.div>
-                            <span className="text-xs font-black tracking-[0.5em] uppercase text-orange-600">Our Qualifications</span>
+                            <span className="text-xs font-black tracking-[0.5em] uppercase text-orange-600">Expertise & Accreditation</span>
                             <motion.div initial={{ width: 0 }} whileInView={{ width: 40 }} className="h-0.5 bg-orange-500 self-center ml-4"></motion.div>
                         </div>
 
-                        <h2 className={`text-4xl md:text-5xl font-serif font-bold mb-8 tracking-tight ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                            Certified <br />
-                            <span className="italic text-brand-orange">Experts.</span>
+                        <h2 className={`text-4xl md:text-5xl font-serif font-bold mb-8 tracking-tight ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+                            Certifications & <br /> Professional <span className="italic font-light text-brand-orange">Qualifications</span>
                         </h2>
 
-                        <p className={`max-w-3xl mx-auto text-lg font-light leading-relaxed ${isDark ? 'text-white/40' : 'text-gray-500 font-medium'}`}>
-                            Our methods are proven and trusted. We use international standards to give you the best advice.
-                        </p>
+                        <div className="mb-12">
+                            <h3 className={`text-xl font-serif font-bold mb-4 ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+                                Surabhi Rawat — <span className="italic font-light text-brand-orange">Founder & Lead Career Consultant</span>
+                            </h3>
+                            <p className={`max-w-4xl mx-auto text-lg leading-relaxed ${isDark ? 'text-zinc-400 font-light' : 'text-zinc-600 font-medium'}`}>
+                                Surabhi brings a unique blend of educational expertise, global perspective, and certified professional training to every student and parent she works with. Her qualifications include:
+                            </p>
+                        </div>
                     </motion.div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {credentials.map((item, idx) => (
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        {qualificationSections.map((section, idx) => (
                             <motion.div
                                 key={idx}
                                 initial={{ opacity: 0, y: 30 }}
@@ -454,56 +456,35 @@ const About = () => {
                                     }
                                 `}
                             >
-                                <div className="flex items-center justify-between w-full mb-8">
+                                <div className="flex items-center gap-4 mb-10 w-full">
                                     <div className={`p-4 rounded-2xl transition-all duration-500 group-hover:scale-110
                                         ${isDark ? 'bg-white/5 text-brand-orange' : 'bg-orange-50 text-brand-orange'}`}>
-                                        <Award size={28} strokeWidth={1.5} />
+                                        <section.icon size={28} strokeWidth={1.5} />
                                     </div>
-                                    <span className={`text-[10px] font-black uppercase tracking-[0.2em] px-4 py-2 rounded-full border transition-colors
-                                        ${isDark
-                                            ? 'bg-transparent border-white/10 text-zinc-400 group-hover:text-white group-hover:border-white/20'
-                                            : 'bg-transparent border-zinc-100 text-zinc-500 group-hover:text-zinc-900 group-hover:border-zinc-200'}`}>
-                                        {item.issuer}
-                                    </span>
+                                    <h3 className={`text-2xl font-serif font-bold ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+                                        {section.title}
+                                    </h3>
                                 </div>
 
-                                <h3 className={`text-2xl font-serif font-medium mb-4 transition-colors ${isDark ? 'text-white' : 'text-zinc-900'}`}>
-                                    {item.title}
-                                </h3>
-
-                                <div className="mb-6 flex items-center gap-3">
-                                    <div className={`h-px w-8 ${isDark ? 'bg-brand-orange/50' : 'bg-brand-orange'}`}></div>
-                                    <p className="text-brand-orange text-[10px] font-black uppercase tracking-[0.2em]">
-                                        {item.impact}
-                                    </p>
+                                <div className="space-y-8 w-full mt-auto">
+                                    {section.items.map((item, itemIdx) => (
+                                        <div key={itemIdx} className="relative pl-6 border-l border-orange-500/20">
+                                            <h4 className={`text-sm font-bold tracking-wide mb-2 transition-colors group-hover:text-brand-orange ${isDark ? 'text-zinc-200' : 'text-zinc-900'}`}>
+                                                {item.title}
+                                            </h4>
+                                            <p className={`text-sm leading-relaxed ${isDark ? 'text-zinc-500 font-light' : 'text-zinc-500 font-medium'}`}>
+                                                {item.desc}
+                                            </p>
+                                        </div>
+                                    ))}
                                 </div>
 
-                                <p className={`text-base leading-relaxed mt-auto ${isDark ? 'text-zinc-400 font-light' : 'text-zinc-500 font-medium'}`}>
-                                    {item.desc}
-                                </p>
+                                {/* Subtle decoration */}
+                                <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity pointer-events-none">
+                                    <section.icon size={120} />
+                                </div>
                             </motion.div>
                         ))}
-
-                        {/* Interactive "Why it matters" card */}
-                        <motion.div
-                            initial={{ opacity: 0, x: 20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            className="lg:col-span-1"
-                        >
-                            <div className={`
-                                h-full p-10 rounded-[3rem] flex flex-col justify-center items-center text-center border-2 border-dashed
-                                ${isDark ? 'border-brand-orange/20 bg-brand-orange/5' : 'border-brand-orange/20 bg-brand-orange/[0.02]'}
-                            `}>
-                                <div className="w-16 h-16 rounded-full bg-brand-orange text-white flex items-center justify-center mb-6 shadow-xl shadow-brand-orange/20">
-                                    <Target size={30} />
-                                </div>
-                                <h4 className={`text-2xl font-serif font-bold mb-4 ${isDark ? 'text-white' : 'text-zinc-900'}`}>The Global Advantage</h4>
-                                <p className={`text-sm leading-relaxed ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}>
-                                    These aren't just titles. They represent a global network of academic intelligence that we leverage for every single student.
-                                </p>
-                            </div>
-                        </motion.div>
                     </div>
                 </div>
             </section>
