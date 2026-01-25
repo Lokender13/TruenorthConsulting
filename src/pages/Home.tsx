@@ -9,6 +9,7 @@ import ServicesGrid from '../components/home/ServicesGrid';
 import Testimonials from '../components/home/Testimonials';
 import CTASection from '../components/home/CTASection';
 import InteractiveProcess from '../components/home/InteractiveProcess';
+import RecentArticles from '../components/home/RecentArticles';
 
 const Home = () => {
     const { theme } = useTheme();
@@ -30,9 +31,9 @@ const Home = () => {
     return (
         <div className={`min-h-screen theme-transition relative overflow-hidden ${isDark ? 'bg-zinc-950 text-white' : 'bg-[#FAFAFA] text-zinc-900'}`}>
             <SEO
-                title="TrueNorth Consulting – Education & Career Advisory (UAE & India)"
-                description="TrueNorth Consulting is a premier career counselling and education consultancy based in Dubai, UAE and serving India. Expert guidance for study abroad, university admissions, and personalized career planning."
-                keywords="career counselling Dubai, study abroad consultants UAE, university admission guidance India, education consultancy UAE, IELTS coaching Dubai, TrueNorth Consulting, education advisory India"
+                title="TrueNorth Consulting | Best Career Counselling & Study Abroad Consultants Dubai"
+                description="Premier education consultancy in Dubai. TrueNorth offers expert career counselling, psychometric assessments, and study abroad guidance for students in UAE & India."
+                keywords="career counselling Dubai, study abroad consultants UAE, university admission guidance India, education consultancy UAE, IELTS coaching Dubai, TrueNorth Consulting, education advisory India, best career counsellor dubai, study abroad consultants uae"
                 canonical="/"
                 schema={homeSchema}
             />
@@ -79,6 +80,9 @@ const Home = () => {
 
             {/* Testimonials for trust */}
             <Testimonials />
+
+            {/* Recent Articles / Resources */}
+            <RecentArticles />
 
             {/* Final CTA */}
             <CTASection />

@@ -13,9 +13,9 @@ const StudyAbroad = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 md:-mt-12">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
                     {[
-                        { icon: Globe2, title: "Global Admissions", desc: "Expert strategy for Ivy League, Oxford, & top Global 100 unis." },
-                        { icon: Landmark, title: "Scholarship Support", desc: "Secure significant funding with our master essay editing service." },
-                        { icon: GraduationCap, title: "Visa Mastery", desc: "99.9% success rate in visa documentation and mock interviews." }
+                        { icon: Globe2, title: "Global University Guidance", desc: "We'll help you find and apply to top universities worldwide that match your goals and budget." },
+                        { icon: Landmark, title: "Scholarship Support", desc: "Let us help you discover and apply for scholarships to make your education more affordable." },
+                        { icon: GraduationCap, title: "Visa Assistance", desc: "We'll guide you through every step of the visa process so you feel prepared and confident." }
                     ].map((item, i) => (
                         <motion.div
                             key={i}

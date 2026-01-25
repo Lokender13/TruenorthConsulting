@@ -13,6 +13,7 @@ import PsychometricAssessment from '../../components/service/PsychometricAssessm
 import { useTheme } from '../../contexts/ThemeContext';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import CTASection from '../../components/home/CTASection';
+import RelatedServices from '../../components/service/RelatedServices';
 
 
 const Section = ({ children }: { children: React.ReactNode }) => (
@@ -205,6 +206,11 @@ const ServicePageLayout = ({ serviceId, children }: ServicePageLayoutProps) => {
                                 </Section>
                             </>
                         )}
+
+                        <SectionDivider />
+                        <Section>
+                            <RelatedServices currentServiceId={service.id} />
+                        </Section>
 
                         <SectionDivider />
                         <Section>

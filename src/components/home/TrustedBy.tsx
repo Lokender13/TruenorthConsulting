@@ -51,35 +51,45 @@ const TrustedBy = () => {
                 <div className={`absolute left-0 top-0 bottom-0 w-24 md:w-48 z-10 bg-gradient-to-r ${isDark ? 'from-zinc-950' : 'from-[#FAFAFA]'} to-transparent pointer-events-none`}></div>
                 <div className={`absolute right-0 top-0 bottom-0 w-24 md:w-48 z-10 bg-gradient-to-l ${isDark ? 'from-zinc-950' : 'from-[#FAFAFA]'} to-transparent pointer-events-none`}></div>
 
-                <div className="flex animate-marquee items-center py-4">
-                    {[...universities, ...universities].map((uni, index) => (
-                        <motion.div
-                            key={index}
-                            className="flex-shrink-0 mx-6 md:mx-8 group"
-                            whileHover={{ scale: 1.05 }}
-                            transition={{ type: 'spring', stiffness: 300 }}
-                        >
-                            <div
-                                className={`
-                                    w-20 h-20 md:w-28 md:h-28 rounded-full flex items-center justify-center p-5
-                                    transition-all duration-500
-                                    ${isDark
-                                        ? 'bg-zinc-950 border border-white/10 group-hover:bg-zinc-900 group-hover:border-white/20'
-                                        : 'bg-white border border-zinc-100 shadow-sm group-hover:shadow-md'
-                                    }
-                                `}
+                <div className="flex overflow-hidden">
+                    <motion.div
+                        className="flex items-center py-4"
+                        animate={{ x: ["0%", "-50%"] }}
+                        transition={{
+                            repeat: Infinity,
+                            ease: "linear",
+                            duration: 40
+                        }}
+                    >
+                        {[...universities, ...universities, ...universities, ...universities].map((uni, index) => (
+                            <motion.div
+                                key={index}
+                                className="flex-shrink-0 mx-6 md:mx-8 group"
+                                whileHover={{ scale: 1.05 }}
+                                transition={{ type: 'spring', stiffness: 300 }}
                             >
-                                <img
-                                    src={uni.logo}
-                                    alt={uni.name}
+                                <div
                                     className={`
-                                        w-full h-full object-contain transition-all duration-500
+                                        w-20 h-20 md:w-28 md:h-28 rounded-full flex items-center justify-center p-5
+                                        transition-all duration-500
+                                        ${isDark
+                                            ? 'bg-zinc-950 border border-white/10 group-hover:bg-zinc-900 group-hover:border-white/20'
+                                            : 'bg-white border border-zinc-100 shadow-sm group-hover:shadow-md'
+                                        }
                                     `}
-                                    loading="lazy"
-                                />
-                            </div>
-                        </motion.div>
-                    ))}
+                                >
+                                    <img
+                                        src={uni.logo}
+                                        alt={uni.name}
+                                        className={`
+                                            w-full h-full object-contain transition-all duration-500
+                                        `}
+                                        loading="lazy"
+                                    />
+                                </div>
+                            </motion.div>
+                        ))}
+                    </motion.div>
                 </div>
             </div>
         </section>

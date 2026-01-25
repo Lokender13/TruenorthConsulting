@@ -16,9 +16,9 @@ const Resources = () => {
     return (
         <div className={`min-h-screen theme-transition relative overflow-hidden ${isDark ? 'bg-zinc-950 text-white' : 'bg-zinc-100 text-zinc-900'}`}>
             <SEO
-                title="Resources & Insights | TrueNorth Consulting"
-                description="Expert articles, guides, and resources on career planning, study abroad, and educational success by TrueNorth Consulting."
-                keywords="career guidance blog, study abroad articles, education resources, student tips, university admission guides"
+                title="Career Guidance & Education Resources | Blogs Dubai & India"
+                description="Read expert insights on career planning, study abroad admissions, and student profile building. Top education blog in Dubai and UAE."
+                keywords="career guidance blog, study abroad articles, education resources, student tips, university admission guides, education blog dubai, career advice uae"
             />
 
             {/* Background Elements */}

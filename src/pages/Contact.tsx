@@ -114,8 +114,9 @@ const Contact = () => {
     return (
         <div className={`min-h-screen theme-transition relative overflow-hidden ${isDark ? 'bg-zinc-950 text-white' : 'bg-zinc-100 text-zinc-900'}`}>
             <SEO
-                title="Contact TrueNorth | Expert Career Counselling Dubai"
-                description="Get in touch for premier career counselling and university admissions guidance. Located in Dubai, serving globally."
+                title="Contact TrueNorth | Best Education Consultants Dubai & India"
+                description="Contact TrueNorth Consulting for top-rated career counselling and study abroad guidance in Dubai. Book your appointment today."
+                keywords="contact career counsellor dubai, education consultants contact number, study abroad enquiry dubai, career guidance appointment"
                 canonical="/contact"
                 schema={contactSchema}
             />

@@ -9,6 +9,16 @@ const CTASection = () => {
 
     return (
         <section className={`py-32 relative overflow-hidden theme-transition ${isDark ? 'bg-zinc-950/0' : 'bg-transparent'}`}>
+            {/* Background Image - Mountains/Horizon */}
+            <div className="absolute inset-0 z-0">
+                <img
+                    src="https://images.unsplash.com/photo-1519681393798-38e43269d8f6?auto=format&fit=crop&q=80"
+                    alt="Horizon"
+                    className={`w-full h-full object-cover transition-opacity duration-1000 ${isDark ? 'opacity-[0.05]' : 'opacity-[0.08]'}`}
+                />
+                <div className={`absolute inset-0 bg-gradient-to-t from-${isDark ? 'zinc-950' : 'zinc-100'} via-transparent to-transparent`}></div>
+            </div>
+
             {/* Ambient background glows */}
             <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] rounded-full blur-[150px] transition-colors duration-1000
                 ${isDark ? 'bg-white/[0.03]' : 'bg-brand-orange/[0.08]'}`} />
@@ -27,14 +37,14 @@ const CTASection = () => {
                     <span className="text-[10px] font-black tracking-[0.5em] uppercase text-brand-orange mb-8 block">Start Your Legacy</span>
 
                     <h2 className={`text-4xl md:text-6xl font-serif font-bold mb-8 leading-[0.9] tracking-tighter ${isDark ? 'text-white' : 'text-zinc-900'}`}>
-                        Ready to Shape <br />
+                        Ready to Find Your <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-purple-500 to-brand-blue italic font-light">
-                            Your Future?
+                            True North?
                         </span>
                     </h2>
 
                     <p className={`text-lg font-light max-w-2xl mx-auto mb-12 leading-relaxed transition-colors duration-500 ${isDark ? 'text-zinc-500' : 'text-zinc-500 font-medium'}`}>
-                        Join thousands of elite students who have transformed their academic journey with TrueNorth's expert guidance.
+                        Be part of a growing community of learners who found clarity with our personalized guidance.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">

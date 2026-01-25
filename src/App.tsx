@@ -44,13 +44,13 @@ const AnimatedRoutes = () => {
           <Route path="/services" element={<Services />} />
 
           {/* Separate routes for each service */}
-          <Route path="/services/career-counselling-psychometric-assessments" element={<CareerCounselling />} />
-          <Route path="/services/university-admissions-study-abroad" element={<StudyAbroad />} />
-          <Route path="/services/academic-support-online-tutoring" element={<AcademicSupport />} />
-          <Route path="/services/competitive-exam-language-preparation" element={<CompetitiveExams />} />
-          <Route path="/services/school-college-partnerships" element={<SchoolPartnerships />} />
-          <Route path="/services/career-lab-setup" element={<CareerLab />} />
-          <Route path="/services/digital-solutions-education" element={<DigitalSolutions />} />
+          <Route path="/services/career-counselling-dubai" element={<CareerCounselling />} />
+          <Route path="/services/study-abroad-consultants-dubai" element={<StudyAbroad />} />
+          <Route path="/services/online-tutoring-academic-support" element={<AcademicSupport />} />
+          <Route path="/services/profile-building-career-booster" element={<CompetitiveExams />} />
+          <Route path="/services/school-career-guidance-programs" element={<SchoolPartnerships />} />
+          <Route path="/services/career-lab-setup-schools" element={<CareerLab />} />
+          <Route path="/services/education-digital-marketing" element={<DigitalSolutions />} />
 
 
           <Route path="/about" element={<About />} />

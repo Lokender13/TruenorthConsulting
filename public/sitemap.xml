@@ -7,7 +7,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://www.truenorthae.com/</loc>
-    <lastmod>2024-12-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -15,7 +15,7 @@
   <!-- About Page -->
   <url>
     <loc>https://www.truenorthae.com/about</loc>
-    <lastmod>2024-12-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -23,7 +23,7 @@
   <!-- Services Main Page -->
   <url>
     <loc>https://www.truenorthae.com/services</loc>
-    <lastmod>2024-12-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -31,57 +31,57 @@
   <!-- Contact Page -->
   <url>
     <loc>https://www.truenorthae.com/contact</loc>
-    <lastmod>2024-12-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
-  <!-- Individual Service Pages -->
+  <!-- Individual Service Pages (SEO Optimized) -->
   <url>
-    <loc>https://www.truenorthae.com/services/career-counselling-psychometric-assessments</loc>
-    <lastmod>2024-12-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.truenorthae.com/services/career-counselling-dubai</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   
   <url>
-    <loc>https://www.truenorthae.com/services/university-admissions-study-abroad</loc>
-    <lastmod>2024-12-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.truenorthae.com/services/study-abroad-consultants-dubai</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   
   <url>
-    <loc>https://www.truenorthae.com/services/academic-support-online-tutoring</loc>
-    <lastmod>2024-12-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.truenorthae.com/services/online-tutoring-academic-support</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   
   <url>
-    <loc>https://www.truenorthae.com/services/competitive-exam-language-preparation</loc>
-    <lastmod>2024-12-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.truenorthae.com/services/profile-building-career-booster</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   
   <url>
-    <loc>https://www.truenorthae.com/services/school-college-partnerships</loc>
-    <lastmod>2024-12-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.truenorthae.com/services/career-lab-setup</loc>
-    <lastmod>2024-12-24</lastmod>
+    <loc>https://www.truenorthae.com/services/school-career-guidance-programs</loc>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://www.truenorthae.com/services/digital-solutions-education</loc>
-    <lastmod>2026-01-07</lastmod>
+    <loc>https://www.truenorthae.com/services/career-lab-setup-schools</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.truenorthae.com/services/education-digital-marketing</loc>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -89,7 +89,7 @@
   <!-- Resources / Blog -->
   <url>
     <loc>https://www.truenorthae.com/resources</loc>
-    <lastmod>2026-01-07</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -97,28 +97,28 @@
   <!-- Legal Pages -->
   <url>
     <loc>https://www.truenorthae.com/privacy-policy</loc>
-    <lastmod>2026-01-07</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://www.truenorthae.com/terms-of-service</loc>
-    <lastmod>2026-01-07</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://www.truenorthae.com/refund-policy</loc>
-    <lastmod>2026-01-07</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://www.truenorthae.com/disclaimer</loc>
-    <lastmod>2026-01-07</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>

@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { Target, Lightbulb, Award, BookOpen, GraduationCap, Globe } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import { useTheme } from '../contexts/ThemeContext';
 import TiltCard from '../components/ui/TiltCard';
+import CTASection from '../components/home/CTASection';
 
 const About = () => {
     const { theme } = useTheme();
@@ -186,30 +188,35 @@ const About = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                         {[
-                            { icon: BookOpen, title: "Personalized Guidance", desc: "Tailored advice based on each student's unique strengths and aspirations." },
-                            { icon: GraduationCap, title: "All Age Groups", desc: "Services for students from middle school to college level." },
-                            { icon: Globe, title: "Global Reach", desc: "Serving clients across UAE, India, and international markets." },
+                            { icon: BookOpen, title: "Personalized Guidance", desc: "Tailored advice based on each student's unique strengths and aspirations.", link: "/services/career-counselling-dubai" },
+                            { icon: GraduationCap, title: "All Age Groups", desc: "Services for students from middle school to college level.", link: "/services" },
+                            { icon: Globe, title: "Global Reach", desc: "Serving clients across UAE, India, and international markets.", link: "/services/study-abroad-consultants-dubai" },
                         ].map((item, i) => (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.1, duration: 0.8 }}
-                                className={`
-                                    group p-10 rounded-[2.5rem] h-full border transition-all duration-500 flex flex-col items-center text-center
-                                    ${isDark
-                                        ? 'bg-zinc-900/80 border-white/10 shadow-xl shadow-black/30 hover:bg-zinc-900 hover:border-white/20'
-                                        : 'bg-white border-zinc-200 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_50px_-10px_rgba(0,0,0,0.12)] hover:border-zinc-300'}
-                                `}
-                            >
-                                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-8 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3
-                                    ${isDark ? 'bg-brand-orange/10 text-brand-orange' : 'bg-orange-50 text-brand-orange'}`}>
-                                    <item.icon size={32} strokeWidth={1.5} />
-                                </div>
-                                <h3 className={`text-2xl font-serif font-bold mb-4 ${isDark ? 'text-white' : 'text-zinc-900'}`}>{item.title}</h3>
-                                <p className={`text-lg leading-relaxed ${isDark ? 'text-zinc-400 font-light' : 'text-zinc-500 font-medium'}`}>{item.desc}</p>
-                            </motion.div>
+                            <Link to={item.link} key={i} className="block h-full">
+                                <motion.div
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: i * 0.1, duration: 0.8 }}
+                                    className={`
+                                        group p-10 rounded-[2.5rem] h-full border transition-all duration-500 flex flex-col items-center text-center
+                                        ${isDark
+                                            ? 'bg-zinc-900/80 border-white/10 shadow-xl shadow-black/30 hover:bg-zinc-900 hover:border-white/20'
+                                            : 'bg-white border-zinc-200 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_50px_-10px_rgba(0,0,0,0.12)] hover:border-zinc-300'}
+                                    `}
+                                >
+                                    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-8 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3
+                                        ${isDark ? 'bg-brand-orange/10 text-brand-orange' : 'bg-orange-50 text-brand-orange'}`}>
+                                        <item.icon size={32} strokeWidth={1.5} />
+                                    </div>
+                                    <h3 className={`text-2xl font-serif font-bold mb-4 ${isDark ? 'text-white' : 'text-zinc-900'}`}>{item.title}</h3>
+                                    <p className={`text-lg leading-relaxed ${isDark ? 'text-zinc-400 font-light' : 'text-zinc-500 font-medium'}`}>{item.desc}</p>
+
+                                    <div className={`mt-6 text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${isDark ? 'text-brand-orange' : 'text-brand-orange'}`}>
+                                        Learn More
+                                    </div>
+                                </motion.div>
+                            </Link>
                         ))}
                     </div>
                 </div>
@@ -342,8 +349,8 @@ const About = () => {
                                 </div>
 
                                 <h2 className={`text-4xl md:text-6xl font-serif font-bold mb-10 leading-[0.9] tracking-tighter ${isDark ? 'bg-gradient-to-br from-white via-white to-white/40 bg-clip-text text-transparent' : 'text-gray-900'}`}>
-                                    Guidance as an <br />
-                                    <span className="italic font-light text-orange-500">Art Form.</span>
+                                    Guidance with Purpose: <br />
+                                    <span className="italic font-light text-orange-500">Turning potential into meaningful paths.</span>
                                 </h2>
 
                                 <div className={`space-y-8 text-base md:text-lg font-light leading-relaxed ${isDark ? 'text-white/40' : 'text-gray-600 font-medium'}`}>
@@ -495,6 +502,8 @@ const About = () => {
                 <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] blur-[150px] -z-10 opacity-20
                     ${isDark ? 'bg-brand-orange/20' : 'bg-brand-orange/10'}`} />
             </section>
+
+            <CTASection />
         </div >
     );
 };

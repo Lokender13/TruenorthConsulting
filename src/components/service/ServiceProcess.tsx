@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { useTheme } from '../../contexts/ThemeContext';
-import { useRef } from 'react';
 
 interface ProcessStep {
     step: string;
@@ -12,74 +11,87 @@ interface ServiceProcessProps {
     process: ProcessStep[];
 }
 
-const ProcessCard = ({ item, index, isDark }: { item: ProcessStep, index: number, isDark: boolean }) => {
-    return (
-        <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className={`group relative p-10 rounded-[3rem] border transition-all duration-500
-                ${isDark
-                    ? 'bg-zinc-900/40 border-white/5 hover:bg-zinc-900/60 shadow-2xl shadow-black/20'
-                    : 'bg-white/80 border-white hover:shadow-[0_20px_50px_rgba(0,0,0,0.06)] shadow-[0_10px_30px_rgba(0,0,0,0.02)]'
-                }
-            `}
-        >
-            <div className={`absolute -top-6 -left-6 w-14 h-14 rounded-2xl flex items-center justify-center font-bold text-xl transition-transform group-hover:scale-110 group-hover:rotate-6
-                ${isDark ? 'bg-white text-black' : 'bg-brand-blue text-white shadow-xl shadow-brand-blue/20'}
-            `}>
-                {item.step}
-            </div>
-
-            <h3 className={`text-2xl font-serif font-bold mb-4 tracking-tight ${isDark ? 'text-white' : 'text-zinc-900'}`}>
-                {item.title}
-            </h3>
-            <p className={`text-lg leading-relaxed ${isDark ? 'text-zinc-400' : 'text-zinc-500 font-medium'}`}>
-                {item.description}
-            </p>
-        </motion.div>
-    );
-};
-
 const ServiceProcess = ({ process }: ServiceProcessProps) => {
     const { theme } = useTheme();
     const isDark = theme === 'dark';
-    const ref = useRef(null);
 
     if (!process || process.length === 0) return null;
 
     return (
-        <section className={`py-16 md:py-20 relative overflow-hidden theme-transition ${isDark ? 'bg-zinc-950/0' : 'bg-transparent'}`} ref={ref}>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className={`py-12 sm:py-16 md:py-20 lg:py-24 relative overflow-hidden theme-transition ${isDark ? 'bg-zinc-950/0' : 'bg-transparent'}`}>
+            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="text-center mb-16"
+                    className="text-center mb-12 sm:mb-16 md:mb-20"
                 >
-                    <motion.span className="text-brand-orange font-black tracking-[0.3em] uppercase text-xs mb-4 block">
-                        Execution Workflow
+                    <motion.span className="inline-block text-brand-orange font-bold tracking-[0.15em] sm:tracking-[0.2em] uppercase text-[10px] sm:text-xs mb-3 sm:mb-4">
+                        How It Works
                     </motion.span>
-                    <h2 className={`text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-8 tracking-tight ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                        Our Strategic{' '}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-purple-500">
-                            Roadmap
+                    <h2 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-4 sm:mb-6 tracking-tight px-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                        Our Simple{' '}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-pink-500 to-purple-600">
+                            Process
                         </span>
                     </h2>
-                    <p className={`text-base md:text-lg font-light max-w-3xl mx-auto ${isDark ? 'text-white/40' : 'text-gray-500 font-medium'}`}>
-                        A systematic, data-driven methodology designed to convert your potential into high-impact performance.
+                    <p className={`text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed px-4 ${isDark ? 'text-zinc-400' : 'text-gray-600'}`}>
+                        We've designed a clear, step-by-step approach to help you reach your goals with confidence
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 relative">
-                    {/* Connecting line for desktop */}
-                    <div className="hidden lg:block absolute top-[150px] left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-white/10 to-transparent" />
+                <div className="relative">
+                    {/* Vertical connecting line - Responsive positioning */}
+                    <div className={`absolute left-6 sm:left-7 md:left-10 top-0 bottom-0 w-0.5 ${isDark ? 'bg-gradient-to-b from-brand-orange/30 via-purple-500/30 to-brand-blue/30' : 'bg-gradient-to-b from-brand-orange/20 via-purple-500/20 to-brand-blue/20'}`} />
 
-                    {process.map((item, index) => (
-                        <ProcessCard key={index} item={item} index={index} isDark={isDark} />
-                    ))}
+                    <div className="space-y-10 sm:space-y-12 md:space-y-14 lg:space-y-16">
+                        {process.map((item, index) => {
+                            const gradients = [
+                                'from-orange-500 to-pink-500',
+                                'from-blue-500 to-cyan-500',
+                                'from-purple-500 to-pink-500',
+                                'from-green-500 to-emerald-500',
+                                'from-yellow-500 to-orange-500',
+                            ];
+                            const gradient = gradients[index % gradients.length];
+
+                            return (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, x: -30 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true, amount: 0.3 }}
+                                    transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                                    className="relative flex gap-5 sm:gap-6 md:gap-8 lg:gap-12 group"
+                                >
+                                    {/* Step Number - Responsive sizing */}
+                                    <div className="relative flex-shrink-0">
+                                        <motion.div
+                                            whileHover={{ scale: 1.1, rotate: 5 }}
+                                            className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-xl sm:rounded-2xl flex items-center justify-center font-bold text-xl sm:text-2xl md:text-2xl lg:text-3xl shadow-lg sm:shadow-xl bg-gradient-to-br ${gradient} text-white relative z-10 transition-all duration-300`}
+                                        >
+                                            {item.step}
+                                        </motion.div>
+
+                                        {/* Glow effect */}
+                                        <div className={`absolute inset-0 rounded-xl sm:rounded-2xl blur-lg sm:blur-xl opacity-40 bg-gradient-to-br ${gradient}`} />
+                                    </div>
+
+                                    {/* Content - Responsive text sizing */}
+                                    <div className="flex-1 pb-6 sm:pb-8 md:pb-10 lg:pb-12 border-b border-gray-200 dark:border-white/10 last:border-0 transition-all duration-300 group-hover:border-gray-300 dark:group-hover:border-white/20 min-w-0">
+                                        <h3 className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif font-bold mb-2 sm:mb-3 md:mb-4 tracking-tight transition-colors duration-300 break-words ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                                            {item.title}
+                                        </h3>
+                                        <p className={`text-base sm:text-lg md:text-xl leading-relaxed transition-colors duration-300 break-words ${isDark ? 'text-zinc-400 group-hover:text-zinc-300' : 'text-gray-600 group-hover:text-gray-700'}`}>
+                                            {item.description}
+                                        </p>
+                                    </div>
+                                </motion.div>
+                            );
+                        })}
+                    </div>
                 </div>
             </div>
         </section>

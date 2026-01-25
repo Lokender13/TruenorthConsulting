@@ -77,13 +77,22 @@ const Hero = () => {
         >
             {/* Cinematic Background Layer */}
             <div className="absolute inset-0 z-0 overflow-hidden">
-                {/* Background Image Removed as per request */}
-
-                {/* Multi-layered Cinematic Overlays */}
+                {/* Base Gradient Background */}
                 <div className={`absolute inset-0 transition-colors duration-1000 ${isDark
-                    ? 'bg-gradient-to-r from-zinc-950 via-zinc-950/60 to-transparent'
-                    : 'bg-gradient-to-r from-zinc-100 via-zinc-100/50 to-transparent'
+                    ? 'bg-gradient-to-r from-zinc-950 via-zinc-950/90 to-zinc-900/50'
+                    : 'bg-gradient-to-r from-zinc-100 via-zinc-100/90 to-white/50'
                     }`}></div>
+
+                {/* Background Image - Textured Overlay */}
+                <div className="absolute inset-0">
+                    <img
+                        src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80"
+                        alt="Background"
+                        className={`w-full h-full object-cover transition-opacity duration-1000 ${isDark ? 'opacity-[0.1]' : 'opacity-[0.15]'}`}
+                    />
+                </div>
+
+                <div className={`absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-${isDark ? 'zinc-950' : 'zinc-100'}`}></div>
 
                 <div className={`absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-${isDark ? 'zinc-950' : 'zinc-100'}`}></div>
 
@@ -166,10 +175,12 @@ const Hero = () => {
                     </motion.h2>
 
                     {/* Headline with TextReveal and Gradient Text */}
-                    <h1 className={`text-4xl md:text-5xl lg:text-7xl font-serif font-bold leading-[1.05] tracking-tight mb-6 ${isDark ? 'text-white' : 'text-zinc-900'
+                    <h1 className={`text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-[1.1] tracking-tight mb-6 ${isDark ? 'text-white' : 'text-zinc-900'
                         }`}>
+                        Clarity for Students. <br />
+                        Confidence for Parents. <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-purple-500 to-brand-blue">
-                            Navigate Your Career with Confidence.
+                            Direction for the Future.
                         </span>
                     </h1>
 
@@ -178,10 +189,10 @@ const Hero = () => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.5 }}
-                        className={`text-lg lg:text-xl max-w-xl mb-10 leading-relaxed transition-colors duration-500 ${isDark ? 'text-zinc-400' : 'text-zinc-600'
+                        className={`text-lg lg:text-xl max-w-2xl mb-10 leading-relaxed transition-colors duration-500 ${isDark ? 'text-zinc-400' : 'text-zinc-600'
                             }`}
                     >
-                        Success starts with the right guidance. We help you find your right career and get into your dream university with confidence.
+                        Expert career counselling, psychometric assessments, and global admissions guidance—tailored for every stage of the academic journey.
                     </motion.p>
 
                     {/* CTA Buttons with glow */}

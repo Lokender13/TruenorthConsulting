@@ -43,7 +43,7 @@ const services = [
     {
         icon: BookOpen,
         title: "Career Counselling",
-        slug: "career-counselling-psychometric-assessments",
+        slug: "career-counselling-dubai",
         desc: "Unlock your true potential with scientifically-backed psychometric assessments and personalized mentorship to map your perfect career trajectory.",
         color: 'blue' as keyof typeof serviceColors,
         image: careerCounsellingImg
@@ -51,31 +51,31 @@ const services = [
     {
         icon: Globe,
         title: "Study Abroad",
-        slug: "university-admissions-study-abroad",
+        slug: "study-abroad-consultants-dubai",
         desc: "Expert end-to-end guidance for global university admissions. From selecting the right Ivy League to visa approvals, we make your global dreams a reality.",
         color: 'orange' as keyof typeof serviceColors,
         image: studyAbroadImg
     },
     {
         icon: GraduationCap,
-        title: "Academic Support",
-        slug: "academic-support-online-tutoring",
+        title: "Academic Support & Online Tutoring",
+        slug: "online-tutoring-academic-support",
         desc: "Achieve academic excellence with tailored 1-on-1 tutoring. We identify learning gaps and design custom strategies to boost grades and subject mastery.",
         color: 'emerald' as keyof typeof serviceColors,
         image: academicSupportImg
     },
     {
         icon: BarChart,
-        title: "Profile Building & IELTS Prep",
-        slug: "competitive-exam-language-preparation",
-        desc: "Craft a standout profile for top-tier universities and master the IELTS. We combine strategic profile enhancement with rigorous exam prep to maximize your scholarship chances.",
+        title: "Career Booster & Profile Building",
+        slug: "profile-building-career-booster",
+        desc: "Craft a standout profile for top-tier universities. We focus on strategic profile enhancement, research, and internships to maximize your scholarship chances.",
         color: 'purple' as keyof typeof serviceColors,
         image: testPrepImg
     },
     {
         icon: Users,
-        title: "School Partnerships",
-        slug: "school-college-partnerships",
+        title: "School & College Partnerships",
+        slug: "school-career-guidance-programs",
         desc: "Collaborate with us to implement comprehensive career guidance programs. We offer train-the-trainer modules, student workshops, and university fair organization to elevate your institution's offering.",
         color: 'pink' as keyof typeof serviceColors,
         image: schoolPartnershipsImg
@@ -83,7 +83,7 @@ const services = [
     {
         icon: Building,
         title: "Career Labs",
-        slug: "career-lab-setup",
+        slug: "career-lab-setup-schools",
         desc: "Establish dedicated, high-tech career guidance centers within your school. We provide the infrastructure, resources, and curriculum to help students innovate and explore future career paths.",
         color: 'slate' as keyof typeof serviceColors,
         image: careerLabsImg
@@ -131,8 +131,8 @@ const ServicesGrid = () => {
                         How We <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-blue italic">Can Help.</span>
                     </h2>
 
-                    <p className={`text-lg font-light max-w-2xl mx-auto leading-relaxed ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>
-                        Complete guidance for every step of your education journey.
+                    <p className={`text-lg font-light max-w-4xl mx-auto leading-relaxed ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>
+                        Whether you're a student feeling unsure about subjects or careers, a parent seeking clarity and direction, or an institution supporting learners at key decision points—we're here to help. Through personalised career counselling, psychometric assessments, profile building, and study abroad guidance, we support confident, well-informed academic and career choices.
                     </p>
                 </motion.div>
 

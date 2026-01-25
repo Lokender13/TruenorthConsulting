@@ -8,12 +8,12 @@ const Footer = () => {
     const isDark = theme === 'dark';
 
     const services = [
-        { label: "Career Counselling", path: "/services/career-counselling-psychometric-assessments" },
-        { label: "Study Abroad", path: "/services/university-admissions-study-abroad" },
-        { label: "Academic Support", path: "/services/academic-support-online-tutoring" },
-        { label: "Profile Building & IELTS", path: "/services/competitive-exam-language-preparation" },
-        { label: "School Partnerships", path: "/services/school-college-partnerships" },
-        { label: "Career Labs", path: "/services/career-lab-setup" },
+        { label: "Career Counselling", path: "/services/career-counselling-dubai" },
+        { label: "Study Abroad", path: "/services/study-abroad-consultants-dubai" },
+        { label: "Academic Support", path: "/services/online-tutoring-academic-support" },
+        { label: "Profile Building & IELTS", path: "/services/profile-building-career-booster" },
+        { label: "School Partnerships", path: "/services/school-career-guidance-programs" },
+        { label: "Career Labs", path: "/services/career-lab-setup-schools" },
     ];
 
     const company = [

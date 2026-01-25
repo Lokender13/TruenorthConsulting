@@ -21,7 +21,7 @@ const services = [
         title: "Career Counselling",
         description: "Scientific psychometric assessments & personalized career roadmaps for students.",
         icon: Target,
-        path: "/services/career-counselling-psychometric-assessments",
+        path: "/services/career-counselling-dubai",
         color: 'blue' as const,
         image: "https://images.unsplash.com/photo-1544531586-fde5298cdd40?q=80&w=800&auto=format&fit=crop"
     },
@@ -29,7 +29,7 @@ const services = [
         title: "Study Abroad",
         description: "End-to-end admission guidance for top global universities worldwide.",
         icon: Globe,
-        path: "/services/university-admissions-study-abroad",
+        path: "/services/study-abroad-consultants-dubai",
         color: 'orange' as const,
         image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop"
     },
@@ -37,7 +37,7 @@ const services = [
         title: "Academic Support",
         description: "Expert tutoring for IB, IGCSE, CBSE & international curricula.",
         icon: BookOpen,
-        path: "/services/academic-support-online-tutoring",
+        path: "/services/online-tutoring-academic-support",
         color: 'emerald' as const,
         image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop"
     },
@@ -45,7 +45,7 @@ const services = [
         title: "Competitive Exams",
         description: "IELTS, NEET, JEE & language proficiency preparation.",
         icon: GraduationCap,
-        path: "/services/competitive-exam-language-preparation",
+        path: "/services/profile-building-career-booster",
         color: 'purple' as const,
         image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800&auto=format&fit=crop"
     },
@@ -53,7 +53,7 @@ const services = [
         title: "School Partnerships",
         description: "Comprehensive career guidance curricula for institutions.",
         icon: Building2,
-        path: "/services/school-college-partnerships",
+        path: "/services/school-career-guidance-programs",
         color: 'pink' as const,
         image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop"
     },
@@ -61,7 +61,7 @@ const services = [
         title: "Career Labs",
         description: "In-house career infrastructure setup for schools.",
         icon: Laptop,
-        path: "/services/career-lab-setup",
+        path: "/services/career-lab-setup-schools",
         color: 'slate' as const,
         image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop"
     },
@@ -69,7 +69,7 @@ const services = [
         title: "Digital Solutions",
         description: "Web development & digital marketing for education brands.",
         icon: Laptop,
-        path: "/services/digital-solutions-education",
+        path: "/services/education-digital-marketing",
         color: 'cyan' as const,
         image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop"
     }
@@ -137,15 +137,25 @@ const Services = () => {
     return (
         <div className={`min-h-screen theme-transition ${isDark ? 'bg-black' : 'bg-zinc-100'}`}>
             <SEO
-                title="Our Services - Career Counselling, Study Abroad & Academic Support"
-                description="Explore TrueNorth's comprehensive services: career counselling, psychometric assessments, study abroad guidance, university admissions, IB/CBSE/IGCSE tutoring, IELTS/SAT preparation, and school partnerships in Dubai, UAE."
-                keywords="career counselling services, study abroad Dubai, university admissions UAE, IB tutoring, CBSE support, IGCSE tutoring, IELTS preparation, SAT preparation, psychometric assessment, school partnerships, career lab setup"
+                title="Our Services | Best Career Counselling & Education Consultants in Dubai"
+                description="Explore TrueNorth's comprehensive services: career counselling in Dubai, study abroad consultants, IB/CBSE tutoring, and school guidance programs in UAE."
+                keywords="career counselling services dubai, study abroad consultants uae, university admissions uae, ib tutoring dubai, school partnerships dubai, career lab setup"
                 canonical="/services"
                 schema={servicesSchema}
             />
 
             {/* Hero */}
             <section className={`relative pt-32 pb-16 px-4 overflow-hidden ${isDark ? 'bg-black text-white' : 'bg-zinc-100 text-gray-900'}`}>
+                {/* Background Image */}
+                <div className="absolute inset-0 z-0">
+                    <img
+                        src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80"
+                        alt="Services"
+                        className={`w-full h-full object-cover transition-opacity duration-1000 ${isDark ? 'opacity-[0.1]' : 'opacity-[0.05]'}`}
+                    />
+                    <div className={`absolute inset-0 bg-gradient-to-t from-${isDark ? 'black' : 'zinc-100'} via-transparent to-transparent`}></div>
+                </div>
+
                 {/* FloatingOrbs */}
                 <FloatingOrbs orbs={isDark ? [
                     { size: 400, x: '5%', y: '15%', color: 'rgba(255,255,255,0.025)', delay: 0, duration: 18 },
@@ -180,9 +190,14 @@ const Services = () => {
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6">
                         <TextReveal>Our Services</TextReveal>
                     </h1>
-                    <p className={`text-lg max-w-2xl mx-auto ${isDark ? 'text-white/40' : 'text-gray-500'}`}>
-                        Comprehensive solutions for every stage of your educational journey.
-                    </p>
+                    <div className="max-w-4xl mx-auto space-y-6">
+                        <p className={`text-xl md:text-2xl font-medium leading-relaxed ${isDark ? 'text-white/90' : 'text-gray-800'}`}>
+                            Structured guidance for students, families, professionals, and educational institutions navigating education and career decisions
+                        </p>
+                        <p className={`text-lg leading-relaxed ${isDark ? 'text-white/50' : 'text-gray-500'}`}>
+                            At <span className="font-semibold text-primary">TrueNorth Consulting</span>, we provide expert-led, personalised guidance across key education and career stages. Our approach integrates psychometric insights, academic planning, and admissions expertise to support informed, ethical, and future-ready decisions.
+                        </p>
+                    </div>
                 </motion.div>
             </section>
 

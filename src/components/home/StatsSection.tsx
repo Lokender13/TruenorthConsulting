@@ -16,6 +16,15 @@ const StatsSection = () => {
 
     return (
         <section className={`py-12 relative overflow-hidden theme-transition ${isDark ? 'bg-zinc-950/0' : 'bg-transparent'}`}>
+            {/* Background Image - Global Network */}
+            <div className="absolute inset-0 z-0">
+                <img
+                    src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80"
+                    alt="Global Network"
+                    className={`w-full h-full object-cover transition-opacity duration-1000 ${isDark ? 'opacity-[0.05]' : 'opacity-[0.03]'}`}
+                />
+            </div>
+
             {/* Ambient background line */}
             <motion.div
                 className={`absolute top-1/2 left-0 w-full h-[1px] ${isDark ? 'bg-gradient-to-r from-transparent via-white/5 to-transparent' : 'bg-gradient-to-r from-transparent via-brand-orange/10 to-transparent'}`}

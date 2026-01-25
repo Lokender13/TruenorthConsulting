@@ -52,13 +52,13 @@ const SEO: React.FC<SEOProps> = ({
 
                 // Specific overrides for long slugs
                 if (segment === 'services') name = 'Services';
-                if (segment === 'career-counselling-psychometric-assessments') name = 'Career Counselling';
-                if (segment === 'university-admissions-study-abroad') name = 'Study Abroad';
-                if (segment === 'academic-support-online-tutoring') name = 'Academic Support';
-                if (segment === 'competitive-exam-language-preparation') name = 'Competitive Exams';
-                if (segment === 'school-college-partnerships') name = 'School Partnerships';
-                if (segment === 'career-lab-setup') name = 'Career Labs';
-                if (segment === 'digital-solutions-education') name = 'Digital Solutions';
+                if (segment === 'career-counselling-dubai') name = 'Career Counselling';
+                if (segment === 'study-abroad-consultants-dubai') name = 'Study Abroad';
+                if (segment === 'online-tutoring-academic-support') name = 'Academic Support';
+                if (segment === 'profile-building-career-booster') name = 'Career Booster';
+                if (segment === 'school-career-guidance-programs') name = 'School Partnerships';
+                if (segment === 'career-lab-setup-schools') name = 'Career Labs';
+                if (segment === 'education-digital-marketing') name = 'Digital Solutions';
 
                 return {
                     "@type": "ListItem",
