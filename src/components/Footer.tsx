@@ -20,6 +20,7 @@ const Footer = () => {
         { label: "About Us", path: "/about" },
         { label: "Success Stories", path: "/testimonials" },
         { label: "Our Partners", path: "/partners" },
+        { label: "Resources", path: "/resources" },
         { label: "Contact Us", path: "/contact" },
     ];
 
