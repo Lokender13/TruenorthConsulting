@@ -44,7 +44,7 @@ const services = [
         icon: BookOpen,
         title: "Career Counselling",
         slug: "career-counselling-dubai",
-        desc: "Unlock your true potential with scientifically-backed psychometric assessments and personalized mentorship to map your perfect career trajectory.",
+        desc: "Confused about your career path? Get expert guidance, scientifically-backed assessments, and personalized mentorship to discover your strengths and build a perfect career roadmap.",
         color: 'blue' as keyof typeof serviceColors,
         image: careerCounsellingImg
     },
@@ -52,7 +52,7 @@ const services = [
         icon: Globe,
         title: "Study Abroad",
         slug: "study-abroad-consultants-dubai",
-        desc: "Expert end-to-end guidance for global university admissions. From selecting the right Ivy League to visa approvals, we make your global dreams a reality.",
+        desc: "Dreaming of studying in the US, UK, or Canada? We provide end-to-end support—from choosing the right university and writing winning applications to securing scholarships and student visas.",
         color: 'orange' as keyof typeof serviceColors,
         image: studyAbroadImg
     },
@@ -60,7 +60,7 @@ const services = [
         icon: GraduationCap,
         title: "Academic Support & Online Tutoring",
         slug: "online-tutoring-academic-support",
-        desc: "Achieve academic excellence with tailored 1-on-1 tutoring. We identify learning gaps and design custom strategies to boost grades and subject mastery.",
+        desc: "Struggling with grades or specific subjects? Get tailored 1-on-1 tutoring that identifies learning gaps and builds clear concepts, helping you score higher and learn better.",
         color: 'emerald' as keyof typeof serviceColors,
         image: academicSupportImg
     },
@@ -68,7 +68,7 @@ const services = [
         icon: BarChart,
         title: "Career Booster & Profile Building",
         slug: "profile-building-career-booster",
-        desc: "Craft a standout profile for top-tier universities. We focus on strategic profile enhancement, research, and internships to maximize your scholarship chances.",
+        desc: "A good score isn’t enough for top universities. We help you build a standout profile through research projects, internships, and extra-curriculars to maximize your admission chances.",
         color: 'purple' as keyof typeof serviceColors,
         image: testPrepImg
     },
@@ -76,7 +76,7 @@ const services = [
         icon: Users,
         title: "School & College Partnerships",
         slug: "school-career-guidance-programs",
-        desc: "Collaborate with us to implement comprehensive career guidance programs. We offer train-the-trainer modules, student workshops, and university fair organization to elevate your institution's offering.",
+        desc: "Enhance your institution's value with our expert career guidance modules. We offer workshops, teacher training, and university fair management to empower your students.",
         color: 'pink' as keyof typeof serviceColors,
         image: schoolPartnershipsImg
     },
@@ -84,7 +84,7 @@ const services = [
         icon: Building,
         title: "Career Labs",
         slug: "career-lab-setup-schools",
-        desc: "Establish dedicated, high-tech career guidance centers within your school. We provide the infrastructure, resources, and curriculum to help students innovate and explore future career paths.",
+        desc: "Transform your school into a hub of innovation. We set up high-tech career labs with the right infrastructure and curriculum to help students explore future career opportunities early on.",
         color: 'slate' as keyof typeof serviceColors,
         image: careerLabsImg
     },
