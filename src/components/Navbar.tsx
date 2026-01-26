@@ -28,7 +28,7 @@ const Navbar = () => {
         { name: "Career Counselling", path: "/services/career-counselling-dubai", icon: Target },
         { name: "Study Abroad", path: "/services/study-abroad-consultants-dubai", icon: Globe },
         { name: "Academic Support", path: "/services/online-tutoring-academic-support", icon: BookOpen },
-        { name: "Competitive Exams", path: "/services/profile-building-career-booster", icon: GraduationCap },
+        { name: "Career Booster & Profile Building", path: "/services/profile-building-career-booster", icon: GraduationCap },
         { name: "School Partnerships", path: "/services/school-career-guidance-programs", icon: Building2 },
         { name: "Career Labs", path: "/services/career-lab-setup-schools", icon: Laptop },
         { name: "Digital Solutions", path: "/services/education-digital-marketing", icon: Laptop },
