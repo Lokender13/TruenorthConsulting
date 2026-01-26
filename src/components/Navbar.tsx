@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Sun, Moon, Linkedin, Instagram, Twitter, BookOpen, Globe, GraduationCap, Target, Building2, Laptop } from 'lucide-react';
+import { Menu, X, ChevronDown, Sun, Moon, Linkedin, Instagram, BookOpen, Globe, GraduationCap, Target, Building2, Laptop } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../contexts/ThemeContext';
 import logo from '../assets/logo.png';
@@ -178,8 +178,7 @@ const Navbar = () => {
                         <div className="flex items-center gap-2">
                             {[
                                 { icon: Linkedin, href: "https://www.linkedin.com/in/surabhi-rawat-truenorth/" }, // Assuming link structure, updated later if needed
-                                { icon: Instagram, href: "https://www.instagram.com/surabhi_truenorth/" },
-                                { icon: Twitter, href: "https://twitter.com/surabhi_truenorth" }
+                                { icon: Instagram, href: "https://www.instagram.com/surabhi_truenorth/" }
                             ].map((social, index) => (
                                 <motion.a
                                     key={index}

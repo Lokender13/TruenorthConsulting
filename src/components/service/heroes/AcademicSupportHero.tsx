@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import HeroLayout from './HeroLayout';
-import { BookOpen, Star, Sparkles, BookCheck, ArrowRight } from 'lucide-react';
+import { Sparkles, BookCheck, ArrowRight } from 'lucide-react';
 import { useTheme } from '../../../contexts/ThemeContext';
 import { Link } from 'react-router-dom';
 
@@ -10,96 +10,94 @@ const AcademicSupportHero = ({ service }: { service: any }) => {
 
     const visual = (
         <div className="relative w-full aspect-square flex items-center justify-center isolate">
-            {/* Main Trophy/A+ Visual */}
+            {/* Background Geometric Shapes */}
+            <div className="absolute inset-0 pointer-events-none">
+                <svg className="w-full h-full opacity-20" viewBox="0 0 100 100">
+                    <motion.circle cx="20" cy="20" r="2" fill="currentColor" className="text-emerald-500" animate={{ y: [0, 10, 0] }} transition={{ duration: 5, repeat: Infinity }} />
+                    <motion.rect x="70" y="15" width="4" height="4" fill="currentColor" className="text-blue-500" animate={{ rotate: 360 }} transition={{ duration: 10, repeat: Infinity, ease: 'linear' }} />
+                    <motion.path d="M80,80 L85,90 L75,90 Z" fill="currentColor" className="text-orange-500" animate={{ y: [0, -10, 0] }} transition={{ duration: 6, repeat: Infinity }} />
+                </svg>
+            </div>
+
+            {/* Central Badge Container */}
             <motion.div
-                className={`relative w-72 md:w-80 h-80 md:h-96 rounded-[2.5rem] border backdrop-blur-3xl z-20 flex flex-col items-center justify-center
-                ${isDark ? 'bg-zinc-900/80 border-white/10 shadow-[0_0_60px_rgba(16,185,129,0.1)]' : 'bg-white/80 border-white/60 shadow-2xl shadow-emerald-500/10'}`}
-                animate={{ y: [-8, 8, -8] }}
+                className={`relative w-64 h-80 rounded-[2.5rem] border backdrop-blur-3xl z-20 flex flex-col items-center justify-center p-6
+                    ${isDark ? 'bg-zinc-900/80 border-white/10 shadow-[0_0_60px_rgba(16,185,129,0.15)]' : 'bg-white/90 border-white/60 shadow-2xl shadow-emerald-500/15'}`}
+                animate={{ y: [-10, 10, -10] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             >
-                {/* Decorative Elements - Contained inside relative parent */}
-                <div className="absolute top-0 right-0 p-6 md:p-8">
-                    <Star size={28} className="text-brand-orange animate-pulse opacity-20" />
-                </div>
-                <div className="absolute bottom-0 left-0 p-6 md:p-8">
-                    <Sparkles size={20} className="text-brand-blue animate-pulse opacity-20" />
+                {/* School Subject 3D Icons orbiting */}
+                <div className="absolute inset-0 z-0">
+                    {[
+                        { icon: "∑", label: "Math", color: "bg-blue-100 text-blue-600", angle: 0 },
+                        { icon: "⚗️", label: "Science", color: "bg-purple-100 text-purple-600", angle: 120 },
+                        { icon: "Aa", label: "English", color: "bg-orange-100 text-orange-600", angle: 240 }
+                    ].map((item, i) => (
+                        <motion.div
+                            key={i}
+                            className={`absolute w-12 h-12 rounded-2xl shadow-lg flex items-center justify-center text-xl font-bold ${item.color}`}
+                            animate={{
+                                x: [
+                                    Math.cos((item.angle * Math.PI) / 180) * 140,
+                                    Math.cos(((item.angle + 360) * Math.PI) / 180) * 140
+                                ],
+                                y: [
+                                    Math.sin((item.angle * Math.PI) / 180) * 80,
+                                    Math.sin(((item.angle + 360) * Math.PI) / 180) * 80
+                                ],
+                                scale: [1, 1.1, 1],
+                                zIndex: [10, 30, 10] // Simple depth simulation
+                            }}
+                            transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                        >
+                            {item.icon}
+                        </motion.div>
+                    ))}
                 </div>
 
-                {/* Background Gradient Mesh - Clipped to radius */}
-                <div className={`absolute inset-0 opacity-30 rounded-[2.5rem] overflow-hidden ${isDark ? 'bg-gradient-to-br from-emerald-500/20 via-transparent to-teal-500/20' : 'bg-gradient-to-br from-emerald-100 via-transparent to-teal-100'}`} />
-
+                {/* Main A+ Text */}
                 <motion.div
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
-                    transition={{ delay: 0.5, duration: 1 }}
-                    className="relative z-10 text-[100px] md:text-[140px] font-serif font-black leading-none mb-2"
-                    style={{
-                        background: 'linear-gradient(135deg, #10B981 0%, #14B8A6 100%)',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                        filter: 'drop-shadow(0 10px 20px rgba(16, 185, 129, 0.2))'
-                    }}
+                    className="relative z-10 text-center"
                 >
-                    A+
+                    <div className="text-[120px] font-serif font-black leading-none tracking-tighter"
+                        style={{
+                            background: 'linear-gradient(135deg, #10B981 0%, #0D9488 100%)',
+                            WebkitBackgroundClip: 'text',
+                            WebkitTextFillColor: 'transparent',
+                            filter: 'drop-shadow(0 4px 12px rgba(16,185,129,0.3))'
+                        }}
+                    >
+                        A+
+                    </div>
+                    <div className={`text-xs font-bold tracking-[0.3em] uppercase mt-2 ${isDark ? 'text-emerald-400' : 'text-emerald-600'}`}>
+                        Academic Mastery
+                    </div>
                 </motion.div>
 
-                <div className={`relative z-10 text-[10px] md:text-[11px] font-black tracking-[0.4em] uppercase ${isDark ? 'text-white/40' : 'text-gray-400'}`}>
-                    Academic Excellence
-                </div>
-
-                {/* Floating Grade Indicators - Centered relative positioning */}
-                {[
-                    { label: 'IB', x: '-50%', y: '-280%', color: 'bg-blue-500', delay: 0, dx: 100, dy: -40 },
-                    { label: 'IGCSE', x: '-180%', y: '120%', color: 'bg-emerald-500', delay: 1, dx: -60, dy: 20 },
-                    { label: 'CBSE', x: '80%', y: '280%', color: 'bg-brand-orange', delay: 2, dx: 50, dy: 50 }
-                ].map((item, i) => (
-                    <motion.div
-                        key={i}
-                        className={`absolute px-3 py-2 md:px-4 md:py-2.5 rounded-xl backdrop-blur-xl border flex items-center gap-2 z-30 shadow-lg top-1/2 left-1/2
-                            ${isDark ? 'bg-zinc-800/90 border-white/20' : 'bg-white border-white/60'}
-                        `}
-                        initial={{ x: item.dx, y: item.dy }}
-                        animate={{
-                            x: [item.dx, item.dx, item.dx],
-                            y: [item.dy, item.dy - 10, item.dy]
-                        }}
-                        transition={{ duration: 4, repeat: Infinity, delay: item.delay, ease: "easeInOut" }}
-                        style={{ marginLeft: item.x, marginTop: item.y, transform: 'translate(-50%, -50%)' }}
-                    >
-                        <div className={`w-2 h-2 md:w-2.5 md:h-2.5 rounded-full ${item.color} shadow-sm`} />
-                        <span className={`text-[10px] md:text-[11px] font-bold tracking-wider uppercase ${isDark ? 'text-white' : 'text-gray-700'}`}>{item.label}</span>
-                    </motion.div>
-                ))}
+                {/* Floating Tags */}
+                <motion.div
+                    className={`absolute -bottom-6 left-1/2 -translate-x-1/2 px-5 py-2.5 rounded-xl border shadow-lg flex items-center gap-2 whitespace-nowrap
+                        ${isDark ? 'bg-zinc-800 text-white border-white/10' : 'bg-white text-gray-800 border-gray-100'}`}
+                    animate={{ y: [0, 5, 0] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                >
+                    <Sparkles size={14} className="text-yellow-500 fill-yellow-500" />
+                    <span className="text-xs font-bold">Top 1% Scorer</span>
+                </motion.div>
             </motion.div>
 
-            {/* Background Elements */}
-            <div className="absolute inset-0 z-0 flex items-center justify-center">
-                {[...Array(3)].map((_, i) => (
-                    <motion.div
-                        key={i}
-                        className={`absolute rounded-2xl border backdrop-blur-sm
-                            ${isDark ? 'bg-white/5 border-white/5' : 'bg-white/40 border-white/40 shadow-sm'}
-                        `}
-                        style={{
-                            width: `${60 + i * 10}%`,
-                            height: `${60 + i * 10}%`,
-                            maxWidth: '300px',
-                            maxHeight: '380px',
-                            zIndex: 10 - i,
-                        }}
-                        animate={{ rotate: [i * 15 - 15, i * 15 - 10, i * 15 - 15] }}
-                        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: i * 2 }}
-                    />
-                ))}
-            </div>
-
-            {/* Floating Icons */}
+            {/* Live Class Indicator */}
             <motion.div
-                className="absolute top-[10%] right-[5%] text-brand-blue opacity-30"
-                animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                className={`absolute top-[15%] right-[10%] px-4 py-2 rounded-lg backdrop-blur-md border shadow-lg flex items-center gap-2
+                    ${isDark ? 'bg-red-500/10 border-red-500/30' : 'bg-red-50 border-red-200'}
+                `}
+                animate={{ opacity: [0.5, 1, 0.5] }}
+                transition={{ duration: 2, repeat: Infinity }}
             >
-                <BookOpen size={40} strokeWidth={1.5} />
+                <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+                <span className={`text-[10px] font-bold uppercase tracking-wider ${isDark ? 'text-red-400' : 'text-red-500'}`}>Live Session</span>
             </motion.div>
         </div>
     );

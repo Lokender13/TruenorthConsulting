@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Instagram, Linkedin } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram, Linkedin, Facebook } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 import logo from '../assets/logo.png';
 
@@ -26,6 +26,7 @@ const Footer = () => {
     const socialLinks = [
         { icon: Linkedin, href: "https://linkedin.com/in/surabhi-rawat", label: "LinkedIn" },
         { icon: Instagram, href: "https://instagram.com/surabhi_truenorth", label: "Instagram" },
+        { icon: Facebook, href: "https://www.facebook.com/SurabhiTrueNorth", label: "Facebook" },
     ];
 
     return (
