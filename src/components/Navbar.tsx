@@ -111,7 +111,7 @@ const Navbar = () => {
                                                             key={service.path}
                                                             to={service.path}
                                                             className={`
-                                                                block px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200
+                                                                block px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200
                                                                 relative overflow-hidden group/item flex items-center
                                                                 ${isDark
                                                                     ? 'text-zinc-400 hover:text-white hover:bg-white/5'
