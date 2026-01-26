@@ -137,7 +137,6 @@ const ServicePageLayout = ({ serviceId, children }: ServicePageLayoutProps) => {
                                     desc={service.fullDesc}
                                     serviceId={service.id}
                                     duration={service.duration}
-                                    pricing={service.pricing}
                                 />
                             </Section>
                         )}

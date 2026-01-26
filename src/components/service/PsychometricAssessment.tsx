@@ -159,7 +159,7 @@ const PsychometricAssessment = () => {
                     transition={{ duration: 0.8 }}
                 >
                     <div className={`p-1 rounded-full inline-block bg-gradient-to-r from-brand-orange to-brand-blue shadow-2xl`}>
-                        <a href="https://careertest.edumilestones.com/student-dashboard/suitability-registration/login/Mzk2Mw==/as13"
+                        <a href="https://surabhirawat.edumilestones.com/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className={`flex items-center gap-3 px-10 py-5 text-lg font-bold rounded-full transition-all duration-300 transform active:scale-95

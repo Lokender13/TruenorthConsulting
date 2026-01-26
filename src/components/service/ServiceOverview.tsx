@@ -1,17 +1,16 @@
 import { motion, type Variants } from 'framer-motion';
 import { useTheme } from '../../contexts/ThemeContext';
 import { serviceImages } from '../ui/ServiceImage';
-import { Clock, Sparkles, Quote } from 'lucide-react';
+import { Clock, Quote } from 'lucide-react';
 import TiltCard from '../ui/TiltCard';
 
 interface ServiceOverviewProps {
     desc: string;
     serviceId?: string;
     duration?: string;
-    pricing?: string;
 }
 
-const ServiceOverview = ({ desc, serviceId, duration, pricing }: ServiceOverviewProps) => {
+const ServiceOverview = ({ desc, serviceId, duration }: ServiceOverviewProps) => {
     const { theme } = useTheme();
     const isDark = theme === 'dark';
 
@@ -99,7 +98,7 @@ const ServiceOverview = ({ desc, serviceId, duration, pricing }: ServiceOverview
                             </div>
                         </TiltCard>
 
-                        {(duration || pricing) && (
+                        {duration && (
                             <div className={`p-5 rounded-2xl border backdrop-blur-xl space-y-4 transition-all duration-500
                                 ${isDark
                                     ? 'bg-zinc-900/60 border-white/10 shadow-lg'
@@ -115,23 +114,6 @@ const ServiceOverview = ({ desc, serviceId, duration, pricing }: ServiceOverview
                                         <p className={`text-sm md:text-base font-bold leading-tight ${isDark ? 'text-white' : 'text-zinc-900'}`}>{duration || "Flexible"}</p>
                                     </div>
                                 </div>
-
-                                {pricing && (
-                                    <>
-                                        <div className={`h-px w-full ${isDark ? 'bg-white/5' : 'bg-zinc-100'}`}></div>
-
-                                        <div className="flex items-center gap-4">
-                                            <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0
-                                                ${isDark ? 'bg-zinc-800 text-brand-blue' : 'bg-blue-50 text-brand-blue'}`}>
-                                                <Sparkles size={16} strokeWidth={2.5} />
-                                            </div>
-                                            <div>
-                                                <h4 className={`text-[10px] font-black uppercase tracking-widest ${isDark ? 'text-zinc-500' : 'text-zinc-400'}`}>Investment</h4>
-                                                <p className={`text-sm md:text-base font-bold leading-tight ${isDark ? 'text-white' : 'text-zinc-900'}`}>{pricing}</p>
-                                            </div>
-                                        </div>
-                                    </>
-                                )}
                             </div>
                         )}
                     </motion.div>

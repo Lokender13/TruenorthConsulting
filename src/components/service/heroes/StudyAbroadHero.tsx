@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import HeroLayout from './HeroLayout';
 import { Globe, Plane, Award, MapPin, GraduationCap } from 'lucide-react';
 import { useTheme } from '../../../contexts/ThemeContext';
-import { Link } from 'react-router-dom';
 
 const StudyAbroadHero = ({ service }: { service: any }) => {
     const { theme } = useTheme();
@@ -56,7 +55,12 @@ const StudyAbroadHero = ({ service }: { service: any }) => {
             {[
                 { icon: GraduationCap, label: "USA", x: -180, y: -100 },
                 { icon: MapPin, label: "UK", x: 180, y: -50 },
-                { icon: Award, label: "EU", x: -120, y: 150 }
+                { icon: Award, label: "EU", x: -120, y: 150 },
+                { icon: GraduationCap, label: "India", x: 160, y: 120 },
+                { icon: MapPin, label: "Australia", x: -200, y: 20 },
+                { icon: Award, label: "Canada", x: 200, y: -150 },
+                { icon: GraduationCap, label: "Germany", x: 0, y: -180 },
+                { icon: MapPin, label: "Singapore", x: 0, y: 180 }
             ].map((item, i) => (
                 <motion.div
                     key={i}
@@ -65,7 +69,7 @@ const StudyAbroadHero = ({ service }: { service: any }) => {
                     `}
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1, x: item.x, y: item.y }}
-                    transition={{ delay: 0.8 + i * 0.2, duration: 1, type: "spring" }}
+                    transition={{ delay: 0.8 + i * 0.15, duration: 1, type: "spring" }}
                 >
                     <div className={`p-2 rounded-lg bg-brand-blue/10 text-brand-blue text-xs font-bold leading-none`}>
                         {item.label}
@@ -113,15 +117,17 @@ const StudyAbroadHero = ({ service }: { service: any }) => {
                 </p>
 
                 <div className="flex flex-wrap gap-6 items-center">
-                    <Link
-                        to="/contact"
+                    <a
+                        href="https://surabhirawat.edumilestones.com/abroad-studies/"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className={`px-10 py-5 rounded-full font-bold text-lg transition-all duration-300 transform active:scale-95 shadow-2xl flex items-center gap-3
                             ${isDark ? 'bg-white text-black hover:bg-white/90 shadow-white/5' : 'bg-brand-orange text-white hover:bg-brand-orange-dark shadow-brand-orange/20'}
                         `}
                     >
                         Secure Your Seat
                         <Plane size={20} className="rotate-45" />
-                    </Link>
+                    </a>
                     <div className="flex flex-col">
                         <span className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>99.5%</span>
                         <span className={`text-[10px] font-black uppercase tracking-widest ${isDark ? 'text-white/30' : 'text-gray-400'}`}>Visa Success</span>
