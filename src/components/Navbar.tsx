@@ -37,6 +37,7 @@ const Navbar = () => {
     const navLinks = [
         { name: "Home", path: "/" },
         { name: "Services", path: "/services", hasDropdown: true },
+        { name: "Career Library", path: "https://surabhirawat.edumilestones.com/global-career-library/", isExternal: true },
         { name: "About us", path: "/about" },
         { name: "Resources", path: "/resources" },
         { name: "Contact", path: "/contact" },
@@ -130,20 +131,39 @@ const Navbar = () => {
                                         </AnimatePresence>
                                     </div>
                                 ) : (
-                                    <Link
-                                        to={link.path}
-                                        className={`
+                                    link.isExternal ? (
+                                        <a
+                                            href={link.path}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={`
                                             px-6 py-2.5 rounded-full text-[10px] font-black tracking-[0.2em] uppercase transition-all duration-500
                                             ${isDark
-                                                ? 'text-zinc-400 hover:text-white hover:bg-white/5'
-                                                : scrolled
-                                                    ? 'text-zinc-500 hover:text-zinc-900 hover:bg-zinc-50'
-                                                    : 'text-zinc-900 hover:bg-white/10'
-                                            }
+                                                    ? 'text-zinc-400 hover:text-white hover:bg-white/5'
+                                                    : scrolled
+                                                        ? 'text-zinc-500 hover:text-zinc-900 hover:bg-zinc-50'
+                                                        : 'text-zinc-900 hover:bg-white/10'
+                                                }
                                         `}
-                                    >
-                                        {link.name}
-                                    </Link>
+                                        >
+                                            {link.name}
+                                        </a>
+                                    ) : (
+                                        <Link
+                                            to={link.path}
+                                            className={`
+                                            px-6 py-2.5 rounded-full text-[10px] font-black tracking-[0.2em] uppercase transition-all duration-500
+                                            ${isDark
+                                                    ? 'text-zinc-400 hover:text-white hover:bg-white/5'
+                                                    : scrolled
+                                                        ? 'text-zinc-500 hover:text-zinc-900 hover:bg-zinc-50'
+                                                        : 'text-zinc-900 hover:bg-white/10'
+                                                }
+                                        `}
+                                        >
+                                            {link.name}
+                                        </Link>
+                                    )
                                 )}
                             </div>
                         ))}
@@ -239,20 +259,39 @@ const Navbar = () => {
                     >
                         <div className="p-6 space-y-4">
                             {navLinks.map((link) => (
-                                <Link
-                                    key={link.name}
-                                    to={link.path}
-                                    className={`
-                                        block px-6 py-4 rounded-2xl text-lg font-medium transition-all duration-300
-                                        ${isDark
-                                            ? 'text-white/70 hover:text-white hover:bg-white/10'
-                                            : 'text-zinc-600 hover:text-zinc-900 hover:bg-zinc-50'
-                                        }
-                                    `}
-                                    onClick={() => setIsOpen(false)}
-                                >
-                                    {link.name}
-                                </Link>
+                                link.isExternal ? (
+                                    <a
+                                        key={link.name}
+                                        href={link.path}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={`
+                                            block px-6 py-4 rounded-2xl text-lg font-medium transition-all duration-300
+                                            ${isDark
+                                                ? 'text-white/70 hover:text-white hover:bg-white/10'
+                                                : 'text-zinc-600 hover:text-zinc-900 hover:bg-zinc-50'
+                                            }
+                                        `}
+                                        onClick={() => setIsOpen(false)}
+                                    >
+                                        {link.name}
+                                    </a>
+                                ) : (
+                                    <Link
+                                        key={link.name}
+                                        to={link.path}
+                                        className={`
+                                            block px-6 py-4 rounded-2xl text-lg font-medium transition-all duration-300
+                                            ${isDark
+                                                ? 'text-white/70 hover:text-white hover:bg-white/10'
+                                                : 'text-zinc-600 hover:text-zinc-900 hover:bg-zinc-50'
+                                            }
+                                        `}
+                                        onClick={() => setIsOpen(false)}
+                                    >
+                                        {link.name}
+                                    </Link>
+                                )
                             ))}
                             <div className="pt-4 mt-4 border-t border-dashed border-zinc-500/20">
                                 <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
