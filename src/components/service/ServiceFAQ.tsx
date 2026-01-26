@@ -28,7 +28,7 @@ const FAQCard = ({ item, isDark, isOpen, onToggle }: { item: FAQItem, isDark: bo
             >
                 <div className="flex-grow">
                     <h3 className={`text-xl md:text-2xl font-serif font-medium tracking-tight transition-colors duration-300 ${isDark ? (isOpen ? 'text-white' : 'text-zinc-400 group-hover:text-white') : (isOpen ? 'text-zinc-900' : 'text-zinc-600 group-hover:text-zinc-900')}`}>
-                        <span className={`inline-block w-8 mr-4 text-sm font-sans font-bold uppercase tracking-widest ${isDark ? 'text-brand-orange' : 'text-brand-orange'}`}>
+                        <span className={`inline-block w-10 mr-2 text-xl md:text-2xl font-sans font-black uppercase tracking-widest ${isDark ? 'text-brand-orange' : 'text-brand-orange'}`}>
                             Q.
                         </span>
                         {item.question}
