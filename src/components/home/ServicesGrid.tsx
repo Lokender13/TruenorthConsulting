@@ -145,12 +145,12 @@ const ServicesGrid = () => {
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1, duration: 0.8 }}
                         >
-                            <Link to={`/services/${service.slug}`} className="group h-full block">
+                            <Link to={`/services/${service.slug}`} aria-label={`Explore our ${service.title} services`} className="group h-full block">
                                 <div
                                     className={`
                                         h-full rounded-3xl overflow-hidden transition-all duration-500 border
                                         ${isDark
-                                            ? `bg-zinc-950 border-white/20 shadow-lg shadow-black/50 hover:border-brand-orange/30 hover:shadow-2xl hover:shadow-brand-orange/10`
+                                            ? `bg-zinc-950 border-white/10 shadow-lg shadow-black/50 hover:border-brand-orange/30 hover:shadow-2xl hover:shadow-brand-orange/10`
                                             : `bg-white border-zinc-200 shadow-md hover:border-zinc-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)]`
                                         }
                                     `}
@@ -161,6 +161,9 @@ const ServicesGrid = () => {
                                             <motion.img
                                                 src={service.image}
                                                 alt={service.title}
+                                                width="800"
+                                                height="600"
+                                                loading="lazy"
                                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                                 onError={handleImageError}
                                             />
@@ -184,7 +187,7 @@ const ServicesGrid = () => {
                                             </p>
 
                                             <div className={`
-                                                flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] uppercase
+                                                flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase
                                                 ${isDark ? 'text-brand-orange' : 'text-brand-orange'}
                                                 transition-all duration-300
                                             `}>

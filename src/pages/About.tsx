@@ -151,8 +151,11 @@ const About = () => {
                         >
                             <div className={`relative overflow-hidden rounded-[3rem] aspect-[4/3] shadow-2xl ${isDark ? 'shadow-black/50 border border-white/5' : 'border border-white shadow-brand-blue/10'}`}>
                                 <img
-                                    src="https://images.unsplash.com/photo-1582672060674-bc2bd808a8b5?auto=format&fit=crop&w=800&q=80"
+                                    src="https://images.unsplash.com/photo-1582672060674-bc2bd808a8b5?auto=format&fit=crop&q=75&w=1200&fm=webp"
                                     alt="Dubai Skyline Premium view"
+                                    width="1200"
+                                    height="900"
+                                    loading="lazy"
                                     className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
                                 />
                                 <div className={`absolute inset-0 ${isDark ? 'bg-gradient-to-t from-black/60 via-transparent' : 'bg-gradient-to-t from-zinc-900/20 via-transparent'}`}></div>
@@ -311,6 +314,8 @@ const About = () => {
                                         <img
                                             src="/assets/surabhi-rawat.jpg"
                                             alt="Surabhi Rawat - Founder of TrueNorth Consulting"
+                                            width="800"
+                                            height="1000"
                                             className="w-full aspect-[4/5] object-cover transition-transform duration-1000 group-hover:scale-105"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>

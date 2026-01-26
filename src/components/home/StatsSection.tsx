@@ -19,8 +19,11 @@ const StatsSection = () => {
             {/* Background Image - Global Network */}
             <div className="absolute inset-0 z-0">
                 <img
-                    src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80"
+                    src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=75&w=1200&fm=webp"
                     alt="Global Network"
+                    width="1200"
+                    height="600"
+                    loading="lazy"
                     className={`w-full h-full object-cover transition-opacity duration-1000 ${isDark ? 'opacity-[0.05]' : 'opacity-[0.03]'}`}
                 />
             </div>

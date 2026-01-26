@@ -42,8 +42,11 @@ const AboutSection = () => {
                                 tiltIntensity={5}
                             >
                                 <img
-                                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+                                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=75&w=1200&fm=webp"
                                     alt="TrueNorth Consultancy Team"
+                                    width="1200"
+                                    height="800"
+                                    loading="lazy"
                                     className="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover transition-transform duration-1000 hover:scale-110"
                                 />
                                 <div className={`absolute inset-0 bg-gradient-to-t ${isDark ? 'from-black/60 via-transparent' : 'from-black/20 via-transparent'} to-transparent`}></div>

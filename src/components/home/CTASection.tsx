@@ -12,8 +12,11 @@ const CTASection = () => {
             {/* Background Image - Mountains/Horizon */}
             <div className="absolute inset-0 z-0">
                 <img
-                    src="https://images.unsplash.com/photo-1519681393798-38e43269d8f6?auto=format&fit=crop&q=80"
+                    src="https://images.unsplash.com/photo-1519681393798-38e43269d8f6?auto=format&fit=crop&q=75&w=1200&fm=webp"
                     alt="Horizon"
+                    width="1200"
+                    height="800"
+                    loading="lazy"
                     className={`w-full h-full object-cover transition-opacity duration-1000 ${isDark ? 'opacity-[0.05]' : 'opacity-[0.08]'}`}
                 />
                 <div className={`absolute inset-0 bg-gradient-to-t from-${isDark ? 'zinc-950' : 'zinc-100'} via-transparent to-transparent`}></div>
@@ -34,7 +37,7 @@ const CTASection = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 1 }}
                 >
-                    <span className="text-[10px] font-black tracking-[0.5em] uppercase text-brand-orange mb-8 block">Start Your Legacy</span>
+                    <span className="text-[11px] font-black tracking-[0.5em] uppercase text-brand-orange mb-8 block">Start Your Legacy</span>
 
                     <h2 className={`text-4xl md:text-6xl font-serif font-bold mb-8 leading-[0.9] tracking-tighter ${isDark ? 'text-white' : 'text-zinc-900'}`}>
                         Ready to Find Your <br />
@@ -51,7 +54,7 @@ const CTASection = () => {
                         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                             <Link
                                 to="/contact"
-                                className={`group inline-flex items-center gap-4 px-12 py-6 rounded-full font-black text-[10px] tracking-[0.2em] uppercase transition-all duration-300
+                                className={`group inline-flex items-center gap-4 px-12 py-6 rounded-full font-black text-[11px] tracking-[0.2em] uppercase transition-all duration-300
                                     ${isDark
                                         ? 'bg-white text-zinc-950 hover:shadow-[0_15px_40px_rgba(255,255,255,0.2)]'
                                         : 'bg-zinc-900 text-white hover:shadow-[0_15px_40px_rgba(0,0,0,0.2)]'}`}
@@ -63,7 +66,8 @@ const CTASection = () => {
                         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                             <Link
                                 to="/about"
-                                className={`inline-flex items-center gap-4 px-12 py-6 rounded-full font-black text-[10px] tracking-[0.2em] uppercase transition-all duration-300 border
+                                aria-label="Learn more about TrueNorth Consulting"
+                                className={`inline-flex items-center gap-4 px-12 py-6 rounded-full font-black text-[11px] tracking-[0.2em] uppercase transition-all duration-300 border
                                     ${isDark
                                         ? 'border-white/10 text-white hover:bg-white/5'
                                         : 'border-zinc-200 text-zinc-900 hover:bg-zinc-50 shadow-sm'}`}

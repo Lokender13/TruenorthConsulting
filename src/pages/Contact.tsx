@@ -30,8 +30,9 @@ const FAQItem = ({ question, answer, isOpen, onClick, isDark }: { question: stri
         >
             <button
                 onClick={onClick}
-                className="w-full py-6 flex items-center justify-between text-left group"
                 aria-expanded={isOpen}
+                aria-label={isOpen ? "Collapse question" : "Expand question"}
+                className="w-full py-6 flex items-center justify-between text-left group"
             >
                 <span className={`text-lg font-medium pr-8 transition-colors ${isOpen ? 'text-brand-orange' : (isDark ? 'text-white' : 'text-gray-900')}`}>
                     {question}

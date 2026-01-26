@@ -24,6 +24,8 @@ const FAQCard = ({ item, isDark, isOpen, onToggle }: { item: FAQItem, isDark: bo
             <motion.button
                 layout
                 onClick={onToggle}
+                aria-expanded={isOpen}
+                aria-label={isOpen ? "Collapse question" : "Expand question"}
                 className="w-full py-8 text-left flex justify-between items-start gap-8"
             >
                 <div className="flex-grow">

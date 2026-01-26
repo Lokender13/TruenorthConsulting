@@ -23,7 +23,7 @@ const services = [
         icon: Target,
         path: "/services/career-counselling-dubai",
         color: 'blue' as const,
-        image: "https://images.unsplash.com/photo-1544531586-fde5298cdd40?q=80&w=800&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1544531586-fde5298cdd40?q=75&w=800&fm=webp&auto=format&fit=crop"
     },
     {
         title: "Study Abroad",
@@ -31,7 +31,7 @@ const services = [
         icon: Globe,
         path: "/services/study-abroad-consultants-dubai",
         color: 'orange' as const,
-        image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=75&w=800&fm=webp&auto=format&fit=crop"
     },
     {
         title: "Academic Support",
@@ -39,7 +39,7 @@ const services = [
         icon: BookOpen,
         path: "/services/online-tutoring-academic-support",
         color: 'emerald' as const,
-        image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=75&w=800&fm=webp&auto=format&fit=crop"
     },
     {
         title: "Competitive Exams",
@@ -47,7 +47,7 @@ const services = [
         icon: GraduationCap,
         path: "/services/profile-building-career-booster",
         color: 'purple' as const,
-        image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=75&w=800&fm=webp&auto=format&fit=crop"
     },
     {
         title: "School Partnerships",
@@ -55,7 +55,7 @@ const services = [
         icon: Building2,
         path: "/services/school-career-guidance-programs",
         color: 'pink' as const,
-        image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=75&w=800&fm=webp&auto=format&fit=crop"
     },
     {
         title: "Career Labs",
@@ -63,7 +63,7 @@ const services = [
         icon: Laptop,
         path: "/services/career-lab-setup-schools",
         color: 'slate' as const,
-        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=75&w=800&fm=webp&auto=format&fit=crop"
     },
     {
         title: "Digital Solutions",
@@ -71,7 +71,7 @@ const services = [
         icon: Laptop,
         path: "/services/education-digital-marketing",
         color: 'cyan' as const,
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=75&w=800&fm=webp&auto=format&fit=crop"
     }
 ];
 
@@ -149,8 +149,10 @@ const Services = () => {
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0">
                     <img
-                        src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80"
+                        src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=75&w=1200&fm=webp"
                         alt="Services"
+                        width="1200"
+                        height="600"
                         className={`w-full h-full object-cover transition-opacity duration-1000 ${isDark ? 'opacity-[0.1]' : 'opacity-[0.05]'}`}
                     />
                     <div className={`absolute inset-0 bg-gradient-to-t from-${isDark ? 'black' : 'zinc-100'} via-transparent to-transparent`}></div>
@@ -235,6 +237,8 @@ const Services = () => {
                                                 <motion.img
                                                     src={service.image}
                                                     alt={service.title}
+                                                    width="800"
+                                                    height="600"
                                                     className="w-full h-full object-cover"
                                                     whileHover={{ scale: 1.1 }}
                                                     transition={{ duration: 0.7 }}

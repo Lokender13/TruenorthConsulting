@@ -62,15 +62,18 @@ const RecentArticles = () => {
                                     {/* Image */}
                                     <div className="relative h-56 overflow-hidden">
                                         <img
-                                            src={post.image}
+                                            src={`${post.image}&q=75&w=800&fm=webp`}
                                             alt={post.title}
+                                            width="800"
+                                            height="600"
+                                            loading="lazy"
                                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                             onError={(e) => {
-                                                e.currentTarget.src = "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80";
+                                                e.currentTarget.src = "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=75&w=800&fm=webp";
                                             }}
                                         />
                                         <div className="absolute top-4 left-4">
-                                            <span className="bg-white/90 backdrop-blur text-zinc-900 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                                            <span className="bg-white/90 backdrop-blur text-zinc-900 text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
                                                 {post.category}
                                             </span>
                                         </div>

@@ -86,8 +86,11 @@ const Hero = () => {
                 {/* Background Image - Textured Overlay */}
                 <div className="absolute inset-0">
                     <img
-                        src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80"
+                        src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=75&w=1200&fm=webp"
                         alt="Background"
+                        width="1920"
+                        height="1080"
+                        fetchPriority="high"
                         className={`w-full h-full object-cover transition-opacity duration-1000 ${isDark ? 'opacity-[0.1]' : 'opacity-[0.15]'}`}
                     />
                 </div>

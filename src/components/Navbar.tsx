@@ -81,7 +81,7 @@ const Navbar = () => {
                                         <Link
                                             to={link.path}
                                             className={`
-                                                flex items-center gap-2 px-6 py-2.5 rounded-full text-[10px] font-black tracking-[0.2em] uppercase transition-all duration-500
+                                                flex items-center gap-2 px-6 py-2.5 rounded-full text-[11px] font-black tracking-[0.2em] uppercase transition-all duration-500
                                                 ${isDark
                                                     ? 'text-zinc-400 hover:text-white hover:bg-white/5'
                                                     : scrolled
@@ -137,7 +137,7 @@ const Navbar = () => {
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className={`
-                                            px-6 py-2.5 rounded-full text-[10px] font-black tracking-[0.2em] uppercase transition-all duration-500
+                                            px-6 py-2.5 rounded-full text-[11px] font-black tracking-[0.2em] uppercase transition-all duration-500
                                             ${isDark
                                                     ? 'text-zinc-400 hover:text-white hover:bg-white/5'
                                                     : scrolled
@@ -152,7 +152,7 @@ const Navbar = () => {
                                         <Link
                                             to={link.path}
                                             className={`
-                                            px-6 py-2.5 rounded-full text-[10px] font-black tracking-[0.2em] uppercase transition-all duration-500
+                                            px-6 py-2.5 rounded-full text-[11px] font-black tracking-[0.2em] uppercase transition-all duration-500
                                             ${isDark
                                                     ? 'text-zinc-400 hover:text-white hover:bg-white/5'
                                                     : scrolled
@@ -197,12 +197,13 @@ const Navbar = () => {
                         {/* Social Media Icons */}
                         <div className="flex items-center gap-2">
                             {[
-                                { icon: Linkedin, href: "https://www.linkedin.com/in/surabhi-rawat-truenorth/" }, // Assuming link structure, updated later if needed
-                                { icon: Instagram, href: "https://www.instagram.com/surabhi_truenorth/" }
+                                { icon: Linkedin, href: "https://www.linkedin.com/in/surabhi-rawat-truenorth/", label: "LinkedIn" },
+                                { icon: Instagram, href: "https://www.instagram.com/surabhi_truenorth/", label: "Instagram" }
                             ].map((social, index) => (
                                 <motion.a
                                     key={index}
                                     href={social.href}
+                                    aria-label={`Visit our ${social.label}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     whileHover={{ scale: 1.1 }}
@@ -225,6 +226,7 @@ const Navbar = () => {
                     <div className="lg:hidden flex items-center gap-3">
                         <motion.button
                             onClick={toggleTheme}
+                            aria-label="Toggle theme"
                             className={`p-2.5 rounded-xl backdrop-blur-md border ${isDark ? 'bg-white/5 border-white/10 text-white' : 'bg-white/60 border-black/5 text-black'
                                 }`}
                             whileTap={{ scale: 0.95 }}
@@ -298,7 +300,7 @@ const Navbar = () => {
                                     <Link
                                         to="/contact"
                                         className={`
-                                            block text-center px-8 py-5 rounded-2xl font-black text-[10px] tracking-[0.2em] uppercase transition-all duration-500
+                                            block text-center px-8 py-5 rounded-2xl font-black text-[11px] tracking-[0.2em] uppercase transition-all duration-500
                                             ${isDark
                                                 ? 'bg-white text-zinc-950'
                                                 : 'bg-zinc-950 text-white shadow-xl'

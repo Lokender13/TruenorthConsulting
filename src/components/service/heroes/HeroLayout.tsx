@@ -16,8 +16,10 @@ const HeroLayout = ({ children, visual, className = "" }: HeroLayoutProps) => {
             {/* Background Image & Overlay */}
             <div className="absolute inset-0 z-0 select-none">
                 <img
-                    src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=2670&auto=format&fit=crop" // Bright University/College - Consistent Image
+                    src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=75&w=1600&fm=webp&auto=format&fit=crop" // Bright University/College - Consistent Image
                     alt="Educational Background"
+                    width="1600"
+                    height="900"
                     className="w-full h-full object-cover transition-all duration-700 pointer-events-none"
                     style={{
                         opacity: isDark ? 0.5 : 0.8,

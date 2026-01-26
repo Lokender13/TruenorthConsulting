@@ -95,6 +95,11 @@
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
 
+  <!-- Preload Critical LCP Image -->
+  <link rel="preload" as="image"
+    href="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=75&w=1200&fm=webp"
+    fetchpriority="high" />
+
   <!-- Schema.org Organization Structured Data -->
   <script type="application/ld+json">
     {
