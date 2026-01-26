@@ -480,11 +480,6 @@ export const servicesData = [
             },
             {
                 step: "04",
-                title: "Training & Certification",
-                description: "We conduct an intensive training workshop for your designated teachers/counsellors to become Certified Career Analysts (CCA)."
-            },
-            {
-                step: "05",
                 title: "Launch & Handholding",
                 description: "We help you launch the lab with a student event. Our support team remains available 24/7 for any technical or functional queries."
             }
