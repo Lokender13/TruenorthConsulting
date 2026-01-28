@@ -19,21 +19,25 @@ export default async function handler(req, res) {
         return res.status(400).json({ message: 'Missing required fields' });
     }
 
-    // Robust SMTP Configuration for Hostinger
+    // Force values to string to prevent any environment injection issues
+    const SMTP_USER = String(process.env.EMAIL_USER || '').trim();
+    const SMTP_PASS = String(process.env.EMAIL_PASS || '').trim();
+
+    // Advanced SMTP Configuration for Hostinger/Vercel compatibility
     const transporter = nodemailer.createTransport({
         host: 'smtp.hostinger.com',
         port: 465,
         secure: true,
-        pool: true, // Reuse connection
         auth: {
-            user: process.env.EMAIL_USER,
-            pass: process.env.EMAIL_PASS
+            user: SMTP_USER,
+            pass: SMTP_PASS
         },
+        // Forced authentication method for Hostinger stability
+        authMethod: 'LOGIN',
         tls: {
-            // Do not fail on invalid certificates (Required for some hosting environments)
             rejectUnauthorized: false
         },
-        connectionTimeout: 10000, // 10 seconds
+        connectionTimeout: 10000,
     });
 
     const additionalData = Object.entries(rest)
@@ -41,7 +45,7 @@ export default async function handler(req, res) {
         .join('');
 
     const mailOptions = {
-        from: `"TrueNorth Website" <${process.env.EMAIL_USER}>`,
+        from: `"TrueNorth Website" <${SMTP_USER}>`,
         to: 'contact@truenorthae.com',
         replyTo: email,
         subject: `[${formType || 'New Inquiry'}] ${firstName || ''} ${lastName || ''}`,
@@ -102,10 +106,10 @@ export default async function handler(req, res) {
         await transporter.sendMail(mailOptions);
         return res.status(200).json({ success: true, message: 'Email sent successfully' });
     } catch (error) {
-        console.error('Nodemailer SMTP Error:', error);
+        console.error('Nodemailer SMTP Error (Refined):', error);
         return res.status(500).json({
             success: false,
-            message: 'Failed to send email. Ensure environment variables are active on Vercel.',
+            message: 'Authentication failed. Please check Hostinger Security/SMTP settings.',
             error: error.message
         });
     }
