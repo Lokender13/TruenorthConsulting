@@ -15,31 +15,31 @@ export default async function handler(req, res) {
         ...rest
     } = req.body;
 
-    // Validate basic fields
     if (!email || !firstName) {
         return res.status(400).json({ message: 'Missing required fields' });
     }
 
-    // Configure the transporter for Hostinger SMTP
-    // Settings for Hostinger:
-    // Host: smtp.hostinger.com
-    // Port: 465 (SSL)
+    // Robust SMTP Configuration for Hostinger
     const transporter = nodemailer.createTransport({
-        host: process.env.EMAIL_HOST || 'smtp.hostinger.com',
-        port: parseInt(process.env.EMAIL_PORT || '465'),
-        secure: true, // Use SSL for port 465
+        host: 'smtp.hostinger.com',
+        port: 465,
+        secure: true,
+        pool: true, // Reuse connection
         auth: {
-            user: process.env.EMAIL_USER, // e.g. contact@truenorthae.com
-            pass: process.env.EMAIL_PASS  // Your Hostinger email password
-        }
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS
+        },
+        tls: {
+            // Do not fail on invalid certificates (Required for some hosting environments)
+            rejectUnauthorized: false
+        },
+        connectionTimeout: 10000, // 10 seconds
     });
 
-    // Formatting any additional data passed in the body
     const additionalData = Object.entries(rest)
         .map(([key, value]) => `<tr><td style="padding: 10px; font-weight: bold; border: 1px solid #e4e4e7;">${key}:</td><td style="padding: 10px; border: 1px solid #e4e4e7;">${value}</td></tr>`)
         .join('');
 
-    // Email content construction
     const mailOptions = {
         from: `"TrueNorth Website" <${process.env.EMAIL_USER}>`,
         to: 'contact@truenorthae.com',
@@ -102,10 +102,10 @@ export default async function handler(req, res) {
         await transporter.sendMail(mailOptions);
         return res.status(200).json({ success: true, message: 'Email sent successfully' });
     } catch (error) {
-        console.error('Nodemailer Error:', error);
+        console.error('Nodemailer SMTP Error:', error);
         return res.status(500).json({
             success: false,
-            message: 'Failed to send email. Check SMTP settings.',
+            message: 'Failed to send email. Ensure environment variables are active on Vercel.',
             error: error.message
         });
     }
