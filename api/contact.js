@@ -11,8 +11,8 @@ export default async function handler(req, res) {
         return res.status(400).json({ message: 'Missing required fields' });
     }
 
-    // Using Primary Account for Authentication (Aliases don't work for SMTP login)
-    const AUTH_USER = String(process.env.EMAIL_USER || 'surbhi@truenorthae.com').trim();
+    // Corrected Spelling to surabhi@truenorthae.com
+    const AUTH_USER = String(process.env.EMAIL_USER || 'surabhi@truenorthae.com').trim();
     const AUTH_PASS = String(process.env.EMAIL_PASS || '').trim();
 
     const transporter = nodemailer.createTransport({
@@ -30,7 +30,7 @@ export default async function handler(req, res) {
 
     const mailOptions = {
         from: `"TrueNorth Website" <${AUTH_USER}>`,
-        to: 'surbhi@truenorthae.com', // Sending to primary inbox
+        to: 'surabhi@truenorthae.com',
         replyTo: email,
         subject: `[${formType || 'Inquiry'}] ${firstName} ${lastName || ''}`,
         html: `
@@ -57,10 +57,10 @@ export default async function handler(req, res) {
         await transporter.sendMail(mailOptions);
         return res.status(200).json({ success: true, message: 'Form submitted successfully' });
     } catch (error) {
-        console.error('SMTP Error (Auth User):', error.message);
+        console.error('SMTP Error (Surabhi Account):', error.message);
         return res.status(500).json({
             success: false,
-            message: 'Authentication failed. Please use primary account credentials (not alias).',
+            message: 'Authentication failed. Please verify surabhi@truenorthae.com credentials.',
             error: error.message
         });
     }
