@@ -1,74 +1,79 @@
-
+import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Home from './pages/Home';
-import Services from './pages/Services';
-import About from './pages/About';
-import Contact from './pages/Contact';
-
-// Individual Service Pages
-import CareerCounselling from './pages/services/CareerCounselling';
-import StudyAbroad from './pages/services/StudyAbroad';
-import AcademicSupport from './pages/services/AcademicSupport';
-import CompetitiveExams from './pages/services/CompetitiveExams';
-import SchoolPartnerships from './pages/services/SchoolPartnerships';
-import CareerLab from './pages/services/CareerLab';
-import DigitalSolutions from './pages/services/DigitalSolutions';
-import Resources from './pages/Resources';
-import BlogPost from './pages/BlogPost';
-import PrivacyPolicy from './pages/legal/PrivacyPolicy';
-import TermsConditions from './pages/legal/TermsConditions';
-import RefundPolicy from './pages/legal/RefundPolicy';
-import Disclaimer from './pages/legal/Disclaimer';
 import SmoothScroll from './components/SmoothScroll';
 import ScrollToTop from './components/ScrollToTop';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 
-// Animated Routes wrapper
+// Lazy load all page components
+const Home = lazy(() => import('./pages/Home'));
+const Services = lazy(() => import('./pages/Services'));
+const About = lazy(() => import('./pages/About'));
+const Contact = lazy(() => import('./pages/Contact'));
+const CareerCounselling = lazy(() => import('./pages/services/CareerCounselling'));
+const StudyAbroad = lazy(() => import('./pages/services/StudyAbroad'));
+const AcademicSupport = lazy(() => import('./pages/services/AcademicSupport'));
+const CompetitiveExams = lazy(() => import('./pages/services/CompetitiveExams'));
+const SchoolPartnerships = lazy(() => import('./pages/services/SchoolPartnerships'));
+const CareerLab = lazy(() => import('./pages/services/CareerLab'));
+const DigitalSolutions = lazy(() => import('./pages/services/DigitalSolutions'));
+const Resources = lazy(() => import('./pages/Resources'));
+const BlogPost = lazy(() => import('./pages/BlogPost'));
+const PrivacyPolicy = lazy(() => import('./pages/legal/PrivacyPolicy'));
+const TermsConditions = lazy(() => import('./pages/legal/TermsConditions'));
+const RefundPolicy = lazy(() => import('./pages/legal/RefundPolicy'));
+const Disclaimer = lazy(() => import('./pages/legal/Disclaimer'));
+
+// Loading component
+const PageLoader = () => (
+  <div className="min-h-[60vh] flex items-center justify-center">
+    <div className="w-12 h-12 border-4 border-brand-orange border-t-transparent rounded-full animate-spin" />
+  </div>
+);
+
 const AnimatedRoutes = () => {
   const location = useLocation();
 
   return (
     <AnimatePresence mode="wait">
-      <motion.div
-        key={location.pathname}
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -10 }}
-        transition={{ duration: 0.2, ease: 'easeOut' }}
-      >
-        <Routes location={location}>
-          <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
+      <Suspense fallback={<PageLoader />}>
+        <motion.div
+          key={location.pathname}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.2, ease: 'easeOut' }}
+        >
+          <Routes location={location}>
+            <Route path="/" element={<Home />} />
+            <Route path="/services" element={<Services />} />
 
-          {/* Separate routes for each service */}
-          <Route path="/services/career-counselling-dubai" element={<CareerCounselling />} />
-          <Route path="/services/study-abroad-consultants-dubai" element={<StudyAbroad />} />
-          <Route path="/services/online-tutoring-academic-support" element={<AcademicSupport />} />
-          <Route path="/services/profile-building-career-booster" element={<CompetitiveExams />} />
-          <Route path="/services/school-career-guidance-programs" element={<SchoolPartnerships />} />
-          <Route path="/services/career-lab-setup-schools" element={<CareerLab />} />
-          <Route path="/services/education-digital-marketing" element={<DigitalSolutions />} />
+            <Route path="/services/career-counselling-dubai" element={<CareerCounselling />} />
+            <Route path="/services/study-abroad-consultants-dubai" element={<StudyAbroad />} />
+            <Route path="/services/online-tutoring-academic-support" element={<AcademicSupport />} />
+            <Route path="/services/profile-building-career-booster" element={<CompetitiveExams />} />
+            <Route path="/services/school-career-guidance-programs" element={<SchoolPartnerships />} />
+            <Route path="/services/career-lab-setup-schools" element={<CareerLab />} />
+            <Route path="/services/education-digital-marketing" element={<DigitalSolutions />} />
 
+            <Route path="/about" element={<About />} />
+            <Route path="/resources" element={<Resources />} />
+            <Route path="/resources/:slug" element={<BlogPost />} />
+            <Route path="/contact" element={<Contact />} />
 
-          <Route path="/about" element={<About />} />
-          <Route path="/resources" element={<Resources />} />
-          <Route path="/resources/:slug" element={<BlogPost />} />
-          <Route path="/contact" element={<Contact />} />
-
-          {/* Legal Pages */}
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms-of-service" element={<TermsConditions />} />
-          <Route path="/refund-policy" element={<RefundPolicy />} />
-          <Route path="/disclaimer" element={<Disclaimer />} />
-        </Routes>
-      </motion.div>
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsConditions />} />
+            <Route path="/refund-policy" element={<RefundPolicy />} />
+            <Route path="/disclaimer" element={<Disclaimer />} />
+          </Routes>
+        </motion.div>
+      </Suspense>
     </AnimatePresence>
   );
 };
-// Force rebuild for new routing structure
+
 function App() {
   return (
     <Router>

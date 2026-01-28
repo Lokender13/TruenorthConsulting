@@ -6,27 +6,19 @@ export default defineConfig({
   plugins: [
     react(),
   ],
-  // Advanced build configuration for SEO
   build: {
-    // Generate sourcemaps for debugging (disabled in prod for smaller bundle)
     sourcemap: false,
-    // Rollup options for code splitting
     rollupOptions: {
       output: {
-        // Manual chunks for better caching and faster loading
-        manualChunks: {
-          // Core React libraries
-          'vendor-react': ['react', 'react-dom'],
-          // Router
-          'vendor-router': ['react-router-dom'],
-          // Animation libraries
-          'vendor-animation': ['framer-motion'],
-          // 3D libraries (lazy loaded)
-
-          // Utility libraries
-          'vendor-utils': ['clsx', 'tailwind-merge', 'class-variance-authority'],
+        manualChunks(id) {
+          // Put all node_modules into a vendor chunk, but separate big ones
+          if (id.includes('node_modules')) {
+            if (id.includes('framer-motion')) return 'vendor-animation';
+            if (id.includes('lucide-react')) return 'vendor-icons';
+            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) return 'vendor-core';
+            return 'vendor-others';
+          }
         },
-        // Asset file naming for better caching
         assetFileNames: (assetInfo) => {
           const extType = assetInfo.name?.split('.').pop() || '';
           if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
@@ -41,27 +33,20 @@ export default defineConfig({
         entryFileNames: 'assets/js/[name]-[hash].js',
       },
     },
-    // Target modern browsers for smaller bundle
     target: ['es2020', 'edge88', 'firefox78', 'chrome87', 'safari14'],
-    // Minify for production (using default esbuild which is faster and built-in)
     minify: 'esbuild',
-    // CSS code splitting
     cssCodeSplit: true,
-    // Chunk size warning limit
-    chunkSizeWarningLimit: 500,
+    chunkSizeWarningLimit: 600,
+    // Reduce report size
+    reportCompressedSize: false,
   },
-  // SSR configuration (for future SSR if needed)
   ssr: {
     noExternal: ['react-helmet-async'],
   },
-  // Preview server config
   preview: {
     port: 4173,
-    // host: true, // Removed to hide network URL
   },
-  // Dev server config
   server: {
     port: 5173,
-    // host: true, // Removed to hide network URL
   },
 })
