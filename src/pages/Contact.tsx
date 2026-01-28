@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { Phone, MessageSquare, Clock, ArrowRight, Plus, Minus } from 'lucide-react';
+import { Phone, MessageSquare, Clock, ArrowRight, Plus, Minus, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 import SEO from '../components/SEO';
 import { useTheme } from '../contexts/ThemeContext';
@@ -69,11 +69,12 @@ const Contact = () => {
         lastName: '',
         email: '',
         phone: '',
+        service: 'Career Counselling',
         requirements: ''
     });
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
     };
@@ -86,12 +87,16 @@ const Contact = () => {
             const response = await fetch('/api/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ ...formData, formType: 'Contact Page' })
+                body: JSON.stringify({
+                    ...formData,
+                    formType: 'Contact Page Inquiry',
+                    interest: formData.service
+                })
             });
 
             if (response.ok) {
                 setStatus('success');
-                setFormData({ firstName: '', lastName: '', email: '', phone: '', requirements: '' });
+                setFormData({ firstName: '', lastName: '', email: '', phone: '', service: 'Career Counselling', requirements: '' });
                 setTimeout(() => setStatus('idle'), 5000);
             } else {
                 throw new Error('Failed to send');
@@ -253,16 +258,36 @@ const Contact = () => {
                                             />
                                         </div>
                                         <div className="group relative">
-                                            <label className={`block text-[10px] font-black uppercase tracking-[0.2em] mb-3 transition-colors ${isDark ? 'text-zinc-600 group-focus-within:text-brand-orange' : 'text-zinc-400 group-focus-within:text-brand-orange'}`}>Phone Number</label>
-                                            <input
-                                                type="tel"
-                                                name="phone"
-                                                value={formData.phone}
+                                            <label className={`block text-[10px] font-black uppercase tracking-[0.2em] mb-3 transition-colors ${isDark ? 'text-zinc-600 group-focus-within:text-brand-orange' : 'text-zinc-400 group-focus-within:text-brand-orange'}`}>Service Interest</label>
+                                            <select
+                                                name="service"
+                                                value={formData.service}
                                                 onChange={handleInputChange}
-                                                className={`w-full bg-transparent border-b-2 py-4 outline-none transition-all font-serif font-bold text-xl ${isDark ? 'border-white/5 text-white focus:border-brand-orange placeholder:text-zinc-800' : 'border-zinc-100 text-zinc-900 focus:border-brand-orange'}`}
-                                                placeholder="+971 50..."
-                                            />
+                                                className={`w-full bg-transparent border-b-2 py-4 outline-none transition-all font-serif font-bold text-xl appearance-none cursor-pointer ${isDark ? 'border-white/5 text-white focus:border-brand-orange' : 'border-zinc-100 text-zinc-900 focus:border-brand-orange'}`}
+                                            >
+                                                <option value="Career Counselling" className={isDark ? 'bg-zinc-900' : 'bg-white'}>Career Counselling</option>
+                                                <option value="Study Abroad" className={isDark ? 'bg-zinc-900' : 'bg-white'}>Study Abroad</option>
+                                                <option value="Academic Support" className={isDark ? 'bg-zinc-900' : 'bg-white'}>Academic Support</option>
+                                                <option value="Profile Building" className={isDark ? 'bg-zinc-900' : 'bg-white'}>Profile Building</option>
+                                                <option value="School Partnerships" className={isDark ? 'bg-zinc-900' : 'bg-white'}>School Partnerships</option>
+                                                <option value="Other" className={isDark ? 'bg-zinc-900' : 'bg-white'}>Other Inquiry</option>
+                                            </select>
+                                            <div className="absolute right-0 bottom-6 pointer-events-none opacity-50">
+                                                <ChevronDown size={20} />
+                                            </div>
                                         </div>
+                                    </div>
+
+                                    <div className="group relative">
+                                        <label className={`block text-[10px] font-black uppercase tracking-[0.2em] mb-3 transition-colors ${isDark ? 'text-zinc-600 group-focus-within:text-brand-orange' : 'text-zinc-400 group-focus-within:text-brand-orange'}`}>Phone Number (Optional)</label>
+                                        <input
+                                            type="tel"
+                                            name="phone"
+                                            value={formData.phone}
+                                            onChange={handleInputChange}
+                                            className={`w-full bg-transparent border-b-2 py-4 outline-none transition-all font-serif font-bold text-xl ${isDark ? 'border-white/5 text-white focus:border-brand-orange placeholder:text-zinc-800' : 'border-zinc-100 text-zinc-900 focus:border-brand-orange'}`}
+                                            placeholder="+971 50..."
+                                        />
                                     </div>
 
                                     <div className="group relative">

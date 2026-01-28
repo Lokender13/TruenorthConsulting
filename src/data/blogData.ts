@@ -276,9 +276,9 @@ export const blogData: BlogPost[] = [
         seoTitle: "Profile Building for Ivy League & Oxbridge | Admissions Strategy",
         seoDescription: "How to get into Harvard, Oxford, or Stanford? It's not just about marks. Learn the art of Profile Building: Research, Leadership, & Impact.",
         content: `
-            <p class="lead text-xl text-gray-600 mb-8">Harvard acceptance rate: 3.4%. Oxford acceptance rate: 13%. In a pool of straight-A students from Dubai and India, how do you stand out? The answer lies in your <strong>Profile</strong>.</p>
+            <p class="lead text-xl mb-8">Harvard acceptance rate: 3.4%. Oxford acceptance rate: 13%. In a pool of straight-A students from Dubai and India, how do you stand out? The answer lies in your <strong>Profile</strong>.</p>
 
-            <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">1. The Holistic Review Process</h2>
+            <h2 class="text-3xl font-bold mt-12 mb-6">1. The Holistic Review Process</h2>
             <p>US universities review applications "holistically." They want to know:</p>
             <ul class="list-disc pl-6 space-y-4 mb-8">
                 <li>Who are you outside the classroom?</li>
@@ -286,9 +286,9 @@ export const blogData: BlogPost[] = [
                 <li>What is your intellectual curiosity?</li>
             </ul>
 
-            <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">2. The "Spike" Approach</h2>
+            <h2 class="text-3xl font-bold mt-12 mb-6">2. The "Spike" Approach</h2>
             <p>Don't be a jack-of-all-trades. Be a master of ONE. Top colleges look for a "spike"—deep excellence in a specific area.</p>
-            <div class="bg-gray-100 p-6 rounded-lg my-6">
+            <div class="bg-zinc-100 dark:bg-zinc-800/50 p-6 rounded-lg my-6">
                 <p><strong>Example:</strong> Instead of joining 10 random clubs, a student interested in Environmental Science should:</p>
                 <ul class="list-decimal pl-6 mt-2 space-y-2">
                     <li>Publish a research paper on local water conservation.</li>
@@ -297,10 +297,10 @@ export const blogData: BlogPost[] = [
                 </ul>
             </div>
 
-            <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">3. Research & Publications</h2>
+            <h2 class="text-3xl font-bold mt-12 mb-6">3. Research & Publications</h2>
             <p>For Indian students especially, publishing a research paper is a massive differentiator. It proves you have university-level academic rigor. TrueNorth mentors guide students to publish in IEEE journals, youth conferences, and more.</p>
 
-            <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">4. Supercurriculars (For UK/Oxbridge)</h2>
+            <h2 class="text-3xl font-bold mt-12 mb-6">4. Supercurriculars (For UK/Oxbridge)</h2>
             <p>The UK is different. They care less about leadership and more about <strong>Supercurriculars</strong>—activities that take your academic subject further. This includes Olympiads, advanced reading, and subject-specific summer schools.</p>
         `
     },
