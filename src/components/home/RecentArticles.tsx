@@ -62,7 +62,7 @@ const RecentArticles = () => {
                                     {/* Image */}
                                     <div className="relative h-56 overflow-hidden">
                                         <img
-                                            src={`${post.image}&q=75&w=800&fm=webp`}
+                                            src={post.image}
                                             alt={post.title}
                                             width="800"
                                             height="600"
