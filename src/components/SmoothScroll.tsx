@@ -17,7 +17,8 @@ const SmoothScroll = ({ children }: SmoothScrollProps) => {
             gestureOrientation: 'vertical',
             smoothWheel: true,
             wheelMultiplier: 1,
-            touchMultiplier: 2,
+            touchMultiplier: 1.5,
+            syncTouch: true,
         });
 
         lenisRef.current = lenis;
