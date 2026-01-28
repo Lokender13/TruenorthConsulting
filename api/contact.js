@@ -19,43 +19,41 @@ export default async function handler(req, res) {
         return res.status(400).json({ message: 'Missing required fields' });
     }
 
-    // Clean credentials to ensure no invisible spaces
-    const SMTP_USER = String(process.env.EMAIL_USER || '').trim();
+    const SMTP_USER = String(process.env.EMAIL_USER || 'contact@truenorthae.com').trim();
     const SMTP_PASS = String(process.env.EMAIL_PASS || '').trim();
-    const SMTP_HOST = String(process.env.EMAIL_HOST || 'smtp.hostinger.com').trim();
 
-    // Use Port 465 (SSL) which is most stable for Hostinger
+    // Use a more standard configuration that often works better with Hostinger's newer security
     const transporter = nodemailer.createTransport({
-        host: SMTP_HOST,
+        host: 'smtp.hostinger.com',
         port: 465,
-        secure: true,
+        secure: true, // SSL
         auth: {
             user: SMTP_USER,
             pass: SMTP_PASS
         },
-        // Security bypass for Vercel Serverless
         tls: {
+            // Important for Vercel/Hostinger handshake
             rejectUnauthorized: false,
             minVersion: 'TLSv1.2'
         },
-        debug: true, // Show detailed logs in Vercel
-        logger: true
+        // Faster timeout to prevent Vercel from hanging
+        connectionTimeout: 5000,
+        greetingTimeout: 5000,
+        socketTimeout: 5000
     });
 
     const mailOptions = {
-        from: `"TrueNorth Inquiry" <${SMTP_USER}>`,
+        from: `"TrueNorth Website" <${SMTP_USER}>`,
         to: 'contact@truenorthae.com',
         replyTo: email,
-        subject: `[${formType || 'New Inquiry'}] ${firstName || ''} ${lastName || ''}`,
+        subject: `[${formType || 'Inquiry'}] ${firstName} ${lastName || ''}`,
         html: `
-            <div style="font-family: Arial, sans-serif; padding: 30px; border: 1px solid #eee; border-radius: 10px;">
-                <h2 style="color: #f97316;">New Lead from TrueNorth Website</h2>
-                <p><strong>Source:</strong> ${formType || 'Contact Form'}</p>
-                <hr>
-                <p><strong>Name:</strong> ${firstName} ${lastName || ''}</p>
+            <div style="font-family: sans-serif; padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
+                <h2 style="color: #f97316;">New Lead: ${firstName} ${lastName || ''}</h2>
                 <p><strong>Email:</strong> ${email}</p>
                 <p><strong>Phone:</strong> ${phone || 'N/A'}</p>
-                <p><strong>Details:</strong> ${requirements || 'N/A'}</p>
+                <p><strong>Form:</strong> ${formType || 'General'}</p>
+                <p><strong>Message:</strong> ${requirements || 'No message'}</p>
                 ${Object.entries(rest).map(([k, v]) => `<p><strong>${k}:</strong> ${v}</p>`).join('')}
             </div>
         `
@@ -63,12 +61,14 @@ export default async function handler(req, res) {
 
     try {
         await transporter.sendMail(mailOptions);
-        return res.status(200).json({ success: true });
+        return res.status(200).json({ success: true, message: 'Sent' });
     } catch (error) {
-        console.error('Final SMTP Error Log:', error);
+        console.error('SMTP Error:', error.message);
+
+        // Final fallback: If 465 fails, some environments handle 587 better
         return res.status(500).json({
             success: false,
-            message: 'Authentication failed. Please verify Password in Vercel Settings.',
+            message: 'Authentication failed. verify SMTP is enabled in Hostinger hPanel.',
             error: error.message
         });
     }
