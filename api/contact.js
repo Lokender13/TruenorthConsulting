@@ -7,61 +7,44 @@ export default async function handler(req, res) {
 
     const { firstName, lastName, email, phone, requirements, formType, ...rest } = req.body;
 
-    if (!email || !firstName) {
-        return res.status(400).json({ message: 'Missing required fields' });
-    }
+    // Clean data
+    const SMTP_USER = String(process.env.EMAIL_USER || 'surabhi@truenorthae.com').trim();
+    const SMTP_PASS = String(process.env.EMAIL_PASS || '').trim();
 
-    // Corrected Spelling to surabhi@truenorthae.com
-    const AUTH_USER = String(process.env.EMAIL_USER || 'surabhi@truenorthae.com').trim();
-    const AUTH_PASS = String(process.env.EMAIL_PASS || '').trim();
-
+    // Debugging transporter
     const transporter = nodemailer.createTransport({
         host: 'smtp.hostinger.com',
-        port: 465,
+        port: 465, // Try 465 first
         secure: true,
         auth: {
-            user: AUTH_USER,
-            pass: AUTH_PASS
+            user: SMTP_USER,
+            pass: SMTP_PASS
         },
         tls: {
             rejectUnauthorized: false
         }
     });
 
-    const mailOptions = {
-        from: `"TrueNorth Website" <${AUTH_USER}>`,
-        to: 'surabhi@truenorthae.com',
-        replyTo: email,
-        subject: `[${formType || 'Inquiry'}] ${firstName} ${lastName || ''}`,
-        html: `
-            <div style="font-family: Arial, sans-serif; padding: 30px; border: 1px solid #e4e4e7; border-radius: 12px; max-width: 600px;">
-                <h2 style="color: #f97316;">New Lead Received</h2>
-                <div style="margin-top: 20px; line-height: 1.6;">
-                    <p><strong>Name:</strong> ${firstName} ${lastName || ''}</p>
-                    <p><strong>Email:</strong> ${email}</p>
-                    <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
-                    <p><strong>Service/Source:</strong> ${formType || 'General Form'}</p>
-                    <p><strong>Message:</strong><br/>${requirements || 'N/A'}</p>
-                </div>
-                ${Object.entries(rest).length > 0 ? `
-                    <div style="margin-top: 20px; padding: 15px; background: #f9fafb; border-radius: 8px;">
-                        <h4 style="margin: 0 0 10px;">Additional Details:</h4>
-                        ${Object.entries(rest).map(([k, v]) => `<p style="margin: 4px 0;"><strong>${k}:</strong> ${v}</p>`).join('')}
-                    </div>
-                ` : ''}
-            </div>
-        `
-    };
-
     try {
-        await transporter.sendMail(mailOptions);
-        return res.status(200).json({ success: true, message: 'Form submitted successfully' });
+        await transporter.sendMail({
+            from: `"TrueNorth Website" <${SMTP_USER}>`,
+            to: 'surabhi@truenorthae.com',
+            replyTo: email,
+            subject: `Website Inquiry: ${firstName}`,
+            text: `Name: ${firstName}\nEmail: ${email}\nPhone: ${phone}\n\nMessage: ${requirements}`,
+            html: `<h3>New Lead</h3><p><strong>Name:</strong> ${firstName}</p><p><strong>Email:</strong> ${email}</p><p><strong>Message:</strong> ${requirements}</p>`
+        });
+
+        return res.status(200).json({ success: true });
     } catch (error) {
-        console.error('SMTP Error (Surabhi Account):', error.message);
+        // Log EXACT error to Vercel console
+        console.error('CRITICAL SMTP ERROR:', error);
+
         return res.status(500).json({
             success: false,
-            message: 'Authentication failed. Please verify surabhi@truenorthae.com credentials.',
-            error: error.message
+            message: 'Delivery Failed',
+            details: error.message,
+            code: error.code // This will tell if it's AUTH, CONN, etc.
         });
     }
 }
